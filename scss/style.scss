@@ -3,141 +3,157 @@
 
 
 html {
-  font-size: 62.5%;
-  scroll-behavior: smooth;
+	font-size: 62.5%;
+	scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  font-family: "YuMincho", "游明朝", "Yu Mincho", serif; // フォントを明朝に変更！
-  background-color: #4D9600;
-  color: #000000;
-  font-weight: 500;
-  font-style: normal;
+	margin: 0;
+	font-family: "YuMincho", "游明朝", "Yu Mincho", serif; // フォントを明朝に変更！
+	background-color: #4D9600;
+	color: #000000;
+	font-weight: 500;
+	font-style: normal;
 }
 
 main {
-  flex: 1;
+	flex: 1;
 }
 
 a {
-  color: #FFFFFF;
-  text-decoration: none;
-  transition: color 0.3s ease;
+	color: #FFFFFF;
+	text-decoration: none;
+	transition: color 0.3s ease;
 }
 
 section[id] {
-  scroll-margin-top: 50px;
+	scroll-margin-top: 50px;
 }
 
 img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
+	width: 100%;
+	height: auto;
+	display: block;
+	object-fit: cover;
 }
 
 .inner {
-  max-width: 920px;
-  margin: 0 auto;
-  padding-inline: 20px;
+	max-width: 920px;
+	margin: 0 auto;
+	padding-inline: 20px;
 
-  @media screen and (max-width: 767px) {
-    max-width: 100%;
-    padding-inline: 30px;
-  }
+	@media screen and (max-width: 767px) {
+		max-width: 100%;
+		padding-inline: 30px;
+	}
 }
 
 .section-bg {
-  background: rgba(77, 150, 0, 0.101961);
+	background: rgba(77, 150, 0, 0.101961);
 }
 
 .ib-span {
-  display: inline-block;
+	display: inline-block;
 }
 
 #container {
-  width: 100%;
-  overflow: hidden;
+	width: 100%;
+	overflow: hidden;
 }
 
 /* PC、SPの非表示 */
 @media (max-width: 767px) {
-  .pc {
-    display: none !important;
-  }
+	.pc {
+		display: none !important;
+	}
 }
 
 @media (min-width: 768px) {
-  .sp {
-    display: none !important;
-  }
+	.sp {
+		display: none !important;
+	}
 }
 
 .section-bg {
-  background: #4D9600;
+	background: #4D9600;
 }
 
-//section-head
-.section__title{
-  font-size: 3.0rem;
-  line-height: 1.1;
+//common-title
+.common-title {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	@media screen and (max-width: 767px) {}
 }
+
+.comomon__title h2 {
+	font-size: 3.0rem;
+	line-height: 1.1;
+}
+
+.section__subtitle {
+	font-size: 2.0rem;
+	line-height: 1.65;
+}
+
+
 
 
 //header
 
 .header {
-  width: 100%;
-  height: 8rem;
-  background-color: #aaF;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  line-height: 1.65;
-  position: fixed;
-  padding-inline: calc(80/ 1080 * 100vw) calc(60/ 1080 * 100vw);
-  left: 0;
-  z-index: 999;
+	width: 100%;
+	height: 8rem;
+	background-color: #aaF;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	line-height: 1.65;
+	position: fixed;
+	padding-inline: calc(80/ 1080 * 100vw) calc(60/ 1080 * 100vw);
+	left: 0;
+	z-index: 999;
 
-  &__logo {
-    font-size: 2.0rem;
-    font-weight: 500;
-    color: #FFF;
+	&__logo {
+		font-size: 2.0rem;
+		font-weight: 500;
+		color: #FFF;
 
-    &-text {
-      font-style: normal;
-      font-weight: 500;
-      font-size: 2.0rem;
-    }
-  }
+		&-text {
+			font-style: normal;
+			font-weight: 500;
+			font-size: 2.0rem;
+		}
+	}
 
-  &__nav {
-    display: flex;
-    align-items: center;
-    column-gap: 30px;
+	&__nav {
+		display: flex;
+		align-items: center;
+		column-gap: 30px;
 
-    ul {
-      display: flex;
-      column-gap: 30px;
-      list-style: none;
-      padding: 0;
-      margin: 0;
+		ul {
+			display: flex;
+			column-gap: 30px;
+			list-style: none;
+			padding: 0;
+			margin: 0;
 
-      a {
-        height: 3.3rem;
-        display: flex;
-        align-items: center;
-        font-size: 1.8rem;
-        font-weight: 500;
-        color: #FFF;
-        text-decoration: none;
+			a {
+				height: 3.3rem;
+				display: flex;
+				align-items: center;
+				font-size: 1.8rem;
+				font-weight: 500;
+				color: #FFF;
+				text-decoration: none;
 
-        &:hover {
-          opacity: 0.4;
+				&:hover {
+					opacity: 0.4;
 
-        }
-      }
-    }
-  }
+				}
+			}
+		}
+	}
 }
