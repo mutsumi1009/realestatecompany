@@ -1,4 +1,6 @@
-@use './_reset.scss';
+@use 'reset';
+
+
 
 
 
@@ -14,6 +16,7 @@ body {
 	color: #000000;
 	font-weight: 500;
 	font-style: normal;
+	background-color: pink;
 }
 
 main {
