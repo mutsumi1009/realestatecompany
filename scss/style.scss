@@ -1,7 +1,8 @@
 @use './reset';
 
 $main-color: #4D9600;
-$bg-color: #808000;
+$section-bg-color: rgba(77, 150, 0, 0.102);
+$contact-bg-color: rgba(77, 150, 0, 0.146); // コンタクト
 $font-color: #fff;
 $font-serif: "YuMincho", "游明朝", "Yu Mincho", serif;
 $font-weight: 500;
@@ -55,7 +56,7 @@ img {
 }
 
 .section-bg {
-	background: rgba(77, 150, 0, 0.101961);
+	background: $section-bg-color;
 }
 
 .ib-span {
@@ -81,14 +82,10 @@ img {
 	display: none !important;
 
 	@media (max-width: 767px) {
-		display: inline;
+		display: block !important;
 	}
 }
 
-.section-bg {
-	background: $bg-color;
-
-}
 
 //common-title
 .common-title {
@@ -103,14 +100,25 @@ img {
 .common-title h2 {
 	font-size: 3.0rem;
 	line-height: 1.1;
+	color: $main-color;
 
 	@media screen and (max-width: 767px) {}
 }
 
 .section__subtitle {
 	font-size: 2.0rem;
-	line-height: 1.65;
+	padding-top: calc(6 / 1080 * 100vw);
+	;
 }
+
+.section__head {
+	padding-block: calc(80/ 1080 * 100vw);
+
+	&.works {
+		padding-block-end: calc(97/ 1080 * 100vw);
+	}
+}
+
 
 //header
 
@@ -128,48 +136,47 @@ img {
 	z-index: 999;
 
 	@media screen and (max-width: 767px) {
-		padding-left: 20px;
-	}
+		padding: 8px 0 0 20px;
 
-	.logo {
-		font-size: 2.0rem;
-		font-weight: 500;
-		color: #FFF;
-	}
-
-	.logo-text {
-		font-style: normal;
-		font-weight: 500;
-		font-size: 2.0rem;
-		color: $font-color;
 	}
 }
 
-.header__nav {
-	display: flex;
-	align-items: center;
-	column-gap: 30px;
+
+.header__site-title{
+	font-size: 2.0rem;
+	font-weight: 500;
+	color: #FFF;
 }
 
-.header__nav ul {
+.header__logo-text {
+	font-style: normal;
+	font-weight: 500;
+	font-size: 2.0rem;
+	line-height: 1.65;
+	color: $font-color;
+
+	@media screen and (max-width: 767px) {}
+}
+
+.header__nav-list {
 	display: flex;
 	column-gap: 30px;
 	list-style: none;
 	padding: 0;
 	margin: 0;
-}
 
-.heeder__nav ul a {
-	height: 3.3rem;
-	display: flex;
-	align-items: center;
-	font-size: 1.8rem;
-	font-weight: 500;
-	color: #FFF;
-	text-decoration: none;
+	li a {
+		height: 3.3rem;
+		display: flex;
+		align-items: center;
+		font-size: 1.8rem;
+		font-weight: 500;
+		color: #FFF;
+		text-decoration: none;
 
-	&:hover {
-		opacity: 0.4;
+		&:hover {
+			opacity: 0.4;
+		}
 	}
 }
 
@@ -186,7 +193,9 @@ img {
 	left: 0;
 	padding-top: calc(339 / 1080 * 100vw);
 
-	@media screen and (max-width: 767px) {}
+	@media screen and (max-width: 767px) {
+		padding-top: 219px;
+	}
 
 }
 
@@ -196,8 +205,6 @@ img {
 	display: flex;
 	align-items: center;
 	padding-left: calc(257 / 1080 * 100vw);
-
-
 
 	@media screen and (max-width: 767px) {
 		width: 264px;
@@ -218,6 +225,11 @@ img {
 	}
 }
 
+.fv__copy {
+	white-space: pre-line;
+}
+
+
 //about
 
 .about__items {
@@ -229,26 +241,33 @@ img {
 .about__content {
 	position: absolute;
 	top: 50%;
-	left: 5%;
+	// left: 50%;
 	transform: translateY(-50%);
 	writing-mode: vertical-rl;
 	text-orientation: mixed;
 	padding-left: calc(150 / 1080 * 100vw);
-	column-gap: 30px;
 
+	@media screen and (max-width: 767px) {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		padding-left: 0;
 
+	}
 }
 
 .about__title h2 {
-	
+
 	font-weight: $font-weight;
 	font-size: 3.0rem;
 	line-height: 1.18;
-	padding-left: calc(150 / 1080 * 100vw);
+	margin-left: calc(60 / 1080 * 100vw);
 
+	@media screen and (max-width: 767px) {}
 }
 
 .about__text {
 	font-size: 1.8rem;
-	
+	line-height: 3.0;
+
 }
