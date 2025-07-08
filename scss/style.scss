@@ -1,5 +1,8 @@
 @use './reset';
 
+/* ===============================================
+# カラー・フォントなどの変数設定
+=============================================== */
 $main-color: #4D9600;
 $section-bg-color: rgba(77, 150, 0, 0.102);
 $contact-bg-color: rgba(77, 150, 0, 0.146); // コンタクト
@@ -7,6 +10,15 @@ $font-color: #fff;
 $font-serif: "YuMincho", "游明朝", "Yu Mincho", serif;
 $font-weight: 500;
 $text-color: #000;
+
+/* ===============================================
+# Mixin
+=============================================== */
+@mixin sp {
+	@media (max-width: 768px) {
+		@content;
+	}
+}
 
 
 html {
@@ -49,7 +61,7 @@ img {
 	margin: 0 auto;
 	padding-inline: 20px;
 
-	@media screen and (max-width: 767px) {
+	@include sp {
 		max-width: 100%;
 		padding-inline: 30px;
 	}
@@ -68,7 +80,10 @@ img {
 	overflow: hidden;
 }
 
-/* PC、SPの非表示 */
+
+/* ===============================================
+# PC、SPの非表示
+=============================================== */
 
 .pc {
 	display: inline;
@@ -87,14 +102,18 @@ img {
 }
 
 
-//common-title
+/* ===============================================
+# common-title
+=============================================== */
+
 .common-title {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 
-	@media screen and (max-width: 767px) {}
+	@include sp {}
+
 }
 
 .common-title h2 {
@@ -102,8 +121,9 @@ img {
 	line-height: 1.1;
 	color: $main-color;
 
-	@media screen and (max-width: 767px) {}
+	@include sp {}
 }
+
 
 .section__subtitle {
 	font-size: 2.0rem;
@@ -142,7 +162,7 @@ img {
 }
 
 
-.header__site-title{
+.header__site-title {
 	font-size: 2.0rem;
 	font-weight: 500;
 	color: #FFF;
@@ -180,7 +200,10 @@ img {
 	}
 }
 
-//fv//
+/* ===============================================
+# fv
+=============================================== */
+
 .fv {
 	position: relative;
 }
@@ -193,7 +216,7 @@ img {
 	left: 0;
 	padding-top: calc(339 / 1080 * 100vw);
 
-	@media screen and (max-width: 767px) {
+	@include sp {
 		padding-top: 219px;
 	}
 
@@ -206,7 +229,7 @@ img {
 	align-items: center;
 	padding-left: calc(257 / 1080 * 100vw);
 
-	@media screen and (max-width: 767px) {
+	@include sp {
 		width: 264px;
 		height: 180px;
 		padding-left: 56px;
@@ -219,7 +242,7 @@ img {
 	font-weight: 400;
 	color: #FFF;
 
-	@media screen and (max-width: 767px) {
+	@include sp {
 		font-size: 3.0rem;
 		line-height: 2;
 	}
@@ -230,15 +253,16 @@ img {
 }
 
 
-//about
+/* ===============================================
+# about
+=============================================== */
 
 .about__items {
 	position: relative;
 }
 
-.about__img {}
-
 .about__content {
+	// background-color: #4D9600;
 	position: absolute;
 	top: 50%;
 	// left: 50%;
@@ -247,27 +271,117 @@ img {
 	text-orientation: mixed;
 	padding-left: calc(150 / 1080 * 100vw);
 
-	@media screen and (max-width: 767px) {
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		padding-left: 0;
-
+	@include sp {
+		position: static;
+		transform: none;
+		writing-mode: initial;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding-inline: 16px;
 	}
 }
 
 .about__title h2 {
-
 	font-weight: $font-weight;
 	font-size: 3.0rem;
 	line-height: 1.18;
-	margin-left: calc(60 / 1080 * 100vw);
+	padding-left: 60px;
 
-	@media screen and (max-width: 767px) {}
+	@include sp {
+		font-size: 2.5rem;
+		line-height: 1.19;
+
+		padding-top: calc(150 / 1080 * 100vw);
+	}
 }
 
 .about__text {
 	font-size: 1.8rem;
 	line-height: 3.0;
 
+	@include sp {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+	}
+}
+
+/* ===============================================
+# service
+=============================================== */
+
+.service {
+	background: $section-bg-color;
+	padding-block: 80px;
+
+	@include sp {
+		padding-block: 50px;
+	}
+}
+
+.service__items {
+	margin-top: 68px;
+
+	@include sp {
+		margin-top: 38px;
+	}
+}
+
+.service__item {
+	display: flex;
+	position: relative;
+	
+	// column-gap: calc(45 / 1080 * 100%);
+}
+
+.service__item:nth-of-type(even) {
+	flex-direction: row-reverse;
+}
+
+.service__item:not(:first-of-type) {
+	margin-top: 50px;
+
+	@media screen and (max-width: 767px) {
+		margin-top: 40px;
+	}
+}
+
+.service__img {
+	position: relative;
+	width: 50%;
+}
+
+.service__caption {
+
+	padding-top: 19px;
+}
+
+.service__img-wrapper {
+	position: relative;
+  }
+
+.service__content {
+	position: absolute;
+	top: 220px;
+	left: 80px;
+	background: $main-color;
+	color: $font-color;
+	width: 500px;
+	height: 250px;
+	padding: 50px 0 42px 20px;
+	//   transform: translate(-50%, -50%);
+}
+
+.service__heading {
+	padding: 50px 0 42px 220px;
+	font-size: 2.5rem;
+	color: $font-color;
+	font-weight: 600;
+}
+
+.service__text {
+	font-size: 1.6rem;
+	padding-inline: 220px 5px;
 }
