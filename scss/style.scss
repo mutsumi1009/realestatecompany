@@ -20,6 +20,9 @@ $text-color: #000;
 	}
 }
 
+/* ===============================================
+# ベース設定（html, body, main など）
+=============================================== */
 
 html {
 	font-size: 62.5%;
@@ -39,14 +42,13 @@ main {
 	flex: 1;
 }
 
+/* ===============================================
+# リンク・画像など汎用要素
+=============================================== */
 a {
 	color: $font-color;
 	text-decoration: none;
 	transition: color 0.3s ease;
-}
-
-section[id] {
-	scroll-margin-top: 50px;
 }
 
 img {
@@ -55,6 +57,26 @@ img {
 	display: block;
 	object-fit: cover;
 }
+
+.ib-span {
+	display: inline-block;
+}
+
+/* ===============================================
+# セクション共通設定
+=============================================== */
+
+section[id] {
+	scroll-margin-top: 50px;
+}
+
+.section-bg {
+	background: $section-bg-color;
+}
+
+/* ===============================================
+# レイアウト共通
+=============================================== */
 
 .inner {
 	max-width: 920px;
@@ -67,19 +89,10 @@ img {
 	}
 }
 
-.section-bg {
-	background: $section-bg-color;
-}
-
-.ib-span {
-	display: inline-block;
-}
-
 #container {
 	width: 100%;
 	overflow: hidden;
 }
-
 
 /* ===============================================
 # PC、SPの非表示
@@ -100,7 +113,6 @@ img {
 		display: block !important;
 	}
 }
-
 
 /* ===============================================
 # common-title
@@ -139,8 +151,9 @@ img {
 	}
 }
 
-
-//header
+/* ===============================================
+# header
+=============================================== */
 
 .header {
 	width: 100%;
@@ -272,9 +285,8 @@ img {
 	padding-left: calc(150 / 1080 * 100vw);
 
 	@include sp {
-		position: static;
-		transform: none;
-		writing-mode: initial;
+		writing-mode: vertical-rl;
+		text-orientation: mixed;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -283,17 +295,21 @@ img {
 	}
 }
 
-.about__title h2 {
+.about__title {
 	font-weight: $font-weight;
 	font-size: 3.0rem;
 	line-height: 1.18;
 	padding-left: 60px;
 
 	@include sp {
+		position: relative;
 		font-size: 2.5rem;
 		line-height: 1.19;
-
-		padding-top: calc(150 / 1080 * 100vw);
+		padding: 0;
+		text-align: center;
+		order: -1;
+		top: -83%;
+		left: -60%
 	}
 }
 
@@ -302,7 +318,11 @@ img {
 	line-height: 3.0;
 
 	@include sp {
-		display: flex;
+		font-size: 1.6rem;
+		line-height: 1.25;
+		display: block;
+		margin: 0 auto;
+		padding-top: 24px;
 		flex-direction: column;
 		justify-content: flex-end;
 	}
@@ -332,8 +352,15 @@ img {
 .service__item {
 	display: flex;
 	position: relative;
-	
 	// column-gap: calc(45 / 1080 * 100%);
+
+	@include sp {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: 36px;
+	}
 }
 
 .service__item:nth-of-type(even) {
@@ -341,7 +368,7 @@ img {
 }
 
 .service__item:not(:first-of-type) {
-	margin-top: 50px;
+	margin-top: 80px;
 
 	@media screen and (max-width: 767px) {
 		margin-top: 40px;
@@ -350,28 +377,59 @@ img {
 
 .service__img {
 	position: relative;
-	width: 50%;
+	width: 60%;
+	z-index: 2;
+	flex-shrink: 0;
+
+	@include sp {
+		width: 100%;
+	}
 }
 
-.service__caption {
+.service__img img {
+	width: 100%;
+	height: auto;
+	aspect-ratio: 600 / 300;
+	object-fit: cover;
 
+	@include sp {
+		aspect-ratio: 315 / 220;
+
+	}
+}
+
+
+.service__caption {
 	padding-top: 19px;
+
+	@include sp {
+		padding-top: 5px;
+		text-align: left;
+	}
 }
 
 .service__img-wrapper {
 	position: relative;
-  }
+}
 
 .service__content {
 	position: absolute;
-	top: 220px;
-	left: 80px;
+	top: 35px;
+	left: 334px;
 	background: $main-color;
 	color: $font-color;
 	width: 500px;
 	height: 250px;
-	padding: 50px 0 42px 20px;
-	//   transform: translate(-50%, -50%);
+	// padding: 50px 0 42px 20px;
+	z-index: 1;
+
+	@include sp {
+		position: static;
+		text-align: left;
+		width: 315px;
+		height: 171px;
+		margin-top: 6px;
+	}
 }
 
 .service__heading {
@@ -379,9 +437,48 @@ img {
 	font-size: 2.5rem;
 	color: $font-color;
 	font-weight: 600;
+
+	@include sp {
+		font-size: 2.0rem;
+		padding: 20px 20px 14px 20px;
+	}
 }
 
 .service__text {
 	font-size: 1.6rem;
 	padding-inline: 220px 5px;
+
+	@include sp {
+		padding: 20px 20px 14px 20px;
+	}
 }
+
+
+/* ===============================================
+# works
+=============================================== */
+
+.works {
+	background-color: f5f5f5;
+	font-size: 1.6rem
+}
+
+.works-sec_contents {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 40px;
+
+
+}
+
+.works-sec__items {}
+
+.works__img {
+	aspect-ratio: 200 / 200;
+}
+
+.works__body {}
+
+.works__caption {}
+
+.works__item {}
