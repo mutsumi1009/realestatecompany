@@ -140,7 +140,7 @@ section[id] {
 .section__subtitle {
 	font-size: 2.0rem;
 	padding-top: calc(6 / 1080 * 100vw);
-	;
+
 }
 
 .section__head {
@@ -342,7 +342,7 @@ section[id] {
 }
 
 .service__items {
-	margin-top: 68px;
+	// margin-top: 68px;
 
 	@include sp {
 		margin-top: 38px;
@@ -449,7 +449,7 @@ section[id] {
 	padding-inline: 220px 5px;
 
 	@include sp {
-		padding: 20px 20px 14px 20px;
+		padding: 14px 20px 14px 20px;
 	}
 }
 
@@ -460,7 +460,12 @@ section[id] {
 
 .works {
 	background-color: f5f5f5;
-	font-size: 1.6rem
+	font-size: 1.6rem;
+	 padding-block: 80px 97px;
+
+	 @include sp {
+		padding-block: 50px 42px;
+	 }
 }
 
 .works-sec_contents {
@@ -468,17 +473,110 @@ section[id] {
 	grid-template-columns: repeat(4, 1fr);
 	gap: 40px;
 
-
+	@include sp {
+		display: flex;
+		flex-direction: column;
+		text-align: left;
+		width: 315px;
+		height: 250px;
+		margin-top: 6px;
+	}
 }
 
-.works-sec__items {}
+.works-sec__item {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	// column-gap: calc(45 / 1080 * 100%);
+
+	@include sp {
+		display: flex;
+		align-items: center;
+		text-align: center;
+		gap: 36px;
+	}
+}
 
 .works__img {
 	aspect-ratio: 200 / 200;
+	// width: 100%;
+
+	@include sp {
+		aspect-ratio: 315 / 250;
+	}
 }
 
-.works__body {}
+.works__body {
+	text-align: center;
+	margin-top: 19px;
 
-.works__caption {}
+	@include sp {}
+
+}
+
+.works__caption {
+	font-size: 1.6rem;
+	line-height: 1.56;
+
+	@include sp {}
+}
 
 .works__item {}
+
+/* ===============================================
+# NEWS
+=============================================== */
+
+.news {
+	 padding-block: 80px;
+
+	// @include sp {
+		 padding: 50px;
+	}
+}
+
+.service-sec {}
+
+.section-bg {}
+
+.inner {}
+
+.section__head {}
+
+.service-sec__title {}
+
+.common-title {}
+
+.section__subtitle {}
+
+.news__container {}
+
+.news__box {}
+
+.news__box--info {}
+
+.news__box-title {}
+
+.news__items {}
+
+.news__item {}
+
+.news__link {}
+
+.news__date {}
+
+.news__text {}
+
+.news__box--blog {}
+
+.blog__items {}
+
+.blog__item {}
+
+.blog__link {}
+
+.blog__date {}
+
+.blog__text {}
+
+.blog__more {}
