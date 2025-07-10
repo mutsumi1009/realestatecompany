@@ -341,7 +341,7 @@ section[id] {
 }
 
 .service__items {
-	// margin-top: 68px;
+	margin-top: 68px;
 
 	@include sp {
 		margin-top: 38px;
@@ -527,11 +527,86 @@ section[id] {
 =============================================== */
 
 .news {
+	background-color: $section-bg-color;
 	padding-block: 80px;
+
 	@include sp {
-	padding: 50px;
+		padding: 50px;
+	}
 }
+
+.news__container-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 60px;
+
+	// padding-top: 220px ;
+	@include sp {
+		flex-direction: column;
+	}
 }
 
+.news__box {
+	justify-content: center;
+	background: #fff;
+	color: $font-color;
+	z-index: 999;
+	width: 430px;
+	height: 383px;
+
+}
+
+.news__box--info {}
+
+.news__box-title {
+	background-color: $main-color;
+	font-size: 2.0rem;
+	height: 50px;
+	padding: 9px 0 0 20px;
+
+}
+
+.news__items {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+
+}
+
+.news__item {
+	border-top: 1px solid $main-color;
+	border-bottom: 1px solid $main-color;
+	padding-inline: 20px;
+
+}
+
+.news__link {
+	display: flex;
+	align-items: center;
+	gap: 24px;
+	text-decoration: none;
+
+}
+
+.news__date {
+	font-size: 1.6rem;
+	color: $text-color;
+	padding-left: 20px;
+}
+
+.news__text {
+	font-size: 1.8rem;
+	color: $text-color;
+	padding-block: 30px 13px;
+
+}
+
+.news__box--blog {}
+
+.blog__items {}
+
+.blog__item {}
 
 
+.blog__more {}
