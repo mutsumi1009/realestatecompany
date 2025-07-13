@@ -149,15 +149,22 @@ section[id] {
 	}
 }
 
-// .section__head {
-// 	padding-block: calc(80 / 1080 * 100vw);
-
-// 	@include sp {
-// 	  padding-block: 50px;
-// 	}
-//   }
+.section__head {
+	padding-block: calc(80 / 1080 * 100vw);
 
 
+	@include sp {
+		padding-block: 50px;
+	}
+
+	&.works {
+		padding-block-end: calc(97 / 1080 * 100vw);
+
+		@include sp {
+			padding-block-end: 42px;
+		}
+	}
+}
 
 /* ===============================================
 # header
@@ -335,7 +342,7 @@ section[id] {
 
 .service {
 	background: $section-bg-color;
-	padding-block: calc(80/ 1080 * 100vw);
+	// padding-block: calc(80/ 1080 * 100vw);
 
 
 	@include sp {
@@ -461,7 +468,7 @@ section[id] {
 .works {
 	background-color: #f5f5f5;
 	font-size: 1.6rem;
-	padding-block: calc(80 / 1080 * 100vw) calc(97 / 1080 * 100vw);
+	// padding-block: calc(80 / 1080 * 100vw) calc(97 / 1080 * 100vw);
 
 	@include sp {
 		padding-block: 50px 42px;
@@ -529,27 +536,26 @@ section[id] {
 
 .news {
 	background-color: $section-bg-color;
-	padding-block: calc(80/ 1080 * 100vw);
+	// padding-top: calc(80/ 1080 * 100vw);
+	// padding-bottom: calc(80/ 1080 * 100vw);
 
 	@include sp {
 		padding-block: 50px;
+		margin-top: 50px
 	}
 }
-
 
 .news__container-wrapper {
 	display: flex;
 	justify-content: space-between;
 	gap: 60px;
 	align-items: stretch;
-	// margin-top: 68px;
 
-	// padding-top: 220px ;
 	@include sp {
-
 		flex-direction: column;
 		width: 100%;
 		margin-top: 38px;
+		align-items: center;
 	}
 }
 
@@ -565,6 +571,10 @@ section[id] {
 	@include sp {
 		display: flex;
 		flex-direction: column;
+		width: 315px;
+		height: 383px;
+		margin: 0 auto;
+		min-width: auto;
 	}
 }
 
@@ -574,6 +584,10 @@ section[id] {
 	height: 50px;
 	padding: 9px 0 0 20px;
 
+	@include sp {
+		display: flex;
+		flex-direction: column;
+	}
 }
 
 .news__items {
@@ -645,6 +659,10 @@ section[id] {
 .news__more {
 	padding: 17px 53px 20px 330px;
 	text-align: right;
+
+	@include sp {
+		padding: 17px 53px 24px 215px;
+	}
 }
 
 .more-link {
@@ -675,8 +693,6 @@ section[id] {
 		padding-block: 50px 42px;
 	}
 }
-
-
 
 .company__inner {
 	display: flex;
@@ -788,7 +804,7 @@ section[id] {
 =============================================== */
 
 .contact {
-	background-color: #f5f5f5;
+	background-color: rgba(77, 150, 0, 0.149);
 	font-size: 1.6rem;
 	padding-block: calc(80/ 1080 * 100vw);
 
@@ -796,3 +812,102 @@ section[id] {
 		padding-block: 50px 42px;
 	}
 }
+
+.service-sec {
+
+}
+
+.contact__lead {
+font-size: 2.0rem;
+
+}
+
+.contact__form {
+
+}
+
+.contact__items {
+
+}
+
+.contact__item {
+
+}
+
+.contact__item--name {
+	font-size: 2.0rem;
+}
+
+.contact__label {
+
+}
+
+.contact__input {
+
+}
+
+.contact__radio-group {
+	font-size: 2.0rem;
+}
+
+.contact__item--email {
+	font-size: 2.0rem;
+}
+
+.contact__item--textarea {
+	font-size: 2.0rem;
+}
+
+.contact__textarea {
+
+}
+
+.contact__checkbox-group {
+	font-size: 2.0rem;
+}
+
+.contact__privacy {
+
+}
+
+.privacy__title {
+	font-size: 2.0rem;
+}
+
+.contact__privafy-box {
+	font-size: 1.8rem;
+}
+
+.contact__submit {
+
+}
+
+.contact__button {
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	padding: 0;
+	font-size: 2.0rem;
+	font-weight: 600;
+	color: $font-color;
+	background-color: $main-color;
+	border: none;
+	// border-radius: 10px;
+	cursor: pointer;
+	border: 1px solid $main-color;
+	transition: background-color 0.3s, color 0.3s;
+	width: 300x;
+	height: 50px;
+	padding-inline: calc(61/ 1080 * 100vw) calc(60/ 1080 * 100vw) ;
+
+	@include sp {
+		width: 315px;
+		height: 50px;
+	}
+}
+
+.contact__button:hover {
+	background-color: $font-color;
+	color: $main-color;
+}
+
