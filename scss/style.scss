@@ -347,25 +347,15 @@ section[id] {
 
 .service {
 	background: $section-bg-color;
-	// padding-block: calc(80/ 1080 * 100vw);
-
-
+	
 	@include sp {
 		padding-block: 5rem;
-	}
-}
-
-.service__items {
-
-	@include sp {
-		margin-top: 38px;
 	}
 }
 
 .service__item {
 	display: flex;
 	position: relative;
-	// column-gap: calc(45 / 1080 * 100%);
 
 	@include sp {
 		display: flex;
@@ -376,10 +366,10 @@ section[id] {
 	}
 }
 
-.service__item:nth-of-type(even) {
+.service__item:nth-child(even) {
 	flex-direction: row-reverse;
-}
-
+  }
+  
 .service__item:not(:first-of-type) {
 	margin-top: 8rem;
 
@@ -389,14 +379,7 @@ section[id] {
 }
 
 .service__img {
-	position: relative;
-	width: 60%;
-	z-index: 2;
-	flex-shrink: 0;
-
-	@include sp {
-		width: 100%;
-	}
+	width: 100%;
 }
 
 .service__img img {
@@ -421,20 +404,18 @@ section[id] {
 }
 
 .service__img-wrapper {
-	position: relative;
+	width: 55%;
+	
 }
 
 .service__content {
-	position: absolute;
-	top: 35px;
-	left: 334px;
+	width: 45%;
+	margin-left: -22rem;
 	background: $main-color;
 	color: $font-color;
-	width: 500px;
-	height: 250px;
-	// padding: 50px 0 42px 20px;
+	padding-left: 20%;
 	z-index: 1;
-
+	
 	@include sp {
 		position: static;
 		text-align: left;
@@ -445,7 +426,6 @@ section[id] {
 }
 
 .service__heading {
-	padding: 5rem 0 4.2rem 22rem;
 	font-size: 2.5rem;
 	color: $font-color;
 	font-weight: 600;
@@ -458,7 +438,7 @@ section[id] {
 
 .service__text {
 	font-size: 1.6rem;
-	padding-inline: 22rem 0.5rem;
+	// padding-inline: 22rem 0.5rem;
 
 	@include sp {
 		padding: 1.4rem 2rem;
