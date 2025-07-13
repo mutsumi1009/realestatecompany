@@ -140,7 +140,7 @@ section[id] {
 
 .section__subtitle {
 	font-size: 2.0rem;
-	padding-top: 6rem;
+	// padding-top: 6rem;
 	margin-bottom: 6.8rem;
 
 	@include sp {
@@ -149,22 +149,22 @@ section[id] {
 	}
 }
 
-.section__head {
-	padding-block: 8.0rem;
+// .section__head {
+// 	padding-block: 8.0rem;
 
 
-	@include sp {
-		padding-block: 5.0rem;
-	}
+// 	@include sp {
+// 		padding-block: 5.0rem;
+// 	}
 
-	&.works {
-		padding-block-end: 9.7rem;
+// 	&.works {
+// 		padding-block-end: 9.7rem;
 
-		@include sp {
-			padding-block-end: 4.2rem;
-		}
-	}
-}
+// 		@include sp {
+// 			padding-block-end: 4.2rem;
+// 		}
+// 	}
+// }
 
 /* ===============================================
 # header
@@ -347,6 +347,7 @@ section[id] {
 
 .service {
 	background: $section-bg-color;
+	padding-block: 8rem 10.7rem;
 	
 	@include sp {
 		padding-block: 5rem;
@@ -380,6 +381,7 @@ section[id] {
 
 .service__img {
 	width: 100%;
+
 }
 
 .service__img img {
@@ -405,12 +407,13 @@ section[id] {
 
 .service__img-wrapper {
 	width: 55%;
-	
+	z-index: 1;
+	position: relative;
 }
 
 .service__content {
 	width: 45%;
-	margin-left: -22rem;
+	// margin-left: -22rem;
 	background: $main-color;
 	color: $font-color;
 	padding-left: 20%;
@@ -453,7 +456,7 @@ section[id] {
 .works {
 	background-color: #f5f5f5;
 	font-size: 1.6rem;
-	// padding-block: calc(80 / 1080 * 100vw) calc(97 / 1080 * 100vw);
+	padding-block: 8rem 10.7rem;
 
 	@include sp {
 		padding-block: 5rem 4.2rem;
@@ -470,7 +473,7 @@ section[id] {
 		flex-direction: column;
 		text-align: left;
 		width: 315px;
-		height: 250px;
+		// height: 250px;
 		margin-top: 0.6rem;
 	}
 }
@@ -521,8 +524,8 @@ section[id] {
 
 .news {
 	background-color: $section-bg-color;
-	// padding-top: calc(80/ 1080 * 100vw);
-	// padding-bottom: calc(80/ 1080 * 100vw);
+	padding-block: 8rem 10.7rem;
+	
 
 	@include sp {
 		padding-block: 5rem;
@@ -557,7 +560,7 @@ section[id] {
 		display: flex;
 		flex-direction: column;
 		width: 315px;
-		height: 383px;
+		// height: 383px;
 		margin: 0 auto;
 		min-width: auto;
 	}
@@ -673,8 +676,8 @@ section[id] {
 .company {
 	background-color: #f5f5f5;
 	font-size: 1.6rem;
-	padding-block: 8rem;
-
+	padding-block: 8rem 10.7rem;
+	
 	@include sp {
 		padding-block: 5rem 4.2rem;
 	}
@@ -791,7 +794,7 @@ section[id] {
 .contact {
 	background-color: rgba(77, 150, 0, 0.149);
 	font-size: 1.6rem;
-	padding-block: 8rem;
+	padding-block: 8rem 3.5rem;
 
 	@include sp {
 		padding-block: 5rem 4.2rem;

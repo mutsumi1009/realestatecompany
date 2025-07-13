@@ -249,31 +249,11 @@ section[id] {
 }
 .section__subtitle {
   font-size: 2rem;
-  padding-top: 6rem;
   margin-bottom: 6.8rem;
 }
 @media (max-width: 768px) {
   .section__subtitle {
     margin-bottom: 3.8rem;
-  }
-}
-
-.section__head {
-  padding-block: 8rem;
-}
-@media (max-width: 768px) {
-  .section__head {
-    padding-block: 5rem;
-  }
-}
-.section__head.works {
-  -webkit-padding-after: 9.7rem;
-          padding-block-end: 9.7rem;
-}
-@media (max-width: 768px) {
-  .section__head.works {
-    -webkit-padding-after: 4.2rem;
-            padding-block-end: 4.2rem;
   }
 }
 
@@ -486,6 +466,7 @@ section[id] {
 =============================================== */
 .service {
   background: rgba(77, 150, 0, 0.102);
+  padding-block: 8rem 10.7rem;
 }
 @media (max-width: 768px) {
   .service {
@@ -561,11 +542,12 @@ section[id] {
 
 .service__img-wrapper {
   width: 55%;
+  z-index: 1;
+  position: relative;
 }
 
 .service__content {
   width: 45%;
-  margin-left: -22rem;
   background: #4D9600;
   color: #fff;
   padding-left: 20%;
@@ -608,6 +590,7 @@ section[id] {
 .works {
   background-color: #f5f5f5;
   font-size: 1.6rem;
+  padding-block: 8rem 10.7rem;
 }
 @media (max-width: 768px) {
   .works {
@@ -631,7 +614,6 @@ section[id] {
             flex-direction: column;
     text-align: left;
     width: 315px;
-    height: 250px;
     margin-top: 0.6rem;
   }
 }
@@ -681,6 +663,7 @@ section[id] {
 =============================================== */
 .news {
   background-color: rgba(77, 150, 0, 0.102);
+  padding-block: 8rem 10.7rem;
 }
 @media (max-width: 768px) {
   .news {
@@ -738,7 +721,6 @@ section[id] {
         -ms-flex-direction: column;
             flex-direction: column;
     width: 315px;
-    height: 383px;
     margin: 0 auto;
     min-width: auto;
   }
@@ -859,7 +841,7 @@ section[id] {
 .company {
   background-color: #f5f5f5;
   font-size: 1.6rem;
-  padding-block: 8rem;
+  padding-block: 8rem 10.7rem;
 }
 @media (max-width: 768px) {
   .company {
@@ -985,7 +967,7 @@ section[id] {
 .contact {
   background-color: rgba(77, 150, 0, 0.149);
   font-size: 1.6rem;
-  padding-block: 8rem;
+  padding-block: 8rem 3.5rem;
 }
 @media (max-width: 768px) {
   .contact {
