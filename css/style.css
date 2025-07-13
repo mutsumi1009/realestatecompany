@@ -225,7 +225,7 @@ section[id] {
 }
 
 /* ===============================================
-# common-title
+# common-title/section
 =============================================== */
 .common-title {
   display: -webkit-box;
@@ -251,6 +251,11 @@ section[id] {
   font-size: 2rem;
   padding-top: 0.5555555556vw;
   margin-bottom: 6.2962962963vw;
+}
+@media (max-width: 768px) {
+  .section__subtitle {
+    margin-bottom: 3.5185185185vw;
+  }
 }
 
 /* ===============================================
@@ -601,7 +606,7 @@ section[id] {
 .works {
   background-color: #f5f5f5;
   font-size: 1.6rem;
-  padding: 7.4074074074vw 8.9814814815vw;
+  padding-block: 7.4074074074vw 8.9814814815vw;
 }
 @media (max-width: 768px) {
   .works {
@@ -786,6 +791,14 @@ section[id] {
   color: #000;
   padding-left: 20px;
 }
+@media (max-width: 768px) {
+  .news__date {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
 
 .news__text {
   font-size: 1.8rem;
@@ -849,6 +862,7 @@ section[id] {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    gap: 20px;
   }
 }
 
@@ -860,6 +874,7 @@ section[id] {
 }
 @media (max-width: 768px) {
   .company__map {
+    position: relative;
     width: 100%;
   }
 }
@@ -882,24 +897,60 @@ section[id] {
   margin-left: 7.4074074074vw;
   padding: 4.537037037vw 0.462962963vw 3.8888888889vw 20.3703703704vw;
 }
+@media (max-width: 768px) {
+  .access__content {
+    width: 100%;
+    height: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    display: block;
+    margin: 0 auto;
+    padding-left: 20px;
+  }
+}
 
 .access__name {
   font-size: 2rem;
   font-weight: 600;
 }
-
 .access__address {
   font-size: 1.6rem;
   font-weight: 600;
+}
+@media (max-width: 768px) {
+  .access__address {
+    line-height: 1.56;
+  }
 }
 
 .access__tel {
   font-size: 1.6rem;
   font-weight: 600;
 }
-
 .access__tel span {
   font-weight: 400;
+}
+@media (max-width: 768px) {
+  .access__tel span {
+    font-size: 2.5rem;
+    line-height: 1.56;
+  }
+}
+
+@media (max-width: 768px) {
+  .access__tel a:hover {
+    opacity: 0.7;
+  }
 }
 
 .access__email {
