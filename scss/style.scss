@@ -143,8 +143,21 @@ section[id] {
 	padding-top: calc(6 / 1080 * 100vw);
 	margin-bottom: calc(68 / 1080 * 100vw);
 
+	@include sp {
+		margin-bottom: calc(38 / 1080 * 100vw);
 
+	}
 }
+
+// .section__head {
+// 	padding-block: calc(80 / 1080 * 100vw);
+
+// 	@include sp {
+// 	  padding-block: 50px;
+// 	}
+//   }
+
+
 
 /* ===============================================
 # header
@@ -448,7 +461,7 @@ section[id] {
 .works {
 	background-color: #f5f5f5;
 	font-size: 1.6rem;
-	padding: calc(80 / 1080 * 100vw) calc(97 / 1080 * 100vw);
+	padding-block: calc(80 / 1080 * 100vw) calc(97 / 1080 * 100vw);
 
 	@include sp {
 		padding-block: 50px 42px;
@@ -533,6 +546,7 @@ section[id] {
 
 	// padding-top: 220px ;
 	@include sp {
+
 		flex-direction: column;
 		width: 100%;
 		margin-top: 38px;
@@ -547,15 +561,12 @@ section[id] {
 	min-width: 430px;
 	flex: 1;
 	min-height: 383px;
-	
+
 	@include sp {
 		display: flex;
 		flex-direction: column;
 	}
-
 }
-
-.news__box--info {}
 
 .news__box-title {
 	background-color: $main-color;
@@ -583,6 +594,8 @@ section[id] {
 		height: 1px;
 		background-color: $main-color;
 		margin: 0 auto;
+
+
 	}
 
 	&::before {
@@ -606,7 +619,7 @@ section[id] {
 		flex-direction: column;
 		// position: relative;
 		// gap: 50px;
-	  }
+	}
 }
 
 .news__date {
@@ -614,6 +627,12 @@ section[id] {
 	line-height: 2.06;
 	color: $text-color;
 	padding-left: 20px;
+
+	@include sp {
+		flex-direction: column;
+		// position: relative;
+		// gap: 50px;
+	}
 }
 
 .news__text {
@@ -668,6 +687,7 @@ section[id] {
 	@include sp {
 		flex-direction: column;
 		align-items: center;
+		gap: 20px;
 	}
 }
 
@@ -678,7 +698,9 @@ section[id] {
 	margin-left: 0;
 
 	@include sp {
+		position: relative;
 		width: 100%;
+
 	}
 }
 
@@ -688,6 +710,7 @@ section[id] {
 
 	@media screen and (max-width: 767px) {
 		aspect-ratio: 315 / 300;
+
 	}
 }
 
@@ -699,27 +722,60 @@ section[id] {
 	height: 262px;
 	margin-left: calc(80 / 1080 * 100vw);
 	padding: calc(49 / 1080 * 100vw) calc(5 / 1080 * 100vw) calc(42 / 1080 * 100vw) calc(220 / 1080 * 100vw);
+
+	@include sp {
+		width: 100%;
+		height: auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		box-sizing: border-box;
+		display: block;
+		margin: 0 auto;
+		padding-left: 20px;
+	}
 }
+
 
 .access__name {
 	font-size: 2.0rem;
 	font-weight: 600;
+
+	@include sp {}
 }
 
 .access__address {
 	font-size: 1.6rem;
 	font-weight: 600;
+
+	@include sp {
+		line-height: 1.56;
+	}
 }
 
 
 .access__tel {
 	font-size: 1.6rem;
 	font-weight: 600;
+
+	@include sp {}
 }
 
 .access__tel span {
 	font-weight: 400;
+
+	@include sp {
+		font-size: 2.5rem;
+		line-height: 1.56;
+	}
 }
+
+.access__tel a:hover {
+	@include sp {
+		opacity: 0.7;
+	}
+}
+
 
 .access__email {
 	font-size: 1.6rem;
