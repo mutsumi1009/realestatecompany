@@ -140,28 +140,28 @@ section[id] {
 
 .section__subtitle {
 	font-size: 2.0rem;
-	padding-top: calc(6 / 1080 * 100vw);
-	margin-bottom: calc(68 / 1080 * 100vw);
+	padding-top: 6rem;
+	margin-bottom: 6.8rem;
 
 	@include sp {
-		margin-bottom: calc(38 / 1080 * 100vw);
+		margin-bottom: 3.8rem;
 
 	}
 }
 
 .section__head {
-	padding-block: calc(80 / 1080 * 100vw);
+	padding-block: 8.0rem;
 
 
 	@include sp {
-		padding-block: 50px;
+		padding-block: 5.0rem;
 	}
 
 	&.works {
-		padding-block-end: calc(97 / 1080 * 100vw);
+		padding-block-end: 9.7rem;
 
 		@include sp {
-			padding-block-end: 42px;
+			padding-block-end: 4.2rem;
 		}
 	}
 }
@@ -178,16 +178,19 @@ section[id] {
 	align-items: center;
 	// line-height: 1.65;
 	position: fixed;
-	padding-inline: calc(80/ 1080 * 100vw) calc(60/ 1080 * 100vw);
+	padding-left: 8.0rem;
+	padding-right: 6.0rem;
 	top: 0;
 	left: 0;
 	z-index: 999;
 
-	@media screen and (max-width: 767px) {
-		padding: 8px 0 0 20px;
-
+	@include sp {
+		padding-top: 8.0rem;
+		padding-left: 2.0rem;
+		padding-right: 2.0rem;
 	}
 }
+
 
 
 .header__site-title {
@@ -202,8 +205,10 @@ section[id] {
 	font-size: 2.0rem;
 	line-height: 1.65;
 	color: $font-color;
-
-	@media screen and (max-width: 767px) {}
+	
+@include sp {
+  
+}
 }
 
 .header__nav-list {
@@ -242,10 +247,10 @@ section[id] {
 	position: absolute;
 	top: 0;
 	left: 0;
-	padding-top: calc(339 / 1080 * 100vw);
+	padding-top: 33.9rem;
 
 	@include sp {
-		padding-top: 219px;
+		padding-top: 21.9rem;
 	}
 }
 
@@ -253,14 +258,14 @@ section[id] {
 	font-size: 4.0rem;
 	line-height: 1.75;
 	font-weight: 400;
-	color: #FFF;
+	color: $font-color;
 	// width: calc(567 / 1080 * 100vw);
-	height: calc(140 / 1080 * 100vw);
+	height: 1.75;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	white-space: normal;
-	padding-inline: calc(257 / 1080 * 100vw);
+	padding-inline: 25.7rem;
 	letter-spacing: 0.3em;
 
 
@@ -290,7 +295,7 @@ section[id] {
 	transform: translateY(-50%);
 	writing-mode: vertical-rl;
 	text-orientation: mixed;
-	padding-left: calc(150 / 1080 * 100vw);
+	padding-left: 15rem;
 
 	@include sp {
 		writing-mode: vertical-rl;
@@ -299,7 +304,7 @@ section[id] {
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		padding-inline: 16px;
+		padding-inline: 1.6rem;
 	}
 }
 
@@ -307,7 +312,7 @@ section[id] {
 	font-weight: $font-weight;
 	font-size: 3.0rem;
 	line-height: 1.18;
-	padding-left: 60px;
+	padding-left: 6rem;
 
 	@include sp {
 		position: relative;
@@ -330,7 +335,7 @@ section[id] {
 		line-height: 1.25;
 		display: block;
 		margin: 0 auto;
-		padding-top: 24px;
+		padding-top: 2.4rem;
 		flex-direction: column;
 		justify-content: flex-end;
 	}
@@ -346,7 +351,7 @@ section[id] {
 
 
 	@include sp {
-		padding-block: 50px;
+		padding-block: 5rem;
 	}
 }
 
@@ -376,10 +381,10 @@ section[id] {
 }
 
 .service__item:not(:first-of-type) {
-	margin-top: 80px;
+	margin-top: 8rem;
 
 	@media screen and (max-width: 767px) {
-		margin-top: 40px;
+		margin-top: 4rem;
 	}
 }
 
@@ -435,28 +440,28 @@ section[id] {
 		text-align: left;
 		width: 315px;
 		height: 171px;
-		margin-top: 6px;
+		margin-top: 6rem;
 	}
 }
 
 .service__heading {
-	padding: 50px 0 42px 220px;
+	padding: 5rem 0 4.2rem 22rem;
 	font-size: 2.5rem;
 	color: $font-color;
 	font-weight: 600;
 
 	@include sp {
 		font-size: 2.0rem;
-		padding: 20px 20px 14px 20px;
+		padding: 2rem 2rem 1.4rem 2rem;
 	}
 }
 
 .service__text {
 	font-size: 1.6rem;
-	padding-inline: 220px 5px;
+	padding-inline: 22rem 0.5rem;
 
 	@include sp {
-		padding: 14px 20px 14px 20px;
+		padding: 1.4rem 2rem;
 	}
 }
 
@@ -471,7 +476,7 @@ section[id] {
 	// padding-block: calc(80 / 1080 * 100vw) calc(97 / 1080 * 100vw);
 
 	@include sp {
-		padding-block: 50px 42px;
+		padding-block: 5rem 4.2rem;
 	}
 }
 
@@ -486,7 +491,7 @@ section[id] {
 		text-align: left;
 		width: 315px;
 		height: 250px;
-		margin-top: 6px;
+		margin-top: 0.6rem;
 	}
 }
 
@@ -540,8 +545,8 @@ section[id] {
 	// padding-bottom: calc(80/ 1080 * 100vw);
 
 	@include sp {
-		padding-block: 50px;
-		margin-top: 50px
+		padding-block: 5rem;
+		margin-top: 5rem;
 	}
 }
 
@@ -554,7 +559,7 @@ section[id] {
 	@include sp {
 		flex-direction: column;
 		width: 100%;
-		margin-top: 38px;
+		margin-top: 3.8rem;
 		align-items: center;
 	}
 }
@@ -582,7 +587,7 @@ section[id] {
 	background-color: $main-color;
 	font-size: 2.0rem;
 	height: 50px;
-	padding: 9px 0 0 20px;
+	padding: 0.9rem 0 0 2rem;
 
 	@include sp {
 		display: flex;
@@ -640,7 +645,7 @@ section[id] {
 	font-size: 1.6rem;
 	line-height: 2.06;
 	color: $text-color;
-	padding-left: 20px;
+	padding-left: 2rem;
 
 	@include sp {
 		flex-direction: column;
@@ -652,18 +657,19 @@ section[id] {
 .news__text {
 	font-size: 1.8rem;
 	color: $text-color;
-	padding: 30px 20px 13px 68px;
+	padding: 3rem 2rem 1.3rem 6.8rem;
 	line-height: 1.38;
 }
 
 .news__more {
-	padding: 17px 53px 20px 330px;
+	padding: 1.7rem 5.3rem 2rem 33rem;
 	text-align: right;
 
 	@include sp {
-		padding: 17px 53px 24px 215px;
+		padding: 1.7rem 5.3rem 2.4rem 21.5rem;
 	}
 }
+
 
 .more-link {
 	display: inline-block;
@@ -687,10 +693,10 @@ section[id] {
 .company {
 	background-color: #f5f5f5;
 	font-size: 1.6rem;
-	padding-block: calc(80/ 1080 * 100vw);
+	padding-block: 8rem;
 
 	@include sp {
-		padding-block: 50px 42px;
+		padding-block: 5rem 4.2rem;
 	}
 }
 
@@ -736,19 +742,18 @@ section[id] {
 	color: $font-color;
 	width: 50%;
 	height: 262px;
-	margin-left: calc(80 / 1080 * 100vw);
-	padding: calc(49 / 1080 * 100vw) calc(5 / 1080 * 100vw) calc(42 / 1080 * 100vw) calc(220 / 1080 * 100vw);
+	margin-left: 8rem;
+	padding: 4.9rem 0.5rem 4.2rem 22rem;
 
 	@include sp {
 		width: 100%;
 		height: auto;
-		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		box-sizing: border-box;
 		display: block;
 		margin: 0 auto;
-		padding-left: 20px;
+		padding-left: 2rem;
 	}
 }
 
@@ -806,45 +811,33 @@ section[id] {
 .contact {
 	background-color: rgba(77, 150, 0, 0.149);
 	font-size: 1.6rem;
-	padding-block: calc(80/ 1080 * 100vw);
+	padding-block: 8rem;
 
 	@include sp {
-		padding-block: 50px 42px;
+		padding-block: 5rem 4.2rem;
 	}
 }
 
-.service-sec {
-
-}
+.service-sec {}
 
 .contact__lead {
-font-size: 2.0rem;
+	font-size: 2.0rem;
 
 }
 
-.contact__form {
+.contact__form {}
 
-}
+.contact__items {}
 
-.contact__items {
-
-}
-
-.contact__item {
-
-}
+.contact__item {}
 
 .contact__item--name {
 	font-size: 2.0rem;
 }
 
-.contact__label {
+.contact__label {}
 
-}
-
-.contact__input {
-
-}
+.contact__input {}
 
 .contact__radio-group {
 	font-size: 2.0rem;
@@ -858,17 +851,13 @@ font-size: 2.0rem;
 	font-size: 2.0rem;
 }
 
-.contact__textarea {
-
-}
+.contact__textarea {}
 
 .contact__checkbox-group {
 	font-size: 2.0rem;
 }
 
-.contact__privacy {
-
-}
+.contact__privacy {}
 
 .privacy__title {
 	font-size: 2.0rem;
@@ -878,9 +867,7 @@ font-size: 2.0rem;
 	font-size: 1.8rem;
 }
 
-.contact__submit {
-
-}
+.contact__submit {}
 
 .contact__button {
 	text-align: center;
@@ -896,9 +883,9 @@ font-size: 2.0rem;
 	cursor: pointer;
 	border: 1px solid $main-color;
 	transition: background-color 0.3s, color 0.3s;
-	width: 300x;
+	width: 300px;
 	height: 50px;
-	padding-inline: calc(61/ 1080 * 100vw) calc(60/ 1080 * 100vw) ;
+	padding-inline: 6.1rem 6rem;
 
 	@include sp {
 		width: 315px;
@@ -910,4 +897,3 @@ font-size: 2.0rem;
 	background-color: $font-color;
 	color: $main-color;
 }
-
