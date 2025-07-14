@@ -138,16 +138,17 @@ section[id] {
 }
 
 
-.section__subtitle {
-	font-size: 2.0rem;
-	// padding-top: 6rem;
-	margin-bottom: 6.8rem;
+// .section__subtitle {
+// 	font-size: 2.0rem;
+	
+// 	// padding-top: 6rem;
+// 	// margin-bottom: 6.8rem;
 
-	@include sp {
-		margin-bottom: 3.8rem;
+// 	@include sp {
+// 		margin-bottom: 3.8rem;
 
-	}
-}
+// 	}
+// }
 
 // .section__head {
 // 	padding-block: 8.0rem;
@@ -354,9 +355,21 @@ section[id] {
 	}
 }
 
+.service__subtitle {
+	font-size: 2.0rem;
+	margin-bottom: 6.8rem;
+
+	@include sp {
+		margin-bottom: 3.8rem;
+	}
+}
+
+.service__items{
+
+}
+
 .service__item {
 	display: flex;
-	position: relative;
 
 	@include sp {
 		display: flex;
@@ -407,20 +420,27 @@ section[id] {
 
 .service__img-wrapper {
 	width: 55%;
-	z-index: 1;
+	z-index: 2;
+	margin-top: -30px; 
+	margin-left: 0; 
 	position: relative;
+
+	@include sp {
+	  margin: 0;
+	  width: 100%;
+	}
 }
 
 .service__content {
 	width: 45%;
-	// margin-left: -22rem;
+	
+	margin-left: -14%;
 	background: $main-color;
 	color: $font-color;
-	padding-left: 20%;
-	z-index: 1;
+	z-index: 1;   
+	    
 	
 	@include sp {
-		position: static;
 		text-align: left;
 		width: 315px;
 		height: 171px;
@@ -430,18 +450,22 @@ section[id] {
 
 .service__heading {
 	font-size: 2.5rem;
+	line-height: 1.32;
 	color: $font-color;
 	font-weight: 600;
+	padding-inline: 22rem 0.5rem;
+
+	
 
 	@include sp {
 		font-size: 2.0rem;
-		padding: 2rem 2rem 1.4rem 2rem;
+		// padding: 2rem 2rem 1.4rem 2rem;
 	}
 }
 
 .service__text {
 	font-size: 1.6rem;
-	// padding-inline: 22rem 0.5rem;
+	padding-inline: 22rem 0.5rem;
 
 	@include sp {
 		padding: 1.4rem 2rem;
