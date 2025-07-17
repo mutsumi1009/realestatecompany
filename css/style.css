@@ -886,7 +886,7 @@ section[id] {
 .company {
   background-color: #f5f5f5;
   font-size: 1.6rem;
-  padding-block: 8rem 10.7rem;
+  padding-block: 8rem 12rem;
 }
 @media (max-width: 768px) {
   .company {
@@ -898,8 +898,11 @@ section[id] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  position: relative;
   margin-top: 6.8rem;
-  padding-bottom: 6.2rem;
 }
 @media (max-width: 768px) {
   .company__inner {
@@ -916,11 +919,9 @@ section[id] {
 
 .company__map {
   width: 65.2173913043%;
-  z-index: 2;
+  z-index: 999;
   position: relative;
-  width: 50%;
   aspect-ratio: 600/400;
-  margin-left: 0;
 }
 @media (max-width: 768px) {
   .company__map {
@@ -942,12 +943,11 @@ section[id] {
 .access__content {
   background: #4D9600;
   color: #fff;
-  width: 45%;
+  width: 54.347826087%;
   margin-left: -19.5652173913%;
+  margin-bottom: -7.1739130435%;
+  z-index: 2;
   padding: 49px 5px 42px 23.9130434783%;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
 }
 @media (max-width: 768px) {
   .access__content {
@@ -971,10 +971,12 @@ section[id] {
 .access__name {
   font-size: 2rem;
   font-weight: 600;
+  padding-bottom: 0.7rem;
 }
 .access__address {
   font-size: 1.6rem;
   font-weight: 600;
+  padding-bottom: 1.2rem;
 }
 @media (max-width: 768px) {
   .access__address {
@@ -985,13 +987,14 @@ section[id] {
 .access__tel {
   font-size: 1.6rem;
   font-weight: 600;
+  padding-bottom: 1.9rem;
 }
 .access__tel span {
+  font-size: 2.5rem;
   font-weight: 400;
 }
 @media (max-width: 768px) {
   .access__tel span {
-    font-size: 2.5rem;
     line-height: 1.56;
   }
 }
@@ -1024,6 +1027,7 @@ section[id] {
 .contact__lead {
   font-size: 2rem;
   margin-top: 3.5rem;
+  margin-bottom: 7rem;
 }
 
 .contact__form {
@@ -1033,6 +1037,17 @@ section[id] {
 
 .contact__item--name {
   font-size: 2rem;
+}
+
+.contact__input {
+  width: 100%;
+  max-width: 711px;
+  padding-inline: 12px;
+  font-size: 1.6rem;
+  background-color: #fff;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 .contact__radio-group {
