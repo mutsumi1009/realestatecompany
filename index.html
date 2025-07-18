@@ -355,32 +355,35 @@
                     <!--お名前-->
                     <form class="contact__form" action="#" method="post">
                         <div class="contact__items">
-                            <div class="contact__item contact__item--name">
+                            <div class="contact__item">
                                 <label for="name" class="contact__label">お名前
                                     *</label>
                                 <input type="text" id="name" name="name" class="contact__input" required>
                             </div>
 
                             <!--性別-->
-                            <fieldset class="contact__radio-group">
-                                <legend>性別</legend>
-                                <label><input type="radio" name="gender" value="male">
-                                    男性</label>
-                                <label><input type="radio" name="gender" value="female">
-                                    女性</label>
-                            </fieldset>
+                            <div class="contact__item">
+                                <label class="contact__label">性別</label>
+                                <div class="contact__radio-group">
+                                    <label><input type="radio" name="gender" value="male">
+                                        <span></span>男性
+                                    </label>
+                                    <label><input type="radio" name="gender" value="female">
+                                        <span></span>女性
+                                    </label>
+                                </div>
+                            </div>
+
 
                             <!--メールアドレス-->
-                            <div class="contact__item contact__item--email">
-                                <label for="email" class="contact__label">メールアドレス
-                                    *</label>
+                            <div class="contact__item">
+                                <label for="email" class="contact__label">メールアドレス </label>
                                 <input type="email" id="email" name="email" class="contact__input" required>
                             </div>
 
                             <!--問い合わせ種別-->
-                            <div class="contact__item contact__item--type">
-                                <label for="type" class="contact__label">問い合わせ種別
-                                </label>
+                            <div class="contact__item">
+                                <label for="type" class="contact__label">問い合わせ種別 </label>
                                 <select id="type" name="type" class="contact__select" required>
                                     <option value="">選択してください</option>
                                     <option value="custom-home">家づくりについて</option>
@@ -390,36 +393,37 @@
                             </div>
 
                             <!--内容-->
-                            <div class="contact__item contact__item--textarea">
-                                <label for="message" class="contact__label">内容
-                                    *</label>
+                            <div class="contact__item">
+                                <label for="message" class="contact__label">内容*</label>
                                 <textarea id="message" name="message" class="contact__textarea" required></textarea>
                             </div>
 
                             <!--アンケート-->
-                            <fieldset class="contact__checkbox-group">
-                                <legend>何を見て当社HPを知りましたか？ (複数回答可)　*</legend>
-                                <label><input type="checkbox" name="source[]" value="internet">
-                                    インターネット</label>
-                                <label><input type="checkbox" name="source[]" value="flyer">
-                                    チラシ</label>
-                                <label><input type="checkbox" name="source[]" value="exhibition">
-                                    住宅展示場</label>
-                                <label><input type="checkbox" name="source[]" value="sign">
-                                    看板</label>
-                                <label><input type="checkbox" name="source[]" value="sns">
-                                    各種SNS</label>
-                                <label><input type="checkbox" name="source[]" value="introduction">
-                                    紹介</label>
-                                <label><input type="checkbox" name="source[]" value="walkby">
-                                    通りがかり</label>
-                                <label><input type="checkbox" name="source[]" value="other">
-                                    その他</label>
-                            </fieldset>
+                            <div class="contact__item">
+                                <label class="contact__label">何を見て当社HPを知りましたか？ (複数回答可) *</label>
+                                <div class="contact__checkbox-group">
+                                    <label><input type="checkbox" name="source[]" value="internet">
+                                        インターネット</label>
+                                    <label><input type="checkbox" name="source[]" value="flyer">
+                                        チラシ</label>
+                                    <label><input type="checkbox" name="source[]" value="exhibition">
+                                        住宅展示場</label>
+                                    <label><input type="checkbox" name="source[]" value="sign">
+                                        看板</label>
+                                    <label><input type="checkbox" name="source[]" value="sns">
+                                        各種SNS</label>
+                                    <label><input type="checkbox" name="source[]" value="introduction">
+                                        紹介</label>
+                                    <label><input type="checkbox" name="source[]" value="walkby">
+                                        通りがかり</label>
+                                    <label><input type="checkbox" name="source[]" value="other">
+                                        その他</label>
+                                </div>
+                            </div>
 
                             <!--個人情報-->
-                            <div class="contact__privacy">
-                                <label class="privacy__title">個人情報保護方針</label>
+                            <div class="contact__item">
+                                <label class="contact__label">個人情報保護方針</label>
                                 <div class="contact__privacy-box">
                                     個人情報取扱事業者の氏名又は名称(法24条1項1号)
                                     株式会社 北村建設興業
@@ -474,12 +478,11 @@
                                     FAX 000-000-0000
                                     メールアドレス info@example.com
                                 </div>
-
-                                <!--送信ボタン-->
-                                <div class="contact__submit">
-                                    <button type="submit" class="contact__button">内容に同意して送信</button>
-                                </div>
                             </div>
+                        </div>
+                        <!--送信ボタン-->
+                        <div class="contact__submit">
+                            <button type="submit" class="contact__button">内容に同意して送信</button>
                         </div>
                     </form>
                 </div>
