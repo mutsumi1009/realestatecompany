@@ -424,7 +424,6 @@ section[id] {
 	position: relative;
 	padding-bottom: 5.1rem;
 
-
 	@include sp {
 		margin: 0;
 		width: 100%;
@@ -760,7 +759,7 @@ section[id] {
 	background-color: #f5f5f5;
 	font-size: 1.6rem;
 	padding-block: 8rem 12rem;
-	
+
 
 	@include sp {
 		padding-block: 5rem 4.2rem;
@@ -817,10 +816,10 @@ section[id] {
 	margin-left: calc(-180 / 920 * 100%);
 	// margin-top: calc(-200 / 920 * 100%);
 	//  margin-bottom: 0;
-	 margin-bottom: calc(-66 / 920 * 100%);
+	margin-bottom: calc(-66 / 920 * 100%);
 	// position: relative;
 	z-index: 2;
-	
+
 
 	padding: 49px 5px 42px calc(220 / 920 * 100%);
 
@@ -895,12 +894,107 @@ section[id] {
 	background-color: rgba(77, 150, 0, 0.149);
 	font-size: 1.6rem;
 	padding-block: 8rem 3.5rem;
-	
+
 
 	@include sp {
 		padding-block: 5rem 4.2rem;
 	}
 }
+
+// ==============================
+// カスタムラジオ・チェックボックス
+// ==============================
+
+.contact__radio-group,
+.contact__checkbox-group {
+	display: flex;
+	gap: 1.9rem;
+
+	label {
+		position: relative;
+		padding-left: 30px;
+		cursor: pointer;
+		display: inline-flex;
+		align-items: flex-start;
+		line-height: 1.38;
+
+		input {
+			display: none;
+		}
+
+		span {
+			position: absolute;
+			left: 0;
+			top: 0.2em;
+			width: 20px;
+			height: 20px;
+			border: 1px solid #ccc;
+			background: #fff;
+		}
+	}
+}
+
+// ラジオボタン用スタイル
+.contact__radio-group label span {
+	border-radius: 50%;
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: 4px;
+		left: 4px;
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		background: $main-color;
+		opacity: 0;
+		transition: opacity 0.3s;
+	}
+}
+
+.contact__radio-group input:checked+span::after {
+	opacity: 1;
+}
+
+// チェックボックス用スタイル
+.contact__checkbox-group label span {
+	&::after {
+		content: '✔';
+		position: absolute;
+		top: -2px;
+		left: 4px;
+		font-size: 14px;
+		color: $main-color;
+		opacity: 0;
+		transition: opacity 0.3s;
+	}
+}
+
+.contact__checkbox-group input:checked+span::after {
+	opacity: 1;
+}
+
+// チェックボックス用スタイル
+.contact__checkbox-group label span {
+	&::after {
+	  content: '✔';
+	  position: absolute;
+	  top: -2px;
+	  left: 4px;
+	  font-size: 14px;
+	  color: $main-color;
+	  opacity: 0;
+	  transition: opacity 0.3s;
+	}
+  }
+  
+  .contact__checkbox-group input:checked + span::after {
+	opacity: 1;
+  }
+
+// ==============================
+// カスタムラジオ・チェックボックス
+// ==============================
 
 .service-sec {}
 
@@ -908,6 +1002,7 @@ section[id] {
 	font-size: 2.0rem;
 	margin-top: 3.5rem;
 	margin-bottom: 7.0rem;
+	margin-left: 14.1rem;
 
 }
 
@@ -916,15 +1011,39 @@ section[id] {
 	margin: 0 auto;
 }
 
-.contact__items {}
 
-.contact__item {}
-
-.contact__item--name {
+.contact__items {
 	font-size: 2.0rem;
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+
+	@include sp {
+	  
+	}
 }
 
-.contact__label {}
+.contact__item {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 29px;
+
+	@include sp {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0;
+	}
+}
+
+
+.contact__item--name {
+	
+}
+
+.contact__label {
+	display: flex;
+}
 
 .contact__input {
 	width: 100%;
@@ -944,8 +1063,20 @@ section[id] {
 }
 
 .contact__item--textarea {
-	font-size: 2.0rem;
+	width: 100%;
+	max-width: 630px;
+	padding-inline: 12px;
+	font-size: 1.8rem;
+	background-color: $font-color;
+	flex: 1;
+
+	@media screen and (max-width: 767px) {
+		margin: 0 auto;
+		flex: unset;
+		margin-top: 0;
+	}
 }
+
 
 .contact__textarea {}
 
