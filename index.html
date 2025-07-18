@@ -355,14 +355,14 @@
                     <!--お名前-->
                     <form class="contact__form" action="#" method="post">
                         <div class="contact__items">
-                            <div class="contact__item">
+                            <div class="contact__item contact__item--name">
                                 <label for="name" class="contact__label">お名前
                                     *</label>
-                                <input type="text" id="name" name="name" class="contact__input" required>
+                                    <input type="text" id="name" name="name" class="contact__input" required placeholder="例：北村太郎">
                             </div>
 
                             <!--性別-->
-                            <div class="contact__item">
+                            <div class="contact__item contact__item--gender">
                                 <label class="contact__label">性別</label>
                                 <div class="contact__radio-group">
                                     <label><input type="radio" name="gender" value="male">
@@ -376,13 +376,13 @@
 
 
                             <!--メールアドレス-->
-                            <div class="contact__item">
-                                <label for="email" class="contact__label">メールアドレス </label>
-                                <input type="email" id="email" name="email" class="contact__input" required>
+                            <div class="contact__item contact__item--email">
+                                <label for="email" class="contact__label">メールアドレス*</label>
+                                <input type="email" id="email" name="email" class="contact__input" required placeholder="例：aaaaaaaa@gmail.com">
                             </div>
 
                             <!--問い合わせ種別-->
-                            <div class="contact__item">
+                            <div class="contact__item contact__item--type">
                                 <label for="type" class="contact__label">問い合わせ種別 </label>
                                 <select id="type" name="type" class="contact__select" required>
                                     <option value="">選択してください</option>
@@ -393,13 +393,13 @@
                             </div>
 
                             <!--内容-->
-                            <div class="contact__item">
+                            <div class="contact__item contact__item--message">
                                 <label for="message" class="contact__label">内容*</label>
                                 <textarea id="message" name="message" class="contact__textarea" required></textarea>
                             </div>
 
                             <!--アンケート-->
-                            <div class="contact__item">
+                            <div class="contact__item contact__item--survey">
                                 <label class="contact__label">何を見て当社HPを知りましたか？ (複数回答可) *</label>
                                 <div class="contact__checkbox-group">
                                     <label><input type="checkbox" name="source[]" value="internet">
@@ -422,7 +422,7 @@
                             </div>
 
                             <!--個人情報-->
-                            <div class="contact__item">
+                            <div class="contact__item contact__item--privacy">
                                 <label class="contact__label">個人情報保護方針</label>
                                 <div class="contact__privacy-box">
                                     個人情報取扱事業者の氏名又は名称(法24条1項1号)

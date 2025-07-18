@@ -1024,92 +1024,73 @@ section[id] {
   }
 }
 
-.contact__radio-group,
-.contact__checkbox-group {
+.contact__radio-group {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 1.9rem;
+  gap: 7.4rem;
 }
-.contact__radio-group label,
-.contact__checkbox-group label {
+.contact__radio-group label {
   position: relative;
   padding-left: 30px;
   cursor: pointer;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   line-height: 1.38;
+  font-size: 1.6rem;
+  /* カスタムラジオボタンの丸 */
+  /* 選択されたときの中の● */
 }
-.contact__radio-group label input,
-.contact__checkbox-group label input {
+.contact__radio-group label input {
   display: none;
 }
-.contact__radio-group label span,
-.contact__checkbox-group label span {
+.contact__radio-group label span {
   position: absolute;
   left: 0;
-  top: 0.2em;
-  width: 20px;
-  height: 20px;
-  border: 1px solid #ccc;
-  background: #fff;
-}
-
-.contact__radio-group label span {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
+  background-color: #fff;
 }
-.contact__radio-group label span::after {
+.contact__radio-group label input:checked + span::after {
   content: "";
   position: absolute;
-  top: 4px;
-  left: 4px;
-  width: 10px;
-  height: 10px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background-color: #000;
   border-radius: 50%;
-  background: #4D9600;
-  opacity: 0;
-  -webkit-transition: opacity 0.3s;
-  transition: opacity 0.3s;
 }
 
-.contact__radio-group input:checked + span::after {
-  opacity: 1;
+/* ===============================================
+# プレースホルダー色
+=============================================== */
+.contact__input::-webkit-input-placeholder, .contact__textarea::-webkit-input-placeholder, .contact__select::-webkit-input-placeholder {
+  color: #A0A0A0;
 }
-
-.contact__checkbox-group label span::after {
-  content: "✔";
-  position: absolute;
-  top: -2px;
-  left: 4px;
-  font-size: 14px;
-  color: #4D9600;
-  opacity: 0;
-  -webkit-transition: opacity 0.3s;
-  transition: opacity 0.3s;
+.contact__input::-moz-placeholder, .contact__textarea::-moz-placeholder, .contact__select::-moz-placeholder {
+  color: #A0A0A0;
 }
-
-.contact__checkbox-group input:checked + span::after {
-  opacity: 1;
+.contact__input:-ms-input-placeholder, .contact__textarea:-ms-input-placeholder, .contact__select:-ms-input-placeholder {
+  color: #A0A0A0;
 }
-
-.contact__checkbox-group label span::after {
-  content: "✔";
-  position: absolute;
-  top: -2px;
-  left: 4px;
-  font-size: 14px;
-  color: #4D9600;
-  opacity: 0;
-  -webkit-transition: opacity 0.3s;
-  transition: opacity 0.3s;
+.contact__input::-ms-input-placeholder, .contact__textarea::-ms-input-placeholder, .contact__select::-ms-input-placeholder {
+  color: #A0A0A0;
 }
-
-.contact__checkbox-group input:checked + span::after {
-  opacity: 1;
+.contact__input::placeholder,
+.contact__textarea::placeholder,
+.contact__select::placeholder {
+  color: #A0A0A0;
 }
 
 .contact__lead {
@@ -1120,7 +1101,7 @@ section[id] {
 }
 
 .contact__form {
-  max-width: 630px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -1133,20 +1114,14 @@ section[id] {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 25px;
 }
 .contact__item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 29px;
 }
 @media (max-width: 768px) {
   .contact__item {
@@ -1161,43 +1136,92 @@ section[id] {
   }
 }
 
+.contact__item--gender {
+  margin-top: 5.8rem;
+}
+
+.contact__item--email {
+  font-size: 2rem;
+  margin-top: 5.8rem;
+}
+
+.contact__item--type {
+  margin-top: 5.8rem;
+}
+
+.contact__item--message {
+  margin-top: 5.8rem;
+}
+
+.contact__item--survey {
+  margin-top: 5.8rem;
+}
+
+.contact__item--privacy {
+  margin-top: 5rem;
+}
+
 .contact__label {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: inline-block;
+  font-size: 2rem;
+  width: 16rem;
+}
+
+.contact__select {
+  width: 100%;
+  max-width: 630px;
+  padding: 13px 40px 12px 20px;
+  font-size: 1.6rem;
+  background-color: #fff;
+  border-radius: 4px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2218%22%20height%3D%2212%22%20viewBox%3D%220%200%2018%2012%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M9%2012L0.339745%200H17.6603L9%2012Z%22%20fill%3D%22%234D9600%22/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+}
+
+.contact__item--message,
+.contact__item--privacy {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 1rem;
 }
 
 .contact__input {
   width: 100%;
-  max-width: 711px;
-  padding-inline: 12px;
   font-size: 1.6rem;
   background-color: #fff;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  gap: 8rem;
+  line-height: 1.8;
+  padding-block: 12px;
+  padding-inline: 20px;
+  resize: none;
 }
 
 .contact__radio-group {
   font-size: 2rem;
 }
 
-.contact__item--email {
-  font-size: 2rem;
-}
-
-.contact__item--textarea {
+.contact__textarea {
   width: 100%;
-  max-width: 630px;
+  height: 200px;
   padding-inline: 12px;
   font-size: 1.8rem;
   background-color: #fff;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
 }
-@media screen and (max-width: 767px) {
-  .contact__item--textarea {
+@media (max-width: 768px) {
+  .contact__textarea {
+    max-width: 315px;
     margin: 0 auto;
     -webkit-box-flex: unset;
         -ms-flex: unset;
@@ -1216,6 +1240,19 @@ section[id] {
 
 .contact__privafy-box {
   font-size: 1.8rem;
+  margin-top: 5rem;
+}
+
+.contact__submit {
+  text-align: center;
+  margin-top: 8.8rem;
+}
+@media screen and (max-width: 767px) {
+  .contact__submit {
+    width: 100%;
+    margin-inline: auto;
+    margin-top: 50px;
+  }
 }
 
 .contact__button {
@@ -1238,7 +1275,7 @@ section[id] {
   transition: background-color 0.3s, color 0.3s;
   width: 300px;
   height: 50px;
-  padding-inline: 6.1rem 6rem;
+  line-height: 1.65;
 }
 @media (max-width: 768px) {
   .contact__button {

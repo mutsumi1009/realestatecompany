@@ -10,6 +10,7 @@ $font-color: #fff;
 $font-serif: "YuMincho", "游明朝", "Yu Mincho", serif;
 $font-weight: 500;
 $text-color: #000;
+$placeholder-color: #A0A0A0;
 
 /* ===============================================
 # Mixin
@@ -904,97 +905,62 @@ section[id] {
 // ==============================
 // カスタムラジオ・チェックボックス
 // ==============================
-
-.contact__radio-group,
-.contact__checkbox-group {
+// 性別
+.contact__radio-group {
 	display: flex;
-	gap: 1.9rem;
+	gap: 7.4rem;
 
 	label {
 		position: relative;
 		padding-left: 30px;
 		cursor: pointer;
 		display: inline-flex;
-		align-items: flex-start;
+		align-items: center;
 		line-height: 1.38;
+		font-size: 1.6rem;
 
 		input {
 			display: none;
 		}
 
+		/* カスタムラジオボタンの丸 */
 		span {
 			position: absolute;
 			left: 0;
-			top: 0.2em;
-			width: 20px;
-			height: 20px;
-			border: 1px solid #ccc;
-			background: #fff;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 18px;
+			height: 18px;
+			// border: 2px solid $text-color;
+			border-radius: 50%;
+			background-color: #fff;
+		}
+
+		/* 選択されたときの中の● */
+		input:checked + span::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 8px;
+			height: 8px;
+			background-color: $text-color;
+			border-radius: 50%;
 		}
 	}
 }
 
-// ラジオボタン用スタイル
-.contact__radio-group label span {
-	border-radius: 50%;
-
-	&::after {
-		content: '';
-		position: absolute;
-		top: 4px;
-		left: 4px;
-		width: 10px;
-		height: 10px;
-		border-radius: 50%;
-		background: $main-color;
-		opacity: 0;
-		transition: opacity 0.3s;
-	}
+/* ===============================================
+# プレースホルダー色
+=============================================== */
+.contact__input::placeholder,
+.contact__textarea::placeholder,
+.contact__select::placeholder {
+	color: $placeholder-color;
 }
 
-.contact__radio-group input:checked+span::after {
-	opacity: 1;
-}
 
-// チェックボックス用スタイル
-.contact__checkbox-group label span {
-	&::after {
-		content: '✔';
-		position: absolute;
-		top: -2px;
-		left: 4px;
-		font-size: 14px;
-		color: $main-color;
-		opacity: 0;
-		transition: opacity 0.3s;
-	}
-}
-
-.contact__checkbox-group input:checked+span::after {
-	opacity: 1;
-}
-
-// チェックボックス用スタイル
-.contact__checkbox-group label span {
-	&::after {
-	  content: '✔';
-	  position: absolute;
-	  top: -2px;
-	  left: 4px;
-	  font-size: 14px;
-	  color: $main-color;
-	  opacity: 0;
-	  transition: opacity 0.3s;
-	}
-  }
-  
-  .contact__checkbox-group input:checked + span::after {
-	opacity: 1;
-  }
-
-// ==============================
-// カスタムラジオ・チェックボックス
-// ==============================
 
 .service-sec {}
 
@@ -1007,7 +973,7 @@ section[id] {
 }
 
 .contact__form {
-	max-width: 630px;
+	max-width: 800px;
 	margin: 0 auto;
 }
 
@@ -1016,18 +982,14 @@ section[id] {
 	font-size: 2.0rem;
 	display: flex;
 	flex-direction: column;
-	gap: 25px;
 
-	@include sp {
-	  
-	}
+	@include sp {}
 }
 
 .contact__item {
 	display: flex;
-	flex-direction: row;
 	align-items: center;
-	gap: 29px;
+	// gap: 2rem; 
 
 	@include sp {
 		flex-direction: column;
@@ -1036,49 +998,102 @@ section[id] {
 	}
 }
 
+// コンタクトアイテム個別
+.contact__item--name {}
 
-.contact__item--name {
+.contact__item--gender {
+	margin-top: 5.8rem;
+}
+
+.contact__item--email {
+	font-size: 2.0rem;
+	margin-top: 5.8rem;
+}
+
+.contact__item--type {
+	margin-top: 5.8rem;
+}
+
+.contact__item--message {
+	margin-top: 5.8rem;
+}
+
+.contact__item--survey {
+	margin-top: 5.8rem;
+}
+
+.contact__item--privacy {
+	margin-top: 5.0rem;
+}
+
+
+
+.contact__label {
+	display: inline-block;
+	// white-space: nowrap; 
+	font-size: 2.0rem;
+	width: 16rem;
 	
 }
 
-.contact__label {
-	display: flex;
+// 問い合わせ種別
+.contact__select {
+	width: 100%;
+	max-width: 630px;
+	padding: 13px 40px 12px 20px;
+	font-size: 1.6rem;
+	background-color: $font-color;
+	border-radius: 4px;
+	appearance: none; 
+	background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2218%22%20height%3D%2212%22%20viewBox%3D%220%200%2018%2012%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M9%2012L0.339745%200H17.6603L9%2012Z%22%20fill%3D%22%234D9600%22/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: right 12px center;
 }
+
+
+// 内容・個人情報個別
+.contact__item--message,
+.contact__item--privacy {
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 1rem;
+}
+
 
 .contact__input {
 	width: 100%;
-	max-width: 711px;
-	padding-inline: 12px;
+	// max-width: 711px;
 	font-size: 1.6rem;
-	background-color: #fff;
+	background-color: $font-color;
 	flex: 1;
+	gap: 8.0rem;
+	line-height: 1.8;
+	padding-block: 12px;
+	padding-inline: 20px;
+	resize: none;
 }
 
 .contact__radio-group {
 	font-size: 2.0rem;
 }
 
-.contact__item--email {
-	font-size: 2.0rem;
-}
 
-.contact__item--textarea {
+.contact__textarea {
 	width: 100%;
-	max-width: 630px;
+	// max-width: 800px;
+	height: 200px;
 	padding-inline: 12px;
 	font-size: 1.8rem;
 	background-color: $font-color;
-	flex: 1;
 
-	@media screen and (max-width: 767px) {
+	@include sp {
+		max-width: 315px;
 		margin: 0 auto;
 		flex: unset;
 		margin-top: 0;
 	}
 }
 
-
-.contact__textarea {}
 
 .contact__checkbox-group {
 	font-size: 2.0rem;
@@ -1092,9 +1107,21 @@ section[id] {
 
 .contact__privafy-box {
 	font-size: 1.8rem;
+	margin-top: 5.0rem;
 }
 
-.contact__submit {}
+
+// 送信ボタン
+.contact__submit {
+	text-align: center;
+	margin-top: 8.8rem;
+
+	@media screen and (max-width: 767px) {
+		width: 100%;
+		margin-inline: auto;
+		margin-top: 50px;
+	}
+}
 
 .contact__button {
 	text-align: center;
@@ -1112,7 +1139,8 @@ section[id] {
 	transition: background-color 0.3s, color 0.3s;
 	width: 300px;
 	height: 50px;
-	padding-inline: 6.1rem 6rem;
+	line-height: 1.65;
+	// padding: 8rem 59.5rem 9rem 60.5rem;
 
 	@include sp {
 		width: 315px;
