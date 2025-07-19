@@ -21,6 +21,33 @@ $placeholder-color: #A0A0A0;
 	}
 }
 
+// PC専用表示
+@mixin pc-only {
+	display: block;
+
+	@include sp {
+		display: none;
+	}
+}
+
+// SP専用 block 表示
+@mixin sp-block {
+	display: none;
+
+	@include sp {
+		display: block;
+	}
+}
+
+// SP専用 inline 表示
+@mixin sp-inline {
+	display: none;
+
+	@include sp {
+		display: inline;
+	}
+}
+
 /* ===============================================
 # ベース設定（html, body, main など）
 =============================================== */
@@ -101,21 +128,21 @@ section[id] {
 # PC、SPの非表示
 =============================================== */
 
-.pc {
-	display: inline;
+// .pc {
+// 	display: inline;
 
-	@include sp {
-		display: none;
-	}
-}
+// 	@include sp {
+// 		display: none;
+// 	}
+// }
 
-.sp {
-	display: none !important;
+// .sp {
+// 	display: none !important;
 
-	@include sp {
-		display: block !important;
-	}
-}
+// 	@include sp {
+// 		display: block !important;
+// 	}
+// }
 
 /* ===============================================
 # common-title/section
@@ -230,6 +257,10 @@ section[id] {
 		}
 	}
 }
+.header__nav.pc {
+	@include pc-only;
+  }
+  
 
 /* ===============================================
 # fv
@@ -245,9 +276,14 @@ section[id] {
 	position: absolute;
 	top: 0;
 	left: 0;
-	padding-top: 33.9rem;
+	// padding-top: 33.9rem;
 	z-index: 2;
-
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	
 	@include sp {
 		padding-top: 21.9rem;
 	}
@@ -264,20 +300,30 @@ section[id] {
 	justify-content: center;
 	align-items: center;
 	white-space: normal;
-	padding-inline: 25.7rem;
+	// padding-inline: 25.7rem;
 	letter-spacing: 0.3em;
 	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 
-
-
 	@include sp {
+		@include sp-block;
+		text-align: center;
 		font-size: 3.0rem;
 		line-height: 2;
-		width: 264px;
-		height: 180px;
-		padding-left: 56px;
+		width: auto;
+		height: auto;
+		padding: 0 5.5rem;
+		letter-spacing: 0.15em;
 	}
 }
+
+.fv__copy.pc {
+	@include pc-only;
+}
+
+.fv__copy.sp {
+	@include sp-block;
+}
+
 
 .fv::before {
 	content: "";
@@ -286,6 +332,7 @@ section[id] {
 	background-color: rgba(0, 0, 0, 0.4); // ← ここが黒の透過
 	z-index: 1;
 }
+
 
 
 /* ===============================================
@@ -302,7 +349,7 @@ section[id] {
 	top: 50%;
 	// left: 50%;
 	transform: translateY(-50%);
-	writing-mode: vertical-rl;
+	 writing-mode: vertical-rl;
 	text-orientation: mixed;
 	padding-left: 15rem;
 
@@ -310,6 +357,7 @@ section[id] {
 		writing-mode: vertical-rl;
 		text-orientation: mixed;
 		display: flex;
+		
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
@@ -321,9 +369,11 @@ section[id] {
 	font-weight: $font-weight;
 	font-size: 3.0rem;
 	line-height: 1.18;
-	padding-left: 6rem;
+	margin-left: 1.2rem; 
+    margin-bottom: 2rem;
 
 	@include sp {
+		display: inline-block;
 		position: relative;
 		font-size: 2.5rem;
 		line-height: 1.19;
@@ -331,7 +381,8 @@ section[id] {
 		text-align: center;
 		order: -1;
 		top: -83%;
-		left: -60%
+		left: -60%;
+		flex-direction: row;
 	}
 }
 
@@ -347,6 +398,8 @@ section[id] {
 		padding-top: 2.4rem;
 		flex-direction: column;
 		justify-content: flex-end;
+		writing-mode: vertical-rl;
+		text-orientation: mixed;
 	}
 }
 
@@ -692,8 +745,6 @@ section[id] {
 	}
 }
 
-
-
 .news__link {
 	display: flex;
 	align-items: center;
@@ -701,7 +752,8 @@ section[id] {
 	text-decoration: none;
 
 	@include sp {
-		flex-direction: column;
+		// margin: 2.3rem ;
+		// flex-direction: column;
 		// position: relative;
 		// gap: 50px;
 	}
@@ -711,7 +763,7 @@ section[id] {
 	font-size: 1.6rem;
 	line-height: 2.06;
 	color: $text-color;
-	padding-left: 2rem;
+	margin-left: 2rem;
 
 	@include sp {
 		flex-direction: column;
@@ -723,8 +775,12 @@ section[id] {
 .news__text {
 	font-size: 1.8rem;
 	color: $text-color;
-	padding: 3rem 2rem 1.3rem 6.8rem;
+	margin: 3rem 2rem 1.3rem 6.8rem;
 	line-height: 1.38;
+
+	@include sp {
+		margin-left: 2.4rem;
+	}
 }
 
 .news__more {
@@ -910,6 +966,12 @@ section[id] {
 	display: flex;
 	gap: 7.4rem;
 
+	@include sp {
+		flex-wrap: nowrap;
+		gap: 2.0rem;
+		margin-left: 5.7rem;
+	}
+
 	label {
 		position: relative;
 		padding-left: 30px;
@@ -937,7 +999,7 @@ section[id] {
 		}
 
 		/* 選択されたときの中の● */
-		input:checked + span::after {
+		input:checked+span::after {
 			content: "";
 			position: absolute;
 			top: 50%;
@@ -951,15 +1013,62 @@ section[id] {
 	}
 }
 
-/* ===============================================
-# プレースホルダー色
-=============================================== */
+// アンケートチェックボックス
+.contact__checkbox-group {
+	display: grid;
+	font-size: 2.0rem;
+	gap: 1.3rem;
+	grid-template-columns: repeat(4, 1fr);
+
+	@include sp {
+		font-size: 1.6rem;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 2rem;
+
+	}
+
+	label {
+		position: relative;
+		padding-left: 30px;
+		cursor: pointer;
+		display: inline-flex;
+		align-items: center;
+
+		input {
+			display: none;
+		}
+
+		span {
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 20px;
+			height: 20px;
+			background-color: $font-color;
+			// border: 2px solid $text-color;
+		}
+
+		input:checked+span::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 10px;
+			height: 6px;
+			border-left: 2px solid $text-color;
+			border-bottom: 2px solid $text-color;
+			transform: translate(-50%, -60%) rotate(-45deg);
+		}
+	}
+}
+
+// # プレースホルダー色
 .contact__input::placeholder,
 .contact__textarea::placeholder,
 .contact__select::placeholder {
 	color: $placeholder-color;
 }
-
 
 
 .service-sec {}
@@ -970,6 +1079,9 @@ section[id] {
 	margin-bottom: 7.0rem;
 	margin-left: 14.1rem;
 
+	@include sp {
+		margin: 0 auto;
+	}
 }
 
 .contact__form {
@@ -999,10 +1111,23 @@ section[id] {
 }
 
 // コンタクトアイテム個別
-.contact__item--name {}
+.contact__item--name {
+
+	@include sp {
+		display: flex;
+		margin-top: 4.0rem;
+	}
+}
 
 .contact__item--gender {
 	margin-top: 5.8rem;
+
+	@include sp {
+		flex-direction: row;
+		flex-wrap: nowrap;
+		align-items: center;
+		margin-top: 4.2rem;
+	}
 }
 
 .contact__item--email {
@@ -1018,14 +1143,22 @@ section[id] {
 	margin-top: 5.8rem;
 }
 
+//アンケート
 .contact__item--survey {
 	margin-top: 5.8rem;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 2rem;
 }
 
+// 内容・個人情報個別
+.contact__item--message,
 .contact__item--privacy {
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 1rem;
 	margin-top: 5.0rem;
 }
-
 
 
 .contact__label {
@@ -1033,8 +1166,17 @@ section[id] {
 	// white-space: nowrap; 
 	font-size: 2.0rem;
 	width: 16rem;
-	
+
+	@include sp {
+		text-align: left;
+		width: auto;
+	}
 }
+
+.contact__item--survey .contact__label {
+	width: auto;
+}
+
 
 // 問い合わせ種別
 .contact__select {
@@ -1044,20 +1186,12 @@ section[id] {
 	font-size: 1.6rem;
 	background-color: $font-color;
 	border-radius: 4px;
-	appearance: none; 
+	appearance: none;
 	background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2218%22%20height%3D%2212%22%20viewBox%3D%220%200%2018%2012%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M9%2012L0.339745%200H17.6603L9%2012Z%22%20fill%3D%22%234D9600%22/%3E%3C/svg%3E");
 	background-repeat: no-repeat;
 	background-position: right 12px center;
 }
 
-
-// 内容・個人情報個別
-.contact__item--message,
-.contact__item--privacy {
-	flex-direction: column;
-	align-items: flex-start;
-	gap: 1rem;
-}
 
 
 .contact__input {
@@ -1095,9 +1229,6 @@ section[id] {
 }
 
 
-.contact__checkbox-group {
-	font-size: 2.0rem;
-}
 
 .contact__privacy {}
 
@@ -1105,9 +1236,19 @@ section[id] {
 	font-size: 2.0rem;
 }
 
-.contact__privafy-box {
+// 個人情報
+.contact__privacy-box {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
 	font-size: 1.8rem;
 	margin-top: 5.0rem;
+	background-color: $font-color;
+	max-height: 300px;
+	padding: 40px;
+	overflow-y: auto;
+	white-space: pre-line;
+
 }
 
 
