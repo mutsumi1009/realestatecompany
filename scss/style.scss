@@ -153,6 +153,7 @@ section[id] {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	letter-spacing: 0.9rem;
 
 	@include sp {}
 
@@ -167,17 +168,19 @@ section[id] {
 }
 
 
-// .section__subtitle {
-// 	font-size: 2.0rem;
+.section__subtitle {
+	font-size: 2.0rem;
+	letter-spacing: 0.6rem;
+	line-height: 1.65;
 
-// 	// padding-top: 6rem;
-// 	// margin-bottom: 6.8rem;
+	// padding-top: 6rem;
+	// margin-bottom: 6.8rem;
 
-// 	@include sp {
-// 		margin-bottom: 3.8rem;
+	@include sp {
+		// margin-bottom: 3.8rem;
 
-// 	}
-// }
+	}
+}
 
 // .section__head {
 // 	padding-block: 8.0rem;
@@ -201,7 +204,7 @@ section[id] {
 
 .header {
 	width: 100%;
-	height: 8rem;
+	height: 9rem;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -228,7 +231,7 @@ section[id] {
 
 .header__logo-text {
 	font-style: normal;
-	font-weight: 500;
+	font-weight: $font-weight;
 	font-size: 2.0rem;
 	line-height: 1.65;
 	color: $font-color;
@@ -240,7 +243,7 @@ section[id] {
 	display: flex;
 	column-gap: 30px;
 	list-style: none;
-	padding: 0;
+	padding: 30px;
 	margin: 0;
 
 	li a {
@@ -257,10 +260,11 @@ section[id] {
 		}
 	}
 }
+
 .header__nav.pc {
 	@include pc-only;
-  }
-  
+}
+
 
 /* ===============================================
 # fv
@@ -270,12 +274,16 @@ section[id] {
 	position: relative;
 }
 
+.slick-dotted.slick-slider {
+	margin-bottom: 0 !important;
+}
+
 .fv__contents {
 	width: 100%;
 	height: 100%;
 	position: absolute;
-	top: 0;
-	left: 0;
+	top: 11px;
+	left: 6px;
 	// padding-top: 33.9rem;
 	z-index: 2;
 	display: flex;
@@ -283,7 +291,7 @@ section[id] {
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	
+
 	@include sp {
 		padding-top: 21.9rem;
 	}
@@ -344,24 +352,35 @@ section[id] {
 }
 
 .about__content {
-	// background-color: #4D9600;
 	position: absolute;
-	top: 50%;
-	// left: 50%;
-	transform: translateY(-50%);
-	 writing-mode: vertical-rl;
+	top: 52%;
+	left: 37%;
+	letter-spacing: 0.7em;
+	transform: translate(-50%, -50%);
+	writing-mode: vertical-rl;
 	text-orientation: mixed;
-	padding-left: 15rem;
+	display: flex;
+	flex-direction: column;
+	white-space: nowrap;
+	// align-items: center;
 
 	@include sp {
-		writing-mode: vertical-rl;
-		text-orientation: mixed;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		padding-left: 0;
 		display: flex;
-		
-		flex-direction: column;
-		align-items: center;
+		flex-direction: row;
 		justify-content: center;
-		padding-inline: 1.6rem;
+		height: 100%;
+
+
+		// writing-mode: vertical-rl;
+		// text-orientation: mixed;
+		// display: flex;
+		// flex-direction: column;
+		// align-items: center;
+		// justify-content: center;
+		// padding-inline: 1.6rem;
 	}
 }
 
@@ -369,37 +388,47 @@ section[id] {
 	font-weight: $font-weight;
 	font-size: 3.0rem;
 	line-height: 1.18;
-	margin-left: 1.2rem; 
-    margin-bottom: 2rem;
+	margin-left: 6rem;
+	//  margin-bottom: 2rem;
 
 	@include sp {
-		display: inline-block;
-		position: relative;
+		margin-left: 0;
+		margin-bottom: 0;
+		display: flex;
+		align-items: center;
 		font-size: 2.5rem;
 		line-height: 1.19;
-		padding: 0;
-		text-align: center;
-		order: -1;
-		top: -83%;
-		left: -60%;
-		flex-direction: row;
+		letter-spacing: 0.22em;
+		// display: inline-block;
+		// position: relative;
+		// padding: 0;
+		// text-align: center;
+		// order: -1;
+		// top: -83%;
+		// left: -60%;
+		// flex-direction: row;
 	}
 }
 
 .about__text {
 	font-size: 1.8rem;
-	line-height: 3.0;
+	line-height: 2.466;
+	// max-height: 27.5rem;
+	white-space: nowrap;
+	writing-mode: vertical-rl;
+	text-orientation: mixed;
 
 	@include sp {
 		font-size: 1.6rem;
-		line-height: 1.25;
-		display: block;
-		margin: 0 auto;
+		line-height: 1.6;
 		padding-top: 2.4rem;
-		flex-direction: column;
-		justify-content: flex-end;
-		writing-mode: vertical-rl;
-		text-orientation: mixed;
+		letter-spacing: 0.22em;
+		// margin: 0 auto;
+		// display: block;
+		// flex-direction: column;
+		// justify-content: flex-end;
+		// writing-mode: vertical-rl;
+		// text-orientation: mixed;
 	}
 }
 
@@ -409,24 +438,27 @@ section[id] {
 
 .service {
 	background: $section-bg-color;
-	padding-block: 8rem 10.7rem;
+	padding-block: 8rem 8.5rem;
 
 	@include sp {
 		padding-block: 5rem;
 	}
 }
 
-.service__subtitle {
-	font-size: 2.0rem;
-	// margin-bottom: 6.8rem;
+// .service__subtitle {
+// 	font-size: 2.0rem;
+// 	letter-spacing: 0.6rem;
+// 	line-height: 1.65;
 
-	@include sp {
-		// margin-bottom: 3.8rem;
-	}
-}
+// 	// margin-bottom: 6.8rem;
+
+// 	@include sp {
+// 		// margin-bottom: 3.8rem;
+// 	}
+// }
 
 .service__items {
-	margin-top: 6.8rem;
+	margin-top: 7.4rem;
 	display: flex;
 	flex-direction: column;
 	row-gap: 8rem;
@@ -515,7 +547,8 @@ section[id] {
 // 2枚目のキャプション
 @media screen and (min-width: 768px) {
 	.service__item:nth-child(2) .service__caption {
-		margin-left: 39rem
+		// margin-left: 39rem
+		text-align: right;
 	}
 }
 
@@ -583,18 +616,19 @@ section[id] {
 .works {
 	background-color: $font-color;
 	font-size: 1.6rem;
-	padding-block: 8rem 10.7rem;
+	padding-block: 8rem 9.7rem;
 
 	@include sp {
 		padding-block: 3rem 4.2rem;
 	}
 }
 
+
 .works-sec_contents {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	gap: 40px;
-	margin-top: 6.8rem;
+	margin-top: 7.2rem;
 
 	@include sp {
 		display: flex;
@@ -631,7 +665,7 @@ section[id] {
 
 .works__body {
 	display: flex;
-	text-align: center;
+	text-align: left;
 	margin-top: 1.9rem;
 
 	@include sp {
@@ -648,6 +682,20 @@ section[id] {
 
 	@include sp {
 		line-height: 1.25;
+	}
+	.pc {
+		display: block;
+
+		@include sp {
+			display: none;
+		}
+	}
+	.sp {
+		display: none;
+
+		@include sp {
+			display: block;
+		}
 	}
 }
 
@@ -675,7 +723,7 @@ section[id] {
 	justify-content: space-between;
 	gap: 60px;
 	align-items: stretch;
-	margin-top: 6.8rem;
+	margin-top: 7.3rem;
 
 	@include sp {
 		flex-direction: column;
@@ -685,14 +733,21 @@ section[id] {
 	}
 }
 
+.news__container {
+flex: 1;
+display: flex;
+flex-direction: column;
+}
+
 .news__box {
 	justify-content: center;
 	background: #fff;
 	color: $font-color;
 	z-index: 999;
-	min-width: 430px;
+	width: 430px;
 	flex: 1;
-	min-height: 383px;
+	height: 100%;
+	// min-height: 383px;
 
 	@include sp {
 		display: flex;
@@ -720,13 +775,14 @@ section[id] {
 	list-style: none;
 	padding: 0;
 	margin: 0;
+	
 
 }
 
 .news__item {
 	position: relative;
 
-	&::before,
+	
 	&::after {
 		content: "";
 		display: block;
@@ -736,14 +792,19 @@ section[id] {
 		margin: 0 auto;
 	}
 
-	&::before {
-		margin-bottom: 10px;
-	}
+	// &::before {
+	// 	margin-bottom: 10px;
+	// }
 
-	&::after {
+	 &::after {
 		margin-top: 10px;
-	}
+	 }
 }
+
+.news__item:first-child::before {
+	content: none;
+  }
+  
 
 .news__link {
 	display: flex;
@@ -775,7 +836,7 @@ section[id] {
 .news__text {
 	font-size: 1.8rem;
 	color: $text-color;
-	margin: 3rem 2rem 1.3rem 6.8rem;
+	margin: 3rem 2rem 0.3rem 6.8rem;
 	line-height: 1.38;
 
 	@include sp {
@@ -784,17 +845,21 @@ section[id] {
 }
 
 .news__more {
-	padding: 1.7rem 5.3rem 2rem 33rem;
-	text-align: right;
+	// padding: 1.7rem 5.3rem 2.4rem 33rem;
+	
 
 	@include sp {
 		padding: 1.7rem 5.3rem 2.4rem 21.5rem;
 	}
 }
 
-
+// moreアイコン
 .more-link {
-	display: inline-block;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	
+gap: 0.2rem;
 	font-weight: 600;
 	font-size: 2.0rem;
 	line-height: 1.65;
@@ -802,11 +867,30 @@ section[id] {
 	text-decoration: none;
 	transition: transform 0.3s ease;
 
+	// margin-left: auto;
+	// margin-right: calc(2 / 1080 * 100vw);
+	
 
 	&:hover {
 		transform: translateX(5px);
 	}
+
+	.more-icon {
+		// gap: 0.4rem;
+		width: 80px;
+		height: 18px;
+		line-height: 1;
+		margin-top: -2px;
+
+		svg {
+			width: 100%;
+			height: auto;
+			display: block;
+		}
+	}
 }
+
+
 
 /* ===============================================
 # 会社概要
@@ -1359,8 +1443,7 @@ section[id] {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-
-	gap: 9px;
+	// gap: 9px;
 }
 
 .footer__sns {
@@ -1400,9 +1483,10 @@ section[id] {
 	text-align: center;
 	justify-content: center;
 	padding: 3rem 26.1rem 2.9rem;
+	width: 100%;
 
 	@include sp {
 		padding: 2.1rem 3rem;
 	}
-
 }
+
