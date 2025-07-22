@@ -861,7 +861,7 @@ section[id] {
 
 .news__items {
   list-style: none;
-  padding: 0;
+  padding-inline: 2rem;
   margin: 0;
 }
 
@@ -911,7 +911,7 @@ section[id] {
 .news__text {
   font-size: 1.8rem;
   color: #000;
-  margin: 3rem 2rem 0.3rem 6.8rem;
+  margin: 3rem 0 0.3rem 6.8rem;
   line-height: 1.38;
 }
 @media (max-width: 768px) {
