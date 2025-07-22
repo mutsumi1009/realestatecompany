@@ -224,16 +224,16 @@ section[id] {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  letter-spacing: 0.9rem;
 }
 .common-title h2 {
   font-size: 3rem;
   line-height: 1.1;
   color: #4D9600;
+  letter-spacing: 0.3em;
 }
 .section__subtitle {
   font-size: 2rem;
-  letter-spacing: 0.6rem;
+  letter-spacing: 0.3em;
   line-height: 1.65;
 }
 /* ===============================================
@@ -252,8 +252,9 @@ section[id] {
       -ms-flex-align: center;
           align-items: center;
   position: fixed;
-  padding-left: 8rem;
-  padding-right: 6rem;
+  padding-left: 7.4074074074vw;
+  padding-right: 7.3148148148vw;
+  max-width: 100vw;
   top: 0;
   left: 0;
   z-index: 999;
@@ -287,7 +288,7 @@ section[id] {
      -moz-column-gap: 30px;
           column-gap: 30px;
   list-style: none;
-  padding: 30px;
+  padding: 0px;
   margin: 0;
 }
 .header__nav-list li a {
@@ -509,7 +510,7 @@ section[id] {
 =============================================== */
 .service {
   background: rgba(77, 150, 0, 0.102);
-  padding-block: 8rem 8.5rem;
+  padding-block: 8rem;
 }
 @media (max-width: 768px) {
   .service {
@@ -670,7 +671,7 @@ section[id] {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 40px;
-  margin-top: 7.2rem;
+  margin-top: 7.6rem;
 }
 @media (max-width: 768px) {
   .works-sec_contents {
@@ -764,7 +765,7 @@ section[id] {
 =============================================== */
 .news {
   background-color: rgba(77, 150, 0, 0.102);
-  padding-block: 8rem 10.7rem;
+  padding-block: 8rem;
 }
 @media (max-width: 768px) {
   .news {
@@ -985,7 +986,7 @@ section[id] {
       -ms-flex-align: end;
           align-items: flex-end;
   position: relative;
-  margin-top: 6.8rem;
+  margin-top: 7.8rem;
 }
 @media (max-width: 768px) {
   .company__inner {
@@ -1123,7 +1124,7 @@ section[id] {
 }
 .contact__radio-group label {
   position: relative;
-  padding-left: 30px;
+  padding-left: 45px;
   cursor: pointer;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -1132,7 +1133,7 @@ section[id] {
       -ms-flex-align: center;
           align-items: center;
   line-height: 1.38;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   /* カスタムラジオボタンの丸 */
   /* 選択されたときの中の● */
 }
@@ -1237,9 +1238,9 @@ section[id] {
 
 .contact__lead {
   font-size: 2rem;
-  margin-top: 3.5rem;
+  margin-top: 5rem;
   margin-bottom: 7rem;
-  margin-left: 14.1rem;
+  margin-left: 6.1rem;
 }
 @media (max-width: 768px) {
   .contact__lead {
