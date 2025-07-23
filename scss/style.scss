@@ -152,37 +152,56 @@ section[id] {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	 align-items: center;
+	align-items: center;
 	// letter-spacing: 0.9rem;
 
 	@include sp {}
 
-}
-
-.common-title h2 {
-	font-size: 3.0rem;
-	line-height: 1.1;
-	color: $main-color;
-	letter-spacing: 0.3em;
-	// padding-top: 0.6rem;
-
-	@include sp {}
-}
 
 
-.section__subtitle {
-	font-size: 2.0rem;
-	letter-spacing: 0.3em;
-	line-height: 1.65;
+	&__en {
+		font-size: 3.0rem;
+		line-height: 1.1;
+		color: $main-color;
+		letter-spacing: 0.3em;
 
-	// padding-top: 6rem;
-	// margin-bottom: 6.8rem;
+		@include sp {}
+	}
 
-	@include sp {
-		// margin-bottom: 3.8rem;
+	&__jp {
+		font-size: 2.0rem;
+		letter-spacing: 0.3em;
+		line-height: 1.65;
+		margin-top: 0.5rem;
 
+		@include sp {}
 	}
 }
+
+// .common-title h2 {
+// 	font-size: 3.0rem;
+// 	line-height: 1.1;
+// 	color: $main-color;
+// 	letter-spacing: 0.3em;
+// 	// padding-top: 0.6rem;
+
+// 	@include sp {}
+// }
+
+
+// .section__subtitle {
+// 	font-size: 2.0rem;
+// 	letter-spacing: 0.3em;
+// 	line-height: 1.65;
+
+// 	// padding-top: 6rem;
+// 	// margin-bottom: 6.8rem;
+
+// 	@include sp {
+// 		// margin-bottom: 3.8rem;
+
+// 	}
+// }
 
 // .section__head {
 // 	padding-block: 8.0rem;
@@ -846,9 +865,12 @@ section[id] {
 	color: $text-color;
 	margin: 3rem 0 0.3rem 6.8rem;
 	line-height: 1.38;
+	overflow: hidden;
+
 
 	@include sp {
 		margin-left: 2.4rem;
+		
 	}
 }
 

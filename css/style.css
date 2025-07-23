@@ -225,16 +225,17 @@ section[id] {
       -ms-flex-align: center;
           align-items: center;
 }
-.common-title h2 {
+.common-title__en {
   font-size: 3rem;
   line-height: 1.1;
   color: #4D9600;
   letter-spacing: 0.3em;
 }
-.section__subtitle {
+.common-title__jp {
   font-size: 2rem;
   letter-spacing: 0.3em;
   line-height: 1.65;
+  margin-top: 0.5rem;
 }
 /* ===============================================
 # header
@@ -913,6 +914,7 @@ section[id] {
   color: #000;
   margin: 3rem 0 0.3rem 6.8rem;
   line-height: 1.38;
+  overflow: hidden;
 }
 @media (max-width: 768px) {
   .news__text {
