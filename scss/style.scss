@@ -745,7 +745,7 @@ section[id] {
 	}
 }
 
-.news__container-wrapper {
+.news__container {
 	display: flex;
 	justify-content: space-between;
 	gap: 60px;
@@ -760,11 +760,11 @@ section[id] {
 	}
 }
 
-.news__container {
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-}
+// .news__container {
+// 	flex: 1;
+// 	display: flex;
+// 	flex-direction: column;
+// }
 
 .news__box {
 	justify-content: center;
@@ -807,25 +807,8 @@ section[id] {
 }
 
 .news__item {
-	position: relative;
-
-
-	&::after {
-		content: "";
-		display: block;
-		width: 90%;
-		height: 1px;
-		background-color: $main-color;
-		margin: 0 auto;
-	}
-
-	// &::before {
-	// 	margin-bottom: 10px;
-	// }
-
-	&::after {
-		margin-top: 10px;
-	}
+// 	position: relative;
+	border-bottom: 1px solid $main-color;
 }
 
 .news__item:first-child::before {
@@ -835,9 +818,11 @@ section[id] {
 
 .news__link {
 	display: flex;
-	align-items: center;
-	// gap: 24px;
+	column-gap: calc(69 / 430 *100%);
 	text-decoration: none;
+	padding-block: 2rem 1.3rem;
+	// align-items: center;
+	// gap: 24px;
 
 	@include sp {
 		// margin: 2.3rem ;
@@ -863,26 +848,22 @@ section[id] {
 .news__text {
 	font-size: 1.8rem;
 	color: $text-color;
-	margin: 3rem 0 0.3rem 6.8rem;
 	line-height: 1.38;
-	overflow: hidden;
-
+	display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; /*何行にするか*/
+  overflow: hidden;
+	// margin: 3rem 0 0.3rem 6.8rem;
 
 	@include sp {
 		margin-left: 2.4rem;
-		
 	}
 }
 
-// // 2段目と3段目の .news__text にだけ効かせたい場合
-// .news__item:nth-child(2) .news__text,
-// .news__item:nth-child(3) .news__text {
-//   margin: 2rem 2rem 1.3rem 6.9rem;
-// }
-
-
 
 .news__more {
+	text-align: right;
+	margin-top: 2.7rem;
 	// padding: 1.7rem 5.3rem 2.4rem 33rem;
 
 
@@ -893,16 +874,19 @@ section[id] {
 
 // moreアイコン
 .more-link {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	gap: 0.2rem;
-	font-weight: 600;
-	font-size: 2.0rem;
-	line-height: 1.65;
-	color: $main-color;
+	display: inline-block;
+	position: relative;
 	text-decoration: none;
 	transition: transform 0.3s ease;
+	font-weight: 600;
+	font-size: 2.0rem;
+	color: $main-color;
+	line-height: 0;
+	padding-top: 1rem;
+	// flex-direction: column;
+	// align-items: flex-start;
+	// gap: 0.2rem;
+	
 
 	// margin-left: auto;
 	// margin-right: calc(2 / 1080 * 100vw);
@@ -911,22 +895,11 @@ section[id] {
 	&:hover {
 		transform: translateX(5px);
 	}
-
-	.more-icon {
-		// gap: 0.4rem;
-		width: 80px;
-		height: 18px;
-		line-height: 1;
-		margin-top: -2px;
-
-		svg {
-			width: 100%;
-			height: auto;
-			display: block;
-		}
-	}
 }
 
+.more-link span {
+	padding-right: 3.3rem;
+}
 
 
 /* ===============================================
@@ -1527,3 +1500,4 @@ section[id] {
 		padding: 2.1rem 3rem;
 	}
 }
+
