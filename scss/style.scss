@@ -673,7 +673,7 @@ section[id] {
 		display: flex;
 		flex-direction: column;
 		text-align: left;
-		width: 315px;
+		// width: 315px;
 		// height: 250px;
 		margin-top: 3.8rem;
 		gap: 2.2px
@@ -986,9 +986,9 @@ section[id] {
 	// width: 50%;
 	aspect-ratio: 600 / 400;
 	position: relative;
-	margin-top: calc(-34 / 920 * 100%);
+	padding-bottom: 6.2rem;
 	
-
+	// margin-top: calc(-34 / 920 * 100%);
 
 	@include sp {
 		position: relative;
@@ -1000,6 +1000,7 @@ section[id] {
 .company__map iframe {
 	width: 100%;
 	height: 100%;
+	display: bloc;
 
 	@media screen and (max-width: 767px) {
 		aspect-ratio: 315 / 300;
@@ -1012,7 +1013,7 @@ section[id] {
 	color: $font-color;
 	width: calc(500 / 920 * 100%);
 	margin-left: calc(-180 / 920 * 100%);
-	margin-bottom: calc(-42 / 920 * 100%);
+	// margin-bottom: calc(-42 / 920 * 100%);
 	// position: relative;
 	z-index: 2;
 	padding: 47px 5px 42px calc(220 / 920 * 100%);
@@ -1346,7 +1347,7 @@ section[id] {
 	// max-width: 711px;
 	font-size: 1.6rem;
 	background-color: $font-color;
-	// flex: 1;
+	 flex: 1;
 	gap: 8rem;
 	line-height: 1.8;
 	padding-block: 12px;
