@@ -137,4 +137,13 @@ $(function () {
   });
 
 });
+// hamburger
+const hamburger = document.getElementById('js-hamburger');
+const nav = document.getElementById('js-nav');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('is-open');
+  nav.classList.toggle('is-open');
+});
+
 

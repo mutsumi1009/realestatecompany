@@ -258,14 +258,14 @@ section[id] {
 	font-size: 2.0rem;
 	line-height: 1.65;
 	transition: opacity 0.4s, color 0.4s;
-  
+
 	&:hover {
-	  opacity: 0.7;
+		opacity: 0.7;
 	}
-  
+
 	@include sp {}
-  }
-  
+}
+
 
 .header__nav-list {
 	display: flex;
@@ -333,9 +333,90 @@ section[id] {
 	}
 }
 
-.header__nav.pc {
-	@include pc-only;
+
+// hamburger
+.hamburger {
+	display: none;
+
+	@include sp {
+		display: flex;
+		position: fixed;
+		top: 1.3rem;
+		right: 2.0rem;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 0.4rem;
+		width: 3.2rem;
+		height: 2.4rem;
+		cursor: pointer;
+		z-index: 1001;
+
+		span {
+			display: block;
+			width: 100%;
+			height: 0.4rem;
+			background-color: $font-color;
+			border-radius: 0.2rem;
+			transition: transform 0.4s, opacity 0.4s, background-color 0.3s;
+		}
+
+		&.is-open span {
+			background-color: $font-color;
+		}
+	}
 }
+
+.header__nav {
+	@include sp {
+		display: none;
+	}
+}
+
+.header__nav-sp {
+	@include pc-only {
+		display: none;
+	}
+}
+
+.header__nav-sp {
+	@include sp {
+	  position: fixed;
+	  top: 0;
+	  right: -100%; // ← 最初は画面外に隠す
+	  width: 75%;
+	  height: 100vh;
+	  background-color: $main-color;
+	  padding: 8rem 2rem;
+	  transition: right 0.3s ease;
+	  z-index: 1000;
+  
+	  &.is-open {
+		right: 0; 
+	  }
+  
+	  .header__nav-sp-list {
+		display: flex;
+		flex-direction: column;
+		gap: 2.4rem;
+  
+		a {
+		  font-size: 2.0rem;
+		  color: $font-color;
+		  text-decoration: none;
+		  padding: 0.8rem;
+		  transition: background-color 0.3s, color 0.3s;
+  
+		  &:hover {
+			background-color: $text-color;
+			color: $font-color;
+		  }
+		}
+	  }
+	}
+  }
+  
+
 
 /* ===============================================
 # fv
