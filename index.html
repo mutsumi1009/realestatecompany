@@ -8,6 +8,7 @@
     <meta name="description" content="長崎県長崎市横尾にある不動産会社です。都市計画から都市開発までご提案いたします。">
     <meta name="keywords" content="新築, 都市計画, ">
     <meta name="robots" content="noindex">
+    <link rel="icon" href="images/home_icon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet"> -->
@@ -35,6 +36,25 @@
                     <li><a href="#company">COMPANY</a></li>
                     <li><a href="#contact">CONTACT</a></li>
 
+                </ul>
+            </nav>
+
+            <!-- SP ハンバーガーメニュー -->
+            <div class="hamburger" id="js-hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- SP ナビゲーション -->
+            <nav class="header__nav-sp" id="js-nav">
+                <ul class="header__nav-sp-list">
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#service">SERVICE</a></li>
+                    <li><a href="#works">WORKS</a></li>
+                    <li><a href="#news">NEWS</a></li>
+                    <li><a href="#company">COMPANY</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
                 </ul>
             </nav>
         </header>
@@ -383,153 +403,153 @@
                             <h2>CONTACT</h2>
                             <div class="section__subtitle">お問い合わせ</div>
                         </div> -->
-               
-                <p class="contact__lead">
-                    ３営業日以内にメールにてご連絡いたします。*は入力必須項目となります。
-                </p>
 
-                <!--お名前-->
-                <form class="contact__form" action="#" method="post">
-                    <div class="contact__items">
-                        <div class="contact__item contact__item--name">
-                            <label for="name" class="contact__label">お名前
-                                *</label>
-                            <input type="text" id="name" name="name" class="contact__input" required
-                                placeholder="例：北村太郎">
-                        </div>
+                    <p class="contact__lead">
+                        ３営業日以内にメールにてご連絡いたします。*は入力必須項目となります。
+                    </p>
 
-                        <!--性別-->
-                        <div class="contact__item contact__item--gender">
-                            <label class="contact__label">性別</label>
-                            <div class="contact__radio-group">
-                                <label><input type="radio" name="gender" value="male">
-                                    <span></span>男性
-                                </label>
-                                <label><input type="radio" name="gender" value="female">
-                                    <span></span>女性
-                                </label>
+                    <!--お名前-->
+                    <form class="contact__form" action="#" method="post">
+                        <div class="contact__items">
+                            <div class="contact__item contact__item--name">
+                                <label for="name" class="contact__label">お名前
+                                    *</label>
+                                <input type="text" id="name" name="name" class="contact__input" required
+                                    placeholder="例：北村太郎">
+                            </div>
+
+                            <!--性別-->
+                            <div class="contact__item contact__item--gender">
+                                <label class="contact__label">性別</label>
+                                <div class="contact__radio-group">
+                                    <label><input type="radio" name="gender" value="male">
+                                        <span></span>男性
+                                    </label>
+                                    <label><input type="radio" name="gender" value="female">
+                                        <span></span>女性
+                                    </label>
+                                </div>
+                            </div>
+
+
+                            <!--メールアドレス-->
+                            <div class="contact__item contact__item--email">
+                                <label for="email" class="contact__label">メールアドレス*</label>
+                                <input type="email" id="email" name="email" class="contact__input" required
+                                    placeholder="例：aaaaaaaa@gmail.com">
+                            </div>
+
+                            <!--問い合わせ種別-->
+                            <div class="contact__item contact__item--type">
+                                <label for="type" class="contact__label">問い合わせ種別 </label>
+                                <select id="type" name="type" class="contact__select" required>
+                                    <option value="">選択してください</option>
+                                    <option value="custom-home">家づくりについて</option>
+                                    <option value="renovation">リノベーションについて</option>
+                                    <option value="other">その他</option>
+                                </select>
+                            </div>
+
+                            <!--内容-->
+                            <div class="contact__item contact__item--message">
+                                <label for="message" class="contact__label">内容*</label>
+                                <textarea id="message" name="message" class="contact__textarea" required></textarea>
+                            </div>
+
+                            <!--アンケート-->
+                            <div class="contact__item contact__item--survey">
+                                <label class="contact__label">何を見て当社HPを知りましたか？ (複数回答可) *</label>
+                                <div class="contact__checkbox-group">
+                                    <label><input type="checkbox" name="source[]" value="internet">
+                                        <span></span> インターネット</label>
+                                    <label><input type="checkbox" name="source[]" value="flyer">
+                                        <span></span>チラシ</label>
+                                    <label><input type="checkbox" name="source[]" value="exhibition">
+                                        <span></span>住宅展示場</label>
+                                    <label><input type="checkbox" name="source[]" value="sign">
+                                        <span></span>看板</label>
+                                    <label><input type="checkbox" name="source[]" value="sns">
+                                        <span></span> 各種SNS</label>
+                                    <label><input type="checkbox" name="source[]" value="introduction">
+                                        <span></span>紹介</label>
+                                    <label><input type="checkbox" name="source[]" value="walkby">
+                                        <span></span> 通りがかり</label>
+                                    <label><input type="checkbox" name="source[]" value="other">
+                                        <span></span> その他</label>
+                                </div>
+                            </div>
+
+                            <!--個人情報-->
+                            <div class="contact__item contact__item--privacy">
+                                <label class="contact__label">個人情報保護方針</label>
+                                <div class="contact__privacy-box">
+                                    <p> 個人情報取扱事業者の氏名又は名称(法24条1項1号)<br>株式会社 北村建設興業</p>
+
+                                    <p> 個人情報の取り扱い
+                                        弊社は、個人情報保護に関連する法令を遵守し、お客様からご提供いただく個人情報を、<br>細心の注意を払って取り扱っております。このプライバシーポリシーでは、当社におけるお客様の個人情報の取扱いについてご説明しております。
+                                    </p>
+
+                                    <p> 個人情報の利用目的(法18条、15条)<br>
+                                        弊社は建築物の設計、施工を主とした当社業務ならびにアフターサービスをさせていただく上で、お客様の個人情報を原則として次の利用目的の範囲内で利用させていただきます。なお、アンケート用紙・ウェブサイトの他のページ等で特に利用目的を定めている場合は、その利用目的を含みます。
+                                    </p>
+
+                                    <p>・お客様からご注文頂いた工事を適切に完成させるため及び物品の納品をさせて頂くため、お客様へ弊社が取扱う商品を積極的に提案する営業活動のため、商品及びサービスの提供に関する手続(融資・申請・保証・保険・登記など)の支援、取次ぎのため<br>
+                                        ・お客様に弊社が取扱う商品、企業活動、イベント等に関するお知らせをお届けするため<br>
+                                        (カタログ、ご提案資料、展示のご案内、各種刊行物など)<br>
+                                        ・見学会等へご来場のお客様へのご商談、ご来場日時の確認のため<br>
+                                        ・商品やサービスについてお客さまからいただいたご意見を活用するため<br>
+                                        ・商品のアフターサービス、メンテナンス等のためにお客さまと接触するため<br>
+                                        ・その他お客さまから寄せられたご意見、ご要望にお応えするため、及び弊社が取扱う商品、サービス等の向上を図るため</p>
+
+                                    <p> 保有個人データ利用目的(法24条1項2号)<br>
+                                        ・当社が建築したお客様宅のアフターメンテナンスを行うため<br>
+                                        ・当社がお客様に提供するサービスにおいて利用するため<br>
+                                        ・お客様に特別なサービスや新しい商品などの情報を的確にお知らせするため<br>
+                                        ・お客様に合ったサービスを提供するため<br>
+                                        ・当社の建築した住宅の利用状況や利用環境などに関する調査を実施して客観的にお客様の満足度を把握するため<br>
+                                        ・必要に応じてお客様に連絡を行うため<br>
+                                        ・会計監査上の確認作業を行うため<br></p>
+
+                                    <p> 個人情報の安全対策(法20条)<br>
+                                        お客様の個人情報を安全に管理・運営するよう鋭意努力しており、個人情報への外部からの不正なアクセス、個人情報の紛失・毀損・破壊・改ざん・漏えい、社外への不正な流出などへの危険防止に対する合理的かつ適切な安全対策を行っています。<br>また個人情報を取り扱う部門ごとに情報管理責任者を置き、個人情報の適切な管理に努めるとともに、情報セキュリティに関する規程を設けて社員への周知徹底を実施しています。
+                                    </p>
+
+                                    <p>第三者への提供(法23条)<br>
+                                        個人情報は、以下のいずれかに該当する場合を除いて、いかなる第三者にも開示・提供いたしません。<br>
+                                        ・お客さまの同意がある場合。
+                                        ・お客様個人を識別することができない状態で開示する場合。<br>
+                                        ・業務を円滑に進める等の理由で外部事業者に取扱いを委託する場合。(この場合には、十分な保護水準を備えている委託先を選定し、漏えいや再提供を防止するために契約により義務づける等の方法によって、適切な管理を実施します)<br>
+                                    </p>
+                                    <p>・法令等により開示を要求された場合
+                                        ・人の生命、身体又は財産の保護のために必要であって、お客様の同意を得ることが困難である場合<br>
+                                        ・国の機関や地方公共団体又はその委託を受けた者が法令の定める事務を遂行することに対して協力する必要がある場合であって、お客様の同意を得ることにより当該事務の遂行に支障を及ぼすおそれがある場合
+                                    </p>
+
+                                    <p> 個人情報の開示手続(法25条)<br>
+                                        お客様本人の個人情報に関する保有データの開示請求があった場合には、ご本人であることを運転免許証・パスポート等の身分証明書で確認させていただいた上、本人確認が終了後、速やかに開示させていただきます。
+                                    </p>
+
+                                    <p>個人情報の訂正等(法26条)<br>
+                                        前項の開示手続きにより、弊社が保有する保有個人データ内容に事実と異なる記載がある場合には、訂正、変更又は削除の手続きを取らせて頂きます。</p>
+
+                                    <p> プライバシーポリシーに関するお問合せ先<br>
+                                        弊社の個人情報の取扱いに関するお問合せは、下記までお問い合せください。<br></p>
+
+                                    <p> 社名 株式会社北村建設興業<br>
+                                        住所 長崎県長崎市横尾○丁目○-○<br>
+                                        電話 000-000-0000<br>
+                                        FAX 000-000-0000<br>
+                                        メールアドレス info@example.com<br></p>
+                                </div>
                             </div>
                         </div>
-
-
-                        <!--メールアドレス-->
-                        <div class="contact__item contact__item--email">
-                            <label for="email" class="contact__label">メールアドレス*</label>
-                            <input type="email" id="email" name="email" class="contact__input" required
-                                placeholder="例：aaaaaaaa@gmail.com">
+                        <!--送信ボタン-->
+                        <div class="contact__submit">
+                            <button type="submit" class="contact__button">内容に同意して送信</button>
                         </div>
-
-                        <!--問い合わせ種別-->
-                        <div class="contact__item contact__item--type">
-                            <label for="type" class="contact__label">問い合わせ種別 </label>
-                            <select id="type" name="type" class="contact__select" required>
-                                <option value="">選択してください</option>
-                                <option value="custom-home">家づくりについて</option>
-                                <option value="renovation">リノベーションについて</option>
-                                <option value="other">その他</option>
-                            </select>
-                        </div>
-
-                        <!--内容-->
-                        <div class="contact__item contact__item--message">
-                            <label for="message" class="contact__label">内容*</label>
-                            <textarea id="message" name="message" class="contact__textarea" required></textarea>
-                        </div>
-
-                        <!--アンケート-->
-                        <div class="contact__item contact__item--survey">
-                            <label class="contact__label">何を見て当社HPを知りましたか？ (複数回答可) *</label>
-                            <div class="contact__checkbox-group">
-                                <label><input type="checkbox" name="source[]" value="internet">
-                                    <span></span> インターネット</label>
-                                <label><input type="checkbox" name="source[]" value="flyer">
-                                    <span></span>チラシ</label>
-                                <label><input type="checkbox" name="source[]" value="exhibition">
-                                    <span></span>住宅展示場</label>
-                                <label><input type="checkbox" name="source[]" value="sign">
-                                    <span></span>看板</label>
-                                <label><input type="checkbox" name="source[]" value="sns">
-                                    <span></span> 各種SNS</label>
-                                <label><input type="checkbox" name="source[]" value="introduction">
-                                    <span></span>紹介</label>
-                                <label><input type="checkbox" name="source[]" value="walkby">
-                                    <span></span> 通りがかり</label>
-                                <label><input type="checkbox" name="source[]" value="other">
-                                    <span></span> その他</label>
-                            </div>
-                        </div>
-
-                        <!--個人情報-->
-                        <div class="contact__item contact__item--privacy">
-                            <label class="contact__label">個人情報保護方針</label>
-                            <div class="contact__privacy-box">
-                                <p> 個人情報取扱事業者の氏名又は名称(法24条1項1号)<br>株式会社 北村建設興業</p>
-
-                                <p> 個人情報の取り扱い
-                                    弊社は、個人情報保護に関連する法令を遵守し、お客様からご提供いただく個人情報を、<br>細心の注意を払って取り扱っております。このプライバシーポリシーでは、当社におけるお客様の個人情報の取扱いについてご説明しております。
-                                </p>
-
-                                <p> 個人情報の利用目的(法18条、15条)<br>
-                                    弊社は建築物の設計、施工を主とした当社業務ならびにアフターサービスをさせていただく上で、お客様の個人情報を原則として次の利用目的の範囲内で利用させていただきます。なお、アンケート用紙・ウェブサイトの他のページ等で特に利用目的を定めている場合は、その利用目的を含みます。
-                                </p>
-
-                                <p>・お客様からご注文頂いた工事を適切に完成させるため及び物品の納品をさせて頂くため、お客様へ弊社が取扱う商品を積極的に提案する営業活動のため、商品及びサービスの提供に関する手続(融資・申請・保証・保険・登記など)の支援、取次ぎのため<br>
-                                    ・お客様に弊社が取扱う商品、企業活動、イベント等に関するお知らせをお届けするため<br>
-                                    (カタログ、ご提案資料、展示のご案内、各種刊行物など)<br>
-                                    ・見学会等へご来場のお客様へのご商談、ご来場日時の確認のため<br>
-                                    ・商品やサービスについてお客さまからいただいたご意見を活用するため<br>
-                                    ・商品のアフターサービス、メンテナンス等のためにお客さまと接触するため<br>
-                                    ・その他お客さまから寄せられたご意見、ご要望にお応えするため、及び弊社が取扱う商品、サービス等の向上を図るため</p>
-
-                                <p> 保有個人データ利用目的(法24条1項2号)<br>
-                                    ・当社が建築したお客様宅のアフターメンテナンスを行うため<br>
-                                    ・当社がお客様に提供するサービスにおいて利用するため<br>
-                                    ・お客様に特別なサービスや新しい商品などの情報を的確にお知らせするため<br>
-                                    ・お客様に合ったサービスを提供するため<br>
-                                    ・当社の建築した住宅の利用状況や利用環境などに関する調査を実施して客観的にお客様の満足度を把握するため<br>
-                                    ・必要に応じてお客様に連絡を行うため<br>
-                                    ・会計監査上の確認作業を行うため<br></p>
-
-                                <p> 個人情報の安全対策(法20条)<br>
-                                    お客様の個人情報を安全に管理・運営するよう鋭意努力しており、個人情報への外部からの不正なアクセス、個人情報の紛失・毀損・破壊・改ざん・漏えい、社外への不正な流出などへの危険防止に対する合理的かつ適切な安全対策を行っています。<br>また個人情報を取り扱う部門ごとに情報管理責任者を置き、個人情報の適切な管理に努めるとともに、情報セキュリティに関する規程を設けて社員への周知徹底を実施しています。
-                                </p>
-
-                                <p>第三者への提供(法23条)<br>
-                                    個人情報は、以下のいずれかに該当する場合を除いて、いかなる第三者にも開示・提供いたしません。<br>
-                                    ・お客さまの同意がある場合。
-                                    ・お客様個人を識別することができない状態で開示する場合。<br>
-                                    ・業務を円滑に進める等の理由で外部事業者に取扱いを委託する場合。(この場合には、十分な保護水準を備えている委託先を選定し、漏えいや再提供を防止するために契約により義務づける等の方法によって、適切な管理を実施します)<br>
-                                </p>
-                                <p>・法令等により開示を要求された場合
-                                    ・人の生命、身体又は財産の保護のために必要であって、お客様の同意を得ることが困難である場合<br>
-                                    ・国の機関や地方公共団体又はその委託を受けた者が法令の定める事務を遂行することに対して協力する必要がある場合であって、お客様の同意を得ることにより当該事務の遂行に支障を及ぼすおそれがある場合
-                                </p>
-
-                                <p> 個人情報の開示手続(法25条)<br>
-                                    お客様本人の個人情報に関する保有データの開示請求があった場合には、ご本人であることを運転免許証・パスポート等の身分証明書で確認させていただいた上、本人確認が終了後、速やかに開示させていただきます。
-                                </p>
-
-                                <p>個人情報の訂正等(法26条)<br>
-                                    前項の開示手続きにより、弊社が保有する保有個人データ内容に事実と異なる記載がある場合には、訂正、変更又は削除の手続きを取らせて頂きます。</p>
-
-                                <p> プライバシーポリシーに関するお問合せ先<br>
-                                    弊社の個人情報の取扱いに関するお問合せは、下記までお問い合せください。<br></p>
-
-                                <p> 社名 株式会社北村建設興業<br>
-                                    住所 長崎県長崎市横尾○丁目○-○<br>
-                                    電話 000-000-0000<br>
-                                    FAX 000-000-0000<br>
-                                    メールアドレス info@example.com<br></p>
-                            </div>
-                        </div>
-                    </div>
-                    <!--送信ボタン-->
-                    <div class="contact__submit">
-                        <button type="submit" class="contact__button">内容に同意して送信</button>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
-        </div>
         </section>
     </main>
 
@@ -567,11 +587,12 @@
 
     </footer>
     <!-- コンテンツ -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
-<script src="js/script.js"></script> <!-- 自分で書くjQueryコードはここに！ -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <script src="js/script.js"></script> <!-- 自分で書くjQueryコードはここに！ -->
 
 </body>
+
 </html>
