@@ -15,21 +15,19 @@ $placeholder-color: #A0A0A0;
 /* ===============================================
 # Mixin
 =============================================== */
+// spのみ
 @mixin sp {
 	@media (max-width: 767px) {
 		@content;
 	}
 }
-
-// PC専用表示
+// pcのみ
 @mixin pc-only {
-	display: block;
-
-	@include sp {
-		display: none;
+	@media (min-width: 768px) {
+		@content;
 	}
 }
-
+// 表示切り替え
 // SP専用 block 表示
 @mixin sp-block {
 	display: none;
@@ -356,7 +354,7 @@ section[id] {
 			display: block;
 			width: 100%;
 			height: 0.4rem;
-			background-color: $font-color;
+			background-color: #fff;
 			border-radius: 0.2rem;
 			transition: transform 0.4s, opacity 0.4s, background-color 0.3s;
 		}
