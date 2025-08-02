@@ -15,51 +15,43 @@ $placeholder-color: #A0A0A0;
 /* ===============================================
 # Mixin
 =============================================== */
-// spのみ
+// sp時のみ適用
 @mixin sp {
 	@media (max-width: 767px) {
 		@content;
 	}
 }
-// pcのみ
+
+// PC時のみ適用
 @mixin pc-only {
 	@media (min-width: 768px) {
 		@content;
 	}
 }
-// 表示切り替え
-// SP専用 block 表示
-@mixin sp-block {
-	display: none;
 
-	@include sp {
-		display: block;
-	}
-}
-
-// SP専用 inline 表示
-@mixin sp-inline {
-	display: none;
-
-	@include sp {
-		display: inline;
-	}
-}
-
-// service text改行
+// HTMLで使用されている `.pc-only` クラスのスタイル
 .pc-only {
-	@include pc-only;
+    display: none; // SPでは非表示
+    @include pc-only {
+        display: block; // PCでは表示（改行）
+    }
 }
 
-.sp-block {
-	@include sp-block;
+// HTMLで使用されている `.pc` クラスのスタイル
+.pc {
+    display: block; // PCでは表示
+    @include sp {
+        display: none; // SPでは非表示
+    }
 }
 
-.sp-inline {
-	@include sp-inline;
+// HTMLで使用されている `.sp` クラスのスタイル
+.sp {
+    display: none; // PCでは非表示
+    @include sp {
+        display: block; // SPでは表示
+    }
 }
-
-
 /* ===============================================
 # ベース設定（html, body, main など）
 =============================================== */
@@ -233,10 +225,11 @@ section[id] {
 	transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 
 	@include sp {
-		display: block;
+		display: flex;
 		padding-top: 0.8rem;
 		padding-left: 2.0rem;
 		padding-right: 2.0rem;
+		z-index: 1000;
 	}
 }
 
@@ -272,7 +265,6 @@ section[id] {
 	padding: 0.2rem 0.2rem 0.3rem 0.2rem;
 	margin: 0;
 
-
 	li {
 		a {
 			height: 3.3rem;
@@ -303,6 +295,7 @@ section[id] {
 			}
 
 			&:hover {
+
 				opacity: 0.7;
 				color: $font-color;
 			}
@@ -339,31 +332,61 @@ section[id] {
 	@include sp {
 		display: flex;
 		position: fixed;
-		top: 1.3rem;
-		right: 2.0rem;
+		top: 0;
+		right: 0;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		gap: 0.4rem;
-		width: 3.2rem;
-		height: 2.4rem;
+		width: 7.2rem;
+		height: 5rem;
 		cursor: pointer;
 		z-index: 1001;
+		background-color: $font-color;
 
 		span {
 			display: block;
-			width: 100%;
-			height: 0.4rem;
-			background-color: #fff;
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 50%;
+			height: 0.3rem;
+			background-color: $main-color;
 			border-radius: 0.2rem;
 			transition: transform 0.4s, opacity 0.4s, background-color 0.3s;
 		}
 
-		&.is-open span {
-			background-color: $font-color;
+		span:nth-child(1) {
+			top: 1.3rem;
+		}
+
+		span:nth-child(2) {
+			top: 2.3rem;
+		}
+
+		span:nth-child(3) {
+			top: 3.4rem;
+		}
+
+
+		&.is-open {
+			span:nth-child(1) {
+				top: 2.3rem;
+				transform: translateX(-50%) rotate(45deg);
+			}
+
+			span:nth-child(2) {
+				opacity: 0;
+			}
+
+			span:nth-child(3) {
+				top: 2.3rem;
+				transform: translateX(-50%) rotate(-45deg);
+			}
 		}
 	}
 }
+
 
 .header__nav {
 	@include sp {
@@ -375,45 +398,52 @@ section[id] {
 	@include pc-only {
 		display: none;
 	}
+
+	@include sp {
+		position: fixed;
+		top: 0;
+		right: -100%; // ← 最初は画面外に隠す
+		width: 75%;
+		height: 100vh;
+		background-color: $main-color;
+		padding: 7rem 2rem;
+		transition: right 0.3s ease;
+		z-index: 1000;
+
+		&.is-open {
+			right: 0;
+			top: 5.1rem;
+			// width: 80%;
+			height: 34.8rem;
+			padding-block: 1.2rem 1.3rem;
+			// margin-top: 2.2rem;
+
+			.header__nav-sp-list {
+				display: flex;
+				position: fixed;
+				width: 100%;
+				flex-direction: column;
+				gap: 2.5rem;
+
+				a {
+					display: block;
+					font-size: 2.0rem;
+					color: $font-color;
+					text-decoration: none;
+					width: 100%;
+					// padding: 1.2rem 1.5rem; 
+					transition: background-color 0.3s, color 0.3s;
+
+					&:hover {
+						background-color: $text-color;
+						color: $font-color;
+					}
+				}
+			}
+		}
+	}
 }
 
-.header__nav-sp {
-	@include sp {
-	  position: fixed;
-	  top: 0;
-	  right: -100%; // ← 最初は画面外に隠す
-	  width: 75%;
-	  height: 100vh;
-	  background-color: $main-color;
-	  padding: 8rem 2rem;
-	  transition: right 0.3s ease;
-	  z-index: 1000;
-  
-	  &.is-open {
-		right: 0; 
-	  }
-  
-	  .header__nav-sp-list {
-		display: flex;
-		flex-direction: column;
-		gap: 2.4rem;
-  
-		a {
-		  font-size: 2.0rem;
-		  color: $font-color;
-		  text-decoration: none;
-		  padding: 0.8rem;
-		  transition: background-color 0.3s, color 0.3s;
-  
-		  &:hover {
-			background-color: $text-color;
-			color: $font-color;
-		  }
-		}
-	  }
-	}
-  }
-  
 
 
 /* ===============================================
@@ -453,7 +483,7 @@ section[id] {
 	}
 }
 
-.fv__copy {
+.fv__copy.pc {
 	font-size: 4.0rem;
 	line-height: 1.75;
 	font-weight: 400;
@@ -469,7 +499,18 @@ section[id] {
 	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 
 	@include sp {
-		@include sp-block;
+		display: none;
+	}
+}
+
+// fv__copy表示
+
+.fv__copy.sp {
+	display: none;
+
+	@include sp {
+		color: $font-color;
+		display: block;
 		text-align: center;
 		font-size: 3.0rem;
 		line-height: 2;
@@ -480,20 +521,11 @@ section[id] {
 	}
 }
 
-.fv__copy.pc {
-	@include pc-only;
-}
-
-.fv__copy.sp {
-	@include sp-block;
-}
-
-
 .fv::before {
 	content: "";
 	position: absolute;
 	inset: 0;
-	background-color: rgba(0, 0, 0, 0.4); // ← ここが黒の透過
+	background-color: rgba(0, 0, 0, 0.4); 
 	z-index: 1;
 }
 
@@ -822,11 +854,42 @@ section[id] {
 
 .works__img {
 	aspect-ratio: 200 / 200;
+	cursor: pointer;
 	// width: 100%;
 
 	@include sp {
 		aspect-ratio: 315 / 250;
 	}
+}
+
+// modal全体
+.modal {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	z-index: 1000;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+// modal表示時に適用
+.modal.is-open {
+	display: flex;
+}
+
+// modal背景
+.modal-over {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.502);
+	z-index: 1001;
 }
 
 .works__body {

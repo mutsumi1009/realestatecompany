@@ -11,130 +11,55 @@ $(function () {
     cssEase: 'linear'
   });
 
-  // --- 2. スティッキーヘッダーと背景色変更の機能 ---
-  // このブロックはヘッダーをスクロールで固定し、FVセクションを通り過ぎたら背景色を変更。
-  const $header = $('.header'); // ヘッダー要素を取得 (headerクラスを持つ要素)
-  const $fv = $('.fv');         // FVセクション要素を取得 (fvクラスを持つ要素)
-  let headerHeight = $header.outerHeight(); // ヘッダーの現在の高さを取得
-  const $body = $('body');      // body要素を取得
+  // ページの読み込みが終わったら実行される
+document.addEventListener("DOMContentLoaded", () => {
+  // ヘッダーとfvセクションの要素を取得
+  const header = document.querySelector(".js-header");
+  const fv = document.querySelector(".fv");
 
-  let headerOffsetTop = $header.offset().top; // ページ上部からのヘッダーの初期位置
-  let fvBottomPosition = 0; // FVセクションの下端のY座標
+  // 要素がどちらか無ければ、処理を中止
+  if (!header || !fv) return;
 
-  // FVの下端位置を計算する関数
-  // スクロールするたびに正確な位置を取得するために関数化しています。
-  function calculateFvBottom() {
-    if ($fv.length) {
-      fvBottomPosition = $fv.offset().top + $fv.outerHeight();
-    }
-  }
+  // fvの下端の位置（画面の一番上からの距離）を取得する関数
+  const getFvBottom = () => {
+    const fvRect = fv.getBoundingClientRect(); // fvの現在の位置と大きさ
+    return window.scrollY + fvRect.bottom;     // スクロール位置＋fvの下端位置
+  };
 
-  // ウィンドウのリサイズ時とページロード時に各種オフセットとヘッダー高さを更新します。
-  // これにより、画面サイズが変わっても正確な位置で機能が動作するようになります。
-  $(window).on('load resize', function () {
-    headerHeight = $header.outerHeight(); // ヘッダーの高さを再取得
+  // スクロールしたときに呼ばれる関数
+  const handleScroll = () => {
+    const scrollY = window.scrollY;       // 現在のスクロール量（＝ヘッダーの上端）
+    const fvBottom = getFvBottom();       // fvの下端の位置を取得
 
-    // ヘッダーが既に固定されている場合、一旦固定を解除して正しい初期位置を再計算します。
-    if ($header.hasClass('is-fixed')) {
-      $header.removeClass('is-fixed');
-      $body.css('padding-top', '0px'); // bodyの余白も一時的にリセット
-      headerOffsetTop = $header.offset().top; // fixedを外して再度オフセットを取得
-      $(window).trigger('scroll'); // 現在のスクロール位置で再評価を促す
+    // ヘッダーの上端がfvの下端より下になったら背景色をつける
+    if (scrollY > fvBottom) {
+      header.style.backgroundColor = "#4D9600"; // 緑色の背景にする
     } else {
-      $body.css('padding-top', '0px'); // fixedでない場合はpadding-topは不要
-      headerOffsetTop = $header.offset().top; // ヘッダーの初期位置を再計算
+      header.style.backgroundColor = "transparent"; // 透明に戻す
     }
-    calculateFvBottom(); // FVの下端位置を更新
-  });
+  };
 
-  // 初期ロード時にもFV下端を一度取得しておきます。
-  calculateFvBottom();
+  // debounce関数：何度も連続で呼ばれる関数を、最後の1回だけにする
+  const debounce = (func, delay = 100) => {
+    let timer;
+    return () => {
+      clearTimeout(timer);          // 前のタイマーをキャンセル
+      timer = setTimeout(func, delay); // 一定時間後に実行（最後の1回）
+    };
+  };
 
-  // スクロールイベントが発生するたびに実行される関数
-  $(window).on('scroll', function () {
-    const scrollPosition = $(this).scrollTop(); // 現在のスクロール位置 (ページの最上部からの距離)
+  // スクロールするたびにhandleScroll関数を実行
+  window.addEventListener("scroll", handleScroll);
 
-    // ヘッダーを固定するかどうかのロジック
-    // スクロール位置がヘッダーの初期位置を超えたら「is-fixed」クラスを付与して固定します。
-    if (scrollPosition >= headerOffsetTop) {
-      if (!$header.hasClass('is-fixed')) {
-        $header.addClass('is-fixed');
-        // ヘッダーがfixedになったら、その高さ分コンテンツが隠れないようにbodyにpadding-topを設定します。
-        $body.css('padding-top', headerHeight + 'px');
-      }
-    } else {
-      // ヘッダーの初期位置よりも上に戻ったら固定を解除します。
-      if ($header.hasClass('is-fixed')) {
-        $header.removeClass('is-fixed');
-        $body.css('padding-top', '0px'); // 固定解除したらpadding-topをリセット
-      }
-    }
+  // リサイズしたときにもhandleScrollを実行（ただし負荷を減らすためにdebounceする）
+  window.addEventListener("resize", debounce(handleScroll, 100));
 
-    // ヘッダーの背景色変更のロジック (FVセクションの下端を基準)
-    // スクロール位置がFVセクションの下端を超えたら背景色を緑に、そうでなければ透明にします。
-    if (scrollPosition > fvBottomPosition) {
-      $header.css('background-color', '#4D9600'); // 緑色の背景にする
-    } else {
-      $header.css('background-color', 'transparent'); // 透明に戻す
-    }
+  // ページ読み込み直後にも一度判定しておく（すでにスクロールされている可能性があるため）
+  handleScroll();
+});
 
-
-    // --- 3. スクロールに応じたナビゲーションのアクティブ状態更新 ---
-    // 現在表示されているセクションに応じて、ナビゲーションメニューのリンクに「is-active」クラスを付与します。
-    $('.header__nav-list li a').each(function () {
-      const targetId = $(this).attr('href'); // リンクのhref属性（例: #about）
-      if (targetId && targetId !== '#') { // 有効なIDを持つリンクのみ処理
-        const $targetSection = $(targetId); // リンク先のセクション要素
-        if ($targetSection.length) { // セクションが存在するか確認
-          // ターゲットセクションの開始位置を計算 (ヘッダーの高さ分を考慮して少し上から判定)
-          const targetSectionTop = $targetSection.offset().top - headerHeight - 1;
-
-          // ターゲットセクションの終了位置を計算 (次のセクションの開始位置、またはドキュメントの最後まで)
-          const targetSectionBottom = $targetSection.next().length ? $targetSection.next().offset().top - headerHeight - 1 : $(document).height();
-
-          // 現在のスクロール位置がセクションの範囲内であれば、そのリンクをアクティブにします。
-          if (scrollPosition >= targetSectionTop && scrollPosition < targetSectionBottom) {
-            $('.header__nav-list li').removeClass('is-active'); // 他のアクティブを解除
-            $(this).parent('li').addClass('is-active');         // 現在のリンクをアクティブに
-          }
-        }
-      }
-    });
-  });
-
-  // --- 4. ナビをクリックしたらスムーススクロール & アクティブクラス切り替え ---
-  // ページ内リンク（#から始まるリンク）がクリックされたときに、滑らかにスクロールさせます。
-  $('a[href^="#"]').click(function (e) {
-    e.preventDefault(); // デフォルトのアンカーリンク動作を無効化
-
-    const speed = 300; // スクロール速度（ミリ秒）
-    const href = $(this).attr("href"); // クリックされたリンクのhref属性
-
-    // hrefが「#」または空の場合は、ページ最上部にスクロールします。
-    if (href === "#" || href === "") {
-        $('html, body').animate({ scrollTop: 0 }, speed, "swing");
-        $('.header__nav-list li').removeClass('is-active'); // 全てのアクティブを解除
-        return false;
-    }
-
-    const $target = $(href); // リンク先の要素
-    if ($target.length) { // ターゲット要素が存在する場合
-        const position = $target.offset().top - headerHeight; // ヘッダーの高さ分を考慮したスクロール位置
-        $('html, body').animate({ scrollTop: position }, speed, "swing"); // アニメーションスクロール
-
-        // クリックされたリンクをアクティブに設定します。
-        $('.header__nav-list li').removeClass('is-active');
-        $(this).parent('li').addClass('is-active');
-
-        // SPナビが開いている場合は閉じます。
-        $('#js-hamburger').removeClass('is-open');
-        $('#js-nav').removeClass('is-open');
-    }
-    return false;
-  });
-
-  // --- 5. ハンバーガーメニューの機能 ---
-  // ハンバーガーアイコンとSP用ナビゲーションの開閉を制御します。
+  //  ハンバーガーメニューの機能 ---
+  // ハンバーガーアイコンとSP用ナビゲーションの開閉を制御。
   const $hamburger = $('#js-hamburger'); // ハンバーガーアイコン要素
   const $nav = $('#js-nav');             // SP用ナビゲーション要素
 
@@ -142,8 +67,30 @@ $(function () {
     $(this).toggleClass('is-open'); // ハンバーガーアイコンの見た目を切り替える
     $nav.toggleClass('is-open');     // ナビゲーションの表示・非表示を切り替える
   });
+// modalを開く
 
-  // ページ読み込み直後にも一度スクロール処理を実行（すでにスクロールされている可能性があるため）
-  // これにより、リロード時などに正しいヘッダーの状態を維持します。
+  // ページ読み込み直後にも一度スクロール処理を実行
+  // これにより、リロード時などに正しいヘッダーの状態を維持
   $(window).trigger('scroll');
+});
+document.addEventListener('DOMContentLoaded', () => {
+  // ... (モーダルを開く処理は省略)
+
+  // 閉じるボタンとオーバーレイにイベントを追加
+  const modals = document.querySelectorAll('.modal');
+  modals.forEach(modal => {
+      const closeButton = modal.querySelector('.modal-close-button');
+      const overlay = modal.querySelector('.modal-overlay');
+
+      // 閉じる処理
+      const closeModal = () => {
+          modal.classList.remove('is-open');
+          document.body.style.overflow = ''; // 背景のスクロールを有効化
+      };
+
+      // ボタンクリックで閉じる
+      closeButton.addEventListener('click', closeModal);
+      // オーバーレイクリックで閉じる
+      overlay.addEventListener('click', closeModal);
+  });
 });
