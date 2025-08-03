@@ -31,27 +31,31 @@ $placeholder-color: #A0A0A0;
 
 // HTMLで使用されている `.pc-only` クラスのスタイル
 .pc-only {
-    display: none; // SPでは非表示
-    @include pc-only {
-        display: block; // PCでは表示（改行）
-    }
+	display: none; // SPでは非表示
+
+	@include pc-only {
+		display: block; // PCでは表示（改行）
+	}
 }
 
-// HTMLで使用されている `.pc` クラスのスタイル
+// HTMLで使用されている.pcクラスのスタイル
 .pc {
-    display: block; // PCでは表示
-    @include sp {
-        display: none; // SPでは非表示
-    }
+	display: block; // PCでは表示
+
+	@include sp {
+		display: none; // SPでは非表示
+	}
 }
 
-// HTMLで使用されている `.sp` クラスのスタイル
+// HTMLで使用されている.spクラスのスタイル
 .sp {
-    display: none; // PCでは非表示
-    @include sp {
-        display: block; // SPでは表示
-    }
+	display: none; // PCでは非表示
+
+	@include sp {
+		display: block; // SPでは表示
+	}
 }
+
 /* ===============================================
 # ベース設定（html, body, main など）
 =============================================== */
@@ -226,10 +230,12 @@ section[id] {
 
 	@include sp {
 		display: flex;
+		height: 5rem;
 		padding-top: 0.8rem;
 		padding-left: 2.0rem;
 		padding-right: 2.0rem;
 		z-index: 1000;
+		background-color: $font-color;
 	}
 }
 
@@ -256,7 +262,6 @@ section[id] {
 
 	@include sp {}
 }
-
 
 .header__nav-list {
 	display: flex;
@@ -308,140 +313,160 @@ section[id] {
 			}
 		}
 
-		&.is-active {
-			a {
-				color: $font-color;
-				opacity: 1;
+		// &.is-active {
+		// 	a {
+		// 		color: $font-color;
+		// 		opacity: 1;
 
-				&::after {
-					background-color: $font-color;
-					/* アクティブ時の下線の色（$main-color） */
-					transform: scaleX(1);
-					opacity: 1;
-				}
-			}
+		// 		&::after {
+		// 			background-color: $font-color;
+		// 			/* アクティブ時の下線の色（$main-color） */
+		// 			transform: scaleX(1);
+		// 			opacity: 1;
+		// 		}
+		// 	}
+		// }
+	}
+}
+
+// spナビゲゲーション
+
+.header__nav-sp {
+	display: none;
+
+	@include sp {
+		display: block;
+		position: fixed;
+		font-size: 1.8rem;
+		font-weight: 500;
+		top: 5rem;
+		right: -100%;
+		width: 80%;
+		// height: 100vh;
+		background-color: $main-color;
+		transition: right 0.3s ease;
+		z-index: 1000;
+		color: $font-color;
+
+		&.is-open {
+			right: 0;
 		}
 	}
 }
 
+.header__nav-sp-list {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	margin: 0;
+	padding: 0;
 
-// hamburger
+	a {
+		display: block;
+		font-size: 2.0rem;
+		font-weight: 500;
+		color: $font-color;
+		text-decoration: none;
+		padding: 1.2rem 1.5rem;
+		transition: background-color 0.3s, color 0.3s;
+
+		&:hover {
+			background-color: $text-color; // ★ ホバー時に背景を黒にする
+			color: $font-color; 
+		}
+	}
+}
+
+// ハンバーガーメニュー
+// PCでは非表示
 .hamburger {
 	display: none;
 
 	@include sp {
-		display: flex;
 		position: fixed;
 		top: 0;
 		right: 0;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		gap: 0.4rem;
 		width: 7.2rem;
 		height: 5rem;
-		cursor: pointer;
+		background: $font-color;
 		z-index: 1001;
-		background-color: $font-color;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		cursor: pointer;
+	}
 
-		span {
-			display: block;
-			position: absolute;
-			left: 50%;
-			transform: translateX(-50%);
-			width: 50%;
-			height: 0.3rem;
-			background-color: $main-color;
-			border-radius: 0.2rem;
-			transition: transform 0.4s, opacity 0.4s, background-color 0.3s;
+	// ★ 三本線のスタイル
+	.hamburger-line,
+	.hamburger-line::before,
+	.hamburger-line::after {
+		position: absolute;
+		width: 3.2rem;
+		height: 0.4rem;
+		background: $main-color;
+		border-radius: 0.2rem;
+		transition: .3s;
+	}
+
+	// 中の線
+	.hamburger-line {
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	// 疑似要素の共通スタイル
+	.hamburger-line::before,
+	.hamburger-line::after {
+		content: "";
+	}
+
+	// 上の線
+	.hamburger-line::before {
+		top: 50%;
+		transform: translateY(calc(-50% - 1.2rem));
+	}
+
+	// 下の線
+	.hamburger-line::after {
+		top: 50%;
+		transform: translateY(calc(-50% + 1.2rem));
+	}
+
+	// メニューが開いた時のアニメーション
+	&.is-open {
+		.hamburger-line {
+			background: transparent;
 		}
 
-		span:nth-child(1) {
-			top: 1.3rem;
+		.hamburger-line::before {
+			top: 50%;
+			transform: translateY(-50%) rotate(45deg);
 		}
 
-		span:nth-child(2) {
-			top: 2.3rem;
-		}
-
-		span:nth-child(3) {
-			top: 3.4rem;
-		}
-
-
-		&.is-open {
-			span:nth-child(1) {
-				top: 2.3rem;
-				transform: translateX(-50%) rotate(45deg);
-			}
-
-			span:nth-child(2) {
-				opacity: 0;
-			}
-
-			span:nth-child(3) {
-				top: 2.3rem;
-				transform: translateX(-50%) rotate(-45deg);
-			}
+		.hamburger-line::after {
+			top: 50%;
+			transform: translateY(-50%) rotate(-45deg);
 		}
 	}
 }
 
-
-.header__nav {
-	@include sp {
-		display: none;
-	}
+.hamburger-bg {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 0;
+	height: 100vh;
+	background-color: $text-color;
+	opacity: 0; // 開いたときに0.6になる
+	z-index: 999; // ナビゲーションの下に配置
+	transition: opacity 0.3s ease, width 0.3s ease;
 }
 
-.header__nav-sp {
-	@include pc-only {
-		display: none;
-	}
-
-	@include sp {
-		position: fixed;
-		top: 0;
-		right: -100%; // ← 最初は画面外に隠す
-		width: 75%;
-		height: 100vh;
-		background-color: $main-color;
-		padding: 7rem 2rem;
-		transition: right 0.3s ease;
-		z-index: 1000;
-
-		&.is-open {
-			right: 0;
-			top: 5.1rem;
-			// width: 80%;
-			height: 34.8rem;
-			padding-block: 1.2rem 1.3rem;
-			// margin-top: 2.2rem;
-
-			.header__nav-sp-list {
-				display: flex;
-				position: fixed;
-				width: 100%;
-				flex-direction: column;
-				gap: 2.5rem;
-
-				a {
-					display: block;
-					font-size: 2.0rem;
-					color: $font-color;
-					text-decoration: none;
-					width: 100%;
-					// padding: 1.2rem 1.5rem; 
-					transition: background-color 0.3s, color 0.3s;
-
-					&:hover {
-						background-color: $text-color;
-						color: $font-color;
-					}
-				}
-			}
-		}
-	}
+.hamburger-bg.is-open {
+	width: 100vw;
+	opacity: 0.6;
 }
 
 
@@ -525,7 +550,7 @@ section[id] {
 	content: "";
 	position: absolute;
 	inset: 0;
-	background-color: rgba(0, 0, 0, 0.4); 
+	background-color: rgba(0, 0, 0, 0.4);
 	z-index: 1;
 }
 
