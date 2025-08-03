@@ -15,12 +15,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
     <!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet"> -->
     <link rel="stylesheet" href="./css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
 </head>
 
 <body>
     <div id="container">
-        <!-- header -->
         <header class="header js-header">
             <div class="header__logo">
                 <h1 class="header__site-title">
@@ -37,18 +36,15 @@
                     <li> <a href="#news">NEWS</a></li>
                     <li><a href="#company">COMPANY</a></li>
                     <li><a href="#contact">CONTACT</a></li>
-
                 </ul>
             </nav>
-
-            <!-- SP ハンバーガーメニュー -->
-            <div class="hamburger" id="js-hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+    
+            <div id="hamburger-wrapper">
+                <button id="hamburger-block" class="hamburger hamburger-trigger">
+                    <span class="hamburger-line"></span>
+                </button>
+                <div id="hamburger-bg" class="hamburger-bg hamburger-trigger"></div>
             </div>
-
-            <!-- SP ナビゲーション -->
             <nav class="header__nav-sp" id="js-nav">
                 <ul class="header__nav-sp-list">
                     <li><a href="#about">ABOUT</a></li>
