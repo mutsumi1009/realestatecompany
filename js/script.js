@@ -15,7 +15,6 @@ $(function () {
   });
 
   // --- 2. ハンバーガーメニューの機能 ---
-  // 教材のように、共通のクラスを使って処理をまとめる
   const $trigger = $('.hamburger-trigger');
   const $hamburger = $('#hamburger-block');
   const $navSp = $('.header__nav-sp');
@@ -27,17 +26,14 @@ $(function () {
     $hamburgerBg.toggleClass('is-open');
   });
 
-  // --- 3. ヘッダーの背景色切り替え機能（jQueryで統一）---
+  // --- 3. ヘッダーの背景色切り替え---
   const $header = $('.js-header');
   const $fv = $('.fv');
 
-  // 要素が存在するか確認
   if ($header.length > 0 && $fv.length > 0) {
     const changeHeaderBg = () => {
-      // .fvセクションの下端の位置を計算
       const fvBottom = $fv.offset().top + $fv.outerHeight();
       
-      // スクロール位置が.fvセクションの下端を越えたら
       if ($(window).scrollTop() > fvBottom) {
         $header.css('background-color', '#4D9600');
       } else {
@@ -45,22 +41,59 @@ $(function () {
       }
     };
     
-    // スクロールとリサイズ時にイベントを発火
     $(window).on('scroll resize', changeHeaderBg);
-    
-    // ページ読み込み時に一度実行
     changeHeaderBg();
   }
   
-  // --- 4. モーダル機能---
-  $('[data-modal-target]').on('click', function() {
-    const targetId = $(this).data('modal-target');
-    $(targetId).addClass('is-open');
-    $('body').css('overflow', 'hidden'); // 背景のスクロールを無効化
+  //--- 4. モーダル機能の記述を、外側のブロックに移動 ---
+  const $modalOpen = $('.works__item');
+  const $modalClose = $('.js-modal-close');
+  const $modalArea = $('.js-modal');
+
+  $modalOpen.on('click', function() {
+      const data = $(this).data('modal');
+      const $modalImg = $('#modal-img');
+      const $modalText = $('#modal-text');
+
+      // data属性から取得した値をセット
+      $modalImg.attr('src', data.img_src);
+      $modalImg.attr('alt', data.title);
+      $modalText.html(`<strong>${data.title}</strong>`);
+
+      $modalArea.addClass('is-active');
+      $('body').css('overflow', 'hidden');
   });
 
-  $('.modal-close-button, .modal-overlay').on('click', function() {
-    $(this).closest('.modal').removeClass('is-open');
-    $('body').css('overflow', ''); // 背景のスクロールを有効化
+  $modalClose.on('click', function() {
+      $modalArea.removeClass('is-active');
+      $('body').css('overflow', '');
   });
+}); 
+
+
+  // --- 5. TOPへ戻る---
+  $(function () {
+    // ... (既存のコード) ...
+
+    // --- 5. トップに戻るボタンの表示/非表示 ---
+    const $toTopBtn = $('.js-to-top');
+
+    // スクロールイベントを監視
+    $(window).on('scroll', function() {
+        // ページのトップから100px以上スクロールしたらボタンを表示
+        if ($(this).scrollTop() > 100) {
+            $toTopBtn.addClass('is-show');
+        } else {
+            $toTopBtn.removeClass('is-show');
+        }
+    });
+
+    // ボタンをクリックしたらページトップへスムーズにスクロール
+    $toTopBtn.on('click', function(e) {
+        e.preventDefault();
+        $('body, html').animate({
+            scrollTop: 0
+        }, 500); // 500msかけてスクロール
+    });
+
 });
