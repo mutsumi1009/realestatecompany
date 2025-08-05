@@ -21,40 +21,44 @@
 <body>
     <div id="container">
         <header class="header js-header">
-            <div class="header__logo">
-                <h1 class="header__site-title">
-                    <a href="#fv">
-                        <span class="header__logo-text">株式会社北村建設興業</span>
-                    </a>
-                </h1>
-            </div>
-            <nav class="header__nav pc">
-                <ul class="header__nav-list">
-                    <li><a href="#about">ABOUT</a></li>
-                    <li><a href="#service">SERVICE</a></li>
-                    <li><a href="#works">WORKS</a></li>
-                    <li> <a href="#news">NEWS</a></li>
-                    <li><a href="#company">COMPANY</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
-                </ul>
-            </nav>
+            <div class="header-inner">
+                <div class="header__logo">
+                    <h1 class="header__site-title">
+                        <a href="#fv">
+                            <span class="header__logo-text">株式会社北村建設興業</span>
+                        </a>
+                    </h1>
+                </div>
 
-            <div id="hamburger-wrapper">
-                <button id="hamburger-block" class="hamburger hamburger-trigger">
-                    <span class="hamburger-line"></span>
-                </button>
-                <div id="hamburger-bg" class="hamburger-bg hamburger-trigger"></div>
+                <nav class="header__nav pc">
+                    <ul class="header__nav-list">
+                        <li><a href="#about">ABOUT</a></li>
+                        <li><a href="#service">SERVICE</a></li>
+                        <li><a href="#works">WORKS</a></li>
+                        <li> <a href="#news">NEWS</a></li>
+                        <li><a href="#company">COMPANY</a></li>
+                        <li><a href="#contact">CONTACT</a></li>
+                    </ul>
+                </nav>
+
+                <!-- hamburger -->
+                <div id="hamburger-wrapper">
+                    <button id="hamburger-block" class="hamburger hamburger-trigger">
+                        <span class="hamburger-line"></span>
+                    </button>
+                    <div id="hamburger-bg" class="hamburger-bg hamburger-trigger"></div>
+                </div>
+                <nav class="header__nav-sp" id="js-nav">
+                    <ul class="header__nav-sp-list">
+                        <li><a href="#about">ABOUT</a></li>
+                        <li><a href="#service">SERVICE</a></li>
+                        <li><a href="#works">WORKS</a></li>
+                        <li><a href="#news">NEWS</a></li>
+                        <li><a href="#company">COMPANY</a></li>
+                        <li><a href="#contact">CONTACT</a></li>
+                    </ul>
+                </nav>
             </div>
-            <nav class="header__nav-sp" id="js-nav">
-                <ul class="header__nav-sp-list">
-                    <li><a href="#about">ABOUT</a></li>
-                    <li><a href="#service">SERVICE</a></li>
-                    <li><a href="#works">WORKS</a></li>
-                    <li><a href="#news">NEWS</a></li>
-                    <li><a href="#company">COMPANY</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
-                </ul>
-            </nav>
         </header>
     </div>
 
@@ -595,12 +599,12 @@
 
         </div>
 
-    <!-- TOPへ戻る -->
-        <a href="#" class="to-top js-to-top">
+        <!-- TOPへ戻る -->
+        <a href="main" id="page-top-btn">
             <picture>
                 <source media="(min-width: 768px)" srcset="images/icon_pc.svg">
-                <img src="images/icon_to-top.png" alt="topへ戻る">
-              </picture>
+                <img src="images/icon_page-top-btn.svg" alt="topへ戻る">
+            </picture>
         </a>
     </footer>
     <!-- コンテンツ -->
