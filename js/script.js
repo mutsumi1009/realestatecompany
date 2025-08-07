@@ -73,27 +73,24 @@ $(function () {
 
   // --- 5. TOPへ戻る---
   $(function () {
-    // ... (既存のコード) ...
-
-    // --- 5. トップに戻るボタンの表示/非表示 ---
     const $toTopBtn = $('.js-to-top');
-
-    // スクロールイベントを監視
-    $(window).on('scroll', function() {
-        // ページのトップから100px以上スクロールしたらボタンを表示
-        if ($(this).scrollTop() > 100) {
-            $toTopBtn.addClass('is-show');
-        } else {
-            $toTopBtn.removeClass('is-show');
-        }
+    const fvHeight = $('.fv').outerHeight(); 
+  
+    $(window).on('scroll', function () {
+      const scrollTop = $(this).scrollTop();
+  
+      if (scrollTop > fvHeight) {
+        // FVを越えたら表示
+        $toTopBtn.addClass('is-show');
+      } else {
+        // FVより上なら非表示
+        $toTopBtn.removeClass('is-show');
+      }
     });
-
-    // ボタンをクリックしたらページトップへスムーズにスクロール
-    $toTopBtn.on('click', function(e) {
-        e.preventDefault();
-        $('body, html').animate({
-            scrollTop: 0
-        }, 500); // 500msかけてスクロール
+  
+    $toTopBtn.on('click', function (e) {
+      e.preventDefault();
+      $('html, body').animate({ scrollTop: 0 }, 500);
     });
-
-});
+  });
+  
