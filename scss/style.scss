@@ -238,7 +238,7 @@ section[id] {
 	justify-content: space-between;
 	align-items: center;
 	height: 100%;
-	 max-width: 108rem;
+	max-width: 108rem;
 	margin: 0 auto;
 	display: flex;
 	// padding: ;
@@ -293,7 +293,7 @@ section[id] {
 	margin-left: 2.4rem;
 
 	@include sp {
-	  margin-left: 0;
+		margin-left: 0;
 	}
 }
 
@@ -509,7 +509,7 @@ section[id] {
 	height: 100%;
 	position: absolute;
 	top: 11px;
-	 transform: translateX(6px);
+	//  transform: translateX(6px);
 	// padding-top: 33.9rem;
 	z-index: 2;
 	display: flex;
@@ -822,15 +822,16 @@ section[id] {
 		// padding: 2rem 2rem 1.4rem 2rem;
 	}
 }
+
 // heading改行の切り替え
 .pc-only {
 	display: inline;
-  
+
 	@include sp {
-	  display: none;
+		display: none;
 	}
-  }
-  
+}
+
 
 .service__text {
 	font-size: 1.6rem;
@@ -1111,9 +1112,9 @@ section[id] {
 	// padding: 0.9rem 0 0 2rem;
 	background-color: $main-color;
 	font-size: 2.0rem;
-	height: 5.0rem; // ← Figma指定：高さ50px
-	line-height: 5.0rem; // ← テキスト上下中央にする
-	padding-left: 2rem; // ← 左だけ余白入れる
+	height: 5.0rem;
+	line-height: 5.0rem;
+	padding-left: 2rem;
 
 
 	@include sp {
@@ -1126,6 +1127,7 @@ section[id] {
 	list-style: none;
 	padding-inline: 2rem;
 	margin: 0;
+	padding-top: 1rem;
 
 	@include sp {}
 
@@ -1135,12 +1137,23 @@ section[id] {
 	width: 100%;
 	height: 100%;
 	border-bottom: 1px solid $main-color;
+	padding-block: 2rem;
 
 	@include sp {
 		//   padding-block: 3rem 1.3rem;
-
+		width: auto;
+		height: auto;
 	}
 }
+
+.news__item:nth-of-type(2) {
+	padding-block: 1rem 1.1rem;
+}
+
+.news__item:nth-of-type(3) {
+	padding-block: 2rem 2rem;
+}
+
 
 .news__item:first-child::before {
 	content: none;
@@ -1151,17 +1164,19 @@ section[id] {
 	display: flex;
 	column-gap: calc(69 / 390 *100%);
 	text-decoration: none;
-	padding-block: 3rem 1.3rem;
+	// padding-block: 2rem;
 	align-items: flex-start;
 	transition: opacity 0.3s ease, color 0.3s ease;
+
+	@include sp {}
+
 
 	&:hover,
 	&:focus {
 		opacity: 0.7;
-		color: lighten($text-color, 30%); 
-		
+		color: lighten($text-color, 30%);
 	}
-	
+
 }
 
 .news__date {
@@ -1200,7 +1215,7 @@ section[id] {
 
 .news__more {
 	text-align: right;
-	margin-top: 2.7rem;
+	margin-top: 2rem;
 	margin-bottom: 2.4rem;
 
 	// padding: 1.7rem 5.3rem 2.4rem 33rem;
@@ -1780,7 +1795,7 @@ section[id] {
 	padding-top: 8rem;
 
 	@include sp {
-		padding-block: 5rem;
+		padding-top: 5rem;
 	}
 }
 
@@ -1927,14 +1942,14 @@ TOPへ戻るボタン
 
 		img {
 			transition: transform 0.3s;
-			transform: translateY(-0.5rem); 
+			transform: translateY(-0.5rem);
 		}
 	}
 
 	img {
 		width: 2.315rem;
 		height: 1.57rem;
-	
+
 		@include sp {
 			width: 2.5rem;
 		}
