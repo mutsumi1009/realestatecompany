@@ -1136,8 +1136,7 @@ section[id] {
 .news__item {
 	width: 100%;
 	height: 100%;
-	border-bottom: 1px solid $main-color;
-	padding-block: 2rem;
+	padding-block: 1rem;
 
 	@include sp {
 		//   padding-block: 3rem 1.3rem;
@@ -1147,11 +1146,11 @@ section[id] {
 }
 
 .news__item:nth-of-type(2) {
-	padding-block: 1rem 1.1rem;
+	padding-block: 0;
 }
 
 .news__item:nth-of-type(3) {
-	padding-block: 2rem 2rem;
+	padding-block: 1rem 2rem;
 }
 
 
@@ -1167,6 +1166,8 @@ section[id] {
 	// padding-block: 2rem;
 	align-items: flex-start;
 	transition: opacity 0.3s ease, color 0.3s ease;
+	border-bottom: 1px solid $main-color;
+	padding-block: 1rem 1.1rem;
 
 	@include sp {}
 
@@ -1215,14 +1216,10 @@ section[id] {
 
 .news__more {
 	text-align: right;
-	margin-top: 2rem;
+	margin-top: 0.5rem;
 	margin-bottom: 2.4rem;
 
-	// padding: 1.7rem 5.3rem 2.4rem 33rem;
-
-
 	@include sp {
-		// padding: 1.7rem 5.3rem 2.4rem 21.5rem;
 		margin-top: auto;
 		margin-bottom: 2.4rem;
 		padding-right: 2rem;
@@ -1240,14 +1237,6 @@ section[id] {
 	color: $main-color;
 	line-height: 0;
 	padding-top: 1rem;
-	// flex-direction: column;
-	// align-items: flex-start;
-	// gap: 0.2rem;
-
-
-	// margin-left: auto;
-	// margin-right: calc(2 / 1080 * 100vw);
-
 
 	&:hover {
 		transform: translateX(5px);
@@ -1266,7 +1255,8 @@ section[id] {
 .company {
 	background-color: #f5f5f5;
 	font-size: 1.6rem;
-	padding-block: 8rem;
+	padding-top: 8rem;
+	padding-bottom: 2rem;
 
 
 	@include sp {
@@ -1278,7 +1268,8 @@ section[id] {
 	display: flex;
 	align-items: flex-end;
 	position: relative;
-	margin-top: 7.8rem;
+	margin-top: 6.8rem;
+	padding-bottom: 6.2rem;
 
 	@include sp {
 		flex-direction: column;
@@ -1322,10 +1313,11 @@ section[id] {
 	color: $font-color;
 	width: calc(500 / 920 * 100%);
 	margin-left: calc(-180 / 920 * 100%);
+	margin-top: 20rem;
 	// margin-bottom: calc(-42 / 920 * 100%);
 	// position: relative;
 	z-index: 2;
-	padding: 47px 5px 42px calc(220 / 920 * 100%);
+	padding: 52px 5px 42px calc(220 / 920 * 100%);
 
 
 	@include sp {
@@ -1354,7 +1346,7 @@ section[id] {
 	font-size: 1.6rem;
 	font-weight: 600;
 	font-weight: 1.56;
-	padding-bottom: 1.2rem;
+	// padding-bottom: 1.2rem;
 
 	@include sp {
 		line-height: 1.56;
@@ -1366,7 +1358,7 @@ section[id] {
 .access__tel {
 	font-size: 1.6rem;
 	font-weight: 600;
-	padding-bottom: 1.9rem;
+	// padding-bottom: 1.9rem;
 
 	@include sp {}
 }
@@ -1391,6 +1383,8 @@ section[id] {
 .access__email {
 	font-size: 1.6rem;
 	font-weight: 600;
+	margin-top: 1.5rem;
+
 }
 
 
@@ -1417,6 +1411,8 @@ section[id] {
 .contact__radio-group {
 	display: flex;
 	gap: 7.4rem;
+	padding-left: 1.4rem;
+	padding-top: 0.3rem;
 
 	@include sp {
 		flex-wrap: nowrap;
@@ -1426,7 +1422,7 @@ section[id] {
 
 	label {
 		position: relative;
-		padding-left: 45px;
+		padding-left: 3.9rem;
 		cursor: pointer;
 		display: inline-flex;
 		align-items: center;
@@ -1525,10 +1521,10 @@ section[id] {
 
 .contact__lead {
 	font-size: 2.0rem;
-	margin-top: 5rem;
-	margin-bottom: 7.0rem;
-	// margin-left: 6.1rem;
-	padding-left: 14.1rem;
+	margin-top: 4rem;
+	margin-bottom: 7rem;
+	margin-left: 6rem;
+
 
 	@include sp {
 		// margin: 0 auto;
@@ -1567,6 +1563,8 @@ section[id] {
 
 // コンタクトアイテム個別
 .contact__item--name {
+	margin-top: 0.9rem;
+	
 	@include sp {
 		display: flex;
 
@@ -1574,7 +1572,7 @@ section[id] {
 }
 
 .contact__item--gender {
-	margin-top: 5.8rem;
+	margin-top: 4.2rem;
 
 	@include sp {
 		flex-direction: row;
@@ -1594,7 +1592,7 @@ section[id] {
 }
 
 .contact__item--type {
-	margin-top: 5.8rem;
+	margin-top: 5rem;
 
 	@include sp {
 		margin-top: 3rem;
@@ -1620,11 +1618,19 @@ section[id] {
 	flex-direction: column;
 	align-items: flex-start;
 	gap: 2rem;
+	width: auto;
 
 	@include sp {
 		margin-top: 3rem;
 	}
 }
+
+.title-label.check-title {
+	position: relative;
+		display: inline-flex;
+		align-items: center;
+}   
+
 
 // 個人情報個別
 .contact__item--privacy {
@@ -1709,6 +1715,7 @@ section[id] {
 	font-size: 2.0rem;
 	width: 16rem;
 	position: relative;
+	
 
 	@include sp {
 		text-align: left;
@@ -1716,9 +1723,6 @@ section[id] {
 	}
 }
 
-.contact__item--survey .contact__label {
-	width: auto;
-}
 
 
 // 問い合わせ種別
@@ -1728,7 +1732,7 @@ section[id] {
 	// max-width: 0;
 	flex: 1;
 	height: 5rem;
-	padding: 13px 40px 12px 20px;
+	padding: 6px 40px 12px 29px;
 	font-size: 1.8rem;
 	background-color: $font-color;
 	border-radius: 4px;
@@ -1739,16 +1743,17 @@ section[id] {
 }
 
 .contact__input {
-	width: 6.3rem;
+	width: 63rem;
 	height: 5rem;
 	font-size: 1.6rem;
 	background-color: $font-color;
-	flex: 1;
+	// flex: 1;
 	gap: 8rem;
 	line-height: 1.8;
 	padding-block: 12px;
 	padding-inline: 20px;
 	resize: none;
+	margin-left: 1rem;
 
 	@include sp {
 		width: 100%;
@@ -1776,8 +1781,6 @@ section[id] {
 		margin-top: 0;
 	}
 }
-
-
 
 .contact__privacy {}
 
