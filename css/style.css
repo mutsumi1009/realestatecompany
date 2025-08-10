@@ -944,14 +944,24 @@ section[id] {
 }
 
 .works__body {
-  margin-top: 1rem;
   text-align: left;
   margin-top: 1.9rem;
+}
+@media (max-width: 767px) {
+  .works__body {
+    margin-top: 1rem;
+  }
 }
 
 .works__caption {
   font-size: 1.6rem;
   line-height: 1.56;
+}
+@media (max-width: 767px) {
+  .works__caption {
+    line-height: 1.25;
+    margin-bottom: 2.2rem;
+  }
 }
 .works__caption .pc {
   display: block;
@@ -1562,8 +1572,9 @@ section[id] {
 }
 @media (max-width: 767px) {
   .contact__lead {
-    padding-inline: 3rem;
-    margin-block: 3.5rem 4rem;
+    padding-inline: 0rem;
+    margin-block: 0;
+    margin-left: 0;
   }
 }
 
@@ -1693,6 +1704,11 @@ section[id] {
   white-space: nowrap;
   line-height: 1.6;
 }
+@media (max-width: 767px) {
+  .title-label.check-title {
+    white-space: normal;
+  }
+}
 
 .contact__item--privacy {
   -webkit-box-orient: vertical;
@@ -1714,10 +1730,14 @@ section[id] {
 
 .scroll-container {
   width: 100%;
-  margin-top: 1rem;
   padding: 1rem;
   aspect-ratio: 800/300;
   background-color: #fff;
+}
+@media (max-width: 767px) {
+  .scroll-container {
+    aspect-ratio: 315/323;
+  }
 }
 
 .scroll-inner {
@@ -1727,14 +1747,21 @@ section[id] {
   padding: 4rem 6.1rem 4rem 3.9rem;
   overflow-y: scroll;
 }
+@media (max-width: 767px) {
+  .scroll-inner {
+    aspect-ratio: 253/263;
+    padding: 0;
+  }
+}
 
 .scroll-inner::-webkit-scrollbar-thumb {
-  background-color: #888; /* スクロールバーのつまみの色 */
-  border-radius: 4px; /* つまみの角を丸くする */
+  background-color: #888;
+  /* スクロールバーのつまみの色 */
 }
 
 .scroll-inner::-webkit-scrollbar-track {
-  background-color: #9B9B9B; /* スクロールバーの背景色 */
+  background-color: #9B9B9B;
+  /* スクロールバーの背景色 */
 }
 
 .privacy-content {
@@ -1854,6 +1881,12 @@ section[id] {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
+@media (max-width: 767px) {
+  .contact__select {
+    max-width: 31.5rem;
+    margin: 0;
+  }
+}
 
 .contact__input {
   width: 63rem;
@@ -1870,6 +1903,7 @@ section[id] {
 @media (max-width: 767px) {
   .contact__input {
     width: 100%;
+    margin: 0;
   }
 }
 
@@ -1926,10 +1960,10 @@ section[id] {
 
 .footer__line {
   width: 100%;
-  max-width: 737px;
+  max-width: 722px;
   height: 1px;
   background-color: #000;
-  margin: 19px auto;
+  margin: 2.5rem auto;
 }
 
 .footer__nav {
@@ -1953,6 +1987,7 @@ section[id] {
       flex-wrap: wrap;
   gap: 5rem;
   list-style: none;
+  padding: 0.3rem;
 }
 @media (max-width: 767px) {
   .footer__nav-list {
