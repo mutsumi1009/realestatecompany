@@ -1464,8 +1464,10 @@ section[id] {
 // アンケートチェックボックス
 .contact__checkbox-group {
 	display: grid;
-	font-size: 2.0rem;
-	gap: 1.3rem;
+	font-size: 1.8rem;
+	line-height: 1.38;
+	column-gap: 4rem;
+	row-gap: 1.5rem;
 	grid-template-columns: repeat(4, 1fr);
 
 	@include sp {
@@ -1477,7 +1479,7 @@ section[id] {
 
 	label {
 		position: relative;
-		padding-left: 30px;
+		padding-left: calc(20px + 2rem);
 		cursor: pointer;
 		display: inline-flex;
 		align-items: center;
@@ -1563,8 +1565,8 @@ section[id] {
 
 // コンタクトアイテム個別
 .contact__item--name {
-	margin-top: 0.9rem;
-	
+	// margin-top: 0.9rem;
+
 	@include sp {
 		display: flex;
 
@@ -1572,7 +1574,7 @@ section[id] {
 }
 
 .contact__item--gender {
-	margin-top: 4.2rem;
+	margin-top: 5.4rem;
 
 	@include sp {
 		flex-direction: row;
@@ -1584,7 +1586,7 @@ section[id] {
 
 .contact__item--email {
 	font-size: 2.0rem;
-	margin-top: 5.8rem;
+	margin-top: 3.9rem;
 
 	@include sp {
 		margin-top: 3rem;
@@ -1600,10 +1602,10 @@ section[id] {
 }
 
 .contact__item--message {
-	flex-direction: column;
-	align-items: flex-start;
+	 flex-direction: column;
+	 align-items: flex-start;
 	gap: 1rem;
-	margin-top: 5rem;
+	 margin-top: 4rem;
 
 	@include sp {
 		margin-top: 3rem;
@@ -1614,10 +1616,10 @@ section[id] {
 
 //アンケート
 .contact__item--survey {
-	margin-top: 5.8rem;
+	margin-top: 5rem;
 	flex-direction: column;
 	align-items: flex-start;
-	gap: 2rem;
+	gap: 1rem;
 	width: auto;
 
 	@include sp {
@@ -1626,18 +1628,20 @@ section[id] {
 }
 
 .title-label.check-title {
-	position: relative;
-		display: inline-flex;
-		align-items: center;
-}   
+	white-space: nowrap;
+	line-height: 1.6;
+	// position: relative;
+	// 	display: inline-flex;
+	// 	align-items: center;
+}
 
 
-// 個人情報個別
+// 個人情報
 .contact__item--privacy {
 	flex-direction: column;
 	align-items: flex-start;
 	gap: 1rem;
-	margin-top: 5.0rem;
+	 margin-top: 4rem;
 
 	@include sp {
 		margin-top: 3rem;
@@ -1645,18 +1649,45 @@ section[id] {
 	}
 }
 
+.scroll-container{
+	width: 100%;
+	 margin-top: 1rem;
+	padding: 1rem;
+	aspect-ratio:  800 / 300;
+	background-color: $font-color;
+	
+}
+
+.scroll-inner{
+	display: block;
+	width: 100%;
+	aspect-ratio:  700 / 220;
+	 padding: 4rem 6.1rem 4rem 3.9rem;
+	 overflow-y: scroll;
+}
+
+.scroll-inner::-webkit-scrollbar-thumb {
+	background-color: #888; /* スクロールバーのつまみの色 */
+	border-radius: 4px; /* つまみの角を丸くする */
+  }
+  
+  .scroll-inner::-webkit-scrollbar-track {
+	background-color: #9B9B9B; /* スクロールバーの背景色 */
+  }
+
+
 // 個人情報box
-.contact__privacy-box {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
+.privacy-content {
+	display: inline-block;
+	position: relative;
+	// flex-direction: column;
+	// align-items: flex-start;
 	font-size: 1.8rem;
-	// margin-top: 5.0rem;
+	
 	background-color: $font-color;
 	max-height: 300px;
 	padding: 4rem;
-	overflow-y: auto;
-	white-space: pre-line;
+	// white-space: pre-line;
 
 	@include sp {
 		font-size: 1.6rem;
@@ -1667,7 +1698,7 @@ section[id] {
 // 送信ボタン
 .contact__submit {
 	text-align: center;
-	margin-top: 8.8rem;
+	margin-top: 8rem;
 
 	@media screen and (max-width: 767px) {
 		width: 100%;
@@ -1712,10 +1743,11 @@ section[id] {
 	display: inline-block;
 	line-height: 1.65;
 	// white-space: nowrap; 
-	font-size: 2.0rem;
+	font-size: 2rem;
 	width: 16rem;
 	position: relative;
-	
+	margin-top: 1rem;
+	cursor: pointer; 
 
 	@include sp {
 		text-align: left;
@@ -1723,23 +1755,42 @@ section[id] {
 	}
 }
 
-
-
 // 問い合わせ種別
+/* ▼ラッパーと三角 */
+.select-container {
+	position: relative;
+	display: block;
+	cursor: pointer; 
+  }
+  
+  .select-container::after {
+	content: "";
+	position: absolute;
+	right: 2rem;               
+	top: 50%;
+	transform: translateY(-50%);
+	width: 0; 
+	height: 0;
+	border-left: 1rem solid transparent;   
+	border-right: 1rem solid transparent;
+	border-top: 1.2rem solid $main-color;   
+	pointer-events: none;                 
+  }
+
+
 .contact__select {
-	width: 100%;
-	//  max-width: 630px;
-	// max-width: 0;
+	width: 63rem;
 	flex: 1;
 	height: 5rem;
-	padding: 6px 40px 12px 29px;
+	padding: 13px 46.6px 12px 20px;
+	margin-left: 3rem;
 	font-size: 1.8rem;
 	background-color: $font-color;
 	border-radius: 4px;
 	appearance: none;
-	background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2218%22%20height%3D%2212%22%20viewBox%3D%220%200%2018%2012%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M9%2012L0.339745%200H17.6603L9%2012Z%22%20fill%3D%22%234D9600%22/%3E%3C/svg%3E");
-	background-repeat: no-repeat;
-	background-position: right 12px center;
+	-webkit-appearance: none;
+	cursor: pointer; 
+	box-sizing: border-box;
 }
 
 .contact__input {
