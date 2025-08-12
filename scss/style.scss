@@ -2019,7 +2019,6 @@ section[id] {
 
 	@include sp {
 		padding: 2.1rem 3rem;
-
 		line-height: 1.25;
 	}
 }
@@ -2044,8 +2043,10 @@ TOPへ戻るボタン
 	align-items: center;
 
 	@include sp {
-		right: 20px;
-		bottom: 60px;
+		right: 2rem;
+		bottom: 6rem;
+		width: 5rem;
+		height: 5rem;
 	}
 
 	// ホバー時のスタイル
@@ -2059,11 +2060,11 @@ TOPへ戻るボタン
 	}
 
 	img {
-		position: fixed;
+		position: static;
 		width: 2.315rem;
 		height: 1.57rem;
-		bottom: 8.5rem;
-		right: 8.3rem;
+		// bottom: 8.5rem;
+		// right: 8.3rem;
 
 		@include sp {
 			width: 2.5rem;
