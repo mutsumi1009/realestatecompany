@@ -1775,19 +1775,19 @@ section[id] {
 }
 @media (max-width: 767px) {
   .scroll-inner {
-    aspect-ratio: 253/263;
-    padding: 0;
+    aspect-ratio: 235/263;
+    padding: 3rem 5rem 3rem 3rem;
   }
 }
 
+/* スクロールバーのつまみの色 */
 .scroll-inner::-webkit-scrollbar-thumb {
   background-color: #888;
-  /* スクロールバーのつまみの色 */
 }
 
+/* スクロールバーの背景色 */
 .scroll-inner::-webkit-scrollbar-track {
   background-color: #9B9B9B;
-  /* スクロールバーの背景色 */
 }
 
 .privacy-content {
@@ -1802,7 +1802,29 @@ section[id] {
   .privacy-content {
     font-size: 1.6rem;
     line-height: 2.0625;
+    padding: 2rem;
   }
+}
+
+/* プライバシー欄の箇条書きだけに適用 */
+.privacy-content ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.privacy-content li {
+  position: relative;
+  padding-left: 1.2em;
+}
+
+.privacy-content li::before {
+  content: "・";
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  font-size: 1em;
+  font-weight: 700;
 }
 
 .contact__submit {
