@@ -2145,8 +2145,10 @@ TOPへ戻るボタン
 }
 @media (max-width: 767px) {
   .page-top-btn {
-    right: 20px;
-    bottom: 60px;
+    right: 2rem;
+    bottom: 6rem;
+    width: 5rem;
+    height: 5rem;
   }
 }
 .page-top-btn:hover {
@@ -2161,11 +2163,9 @@ TOPへ戻るボタン
           transform: translateY(-0.5rem);
 }
 .page-top-btn img {
-  position: fixed;
+  position: static;
   width: 2.315rem;
   height: 1.57rem;
-  bottom: 8.5rem;
-  right: 8.3rem;
 }
 @media (max-width: 767px) {
   .page-top-btn img {
