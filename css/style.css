@@ -301,6 +301,11 @@ section[id] {
   display: flex;
   padding-left: 8rem;
 }
+@media (max-width: 767px) {
+  .header__inner {
+    padding-left: 0;
+  }
+}
 
 .header__logo-text {
   font-style: normal;
@@ -1906,6 +1911,7 @@ section[id] {
   .contact__select {
     max-width: 31.5rem;
     margin: 0;
+    font-size: 1.6rem;
   }
 }
 
@@ -1973,10 +1979,13 @@ section[id] {
   text-align: center;
   color: #000;
   line-height: 1.65;
+  display: inline-block;
+  letter-spacing: 0.039em;
 }
 @media (max-width: 767px) {
   .logo__text {
     padding: 0;
+    margin-top: 0.5rem;
   }
 }
 
@@ -1985,7 +1994,7 @@ section[id] {
   max-width: 722px;
   height: 1px;
   background-color: #000;
-  margin: 2.5rem auto;
+  margin: 2rem auto;
 }
 
 .footer__nav {
@@ -2013,7 +2022,16 @@ section[id] {
 }
 @media (max-width: 767px) {
   .footer__nav-list {
-    gap: 2rem 3rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-column-gap: 3rem;
+       -moz-column-gap: 3rem;
+            column-gap: 3rem;
+    row-gap: 1.2rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
   }
 }
 
@@ -2096,6 +2114,7 @@ section[id] {
 @media (max-width: 767px) {
   .footer__copyright {
     padding: 2.1rem 3rem;
+    line-height: 1.25;
   }
 }
 
@@ -2142,8 +2161,11 @@ TOPへ戻るボタン
           transform: translateY(-0.5rem);
 }
 .page-top-btn img {
+  position: fixed;
   width: 2.315rem;
   height: 1.57rem;
+  bottom: 8.5rem;
+  right: 8.3rem;
 }
 @media (max-width: 767px) {
   .page-top-btn img {
