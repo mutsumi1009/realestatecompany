@@ -1796,13 +1796,11 @@ section[id] {
   font-size: 1.8rem;
   background-color: #fff;
   max-height: 300px;
-  padding: 4rem;
 }
 @media (max-width: 767px) {
   .privacy-content {
     font-size: 1.6rem;
     line-height: 2.0625;
-    padding: 2rem;
   }
 }
 
@@ -1831,7 +1829,7 @@ section[id] {
   text-align: center;
   margin-top: 8rem;
 }
-@media screen and (max-width: 767px) {
+@media (max-width: 767px) {
   .contact__submit {
     width: 100%;
     margin-inline: auto;
