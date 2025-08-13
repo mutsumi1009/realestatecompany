@@ -1420,7 +1420,7 @@ section[id] {
 
 
 	@include sp {
-		padding-block: 5rem 4.2rem;
+		padding-block: 5rem;
 	}
 }
 
@@ -1568,7 +1568,6 @@ section[id] {
 	margin: 0 auto;
 }
 
-
 .contact__items {
 	font-size: 2.0rem;
 	display: flex;
@@ -1714,14 +1713,11 @@ section[id] {
 /* スクロールバーのつまみの色 */
 .scroll-inner::-webkit-scrollbar-thumb {
 	background-color: #888;
-	
-
 }
 
 /* スクロールバーの背景色 */
 .scroll-inner::-webkit-scrollbar-track {
 	background-color: #9B9B9B;
-	
 }
 
 
@@ -1773,7 +1769,7 @@ section[id] {
 	@media screen and (max-width: 767px) {
 		width: 100%;
 		margin-inline: auto;
-		margin-top: 50px;
+		margin-top: 2.2rem;
 	}
 }
 
@@ -1944,7 +1940,7 @@ section[id] {
 
 	@include sp {
 		padding: 0;
-		margin-top: 0.5rem;
+		// margin-top: 0.5rem;
 	}
 }
 
