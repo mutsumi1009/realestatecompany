@@ -1728,13 +1728,13 @@ section[id] {
 	font-size: 1.8rem;
 	background-color: $font-color;
 	max-height: 300px;
-	padding: 4rem;
+	// padding: 4rem;
 	
 
 	@include sp {
 		font-size: 1.6rem;
 		line-height: 2.0625;
-		padding: 2rem;
+		// padding: 2rem;
 	}
 }
 
@@ -1766,7 +1766,7 @@ section[id] {
 	text-align: center;
 	margin-top: 8rem;
 
-	@media screen and (max-width: 767px) {
+	@include sp {
 		width: 100%;
 		margin-inline: auto;
 		margin-top: 2.2rem;
