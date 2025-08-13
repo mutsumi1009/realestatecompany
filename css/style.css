@@ -1439,7 +1439,7 @@ section[id] {
 }
 @media (max-width: 767px) {
   .contact {
-    padding-block: 5rem 4.2rem;
+    padding-block: 5rem;
   }
 }
 
@@ -1835,7 +1835,7 @@ section[id] {
   .contact__submit {
     width: 100%;
     margin-inline: auto;
-    margin-top: 50px;
+    margin-top: 2.2rem;
   }
 }
 
@@ -2007,7 +2007,6 @@ section[id] {
 @media (max-width: 767px) {
   .logo__text {
     padding: 0;
-    margin-top: 0.5rem;
   }
 }
 
