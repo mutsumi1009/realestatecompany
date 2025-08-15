@@ -266,7 +266,7 @@ section[id] {
 =============================================== */
 .header {
   width: 100%;
-  height: 9rem;
+  height: 8rem;
   position: fixed;
   top: 0;
   z-index: 999;
@@ -278,7 +278,6 @@ section[id] {
 @media (max-width: 767px) {
   .header {
     height: 5rem;
-    padding-top: 0.8rem;
     padding-left: 2rem;
     padding-right: 2rem;
     z-index: 1000;
@@ -287,6 +286,9 @@ section[id] {
 }
 
 .header__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -296,10 +298,8 @@ section[id] {
   height: 100%;
   max-width: 108rem;
   margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  padding-left: 8rem;
+  padding-inline: 8rem;
 }
 @media (max-width: 767px) {
   .header__inner {
@@ -307,17 +307,42 @@ section[id] {
   }
 }
 
-.header__logo-text {
+.header__logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+.header__site-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  white-space: nowrap;
+}
+.header__logo-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
   font-style: normal;
   font-weight: 500;
   color: #fff;
   font-size: 2rem;
+  line-height: 1.65;
   font-weight: 500;
   -webkit-transition: opacity 0.4s, color 0.4s;
   transition: opacity 0.4s, color 0.4s;
-  margin-top: 1rem;
+  margin-top: 0rem;
 }
-.header__logo-text:hover {
+.header__logo-link:hover {
   opacity: 0.7;
 }
 .header__nav {
@@ -337,7 +362,6 @@ section[id] {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-left: 2.4rem;
 }
 @media (max-width: 767px) {
   .header__nav-list {
@@ -582,6 +606,15 @@ section[id] {
     top: 7px;
     left: 0;
   }
+}
+
+.fv__catch {
+  position: absolute;
+  top: 49.39%;
+  left: 50.5%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 .fv__copy.pc {
@@ -1756,46 +1789,48 @@ section[id] {
 
 .scroll-container {
   width: 100%;
-  padding: 1rem;
-  aspect-ratio: 800/300;
+  height: 300px;
+  padding: 0;
   background-color: #fff;
-}
-@media (max-width: 767px) {
-  .scroll-container {
-    aspect-ratio: 315/323;
-  }
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  --simplebar-scrollbar-thickness: 10px;
+  --simplebar-track-thickness: 10px;
+  min-height: 30px;
 }
 
 .scroll-inner {
   display: block;
   width: 100%;
-  aspect-ratio: 700/220;
-  padding: 4rem 6.1rem 4rem 3.9rem;
-  overflow-y: scroll;
+  padding: 4rem 6rem 4rem 4rem;
 }
 @media (max-width: 767px) {
   .scroll-inner {
-    aspect-ratio: 235/263;
     padding: 3rem 5rem 3rem 3rem;
   }
 }
 
-/* スクロールバーのつまみの色 */
-.scroll-inner::-webkit-scrollbar-thumb {
-  background-color: #888;
+/* SimpleBarの見た目（Figmaカラー） */
+.simplebar-track.simplebar-vertical {
+  background: #E3E3E3;
+  border-radius: 0;
+  top: 10px;
+  bottom: 10px;
+  right: 10px;
 }
 
-/* スクロールバーの背景色 */
-.scroll-inner::-webkit-scrollbar-track {
-  background-color: #9B9B9B;
+.simplebar-scrollbar::before {
+  background: #9B9B9B;
+  border-radius: 0;
 }
 
+/* 本文 */
 .privacy-content {
-  display: inline-block;
+  display: block;
   position: relative;
   font-size: 1.8rem;
+  line-height: 2;
   background-color: #fff;
-  max-height: 300px;
 }
 @media (max-width: 767px) {
   .privacy-content {
@@ -1804,7 +1839,7 @@ section[id] {
   }
 }
 
-/* プライバシー欄の箇条書きだけに適用 */
+/* プライバシー欄の箇条書き */
 .privacy-content ul {
   list-style: none;
   margin: 0;
@@ -2183,15 +2218,7 @@ TOPへ戻るボタン
 }
 .page-top-btn img {
   position: static;
-  width: 2.315rem;
-  height: 1.57rem;
 }
-@media (max-width: 767px) {
-  .page-top-btn img {
-    width: 2.5rem;
-  }
-}
-
 .is-show {
   opacity: 1;
   visibility: visible;
