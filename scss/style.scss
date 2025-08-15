@@ -213,7 +213,7 @@ section[id] {
 
 .header {
 	width: 100%;
-	height: 9rem;
+	height: 8rem;
 	position: fixed;
 	// background-color: transparent;
 	// padding-left: calc(80 / 1080 * 100vw);
@@ -226,7 +226,7 @@ section[id] {
 
 	@include sp {
 		height: 5rem;
-		padding-top: 0.8rem;
+		// padding-top: 0.8rem;
 		padding-left: 2.0rem;
 		padding-right: 2.0rem;
 		z-index: 1000;
@@ -235,6 +235,7 @@ section[id] {
 }
 
 .header__inner {
+	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	height: 100%;
@@ -242,33 +243,44 @@ section[id] {
 	margin: 0 auto;
 	display: flex;
 	// padding-left: calc(80 / 1080 * 100%);
-	padding-left: 8rem;
+	padding-inline: 8rem;
+
 
 	@include sp {
-	  padding-left: 0;
+		padding-left: 0;
 	}
+}
+
+.header__logo {
+    display: flex;
+    align-items: center;
+    height: 100%; 
+}
+
+
+.header__site-title {
+	display: flex;
+	height: 100%;
+	white-space: nowrap;
+
+	@include sp {}
+
 }
 
 
 
-// .header__site-title {
-// 	font-size: 2.0rem;
-// 	font-weight: 500;
-// 	color: $font-color;
-
-// 	@include sp {}
-// }
-
-
-.header__logo-text {
+.header__logo-link {
+	display: flex;
+	align-items: center;
+	height: 100%;
 	font-style: normal;
 	font-weight: $font-weight;
 	color: $font-color;
 	font-size: 2.0rem;
-	// line-height: 1.65;
+	line-height: 1.65;
 	font-weight: 500;
 	transition: opacity 0.4s, color 0.4s;
-	margin-top: 1rem;
+	margin-top: 0rem;
 
 	&:hover {
 		opacity: 0.7;
@@ -277,22 +289,19 @@ section[id] {
 	@include sp {}
 }
 
+
 .header__nav {
 	height: 100%;
 }
 
-
-
 .header__nav-list {
 	display: flex;
 	column-gap: 3.1rem;
-	// line-height: 1.833;
 	height: 100%;
 	list-style: none;
-	//  padding: 0.2rem 0.2rem 0.3rem 0.2rem;
 	margin: 0;
 	align-items: center;
-	margin-left: 2.4rem;
+	// margin-left: 11.1rem;
 
 	@include sp {
 		margin-left: 0;
@@ -524,7 +533,16 @@ section[id] {
 		// padding-top: 21.9rem;
 		top: 7px;
 		left: 0;
+
 	}
+}
+
+.fv__catch {
+	position: absolute;
+	top: 49.39%;
+	left: 50.5%;
+	transform: translate(-50%, -50%);
+	text-align: center;
 }
 
 .fv__copy.pc {
@@ -1685,80 +1703,74 @@ section[id] {
 
 .scroll-container {
 	width: 100%;
-	//  margin-top: 1rem;
-	padding: 1rem;
-	aspect-ratio: 800 / 300;
+	height: 300px;
+	padding: 0;
 	background-color: $font-color;
-
-	@include sp {
-		aspect-ratio: 315 / 323;
-	}
-
+	box-sizing: border-box;
+	--simplebar-scrollbar-thickness: 10px;
+	--simplebar-track-thickness: 10px;
+	min-height: 30px
 }
 
 .scroll-inner {
 	display: block;
 	width: 100%;
-	aspect-ratio: 700 / 220;
-	padding: 4rem 6.1rem 4rem 3.9rem;
-	overflow-y: scroll;
+	padding: 4rem 6rem 4rem 4rem;
 
 	@include sp {
-		aspect-ratio: 235 / 263;
 		padding: 3rem 5rem 3rem 3rem;
-
 	}
 }
 
-/* スクロールバーのつまみの色 */
-.scroll-inner::-webkit-scrollbar-thumb {
-	background-color: #888;
+/* SimpleBarの見た目（Figmaカラー） */
+.simplebar-track.simplebar-vertical {
+	background: #E3E3E3;
+	border-radius: 0;
+	top: 10px;
+	bottom: 10px;
+	right: 10px;
+
 }
 
-/* スクロールバーの背景色 */
-.scroll-inner::-webkit-scrollbar-track {
-	background-color: #9B9B9B;
+.simplebar-scrollbar::before {
+	background: #9B9B9B;
+	border-radius: 0;
 }
 
-
-// 個人情報box
+/* 本文 */
 .privacy-content {
-	display: inline-block;
+	display: block;
 	position: relative;
 	font-size: 1.8rem;
+	line-height: 2;
 	background-color: $font-color;
-	max-height: 300px;
-	// padding: 4rem;
-	
 
 	@include sp {
 		font-size: 1.6rem;
 		line-height: 2.0625;
-		// padding: 2rem;
 	}
 }
 
-/* プライバシー欄の箇条書きだけに適用 */
+/* プライバシー欄の箇条書き */
 .privacy-content ul {
-	list-style: none;         
+	list-style: none;
 	margin: 0;
 	padding: 0;
-  }
-  
-  .privacy-content li {
+}
+
+.privacy-content li {
 	position: relative;
-	padding-left: 1.2em;          
-  }
-  
-  .privacy-content li::before {
-	content: "・";             
+	padding-left: 1.2em;
+}
+
+.privacy-content li::before {
+	content: "・";
 	position: absolute;
 	left: 0;
-	top: 0.1em;               
-	font-size: 1em;            
-	font-weight: 700;          
-  }
-  
+	top: 0.1em;
+	font-size: 1em;
+	font-weight: 700;
+}
 
 
 // 送信ボタン
@@ -1951,7 +1963,7 @@ section[id] {
 	background-color: #000;
 	margin: 2rem auto;
 
-	
+
 }
 
 .footer__nav {
@@ -1972,11 +1984,11 @@ section[id] {
 	padding: 0.3rem;
 
 	@include sp {
-	
+
 		align-items: center;
-		 column-gap: 3rem;
-		 row-gap: 1.2rem;         
-		padding: 0;              
+		column-gap: 3rem;
+		row-gap: 1.2rem;
+		padding: 0;
 		margin: 0;
 		list-style: none;
 	}
@@ -2080,13 +2092,13 @@ TOPへ戻るボタン
 
 	img {
 		position: static;
-		width: 2.315rem;
-		height: 1.57rem;
+		// width: 2.315rem;
+		// height: 1.57rem;
 		// bottom: 8.5rem;
 		// right: 8.3rem;
 
 		@include sp {
-			width: 2.5rem;
+			// width: 2.5rem;
 		}
 	}
 }

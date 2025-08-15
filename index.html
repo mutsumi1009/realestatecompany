@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
     <!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.min.css" />
     <link rel="stylesheet" href="./css/style.css">
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
 </head>
@@ -24,32 +25,11 @@
             <div class="header__inner">
                 <div class="header__logo">
                     <h1 class="header__site-title">
-                        <a href="#fv">
-                            <span class="header__logo-text">株式会社北村建設興業</span>
-                        </a>
+                        <a href="#fv" class="header__logo-link">株式会社北村建設興業</a>
                     </h1>
                 </div>
-
                 <nav class="header__nav pc">
                     <ul class="header__nav-list">
-                        <li><a href="#about">ABOUT</a></li>
-                        <li><a href="#service">SERVICE</a></li>
-                        <li><a href="#works">WORKS</a></li>
-                        <li> <a href="#news">NEWS</a></li>
-                        <li><a href="#company">COMPANY</a></li>
-                        <li><a href="#contact">CONTACT</a></li>
-                    </ul>
-                </nav>
-
-                <!-- hamburger -->
-                <div id="hamburger-wrapper">
-                    <button id="hamburger-block" class="hamburger hamburger-trigger">
-                        <span class="hamburger-line"></span>
-                    </button>
-                    <div id="hamburger-bg" class="hamburger-bg hamburger-trigger"></div>
-                </div>
-                <nav class="header__nav-sp" id="js-nav">
-                    <ul class="header__nav-sp-list">
                         <li><a href="#about">ABOUT</a></li>
                         <li><a href="#service">SERVICE</a></li>
                         <li><a href="#works">WORKS</a></li>
@@ -59,8 +39,25 @@
                     </ul>
                 </nav>
             </div>
+            <div id="hamburger-wrapper">
+                <button id="hamburger-block" class="hamburger hamburger-trigger">
+                    <span class="hamburger-line"></span>
+                </button>
+                <div id="hamburger-bg" class="hamburger-bg hamburger-trigger"></div>
+            </div>
+            <nav class="header__nav-sp" id="js-nav">
+                <ul class="header__nav-sp-list">
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#service">SERVICE</a></li>
+                    <li><a href="#works">WORKS</a></li>
+                    <li><a href="#news">NEWS</a></li>
+                    <li><a href="#company">COMPANY</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </nav>
         </header>
     </div>
+
 
     <main class="main">
         <!-- fv -->
@@ -499,8 +496,8 @@
                             <!-- 個人情報 -->
                             <div class="contact__item contact__item--privacy">
                                 <label class="contact__label">個人情報保護方針</label>
-
-                                <div class="scroll-container">
+                                <div class="scroll-container" data-simplebar data-simplebar-auto-hide="false"
+                                    aria-label="個人情報保護方針">
                                     <div class="scroll-inner">
                                         <div class="privacy-content">
                                             <h3>個人情報取扱事業者の氏名又は名称（法24条1項1号）</h3>
@@ -618,6 +615,7 @@
     <!-- コンテンツ -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 
