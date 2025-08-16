@@ -262,6 +262,36 @@ section[id] {
   margin-top: 0.5rem;
 }
 /* ===============================================
+# Scroll fade-in (共通)
+=============================================== */
+.js-fade {
+  --base-t: var(--base-t, none);
+  opacity: 0;
+  -webkit-transform: var(--base-t) translate3d(0, 16px, 0);
+          transform: var(--base-t) translate3d(0, 16px, 0);
+  -webkit-transition: opacity 0.7s ease, -webkit-transform 0.7s ease;
+  transition: opacity 0.7s ease, -webkit-transform 0.7s ease;
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition: opacity 0.7s ease, transform 0.7s ease, -webkit-transform 0.7s ease;
+}
+
+.js-fade.is-show {
+  opacity: 1;
+  -webkit-transform: var(--base-t) translate3d(0, 0, 0);
+          transform: var(--base-t) translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js-fade,
+  .js-fade.is-show {
+    -webkit-transition: none;
+    transition: none;
+    -webkit-transform: none;
+            transform: none;
+    opacity: 1;
+  }
+}
+/* ===============================================
 # header
 =============================================== */
 .header {
@@ -616,6 +646,11 @@ section[id] {
           transform: translate(-50%, -50%);
   text-align: center;
 }
+@media (max-width: 767px) {
+  .fv__catch {
+    top: 50.39%;
+  }
+}
 
 .fv__copy.pc {
   font-size: 4rem;
@@ -653,8 +688,8 @@ section[id] {
     line-height: 2;
     width: auto;
     height: auto;
-    padding: 0 5.5rem;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.3em;
+    white-space: nowrap;
   }
 }
 
@@ -675,8 +710,8 @@ section[id] {
 
 .about__content {
   position: absolute;
-  top: 52%;
-  left: 37%;
+  top: 50%;
+  left: 36.6%;
   letter-spacing: 0.7em;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -715,10 +750,10 @@ section[id] {
 }
 
 .about__title {
-  font-weight: 500;
   font-size: 3rem;
   line-height: 1.18;
   margin-left: 6rem;
+  letter-spacing: 0.18em;
 }
 @media (max-width: 767px) {
   .about__title {
@@ -739,11 +774,7 @@ section[id] {
 .about__text {
   font-size: 1.8rem;
   line-height: 2.466;
-  white-space: nowrap;
-  -webkit-writing-mode: vertical-rl;
-      -ms-writing-mode: tb-rl;
-          writing-mode: vertical-rl;
-  text-orientation: mixed;
+  letter-spacing: 0.4em;
 }
 @media (max-width: 767px) {
   .about__text {
