@@ -207,6 +207,7 @@ section[id] {
 // 	}
 // }
 
+
 /* ===============================================
 # header
 =============================================== */
@@ -543,6 +544,10 @@ section[id] {
 	left: 50.5%;
 	transform: translate(-50%, -50%);
 	text-align: center;
+
+	@include sp {
+	  top: 50.39%;
+	}
 }
 
 .fv__copy.pc {
@@ -578,8 +583,9 @@ section[id] {
 		line-height: 2;
 		width: auto;
 		height: auto;
-		padding: 0 5.5rem;
-		letter-spacing: 0.15em;
+		// padding: 0 5.5rem;
+		letter-spacing: 0.3em;
+		white-space: nowrap;
 	}
 }
 
@@ -603,8 +609,10 @@ section[id] {
 
 .about__content {
 	position: absolute;
-	top: 52%;
-	left: 37%;
+	top: 50%;
+	left: 36.6%;
+	transform: translate(-50%, -50%);
+    --base-t: translate(-50%, -50%); 
 	letter-spacing: 0.7em;
 	transform: translate(-50%, -50%);
 	writing-mode: vertical-rl;
@@ -635,11 +643,14 @@ section[id] {
 	}
 }
 
+
+
+
 .about__title {
-	font-weight: $font-weight;
 	font-size: 3.0rem;
 	line-height: 1.18;
 	margin-left: 6rem;
+	letter-spacing: 0.18em;
 	//  margin-bottom: 2rem;
 
 	@include sp {
@@ -664,10 +675,11 @@ section[id] {
 .about__text {
 	font-size: 1.8rem;
 	line-height: 2.466;
+	letter-spacing: 0.4em;
 	// max-height: 27.5rem;
-	white-space: nowrap;
-	writing-mode: vertical-rl;
-	text-orientation: mixed;
+	// white-space: nowrap;
+	// writing-mode: vertical-rl;
+	// text-orientation: mixed;
 
 	@include sp {
 		font-size: 1.6rem;
