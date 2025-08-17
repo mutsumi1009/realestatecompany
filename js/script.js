@@ -84,8 +84,12 @@ $(function () {
 }); 
 
 AOS.init({
-  once: true,        // 1回だけ再生
-  duration: 700,     // アニメ時間
-  offset: 120,       // 画面に入ってからどれだけで発火
-  easing: 'ease-out' // 好みで
+  once: true,
+  duration: 900,              
+  offset: 150,                 
+  easing: 'ease-out',
+  startEvent: 'load',         // 画像レイアウト確定後に初期化
+  disable: () => window.matchMedia('(prefers-reduced-motion: reduce)').matches
 });
+// 画像やスライダーの影響で位置がズレるのを再計算
+window.addEventListener('load', () => AOS.refresh());
