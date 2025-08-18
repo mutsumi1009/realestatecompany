@@ -681,23 +681,13 @@ section[id] {
 .about__content {
   position: absolute;
   top: 50%;
-  left: 36.6%;
+  left: 36%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  --base-t: translate(-50%, -50%);
   letter-spacing: 0.7em;
-  transform: translate(-50%, -50%);
   -webkit-writing-mode: vertical-rl;
       -ms-writing-mode: tb-rl;
           writing-mode: vertical-rl;
-  text-orientation: mixed;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   white-space: nowrap;
 }
 @media (max-width: 767px) {
@@ -724,7 +714,7 @@ section[id] {
 .about__title {
   font-size: 3rem;
   line-height: 1.18;
-  margin-left: 6rem;
+  margin-left: 4.2rem;
   letter-spacing: 0.18em;
 }
 @media (max-width: 767px) {
@@ -745,7 +735,7 @@ section[id] {
 
 .about__text {
   font-size: 1.8rem;
-  line-height: 2.466;
+  line-height: 2.66;
   letter-spacing: 0.4em;
 }
 @media (max-width: 767px) {
@@ -1056,7 +1046,7 @@ section[id] {
   width: 50%;
   max-width: 800px;
   height: auto;
-  padding: 20px;
+  padding: 15px 15px 6px 15px;
   position: relative;
   z-index: 2;
   -webkit-transform: scale(0.8);
@@ -1090,10 +1080,10 @@ section[id] {
 .modal__close {
   position: absolute;
   top: 10px;
-  right: 10px;
-  width: 25px;
-  height: 25px;
-  line-height: 25px;
+  right: 2px;
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
   cursor: pointer;
   text-align: center;
   font-size: 2rem;
@@ -1112,7 +1102,7 @@ section[id] {
   }
 }
 .modal__content p {
-  margin-top: 15px;
+  margin-top: 9px;
   line-height: 1.5625;
   font-size: 1.6rem;
 }
@@ -1561,7 +1551,7 @@ section[id] {
 }
 .contact__checkbox-group label {
   position: relative;
-  padding-left: calc(20px + 2rem);
+  padding-left: calc(16px + 2rem);
   cursor: pointer;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
