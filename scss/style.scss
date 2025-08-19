@@ -155,7 +155,8 @@ section[id] {
 		font-size: 2.0rem;
 		letter-spacing: 0.3em;
 		line-height: 1.65;
-		margin-top: 0.5rem;
+		margin-top: 0.6rem;
+		margin-left: 0.7rem;
 
 		@include sp {}
 	}
@@ -190,8 +191,12 @@ section[id] {
 	height: 100%;
 	max-width: 108rem;
 	margin: 0 auto;
-	display: flex;
 	padding-inline: 8rem;
+
+
+	@media screen and (max-width: 1024px) {
+		padding-inline: 2rem;
+	}
 
 	@include sp {
 		padding-left: 0;
@@ -199,9 +204,9 @@ section[id] {
 }
 
 .header__logo {
-    display: flex;
-    align-items: center;
-    height: 100%; 
+	display: flex;
+	align-items: center;
+	height: 100%;
 }
 
 
@@ -489,7 +494,7 @@ section[id] {
 	text-align: center;
 
 	@include sp {
-	  top: 50.39%;
+		top: 50.39%;
 	}
 }
 
@@ -558,7 +563,7 @@ section[id] {
 	letter-spacing: 0.7em;
 	writing-mode: vertical-rl;
 	white-space: nowrap;
-	
+
 	@include sp {
 		top: 50%;
 		left: 50%;
@@ -592,7 +597,7 @@ section[id] {
 	font-size: 1.8rem;
 	line-height: 2.66;
 	letter-spacing: 0.4em;
-	
+
 	@include sp {
 		font-size: 1.6rem;
 		line-height: 1.6;
@@ -615,7 +620,7 @@ section[id] {
 }
 
 .service__items {
-	margin-top: 6.8rem;
+	margin-top: 6.5rem;
 	display: flex;
 	flex-direction: column;
 	row-gap: 8rem;
@@ -653,7 +658,7 @@ section[id] {
 	width: calc(600 / 920 * 100%);
 	z-index: 2;
 	position: relative;
-	padding-bottom: 5.1rem;
+	padding-bottom: 5.2rem;
 
 	@include sp {
 		margin: 0;
@@ -783,7 +788,7 @@ section[id] {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	gap: 40px;
-	margin-top: 6.8rem;
+	margin-top: 6.7rem;
 
 	@include sp {
 		display: flex;
@@ -966,7 +971,7 @@ section[id] {
 	justify-content: space-between;
 	gap: 6rem;
 	align-items: stretch;
-	margin-top: 6.9rem;
+	margin-top: 6.7rem;
 
 	@include sp {
 		grid-template-columns: 1fr;
@@ -975,7 +980,6 @@ section[id] {
 		gap: 4.7rem;
 	}
 }
-
 
 .news__box {
 	justify-content: center;
@@ -1012,8 +1016,7 @@ section[id] {
 	margin: 0;
 	padding-top: 1rem;
 
-	@include sp {
-	}
+	@include sp {}
 
 }
 
@@ -1029,7 +1032,7 @@ section[id] {
 }
 
 .news__item:nth-of-type(2) {
-	padding-block: 0;
+	padding-block: 0.2rem;
 }
 
 .news__item:nth-of-type(3) {
@@ -1094,7 +1097,7 @@ section[id] {
 .news__more {
 	text-align: right;
 	margin-top: 0.5rem;
-	margin-bottom: 2.4rem;
+	margin-bottom: 1.9rem;
 
 	@include sp {
 		margin-top: auto;
@@ -1141,8 +1144,8 @@ section[id] {
 .company {
 	background-color: #f5f5f5;
 	font-size: 1.6rem;
-	padding-top: 8rem;
-	padding-bottom: 2rem;
+	padding-block: 8rem;
+	// padding-bottom: 1.8rem;
 
 
 	@include sp {
@@ -1155,7 +1158,7 @@ section[id] {
 	align-items: flex-end;
 	position: relative;
 	margin-top: 6.8rem;
-	padding-bottom: 6.2rem;
+	// padding-bottom: 6.2rem;
 
 	@include sp {
 		flex-direction: column;
@@ -1201,8 +1204,6 @@ section[id] {
 	width: calc(500 / 920 * 100%);
 	margin-left: calc(-180 / 920 * 100%);
 	margin-top: 20rem;
-	// margin-bottom: calc(-42 / 920 * 100%);
-	// position: relative;
 	z-index: 2;
 	padding: 52px 5px 42px calc(220 / 920 * 100%);
 
@@ -1233,7 +1234,6 @@ section[id] {
 	font-size: 1.6rem;
 	font-weight: 600;
 	font-weight: 1.56;
-	// padding-bottom: 1.2rem;
 
 	@include sp {
 		line-height: 1.56;
@@ -1245,7 +1245,7 @@ section[id] {
 .access__tel {
 	font-size: 1.6rem;
 	font-weight: 600;
-	// padding-bottom: 1.9rem;
+	margin-top: 0.9rem;
 
 	@include sp {}
 }
@@ -1270,11 +1270,9 @@ section[id] {
 .access__email {
 	font-size: 1.6rem;
 	font-weight: 600;
-	margin-top: 1.5rem;
+	margin-top: 1.3rem;
 
 }
-
-
 
 /* ===============================================
 # CONTACT
@@ -1301,7 +1299,7 @@ section[id] {
 	display: flex;
 	gap: 7.4rem;
 	padding-left: 1.4rem;
-	padding-top: 0.3rem;
+	padding-top: 1.4rem;
 
 	@include sp {
 		flex-wrap: nowrap;
@@ -1385,6 +1383,8 @@ section[id] {
 
 		span {
 			position: absolute;
+			font-size: 1.8rem;
+			line-height: 1.388;
 			top: 50%;
 			left: 0;
 			transform: translateY(-50%);
@@ -1418,7 +1418,7 @@ section[id] {
 
 .contact__lead {
 	font-size: 2.0rem;
-	margin-top: 4rem;
+	margin-top: 3.7rem;
 	margin-bottom: 7rem;
 	margin-left: 6rem;
 
@@ -1469,7 +1469,7 @@ section[id] {
 
 // コンタクトアイテム個別
 .contact__item--gender {
-	margin-top: 5.4rem;
+	margin-top: 4.2rem;
 
 	@include sp {
 		flex-direction: row;
@@ -1482,7 +1482,7 @@ section[id] {
 // コンタクトアイテム個別
 .contact__item--email {
 	font-size: 2.0rem;
-	margin-top: 3.9rem;
+	margin-top: 4.8rem;
 
 	@include sp {
 		margin-top: 2rem;
@@ -1591,7 +1591,7 @@ section[id] {
 	display: block;
 	position: relative;
 	font-size: 1.8rem;
-	line-height: 2;
+	line-height: 1.72222;
 	background-color: $font-color;
 
 	@include sp {

@@ -259,7 +259,8 @@ section[id] {
   font-size: 2rem;
   letter-spacing: 0.3em;
   line-height: 1.65;
-  margin-top: 0.5rem;
+  margin-top: 0.6rem;
+  margin-left: 0.7rem;
 }
 /* ===============================================
 # header
@@ -298,8 +299,12 @@ section[id] {
   height: 100%;
   max-width: 108rem;
   margin: 0 auto;
-  display: flex;
   padding-inline: 8rem;
+}
+@media screen and (max-width: 1024px) {
+  .header__inner {
+    padding-inline: 2rem;
+  }
 }
 @media (max-width: 767px) {
   .header__inner {
@@ -761,7 +766,7 @@ section[id] {
 }
 
 .service__items {
-  margin-top: 6.8rem;
+  margin-top: 6.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -814,7 +819,7 @@ section[id] {
   width: 65.2173913043%;
   z-index: 2;
   position: relative;
-  padding-bottom: 5.1rem;
+  padding-bottom: 5.2rem;
 }
 @media (max-width: 767px) {
   .service__img-wrapper {
@@ -928,7 +933,7 @@ section[id] {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 40px;
-  margin-top: 6.8rem;
+  margin-top: 6.7rem;
 }
 @media (max-width: 767px) {
   .works__contents {
@@ -1136,7 +1141,7 @@ section[id] {
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
-  margin-top: 6.9rem;
+  margin-top: 6.7rem;
 }
 @media (max-width: 767px) {
   .news__container {
@@ -1208,7 +1213,7 @@ section[id] {
 }
 
 .news__item:nth-of-type(2) {
-  padding-block: 0;
+  padding-block: 0.2rem;
 }
 
 .news__item:nth-of-type(3) {
@@ -1280,7 +1285,7 @@ section[id] {
 .news__more {
   text-align: right;
   margin-top: 0.5rem;
-  margin-bottom: 2.4rem;
+  margin-bottom: 1.9rem;
 }
 @media (max-width: 767px) {
   .news__more {
@@ -1322,8 +1327,7 @@ section[id] {
 .company {
   background-color: #f5f5f5;
   font-size: 1.6rem;
-  padding-top: 8rem;
-  padding-bottom: 2rem;
+  padding-block: 8rem;
 }
 @media (max-width: 767px) {
   .company {
@@ -1340,7 +1344,6 @@ section[id] {
           align-items: flex-end;
   position: relative;
   margin-top: 6.8rem;
-  padding-bottom: 6.2rem;
 }
 @media (max-width: 767px) {
   .company__inner {
@@ -1432,6 +1435,7 @@ section[id] {
 .access__tel {
   font-size: 1.6rem;
   font-weight: 600;
+  margin-top: 0.9rem;
 }
 .access__tel span {
   font-size: 2.5rem;
@@ -1452,7 +1456,7 @@ section[id] {
 .access__email {
   font-size: 1.6rem;
   font-weight: 600;
-  margin-top: 1.5rem;
+  margin-top: 1.3rem;
 }
 
 /* ===============================================
@@ -1476,7 +1480,7 @@ section[id] {
   display: flex;
   gap: 7.4rem;
   padding-left: 1.4rem;
-  padding-top: 0.3rem;
+  padding-top: 1.4rem;
 }
 @media (max-width: 767px) {
   .contact__radio-group {
@@ -1571,6 +1575,8 @@ section[id] {
 }
 .contact__checkbox-group label span {
   position: absolute;
+  font-size: 1.8rem;
+  line-height: 1.388;
   top: 50%;
   left: 0;
   -webkit-transform: translateY(-50%);
@@ -1616,7 +1622,7 @@ section[id] {
 
 .contact__lead {
   font-size: 2rem;
-  margin-top: 4rem;
+  margin-top: 3.7rem;
   margin-bottom: 7rem;
   margin-left: 6rem;
 }
@@ -1678,7 +1684,7 @@ section[id] {
 }
 
 .contact__item--gender {
-  margin-top: 5.4rem;
+  margin-top: 4.2rem;
 }
 @media (max-width: 767px) {
   .contact__item--gender {
@@ -1697,7 +1703,7 @@ section[id] {
 
 .contact__item--email {
   font-size: 2rem;
-  margin-top: 3.9rem;
+  margin-top: 4.8rem;
 }
 @media (max-width: 767px) {
   .contact__item--email {
@@ -1822,7 +1828,7 @@ section[id] {
   display: block;
   position: relative;
   font-size: 1.8rem;
-  line-height: 2;
+  line-height: 1.72222;
   background-color: #fff;
 }
 @media (max-width: 767px) {
