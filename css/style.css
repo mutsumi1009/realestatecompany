@@ -272,6 +272,7 @@ section[id] {
   position: fixed;
   top: 0;
   z-index: 999;
+  text-align: center;
   -webkit-transition: background-color 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out;
   transition: background-color 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out;
   transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -280,8 +281,6 @@ section[id] {
 @media (max-width: 767px) {
   .header {
     height: 5rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
     z-index: 1000;
     background-color: #fff;
   }
@@ -294,9 +293,9 @@ section[id] {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 100%;
   max-width: 108rem;
   margin: 0 auto;
@@ -309,7 +308,8 @@ section[id] {
 }
 @media (max-width: 767px) {
   .header__inner {
-    padding-left: 0;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 
