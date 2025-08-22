@@ -174,12 +174,11 @@ section[id] {
 	position: fixed;
 	top: 0;
 	z-index: 999;
+	text-align: center;
 	transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 
 	@include sp {
 		height: 5rem;
-		padding-left: 2.0rem;
-		padding-right: 2.0rem;
 		z-index: 1000;
 		background-color: $font-color;
 	}
@@ -188,19 +187,19 @@ section[id] {
 .header__inner {
 	display: flex;
 	justify-content: space-between;
-	align-items: baseline;
+	align-items: center;
 	height: 100%;
 	max-width: 108rem;
 	margin: 0 auto;
 	padding-inline: 8rem;
 
-
-	@media screen and (max-width: 1024px) {
-		padding-inline: 2rem;
-	}
+	 @media screen and (max-width: 1024px) {
+	 	padding-inline: 2rem; 
+	 }
 
 	@include sp {
-		padding-left: 0;
+		padding-left: 2.0rem;
+		padding-right: 2.0rem;
 	}
 }
 
@@ -245,6 +244,7 @@ section[id] {
 
 .header__nav {
 	height: 100%;
+
 }
 
 .header__nav-list {
@@ -254,6 +254,7 @@ section[id] {
 	list-style: none;
 	margin: 0;
 	align-items: center;
+
 	// margin-left: 11.1rem;
 
 	@include sp {
