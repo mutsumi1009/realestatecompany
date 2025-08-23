@@ -348,6 +348,11 @@ section[id] {
   transition: opacity 0.4s, color 0.4s;
   margin-top: 0.3rem;
 }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .header__logo-link {
+    font-size: 1.8rem;
+  }
+}
 .header__logo-link:hover {
   opacity: 0.7;
 }
@@ -374,6 +379,13 @@ section[id] {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .header__nav-list {
+    -webkit-column-gap: 2.1rem;
+       -moz-column-gap: 2.1rem;
+            column-gap: 2.1rem;
+  }
 }
 @media (max-width: 767px) {
   .header__nav-list {
@@ -407,6 +419,16 @@ section[id] {
   position: relative;
   -webkit-transition: opacity 0.4s ease;
   transition: opacity 0.4s ease;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .header__nav-list li a {
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 767px) {
+  .header__nav-list li a {
+    font-size: 1.6rem;
+  }
 }
 .header__nav-list li a::after {
   content: "";
@@ -497,7 +519,7 @@ section[id] {
 @media (max-width: 767px) {
   .hamburger {
     position: fixed;
-    top: 0;
+    top: -0.1rem;
     right: 0;
     width: 7.2rem;
     height: 5rem;
@@ -525,6 +547,7 @@ section[id] {
   position: absolute;
   width: 3.2rem;
   height: 0.4rem;
+  left: 2rem;
   background: #4D9600;
   border-radius: 0.2rem;
   -webkit-transition: 0.3s;
@@ -538,6 +561,7 @@ section[id] {
 .hamburger .hamburger-line::before,
 .hamburger .hamburger-line::after {
   content: "";
+  left: 0;
 }
 .hamburger .hamburger-line::before {
   top: 50%;
@@ -749,7 +773,7 @@ section[id] {
 }
 
 .service__items {
-  margin-top: 6.5rem;
+  margin-top: 6.8rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -917,7 +941,7 @@ section[id] {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 40px;
-  margin-top: 6.7rem;
+  margin-top: 6.8rem;
 }
 @media (max-width: 767px) {
   .works__contents {
@@ -1113,7 +1137,7 @@ section[id] {
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
-  margin-top: 6.7rem;
+  margin-top: 6.8rem;
 }
 @media (max-width: 767px) {
   .news__container {
@@ -1184,7 +1208,7 @@ section[id] {
 }
 
 .news__item:nth-of-type(2) {
-  padding-block: 0rem;
+  padding-block: 0.1rem;
 }
 
 .news__item:nth-of-type(3) {
@@ -1257,8 +1281,8 @@ section[id] {
 
 .news__more {
   text-align: right;
-  margin-top: 0.5rem;
-  margin-bottom: 1.9rem;
+  margin-top: 1.1rem;
+  margin-bottom: 1.2rem;
 }
 @media (max-width: 767px) {
   .news__more {
@@ -1279,7 +1303,7 @@ section[id] {
   font-size: 2rem;
   color: #4D9600;
   line-height: 0;
-  padding-top: 1rem;
+  padding-bottom: 0.9rem;
 }
 @media (max-width: 767px) {
   .more-link {
@@ -1292,8 +1316,18 @@ section[id] {
 }
 
 .more-link span {
-  padding-right: 3.3rem;
+  padding-right: 3.4rem;
 }
+.more-link::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 50%;
+  width: 8em;
+  height: 1.8rem;
+  background: url("images/more.svg") no-repeat center;
+}
+
 /* ===============================================
 # 会社概要
 =============================================== */
@@ -1312,9 +1346,6 @@ section[id] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
   position: relative;
   margin-top: 6.8rem;
 }
@@ -1364,9 +1395,9 @@ section[id] {
   color: #fff;
   width: 54.347826087%;
   margin-left: -19.5652173913%;
-  margin-top: 20.5rem;
+  margin-top: 20rem;
   z-index: 2;
-  padding: 52px 5px 42px 23.9130434783%;
+  padding: 5.2rem 5rem 4rem 23.9130434783%;
 }
 @media (max-width: 767px) {
   .access__content {
@@ -1402,6 +1433,7 @@ section[id] {
   font-size: 1.6rem;
   font-weight: 600;
   font-weight: 1.56;
+  margin-top: 0.8rem;
 }
 @media (max-width: 767px) {
   .access__address {
@@ -1413,7 +1445,7 @@ section[id] {
 .access__tel {
   font-size: 1.6rem;
   font-weight: 600;
-  margin-top: 0.9rem;
+  margin-top: 0.8rem;
   line-height: 1.56;
 }
 @media (max-width: 767px) {
@@ -1921,7 +1953,7 @@ section[id] {
   content: "";
   position: absolute;
   right: 2rem;
-  top: 50%;
+  top: 54%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   width: 0;
@@ -1938,7 +1970,7 @@ section[id] {
       -ms-flex: 1;
           flex: 1;
   height: 5rem;
-  padding: 13px 46.6px 12px 20px;
+  padding: 1.7rem 4.66rem 1.2rem 2rem;
   margin-left: 3rem;
   font-size: 1.8rem;
   background-color: #fff;
