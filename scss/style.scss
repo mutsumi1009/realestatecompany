@@ -29,6 +29,14 @@ $placeholder-color: #A0A0A0;
 	}
 }
 
+// 中間幅（768px〜1024px）専用
+@mixin tab {
+	@media screen and (min-width: 768px) and (max-width: 1024px) {
+		@content;
+	}
+}
+
+
 // HTMLで使用されている `.pc-only` クラスのスタイル
 .pc-only {
 	display: none; // SPでは非表示
@@ -233,6 +241,10 @@ section[id] {
 	transition: opacity 0.4s, color 0.4s;
 	margin-top: 0.3rem;
 
+	@include tab{
+		font-size: 1.8rem;
+	}
+
 	&:hover {
 		opacity: 0.7;
 	}
@@ -254,8 +266,11 @@ section[id] {
 	list-style: none;
 	margin: 0;
 	align-items: center;
-
 	// margin-left: 11.1rem;
+
+	@include tab {
+	  column-gap: 2.1rem;
+	}
 
 	@include sp {
 		margin-left: 0;
@@ -280,6 +295,14 @@ section[id] {
 	text-decoration: none;
 	position: relative;
 	transition: opacity 0.4s ease;
+
+	@include tab{
+		font-size: 1.6rem;
+	}
+
+	@include sp {
+	  font-size: 1.6rem;
+	}
 
 	&::after {
 		content: '';
@@ -366,7 +389,7 @@ section[id] {
 
 	@include sp {
 		position: fixed;
-		top: 0;
+		top: -0.1rem;
 		right: 0;
 		width: 7.2rem;
 		height: 5rem;
@@ -386,6 +409,7 @@ section[id] {
 		position: absolute;
 		width: 3.2rem;
 		height: 0.4rem;
+		left: 2rem;
 		background: $main-color;
 		border-radius: 0.2rem;
 		transition: .3s;
@@ -401,6 +425,7 @@ section[id] {
 	.hamburger-line::before,
 	.hamburger-line::after {
 		content: "";
+		left: 0;
 	}
 
 	// 上の線
@@ -626,7 +651,7 @@ section[id] {
 }
 
 .service__items {
-	margin-top: 6.5rem;
+	margin-top: 6.8rem;
 	display: flex;
 	flex-direction: column;
 	row-gap: 8rem;
@@ -795,20 +820,13 @@ section[id] {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	gap: 40px;
-	margin-top: 6.7rem;
+	margin-top: 6.8rem;
 
 	@include sp {
 		grid-template-columns: 1fr;
 		gap: 2.1rem;
 		margin-top: 3.6rem;
 		margin-bottom: 2.2rem;
-
-
-		// display: flex;
-		// flex-direction: column;
-		// text-align: left;
-		// margin-top: 3.5rem;
-		// gap: 2px
 	}
 }
 
@@ -820,7 +838,6 @@ section[id] {
 	@include sp {
 		display: flex;
 		text-align: center;
-
 	}
 }
 
@@ -833,7 +850,6 @@ section[id] {
 	}
 }
 
-
 .works__body {
 	text-align: left;
 	margin-top: 1.9rem;
@@ -843,14 +859,12 @@ section[id] {
 	}
 }
 
-
 .works__caption {
 	font-size: 1.6rem;
 	line-height: 1.56;
 
 	@include sp {
-		// line-height: 1.25;
-		// margin-bottom: 2.7rem;
+		
 	}
 
 	.pc {
@@ -984,7 +998,7 @@ section[id] {
 	justify-content: space-between;
 	gap: 6rem;
 	align-items: stretch;
-	margin-top: 6.7rem;
+	margin-top: 6.8rem;
 
 	@include sp {
 		grid-template-columns: 1fr;
@@ -1045,7 +1059,7 @@ section[id] {
 }
 
 .news__item:nth-of-type(2) {
-	padding-block: 0rem;
+	padding-block: 0.1rem;
 }
 
 .news__item:nth-of-type(3) {
@@ -1109,8 +1123,8 @@ section[id] {
 
 .news__more {
 	text-align: right;
-	margin-top: 0.5rem;
-	margin-bottom: 1.9rem;
+	margin-top: 1.1rem;
+	margin-bottom: 1.2rem;
 
 	@include sp {
 		margin-top: auto;
@@ -1130,7 +1144,7 @@ section[id] {
 	font-size: 2.0rem;
 	color: $main-color;
 	line-height: 0;
-	padding-top: 1rem;
+	 padding-bottom: 0.9rem;
 
 	@include sp {
 		padding-top: 0;
@@ -1142,12 +1156,23 @@ section[id] {
 }
 
 .more-link span {
-	padding-right: 3.3rem;
+	padding-right: 3.4rem;
 
 	@include sp {
 		//   padding-right: 0;
 	}
 }
+
+.more-link::after {
+	content: "";
+	position: absolute;
+	right: 0;                    // ★ 右端に固定
+	bottom: 50%;                   // 下端に固定（中央にしたいなら bottom:50%; transform:translateY(50%); 等）
+	width: 8em;               // Figmaの幅
+	height: 1.8rem;                // Figmaの高さ
+	background: url("images/more.svg") no-repeat center;
+	
+  }
 
 
 /* ===============================================
@@ -1168,11 +1193,10 @@ section[id] {
 
 .company__inner {
 	display: flex;
-	align-items: flex-end;
+	// align-items: flex-end;
 	position: relative;
 	margin-top: 6.8rem;
-	// padding-bottom: 6.2rem;
-
+	
 	@include sp {
 		flex-direction: column;
 		align-items: center;
@@ -1185,12 +1209,9 @@ section[id] {
 	width: calc(600 / 920 * 100%);
 	z-index: 999;
 	position: relative;
-	// width: 50%;
 	aspect-ratio: 600 / 400;
 	position: relative;
 	padding-bottom: 6.2rem;
-
-	// margin-top: calc(-34 / 920 * 100%);
 
 	@include sp {
 		position: relative;
@@ -1215,9 +1236,9 @@ section[id] {
 	color: $font-color;
 	width: calc(500 / 920 * 100%);
 	margin-left: calc(-180 / 920 * 100%);
-	margin-top: 20.5rem;
+	margin-top: 20rem;
 	z-index: 2;
-	padding: 52px 5px 42px calc(220 / 920 * 100%);
+	padding: 5.2rem 5rem 4rem calc(220 / 920 * 100%);
 
 
 	@include sp {
@@ -1248,6 +1269,7 @@ section[id] {
 	font-size: 1.6rem;
 	font-weight: 600;
 	font-weight: 1.56;
+	margin-top: 0.8rem;
 
 	@include sp {
 		line-height: 1.56;
@@ -1259,7 +1281,7 @@ section[id] {
 .access__tel {
 	font-size: 1.6rem;
 	font-weight: 600;
-	margin-top: 0.9rem;
+	margin-top: 0.8rem;
 	line-height: 1.56;
 
 	@include sp {
@@ -1703,8 +1725,6 @@ section[id] {
 	@include sp {
 		text-align: left;
 		width: auto;
-
-
 	}
 }
 
@@ -1720,7 +1740,7 @@ section[id] {
 	content: "";
 	position: absolute;
 	right: 2rem;
-	top: 50%;
+	top: 54%;
 	transform: translateY(-50%);
 	width: 0;
 	height: 0;
@@ -1735,7 +1755,7 @@ section[id] {
 	width: 63rem;
 	flex: 1;
 	height: 5rem;
-	padding: 13px 46.6px 12px 20px;
+	padding: 1.7rem 4.66rem 1.2rem 2rem;
 	margin-left: 3rem;
 	font-size: 1.8rem;
 	background-color: $font-color;
