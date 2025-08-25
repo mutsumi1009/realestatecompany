@@ -532,7 +532,7 @@ section[id] {
 .fv__copy.pc {
 	font-size: 4.0rem;
 	line-height: 1.75;
-	font-weight: 400;
+	font-weight: 600;
 	color: $font-color;
 	// width: calc(567 / 1080 * 100vw);
 	// height: 1.75;
@@ -1060,10 +1060,20 @@ section[id] {
 
 .news__item:nth-of-type(2) {
 	padding-block: 0.1rem;
+
+	@include sp {
+	  padding: 0;
+	}
+
 }
 
 .news__item:nth-of-type(3) {
 	padding-block: 1rem 2rem;
+
+	@include sp {
+		padding-block: 1.2rem;
+
+	}
 }
 
 
@@ -1082,7 +1092,7 @@ section[id] {
 	padding-block: 1rem 1.1rem;
 
 	@include sp {
-		padding-block: 1.1rem;
+		padding-block: 1rem 1.1rem;
 		column-gap: 1.9rem;
 	}
 
@@ -1128,9 +1138,7 @@ section[id] {
 
 	@include sp {
 		margin-top: auto;
-		// margin-bottom: 3.4rem;
-		// padding-right: 2rem;
-		padding-top: 1.2rem;
+		padding-top: 2rem;
 	}
 }
 
@@ -1248,7 +1256,7 @@ section[id] {
 		justify-content: center;
 		box-sizing: border-box;
 		display: block;
-		margin: 1.4rem 0 auto;
+		margin: 1.3rem 0 auto;
 		padding: 19px 20px 12px 20px;
 	}
 }
@@ -1392,10 +1400,11 @@ section[id] {
 .contact__checkbox-group {
 	display: grid;
 	font-size: 1.8rem;
-	line-height: 1.38;
-	column-gap: 4rem;
+	line-height: 1.388;
+	column-gap: 3.8rem;
 	row-gap: 1.5rem;
 	grid-template-columns: repeat(4, 1fr);
+	justify-items: start;
 
 	@include sp {
 		font-size: 1.6rem;
@@ -1408,13 +1417,15 @@ section[id] {
 
 	label {
 		position: relative;
-		padding-left: calc(16px + 2rem);
+		padding-left: calc(1.2rem + 2rem);
+	
+		// padding-block: 1rem 2rem;
 		cursor: pointer;
 		display: inline-flex;
-		align-items: center;
+		 align-items: center;
 
 		@include sp {
-			padding-left: 3rem;
+			padding-left: 2.5rem;
 			white-space: nowrap;
 		}
 
@@ -1426,13 +1437,14 @@ section[id] {
 			position: absolute;
 			font-size: 1.8rem;
 			line-height: 1.388;
-			top: 50%;
-			left: 0;
+			top: 55%;
+			left: -1px;
 			transform: translateY(-50%);
 			width: 20px;
 			height: 20px;
 			background-color: $font-color;
-			// border: 2px solid $text-color;
+			margin-right: 2rem;
+			
 		}
 
 		input:checked+span::after {
@@ -1550,7 +1562,6 @@ section[id] {
 		margin-top: 2rem;
 		gap: 0;
 	}
-
 }
 
 //アンケート
@@ -1582,7 +1593,7 @@ section[id] {
 .contact__item--privacy {
 	flex-direction: column;
 	align-items: flex-start;
-	gap: 1rem;
+	gap: 1.2rem;
 	margin-top: 4rem;
 
 	@include sp {
@@ -1593,26 +1604,33 @@ section[id] {
 
 .scroll-container {
 	width: 100%;
+	max-width: 800px;
 	height: 300px;
 	padding: 0;
 	background-color: $font-color;
 	box-sizing: border-box;
 	--simplebar-scrollbar-thickness: 10px;
 	--simplebar-track-thickness: 10px;
-	min-height: 30px
+	min-height: 30px;
+	
+
+	@include sp {
+	  height: auto;
+	}
 }
 
 .scroll-inner {
 	display: block;
 	width: 100%;
 	padding: 4rem 6rem 4rem 4rem;
-
+	aspect-ratio: 700 / 220;
+	
 	@include sp {
-		padding: 3rem 5rem 3rem 3rem;
+		padding: 3rem 5rem 2.8rem 3rem;
 	}
 }
 
-/* SimpleBarの見た目（Figmaカラー） */
+/* SimpleBarの見た目 */
 .simplebar-track.simplebar-vertical {
 	background: #E3E3E3;
 	border-radius: 0;
@@ -1620,11 +1638,16 @@ section[id] {
 	bottom: 10px;
 	right: 10px;
 
+	@include sp {
+	  bottom: 0;
+	}
+
 }
 
 .simplebar-scrollbar::before {
 	background: #9B9B9B;
 	border-radius: 0;
+	height: 30px;
 }
 
 /* 本文 */
@@ -1637,7 +1660,8 @@ section[id] {
 	display: -webkit-box;
 	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 7;
-	overflow: hidden;
+	// overflow: hidden;
+	
 
 	@include sp {
 		font-size: 1.6rem;
@@ -1676,7 +1700,7 @@ section[id] {
 	@include sp {
 		width: 100%;
 		margin-inline: auto;
-		// margin-top: 2.2rem;
+		 margin-top: 5rem;
 	}
 }
 
@@ -1872,12 +1896,11 @@ section[id] {
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
-	gap: 5rem;
+	gap: 5.1rem;
 	list-style: none;
 	padding: 0.3rem;
 
 	@include sp {
-
 		align-items: center;
 		column-gap: 3rem;
 		row-gap: 1.2rem;
@@ -1889,6 +1912,12 @@ section[id] {
 
 .footer__nav-list a {
 	color: $text-color;
+	transition: opacity 0.4s ease;
+}
+
+.footer__nav-list a:hover{
+	opacity: 0.7;
+	cursor: pointer;
 }
 
 .footer__bottom {
@@ -1902,10 +1931,10 @@ section[id] {
 	justify-content: center;
 	align-items: center;
 	gap: 3.1rem;
-	padding-block: 2.6rem 8rem;
+	margin-block: 2.4rem 8rem;
 
 	@include sp {
-		padding-block: 2.8rem 5rem;
+		margin-block: 2.8rem 5rem;
 	}
 }
 
