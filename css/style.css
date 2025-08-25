@@ -1837,7 +1837,6 @@ section[id] {
   display: block;
   width: 100%;
   padding: 4rem 6rem 4rem 4rem;
-  aspect-ratio: 700/220;
 }
 @media (max-width: 767px) {
   .scroll-inner {
