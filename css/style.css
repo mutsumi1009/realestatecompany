@@ -652,6 +652,11 @@ section[id] {
   letter-spacing: 0.3em;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
+@media screen and (max-width: 840px) {
+  .fv__copy.pc {
+    font-size: 3.5rem;
+  }
+}
 @media (max-width: 767px) {
   .fv__copy.pc {
     display: none;
@@ -1512,7 +1517,6 @@ section[id] {
   display: -ms-flexbox;
   display: flex;
   gap: 7.4rem;
-  padding-left: 1.4rem;
   padding-top: 1.4rem;
 }
 @media (max-width: 767px) {
@@ -1525,7 +1529,7 @@ section[id] {
 }
 .contact__radio-group label {
   position: relative;
-  padding-left: 3.9rem;
+  padding-left: 4rem;
   cursor: pointer;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -1575,6 +1579,11 @@ section[id] {
   row-gap: 1.5rem;
   grid-template-columns: repeat(4, 1fr);
   justify-items: start;
+}
+@media screen and (max-width: 840px) {
+  .contact__checkbox-group {
+    font-size: 1.6rem;
+  }
 }
 @media (max-width: 767px) {
   .contact__checkbox-group {
@@ -1697,6 +1706,7 @@ section[id] {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  gap: 1rem;
 }
 @media (max-width: 767px) {
   .contact__item {
@@ -1965,11 +1975,6 @@ section[id] {
   margin-top: 1rem;
   cursor: pointer;
 }
-@media screen and (max-width: 840px) {
-  .contact__label {
-    font-size: 1.6rem;
-  }
-}
 @media (max-width: 767px) {
   .contact__label {
     text-align: left;
@@ -1982,6 +1987,9 @@ section[id] {
   position: relative;
   display: block;
   cursor: pointer;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 .select-container::after {
@@ -2000,16 +2008,14 @@ section[id] {
 }
 
 .contact__select {
-  width: 63rem;
+  width: 100%;
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   height: 5rem;
   padding: 1.7rem 4.66rem 1.2rem 2rem;
-  margin-left: 3rem;
   font-size: 1.8rem;
   background-color: #fff;
-  border-radius: 4px;
   -moz-appearance: none;
        appearance: none;
   -webkit-appearance: none;
@@ -2019,14 +2025,18 @@ section[id] {
 }
 @media (max-width: 767px) {
   .contact__select {
-    max-width: 31.5rem;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     margin: 0;
     font-size: 1.6rem;
   }
 }
 
 .contact__input {
-  width: 63rem;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   height: 5rem;
   font-size: 1.6rem;
   background-color: #fff;
@@ -2035,7 +2045,7 @@ section[id] {
   padding-block: 12px;
   padding-inline: 20px;
   resize: none;
-  margin-left: 1rem;
+  margin-left: 0;
 }
 @media (max-width: 767px) {
   .contact__input {
