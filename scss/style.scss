@@ -544,6 +544,10 @@ section[id] {
 	letter-spacing: 0.3em;
 	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 
+	@media screen and (max-width: 840px) {
+		font-size: 3.5rem;
+	}
+
 	@include sp {
 		display: none;
 	}
@@ -1346,7 +1350,7 @@ section[id] {
 	font-size: 2.0rem;
 	display: flex;
 	gap: 7.4rem;
-	padding-left: 1.4rem;
+	// padding-left: 1.4rem;
 	padding-top: 1.4rem;
 
 	@include sp {
@@ -1357,7 +1361,7 @@ section[id] {
 
 	label {
 		position: relative;
-		padding-left: 3.9rem;
+		padding-left: 4rem;
 		cursor: pointer;
 		display: inline-flex;
 		align-items: center;
@@ -1405,6 +1409,10 @@ section[id] {
 	row-gap: 1.5rem;
 	grid-template-columns: repeat(4, 1fr);
 	justify-items: start;
+
+	@media screen and (max-width: 840px) {
+		font-size: 1.6rem;
+	}
 
 	@include sp {
 		font-size: 1.6rem;
@@ -1492,16 +1500,14 @@ section[id] {
 	flex-direction: column;
 	flex-wrap: nowrap;
 
-	@include sp {
-
-	}
+	@include sp {}
 }
 
 .contact__item {
 	display: flex;
 	align-items: flex-start;
 	justify-content: flex-start;
-	// gap: 2rem; 
+	gap: 1rem;
 
 
 	@include sp {
@@ -1744,9 +1750,9 @@ section[id] {
 	margin-top: 1rem;
 	cursor: pointer;
 
-	@media screen and (max-width: 840px) {
-		font-size: 1.6rem;
-		}
+	// @media screen and (max-width: 840px) {
+	// 	font-size: 1.6rem;
+	// 	}
 
 	@include sp {
 		text-align: left;
@@ -1760,6 +1766,7 @@ section[id] {
 	position: relative;
 	display: block;
 	cursor: pointer;
+	flex-grow: 1;
 }
 
 .select-container::after {
@@ -1778,28 +1785,38 @@ section[id] {
 
 
 .contact__select {
-	width: 63rem;
-	flex: 1;
+	width: 100%;
+	flex-grow: 1;
+	// width: 63rem;
+	// flex: 1;
 	height: 5rem;
 	padding: 1.7rem 4.66rem 1.2rem 2rem;
-	margin-left: 3rem;
+	// margin-left: 3rem;
 	font-size: 1.8rem;
 	background-color: $font-color;
-	border-radius: 4px;
+	// border-radius: 4px;
 	appearance: none;
 	-webkit-appearance: none;
 	cursor: pointer;
 	box-sizing: border-box;
 
+	// @media (max-width: 840px) {
+	//     width: 100%;
+	//     margin: 0;
+	// 	flex-grow: 1;
+	// }
+
 	@include sp {
-		max-width: 31.5rem;
+		flex-grow: 1;
+		// max-width: 31.5rem;
 		margin: 0;
 		font-size: 1.6rem;
 	}
 }
 
 .contact__input {
-	width: 63rem;
+	flex-grow: 1;
+	// width: 63rem;
 	height: 5rem;
 	font-size: 1.6rem;
 	background-color: $font-color;
@@ -1809,7 +1826,8 @@ section[id] {
 	padding-block: 12px;
 	padding-inline: 20px;
 	resize: none;
-	margin-left: 1rem;
+	// margin-left: 1rem;
+	margin-left: 0;
 
 	@include sp {
 		width: 100%;
@@ -1978,7 +1996,7 @@ section[id] {
 
 	@include sp {
 		padding-block: 2.1rem;
-		padding-inline: 3rem ;
+		padding-inline: 3rem;
 		line-height: 1.25;
 	}
 }
