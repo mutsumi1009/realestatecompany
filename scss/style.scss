@@ -1062,10 +1062,10 @@ section[id] {
 
 .news__item:nth-of-type(2) {
 	padding-block: 0.1rem;
-	margin-top: 0.2rem;
+	// margin-top: 0.2rem;
 
 	@include sp {
-		padding: 0;
+		padding: 0.2rem;
 	}
 
 }
@@ -1074,7 +1074,7 @@ section[id] {
 	padding-block: 1rem 2rem;
 
 	@include sp {
-		padding-block: 1.1rem;
+		padding-block: 1rem;
 
 	}
 }
@@ -1247,7 +1247,7 @@ section[id] {
 	color: $font-color;
 	width: calc(500 / 920 * 100%);
 	margin-left: calc(-180 / 920 * 100%);
-	margin-top: 19.7rem;
+	margin-top: 19.8rem;
 	z-index: 2;
 	padding: 5.2rem 5rem 4rem calc(220 / 920 * 100%);
 
@@ -1259,7 +1259,7 @@ section[id] {
 		justify-content: center;
 		box-sizing: border-box;
 		display: block;
-		margin: 1.5rem 0 auto;
+		margin: 1.4rem 0 auto;
 		padding: 19px 20px 12px 20px;
 	}
 }
@@ -1356,7 +1356,7 @@ section[id] {
 	@include sp {
 		flex-wrap: nowrap;
 		gap: 3rem;
-		margin-left: 3.7rem;
+		margin-left: 4.8rem;
 	}
 
 	label {
@@ -1409,6 +1409,7 @@ section[id] {
 	row-gap: 1.5rem;
 	grid-template-columns: repeat(4, 1fr);
 	justify-items: start;
+	
 
 	@media screen and (max-width: 840px) {
 		font-size: 1.6rem;
@@ -1417,7 +1418,7 @@ section[id] {
 	@include sp {
 		font-size: 1.6rem;
 		grid-template-columns: repeat(2, 1fr);
-		row-gap: 0.8rem;
+		row-gap: 0.5rem;
 		column-gap: 1.6rem;
 		margin-top: 0.3rem;
 		margin-bottom: 2.1rem;
@@ -1429,6 +1430,7 @@ section[id] {
 		cursor: pointer;
 		display: inline-flex;
 		align-items: center;
+		padding-top: 0.2rem;
 
 		@include sp {
 			padding-left: 2.5rem;
@@ -1561,7 +1563,7 @@ section[id] {
 	flex-direction: column;
 	align-items: flex-start;
 	gap: 1rem;
-	margin-top: 4rem;
+	margin-top: 4.1rem;
 
 	@include sp {
 		margin-top: 2rem;
@@ -1699,7 +1701,7 @@ section[id] {
 // 送信ボタン
 .contact__submit {
 	text-align: center;
-	margin-top: 8rem;
+	margin-top: 7.8rem;
 
 	@include sp {
 		width: 100%;
@@ -1766,14 +1768,15 @@ section[id] {
 	position: relative;
 	display: block;
 	cursor: pointer;
-	flex-grow: 1;
+	width: 100%;
+	flex: 1;
 }
 
 .select-container::after {
 	content: "";
 	position: absolute;
 	right: 2rem;
-	top: 54%;
+	top: 59%;
 	transform: translateY(-50%);
 	width: 0;
 	height: 0;
@@ -1786,9 +1789,9 @@ section[id] {
 
 .contact__select {
 	width: 100%;
-	flex-grow: 1;
+	flex: 1;
 	// width: 63rem;
-	// flex: 1;
+	flex: 1;
 	height: 5rem;
 	padding: 1.7rem 4.66rem 1.2rem 2rem;
 	// margin-left: 3rem;
@@ -1807,8 +1810,9 @@ section[id] {
 	// }
 
 	@include sp {
-		flex-grow: 1;
-		// max-width: 31.5rem;
+		width: 100%;
+		flex: 1;
+		max-width: none;
 		margin: 0;
 		font-size: 1.6rem;
 	}
@@ -1879,6 +1883,7 @@ section[id] {
 	line-height: 1.65;
 }
 
+
 .logo__text {
 	font-size: 2.0rem;
 	text-align: center;
@@ -1898,10 +1903,10 @@ section[id] {
 	max-width: 722px;
 	height: 1px;
 	background-color: #000;
-	margin: 2.8rem auto;
+	margin: 2.7rem auto;
 
 	@include sp {
-		margin-top: 1.9rem;
+		margin-top: 2rem;
 		margin-bottom: 0;
 	}
 
@@ -1922,7 +1927,7 @@ section[id] {
 	flex-wrap: wrap;
 	gap: 5.1rem;
 	list-style: none;
-	padding: 0.3rem;
+	// padding: 0.3rem;
 
 	@include sp {
 		align-items: center;
@@ -1955,7 +1960,7 @@ section[id] {
 	justify-content: center;
 	align-items: center;
 	gap: 3.1rem;
-	margin-block: 2.4rem 8rem;
+	margin-block: 3rem 8rem;
 
 	@include sp {
 		margin-block: 2.7rem 5rem;
