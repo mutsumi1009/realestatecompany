@@ -10,7 +10,7 @@ $(function () {
     speed: 800,
     fade: true,
     cssEase: 'linear'
-  }); 
+  });
 
   // --- 2. ハンバーガーメニューの機能 ---
   const $trigger = $('.hamburger-trigger');
@@ -43,8 +43,9 @@ $(function () {
   // --- 4. モーダル機能 ---
   const $modalOpen = $('.works__item');
   const $modalClose = $('.js-modal-close');
-  const $modalArea  = $('.js-modal');
+  const $modalArea = $('.js-modal');
 
+  // モーダルを開く
   $modalOpen.on('click', function () {
     const data = $(this).data('modal');
     $('#modal-img').attr({ src: data.img_src, alt: data.title });
@@ -53,11 +54,18 @@ $(function () {
     $('body').css('overflow', 'hidden');
   });
 
-  $modalClose.on('click', function () {
+  // モーダルを閉じる（閉じるボタンと背景の両方）
+  $modalClose.add($modalArea).on('click', function () {
     $modalArea.removeClass('is-active');
     $('body').css('overflow', '');
   });
 
+  // モーダル内のコンテンツをクリックしても閉じないようにする
+  $modalArea.children().on('click', function (e) {
+    e.stopPropagation();
+  });
+
+  // Escapeキーでモーダルを閉じる
   $(document).on('keydown', function (e) {
     if (e.key === 'Escape') {
       $modalArea.removeClass('is-active');
@@ -66,7 +74,7 @@ $(function () {
   });
 
 
-  // --- 6. TOPへ戻る（FVより下で表示） ---
+  // --- 5. TOPへ戻る（FVより下で表示） ---
   const $toTopBtn = $('.js-to-top');
   function fvHeight() { return $fv.length ? $fv.outerHeight() : 200; }
   function onScrollToTop() {
@@ -81,17 +89,14 @@ $(function () {
     e.preventDefault();
     $('html, body').animate({ scrollTop: 0 }, 500);
   });
-}); 
+});
 
 AOS.init({
   once: true,
-  duration: 900,              
-  offset: 150,                 
+  duration: 900,
+  offset: 150,
   easing: 'ease-out',
-  startEvent: 'load',         // 画像レイアウト確定後に初期化
+  startEvent: 'load',
   disable: () => window.matchMedia('(prefers-reduced-motion: reduce)').matches
 });
-// 画像やスライダーの影響で位置がズレるのを再計算
 window.addEventListener('load', () => AOS.refresh());
-
-

@@ -224,9 +224,7 @@ section[id] {
 	white-space: nowrap;
 
 	@include sp {}
-
 }
-
 
 .header__logo-link {
 	display: flex;
@@ -246,7 +244,7 @@ section[id] {
 	}
 
 	&:hover {
-		opacity: 0.7;
+		opacity: 0.5;
 	}
 
 	@include sp {
@@ -320,7 +318,7 @@ section[id] {
 	}
 
 	&:hover {
-		opacity: 0.7;
+		opacity: 0.5;
 		color: $font-color;
 
 
@@ -848,10 +846,17 @@ section[id] {
 .works__img {
 	aspect-ratio: 200 / 200;
 	cursor: pointer;
+	opacity: 1;
+	transition: opacity 0.4s ease;
+
 
 	@include sp {
 		aspect-ratio: 315 / 250;
 	}
+}
+
+.works__img:hover {
+    opacity: 0.7; 
 }
 
 .works__body {
@@ -1409,7 +1414,7 @@ section[id] {
 	row-gap: 1.5rem;
 	grid-template-columns: repeat(4, 1fr);
 	justify-items: start;
-	
+
 
 	@media screen and (max-width: 840px) {
 		font-size: 1.6rem;
@@ -1890,6 +1895,7 @@ section[id] {
 	color: #000;
 	line-height: 1.65;
 	display: inline-block;
+	transition: opacity 0.4s ease;
 	// letter-spacing: 0.039em;
 
 	@include sp {
@@ -1897,6 +1903,12 @@ section[id] {
 		// margin-top: 0.5rem;
 	}
 }
+
+.logo__text:hover {
+    opacity: 0.7; 
+    cursor: pointer;
+}
+
 
 .footer__line {
 	width: 100%;
