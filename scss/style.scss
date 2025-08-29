@@ -264,8 +264,7 @@ section[id] {
 	list-style: none;
 	margin: 0;
 	align-items: center;
-	// margin-left: 11.1rem;
-
+	
 	@include tab {
 		column-gap: 2.1rem;
 	}
@@ -344,11 +343,10 @@ section[id] {
 		top: 5rem;
 		right: -100%;
 		width: 80%;
-		// height: 100vh;
 		background-color: $main-color;
 		transition: right 0.3s ease;
 		z-index: 1000;
-		color: $font-color;
+		color: $text-color;
 
 		&.is-open {
 			right: 0;
@@ -371,10 +369,11 @@ section[id] {
 		color: $font-color;
 		text-decoration: none;
 		padding: 1.2rem 1.5rem;
+		text-align: left;
 		transition: background-color 0.3s, color 0.3s;
 
 		&:hover {
-			background-color: $text-color; // ★ ホバー時に背景を黒にする
+			background-color: $text-color; 
 			color: $font-color;
 		}
 	}
@@ -494,26 +493,6 @@ section[id] {
 	margin-bottom: 0 !important;
 }
 
-// .fv__contents {
-// 	// width: 100%;
-// 	// height: 100%;
-// 	// position: absolute;
-// 	// top: 11px;
-// 	// z-index: 2;
-// 	// display: flex;
-// 	// flex-direction: column;
-// 	// justify-content: center;
-// 	// align-items: center;
-// 	// text-align: center;
-
-// 	@include sp {
-// 		// padding-top: 21.9rem;
-// 		// top: 7px;
-// 		// left: 2px;
-
-// 	}
-// }
-
 .fv__catch {
 	position: absolute;
 	top: 51.39%;
@@ -532,13 +511,10 @@ section[id] {
 	line-height: 1.75;
 	font-weight: 600;
 	color: $font-color;
-	// width: calc(567 / 1080 * 100vw);
-	// height: 1.75;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	white-space: normal;
-	// padding-inline: 25.7rem;
 	letter-spacing: 0.3em;
 	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 
@@ -552,7 +528,6 @@ section[id] {
 }
 
 // fv__copy表示
-
 .fv__copy.sp {
 	display: none;
 
@@ -564,7 +539,6 @@ section[id] {
 		line-height: 2;
 		width: auto;
 		height: auto;
-		// padding: 0 5.5rem;
 		letter-spacing: 0.3em;
 		white-space: nowrap;
 	}
@@ -667,16 +641,12 @@ section[id] {
 .service__item {
 	display: flex;
 	align-items: flex-end;
-	// align-items: center;
-	// align-items: stretch;
-	// padding-top: 8rem;
-
+	
 	@include sp {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		text-align: center;
-		// gap: 36px;
 	}
 }
 
@@ -1729,14 +1699,13 @@ section[id] {
 	cursor: pointer;
 	border: 1px solid $main-color;
 	transition: background-color 0.3s, color 0.3s;
-	width: 300px;
-	height: 50px;
+	width: 100%;
+	max-width: 30rem;
+	 height: 5rem;
 	line-height: 1.65;
-	// padding: 8rem 59.5rem 9rem 60.5rem;
-
+	
 	@include sp {
-		width: 315px;
-		height: 50px;
+		max-width: 31.5rem;
 	}
 }
 
@@ -1745,21 +1714,14 @@ section[id] {
 	color: $main-color;
 }
 
-
-
 .contact__label {
 	display: inline-block;
 	line-height: 1.65;
-	// white-space: nowrap; 
 	font-size: 2rem;
 	width: 16rem;
 	position: relative;
 	margin-top: 1rem;
 	cursor: pointer;
-
-	// @media screen and (max-width: 840px) {
-	// 	font-size: 1.6rem;
-	// 	}
 
 	@include sp {
 		text-align: left;
@@ -1795,24 +1757,15 @@ section[id] {
 .contact__select {
 	width: 100%;
 	flex: 1;
-	// width: 63rem;
 	flex: 1;
 	height: 5rem;
 	padding: 1.7rem 4.66rem 1.2rem 2rem;
-	// margin-left: 3rem;
 	font-size: 1.8rem;
 	background-color: $font-color;
-	// border-radius: 4px;
 	appearance: none;
 	-webkit-appearance: none;
 	cursor: pointer;
 	box-sizing: border-box;
-
-	// @media (max-width: 840px) {
-	//     width: 100%;
-	//     margin: 0;
-	// 	flex-grow: 1;
-	// }
 
 	@include sp {
 		width: 100%;
@@ -1825,17 +1778,14 @@ section[id] {
 
 .contact__input {
 	flex-grow: 1;
-	// width: 63rem;
 	height: 5rem;
 	font-size: 1.6rem;
 	background-color: $font-color;
-	// flex: 1;
 	gap: 8rem;
 	line-height: 1.8;
 	padding-block: 12px;
 	padding-inline: 20px;
 	resize: none;
-	// margin-left: 1rem;
 	margin-left: 0;
 
 	@include sp {
@@ -1848,14 +1798,13 @@ section[id] {
 
 .contact__textarea {
 	width: 100%;
-	// max-width: 800px;
-	height: 200px;
-	padding-inline: 12px;
+	height: 20rem;
+	padding: 1.5rem 2rem;
 	font-size: 1.8rem;
 	background-color: $font-color;
+	line-height: 1.7;
 
 	@include sp {
-		// max-width: 315px;
 		margin: 0 auto;
 		flex: unset;
 		margin-top: 0;
@@ -1880,7 +1829,6 @@ section[id] {
 	}
 }
 
-
 .footer__logo {
 
 	text-align: center;
@@ -1896,11 +1844,9 @@ section[id] {
 	line-height: 1.65;
 	display: inline-block;
 	transition: opacity 0.4s ease;
-	// letter-spacing: 0.039em;
 
 	@include sp {
 		padding: 0;
-		// margin-top: 0.5rem;
 	}
 }
 
@@ -1939,7 +1885,6 @@ section[id] {
 	flex-wrap: wrap;
 	gap: 5.1rem;
 	list-style: none;
-	// padding: 0.3rem;
 
 	@include sp {
 		align-items: center;
@@ -1982,7 +1927,6 @@ section[id] {
 .footer__sns a {
 	transition: opacity 0.4s ease;
 }
-
 
 .footer__sns a:hover {
 	opacity: 0.7;
@@ -2027,7 +1971,6 @@ TOPへ戻るボタン
 	bottom: 6rem;
 	z-index: 99;
 	opacity: 0;
-	// visibility: hidden;
 	transition: 0.5s;
 	width: 6.8rem;
 	height: 6.8rem;
@@ -2056,13 +1999,9 @@ TOPへ戻るボタン
 
 	img {
 		position: static;
-		// width: 2.315rem;
-		// height: 1.57rem;
-		// bottom: 8.5rem;
-		// right: 8.3rem;
-
+		
 		@include sp {
-			// width: 2.5rem;
+			
 		}
 	}
 }

@@ -478,7 +478,7 @@ section[id] {
     -webkit-transition: right 0.3s ease;
     transition: right 0.3s ease;
     z-index: 1000;
-    color: #fff;
+    color: #000;
   }
   .header__nav-sp.is-open {
     right: 0;
@@ -505,6 +505,7 @@ section[id] {
   color: #fff;
   text-decoration: none;
   padding: 1.2rem 1.5rem;
+  text-align: left;
   -webkit-transition: background-color 0.3s, color 0.3s;
   transition: background-color 0.3s, color 0.3s;
 }
@@ -1957,14 +1958,14 @@ section[id] {
   border: 1px solid #4D9600;
   -webkit-transition: background-color 0.3s, color 0.3s;
   transition: background-color 0.3s, color 0.3s;
-  width: 300px;
-  height: 50px;
+  width: 100%;
+  max-width: 30rem;
+  height: 5rem;
   line-height: 1.65;
 }
 @media (max-width: 767px) {
   .contact__button {
-    width: 315px;
-    height: 50px;
+    max-width: 31.5rem;
   }
 }
 
@@ -2067,10 +2068,11 @@ section[id] {
 
 .contact__textarea {
   width: 100%;
-  height: 200px;
-  padding-inline: 12px;
+  height: 20rem;
+  padding: 1.5rem 2rem;
   font-size: 1.8rem;
   background-color: #fff;
+  line-height: 1.7;
 }
 @media (max-width: 767px) {
   .contact__textarea {
