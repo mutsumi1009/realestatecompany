@@ -958,11 +958,26 @@ section[id] {
 =============================================== */
 
 .news {
-	background-color: $section-bg-color;
+	position: relative;
+	z-index: 1;
+	background-color: transparent;
 	padding-block: 8rem;
 
 	@include sp {
 		padding-block: 5rem;
+	}
+
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: $section-bg-color;
+		background-attachment: fixed;
+		z-index: -1;
 	}
 }
 
@@ -984,9 +999,9 @@ section[id] {
 
 .news__box {
 	justify-content: center;
-	background: #fff;
+	background: $font-color;
 	color: $font-color;
-	z-index: 999;
+	z-index: 2;
 	width: 100%;
 	margin: 0 auto;
 	height: 100%;
@@ -1033,7 +1048,7 @@ section[id] {
 
 .news__item:nth-of-type(2) {
 	padding-block: 0.1rem;
-	
+
 	@include sp {
 		padding: 0.2rem;
 	}
@@ -1139,8 +1154,7 @@ section[id] {
 .more-link span {
 	padding-right: 3.4rem;
 
-	@include sp {
-	}
+	@include sp {}
 }
 
 .more-link::after {
@@ -1263,7 +1277,7 @@ section[id] {
 
 	@include sp {
 		margin-top: 0.5rem;
-		
+
 	}
 }
 
@@ -1963,16 +1977,16 @@ TOPへ戻るボタン
 	z-index: 99;
 	opacity: 0;
 	visibility: hidden;
-    transform: translateY(20px);
+	transform: translateY(20px);
 	background-color: $main-color;
-    transition: 0.5s;
-    width: 6.8rem;
-    height: 6.8rem;
-    background-color: $main-color;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	transition: 0.5s;
+	width: 6.8rem;
+	height: 6.8rem;
+	background-color: $main-color;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
 	@include sp {
 		right: 2rem;
@@ -1983,13 +1997,13 @@ TOPへ戻るボタン
 
 	// ホバー時のスタイル
 	&:hover {
-		opacity: 0.8; 
-        transform: translateY(-0.5rem); 
-        transition: transform 0.3s, opacity 0.3s; 
-		
+		opacity: 0.8;
+		transform: translateY(-0.5rem);
+		transition: transform 0.3s, opacity 0.3s;
+
 		img {
-			transition: none; 
-            transform: none;
+			transition: none;
+			transform: none;
 		}
 	}
 
