@@ -112,7 +112,7 @@ img {
 =============================================== */
 
 section[id] {
-	scroll-margin-top: 50px;
+	scroll-margin-top: 80px;
 }
 
 
@@ -483,10 +483,6 @@ section[id] {
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
-
-	// @include sp {
-	// 	height: 100vh;
-	// }
 }
 
 .slick-dotted.slick-slider {
@@ -787,7 +783,6 @@ section[id] {
 	}
 }
 
-
 .works__contents {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
@@ -859,6 +854,11 @@ section[id] {
 			display: block;
 		}
 	}
+}
+
+.works__caption:hover {
+	opacity: 0.7;
+	cursor: pointer;
 }
 
 /*==================================================
@@ -936,7 +936,6 @@ section[id] {
 
 		@include sp {
 			aspect-ratio: 274 / 144;
-
 		}
 	}
 
@@ -951,7 +950,6 @@ section[id] {
 	max-width: 100%;
 	height: auto;
 	display: block;
-
 }
 
 
@@ -969,7 +967,6 @@ section[id] {
 }
 
 .news__container {
-
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	justify-content: space-between;
@@ -1017,7 +1014,6 @@ section[id] {
 .news__items {
 	list-style: none;
 	padding-inline: 2rem;
-	// margin: 0.1rem;
 	padding-top: 1rem;
 
 	@include sp {}
@@ -1037,8 +1033,7 @@ section[id] {
 
 .news__item:nth-of-type(2) {
 	padding-block: 0.1rem;
-	// margin-top: 0.2rem;
-
+	
 	@include sp {
 		padding: 0.2rem;
 	}
@@ -1145,7 +1140,6 @@ section[id] {
 	padding-right: 3.4rem;
 
 	@include sp {
-		//   padding-right: 0;
 	}
 }
 
@@ -1179,7 +1173,6 @@ section[id] {
 
 .company__inner {
 	display: flex;
-	// align-items: flex-end;
 	position: relative;
 	margin-top: 6.8rem;
 
@@ -1213,7 +1206,6 @@ section[id] {
 
 	@media screen and (max-width: 767px) {
 		aspect-ratio: 315 / 300;
-
 	}
 }
 
@@ -1311,7 +1303,6 @@ section[id] {
 	background-color: rgba(77, 150, 0, 0.149);
 	font-size: 1.6rem;
 	padding-block: 8rem;
-
 
 	@include sp {
 		padding-block: 5rem;
@@ -1698,7 +1689,6 @@ section[id] {
 	color: $font-color;
 	background-color: $main-color;
 	border: none;
-	// border-radius: 10px;
 	cursor: pointer;
 	border: 1px solid $main-color;
 	transition: background-color 0.3s, color 0.3s;
@@ -1794,7 +1784,6 @@ section[id] {
 	@include sp {
 		width: 100%;
 		margin: 0;
-
 	}
 }
 
@@ -1853,7 +1842,7 @@ section[id] {
 }
 
 .logo__text:hover {
-	opacity: 0.7;
+	opacity: 0.5;
 	cursor: pointer;
 }
 
@@ -1904,7 +1893,7 @@ section[id] {
 }
 
 .footer__nav-list a:hover {
-	opacity: 0.7;
+	opacity: 0.5;
 	cursor: pointer;
 }
 
@@ -1994,19 +1983,19 @@ TOPへ戻るボタン
 
 	// ホバー時のスタイル
 	&:hover {
-		opacity: 0.9;
-		transform: translateY(-0.5rem);
-        transition: transform 0.3s, opacity 0.3s;
-
+		opacity: 0.8; 
+        transform: translateY(-0.5rem); 
+        transition: transform 0.3s, opacity 0.3s; 
+		
 		img {
-			// transition: transform 0.3s;
-			// transform: translateY(-0.5rem);
-			transition: none;
+			transition: none; 
+            transform: none;
 		}
 	}
 
 	img {
 		position: static;
+		transform: none;
 
 		@include sp {}
 	}

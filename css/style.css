@@ -207,7 +207,7 @@ img {
 # セクション共通設定
 =============================================== */
 section[id] {
-  scroll-margin-top: 50px;
+  scroll-margin-top: 80px;
 }
 
 /* ===============================================
@@ -1023,6 +1023,11 @@ section[id] {
   .works__caption .sp {
     display: block;
   }
+}
+
+.works__caption:hover {
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 /*==================================================
@@ -2130,7 +2135,7 @@ section[id] {
 }
 
 .logo__text:hover {
-  opacity: 0.7;
+  opacity: 0.5;
   cursor: pointer;
 }
 
@@ -2192,7 +2197,7 @@ section[id] {
 }
 
 .footer__nav-list a:hover {
-  opacity: 0.7;
+  opacity: 0.5;
   cursor: pointer;
 }
 
@@ -2315,7 +2320,7 @@ TOPへ戻るボタン
   }
 }
 .page-top-btn:hover {
-  opacity: 0.9;
+  opacity: 0.8;
   -webkit-transform: translateY(-0.5rem);
           transform: translateY(-0.5rem);
   -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
@@ -2326,9 +2331,13 @@ TOPへ戻るボタン
 .page-top-btn:hover img {
   -webkit-transition: none;
   transition: none;
+  -webkit-transform: none;
+          transform: none;
 }
 .page-top-btn img {
   position: static;
+  -webkit-transform: none;
+          transform: none;
 }
 .is-show {
   opacity: 1;
