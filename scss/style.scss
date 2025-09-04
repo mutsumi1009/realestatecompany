@@ -7,8 +7,8 @@ $main-color: #4D9600;
 $section-bg-color: rgba(77, 150, 0, 0.102);
 $contact-bg-color: rgba(77, 150, 0, 0.146); // コンタクト
 $font-color: #fff;
-$font-serif: "YuMincho", "游明朝", "Yu Mincho", serif;
-$font-weight: 500;
+$font-serif: "YuMincho", "游明朝", "Yu Mincho", "Hiragino Mincho Pro", "Hiragino Mincho ProN", "MS PMincho", serif;
+$font-weight: 400;
 $text-color: #000;
 $placeholder-color: #A0A0A0;
 
@@ -1030,6 +1030,7 @@ section[id] {
 	list-style: none;
 	padding-inline: 2rem;
 	padding-top: 1rem;
+	padding-bottom: 2rem;
 
 	@include sp {}
 
@@ -1122,7 +1123,7 @@ section[id] {
 .news__more {
 	text-align: right;
 	margin-top: 1.1rem;
-	margin-bottom: 1.2rem;
+	// margin-bottom: 1.2rem;
 
 	@include sp {
 		margin-top: auto;
@@ -1132,7 +1133,8 @@ section[id] {
 
 // moreアイコン
 .more-link {
-	display: inline-block;
+	display: inline-flex;
+	align-items: center;
 	position: relative;
 	text-decoration: none;
 	transition: transform 0.3s ease;
@@ -1160,11 +1162,12 @@ section[id] {
 .more-link::after {
 	content: "";
 	position: absolute;
-	right: 0;
-	bottom: 50%;
+	right: -2px;
+	top: 37%;
 	width: 8em;
 	height: 1.8rem;
-	background: url("images/more.svg") no-repeat center;
+	background: url("../images/more.svg") no-repeat right center;
+
 
 }
 

@@ -168,9 +168,9 @@ html {
 
 body {
   margin: 0;
-  font-family: "YuMincho", "游明朝", "Yu Mincho", serif;
+  font-family: "YuMincho", "游明朝", "Yu Mincho", "Hiragino Mincho Pro", "Hiragino Mincho ProN", "MS PMincho", serif;
   color: #000;
-  font-weight: 500;
+  font-weight: 400;
   font-style: normal;
   background-color: #fff;
   padding-top: 0;
@@ -339,7 +339,7 @@ section[id] {
           align-items: center;
   height: 100%;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   color: #fff;
   font-size: 2rem;
   line-height: 1.65;
@@ -1225,6 +1225,7 @@ section[id] {
   list-style: none;
   padding-inline: 2rem;
   padding-top: 1rem;
+  padding-bottom: 2rem;
 }
 .news__item {
   width: 100%;
@@ -1323,7 +1324,6 @@ section[id] {
 .news__more {
   text-align: right;
   margin-top: 1.1rem;
-  margin-bottom: 1.2rem;
 }
 @media (max-width: 767px) {
   .news__more {
@@ -1333,7 +1333,12 @@ section[id] {
 }
 
 .more-link {
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
   text-decoration: none;
   -webkit-transition: -webkit-transform 0.3s ease;
@@ -1362,11 +1367,11 @@ section[id] {
 .more-link::after {
   content: "";
   position: absolute;
-  right: 0;
-  bottom: 50%;
+  right: -2px;
+  top: 37%;
   width: 8em;
   height: 1.8rem;
-  background: url("images/more.svg") no-repeat center;
+  background: url("../images/more.svg") no-repeat right center;
 }
 
 /* ===============================================
