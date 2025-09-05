@@ -303,8 +303,8 @@
 
                             <div class="news__more">
                                 <a href="#" class="more-link">
-                                    <span>more</span>
-                                    <!-- <img src="images/more.svg" alt="右矢印" width="82" height="20"> -->
+                                    <img src="images/more.svg" alt="右矢印" width="82" height="23">
+                                    <!-- <span>more</span> -->
                                 </a>
                             </div>
                         </div>
@@ -336,8 +336,8 @@
 
                             <div class="news__more">
                                 <a href="#" class="more-link">
-                                    <span>more</span>
-                                    <!-- <img src="images/more.svg" alt="右矢印" width="82" height="20"> -->
+                                    <!-- <span>more</span> -->
+                                    <img src="images/more.svg" alt="右矢印" width="82" height="23">
                                 </a>
                             </div>
                         </div>
@@ -382,18 +382,17 @@
         <!-- CONTACT-->
         <section class="contact" id="contact">
             <div class="contact-sec section-bg">
-                <div class="inner" data-aos="fade-up" data-aos-delay="0">
+                <div class="contact__inner inner" data-aos="fade-up" data-aos-delay="0">
 
                     <h2 class="news__title common-title" data-aos="fade-up" data-aos-duration="600">
                         <span class="common-title__en">CONTACT</span>
                         <span class="common-title__jp">お問い合わせ</span>
                     </h2>
-                    <p class="contact__lead">
+                    <p class="contact__lead" data-aos="fade-up" data-aos-delay="0">
                         ３営業日以内にメールにてご連絡いたします。*は入力必須項目となります。
                     </p>
-
                     <!--お名前-->
-                    <form class="contact__form" action="#" method="post">
+                    <form class="contact__form" action="#" method="post" data-aos="fade-up" data-aos-delay="0">
                         <div class="contact__items">
                             <div class="contact__item contact__item--name">
                                 <label for="name" class="contact__label">お名前
@@ -437,13 +436,17 @@
 
                             <!--内容-->
                             <div class="contact__item contact__item--message">
-                                <label for="message" class="contact__label">内容 *</label>
+                                <label for="message" class="contact__label">内容
+                                    <span class="req" aria-hidden="true">*</span>
+                                </label>
                                 <textarea id="message" name="message" class="contact__textarea" required></textarea>
                             </div>
 
                             <!--アンケート-->
                             <div class="contact__item contact__item--survey">
-                                <label class="title-label check-title">何を見て当社HPを知りましたか？ (複数回答可)　*</label>
+                                <label class="title-label check-title">
+                                    何を見て当社HPを知りましたか？ (複数回答可)&nbsp;&nbsp;&nbsp;*
+                                  </label>
                                 <div class="contact__checkbox-group">
                                     <label><input type="checkbox" name="source[]" value="internet">
                                         <span></span>&nbsp;インターネット</label>
@@ -571,7 +574,7 @@
                 <a href="#"><img src="images/icon_instagram.svg" alt="Instagram"></a>
             </div>
             <div class="footer__copyright">
-                <p>©Copyright0000&ensp; <br class="sp">
+                <p>©Copyright0000<br class="sp">
                     kitamurakensetukogyo
                 </p>
             </div>
