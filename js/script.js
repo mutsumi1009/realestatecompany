@@ -24,6 +24,20 @@ $(function () {
     $hamburgerBg.toggleClass('is-open');
   });
 
+
+/*：閉じる関数 */
+function closeHamburger() {
+  $hamburger.removeClass('is-open');
+  $navSp.removeClass('is-open');
+  $hamburgerBg.removeClass('is-open');
+}
+
+/* SPメニューのリンククリックで自動クローズ */
+$('.header__nav-sp a').on('click', function () {
+  closeHamburger();               // ← メニューを閉じる
+  // 以降は通常の遷移／スムーススクロールに任せる（preventDefaultしない）
+});
+
   // --- 3. ヘッダーの背景色切り替え ---
   const $header = $('.js-header');
   const $fv = $('.fv');
