@@ -35,7 +35,6 @@ function closeHamburger() {
 /* SPメニューのリンククリックで自動クローズ */
 $('.header__nav-sp a').on('click', function () {
   closeHamburger();               // ← メニューを閉じる
-  // 以降は通常の遷移／スムーススクロールに任せる（preventDefaultしない）
 });
 
   // --- 3. ヘッダーの背景色切り替え ---
@@ -55,37 +54,44 @@ $('.header__nav-sp a').on('click', function () {
   changeHeaderBg();
 
   // --- 4. モーダル機能 ---
-  const $modalOpen = $('.works__item');
-  const $modalClose = $('.js-modal-close');
-  const $modalArea = $('.js-modal');
+const $modalArea = $('.js-modal');
 
-  // モーダルを開く
-  $modalOpen.on('click', function () {
-    const data = $(this).data('modal');
-    $('#modal-img').attr({ src: data.img_src, alt: data.title });
-    $('#modal-text').html(`<strong>${data.title}</strong>`);
-    $modalArea.addClass('is-active');
-    $('body').css('overflow', 'hidden');
-  });
+// 開く：a.work-card をクリックした時だけ（委譲）
+$('.works__contents').on('click', 'a.work-card', function (e) {
+  e.preventDefault(); // ← # へのジャンプ防止
 
-  // モーダルを閉じる（閉じるボタンと背景の両方）
-  $modalClose.add($modalArea).on('click', function () {
+  const $item = $(this).closest('.works__item');
+  const data = $item.data('modal') || {};
+
+  $('#modal-img').attr({ src: data.img_src || '', alt: data.title || '' });
+  $('#modal-text').text(data.title || '');
+
+  $modalArea.appendTo('body');
+
+  $modalArea.addClass('is-active');
+  $('body').addClass('is-modal-open'); 
+  $('body').css('overflow', 'hidden');   // 背景スクロール停止（位置は維持）
+});
+
+// 閉じる：× と 黒幕だけで閉じる
+$(document).on('click', '.js-modal-close, .modal-bg', function () {
+  $modalArea.removeClass('is-active');
+  $('body').css('overflow', '');
+});
+
+// モーダル本体をクリックしても閉じない
+$(document).on('click', '.modal__item', function (e) {
+  e.stopPropagation();
+});
+
+// Escapeキーで閉じる
+$(document).on('keydown', function (e) {
+  if (e.key === 'Escape') {
     $modalArea.removeClass('is-active');
+    $('body').removeClass('is-modal-open');
     $('body').css('overflow', '');
-  });
-
-  // モーダル内のコンテンツをクリックしても閉じないようにする
-  $modalArea.children().on('click', function (e) {
-    e.stopPropagation();
-  });
-
-  // Escapeキーでモーダルを閉じる
-  $(document).on('keydown', function (e) {
-    if (e.key === 'Escape') {
-      $modalArea.removeClass('is-active');
-      $('body').css('overflow', '');
-    }
-  });
+  }
+});
 
 
   // --- 5. TOPへ戻る（FVより下で表示） ---

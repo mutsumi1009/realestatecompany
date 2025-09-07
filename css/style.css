@@ -1040,7 +1040,7 @@ section[id] {
   top: 0;
   left: 0;
   width: 100%;
-  height: 27.5rem;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1050,8 +1050,9 @@ section[id] {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  z-index: 1000;
+  z-index: 99999;
   opacity: 0;
+  padding: 2rem;
   visibility: hidden;
   -webkit-transition: opacity 0.3s, visibility 0.3s;
   transition: opacity 0.3s, visibility 0.3s;
@@ -1064,14 +1065,16 @@ section[id] {
 
 .modal__item {
   background: #fff;
+  top: 49%;
+  left: 50%;
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%) scale(0.8);
+          transform: translate(-50%, -50%) scale(0.8);
   width: 50%;
   max-width: 450px;
   height: auto;
   padding: 15px 15px 6px 15px;
-  position: relative;
   z-index: 2;
-  -webkit-transform: scale(0.8);
-          transform: scale(0.8);
   -webkit-transition: -webkit-transform 0.3s;
   transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
@@ -1084,8 +1087,8 @@ section[id] {
 }
 
 .modal-area.is-active .modal__item {
-  -webkit-transform: scale(1);
-          transform: scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
 }
 
 .modal-bg {
@@ -1100,7 +1103,7 @@ section[id] {
 
 .modal__close {
   position: absolute;
-  top: 10px;
+  top: 4px;
   right: 2px;
   width: 15px;
   height: 15px;
@@ -2386,4 +2389,8 @@ TOPへ戻るボタン
   visibility: visible;
   -webkit-transform: translateY(0);
           transform: translateY(0);
+}
+
+.is-modal-open .page-top-btn {
+  display: none;
 }/*# sourceMappingURL=style.css.map */
