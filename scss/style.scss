@@ -1320,6 +1320,7 @@ section[id] {
 	font-size: 2.0rem;
 	font-weight: 600;
 	line-height: 1.65;
+	white-space: nowrap;
 
 	@media screen and (max-width: 860px) and (min-width: 768px) {
 		font-size: 1.8rem;
@@ -1336,6 +1337,7 @@ section[id] {
 	font-weight: 600;
 	line-height: 1.56;
 	margin-top: 0.8rem;
+	white-space: nowrap;
 
 	@media screen and (max-width: 860px) and (min-width: 768px) {
 		font-size: 1.5rem;
@@ -1353,6 +1355,7 @@ section[id] {
 	font-weight: 600;
 	margin-top: 0.2rem;
 	line-height: 1.56;
+	white-space: nowrap;
 
 	@include sp {
 		margin-top: 0.5rem;
@@ -1512,7 +1515,7 @@ section[id] {
 		font-size: 1.6rem;
 		grid-template-columns: repeat(2, 1fr);
 		row-gap: 0.5rem;
-		column-gap: 0.5rem;
+		column-gap: 0.2rem;
 		// margin-top: 0.3rem;
 		margin-bottom: 2.1rem;
 		margin-right: 0;
@@ -1671,9 +1674,10 @@ section[id] {
 	width: auto;
 
 	@include sp {
-		margin-top: 1.1rem;
-		gap: 0;
-		margin-top: 0.3rem;
+    align-items: flex-start;
+    gap: 0;
+    margin-top: 0.3rem;
+    line-height: initial;    
 	}
 }
 
@@ -1683,7 +1687,13 @@ section[id] {
 	flex-shrink: 1;
 	flex-basis: auto;
 	width: auto;
+
+	@include sp {
+	  line-height: 1.35;
+	}
 }
+
+
 
 .title-label.check-title {
 	white-space: normal;
@@ -1779,13 +1789,19 @@ section[id] {
 	display: -webkit-box;
 	-webkit-box-orient: vertical;
 	overflow: hidden;
-
+	
+	> * { margin: 0; }
+	> * + * { margin-top: 1rem; }   
+	h3 { margin-top: .4rem; margin-bottom: 0rem; }
+	p { margin-top: 0rem; margin-bottom: 2.2rem; }
 
 	@include sp {
 		font-size: 1.6rem;
 		line-height: 2.0625;
 	}
 }
+
+
 
 /* プライバシー欄の箇条書き */
 .privacy-content ul {
