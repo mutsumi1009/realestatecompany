@@ -2025,12 +2025,12 @@ section[id] {
 
 .footer__nav {
 	padding-top: 0.6rem;
-	padding-bottom: 3.3rem;
+	padding-bottom: 2.8rem;
 
 	@include sp {
 		// margin-top: 2.1rem;
-		padding-top: 0;
-		padding-bottom: 0;
+		padding-top: 2.3rem;
+		padding-bottom: 2.5rem;
 	}
 }
 
@@ -2045,7 +2045,7 @@ section[id] {
 	@include sp {
 		align-items: center;
 		column-gap: 3.1rem;
-		row-gap: 1.16rem;
+		row-gap: 1rem;
 		padding: 0;
 		margin: 0;
 		list-style: none;
@@ -2073,10 +2073,10 @@ section[id] {
 	justify-content: center;
 	align-items: center;
 	gap: 3.1rem;
-	 margin-bottom: 8rem;
+	//  margin-bottom: 8rem;
 
 	@include sp {
-		// margin-block: 2.7rem 5rem;
+	// margin-bottom: 5.1rem;
 	}
 }
 
@@ -2110,6 +2110,7 @@ section[id] {
 	justify-content: center;
 	padding-block: 3rem 2.9rem;
 	width: 100%;
+	margin-top: 7.5rem;
 
 	@include sp {
 		padding-block: 2.1rem;
