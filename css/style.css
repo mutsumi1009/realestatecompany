@@ -2222,12 +2222,12 @@ section[id] {
 
 .footer__nav {
   padding-top: 0.6rem;
-  padding-bottom: 3.3rem;
+  padding-bottom: 2.8rem;
 }
 @media (max-width: 767px) {
   .footer__nav {
-    padding-top: 0;
-    padding-bottom: 0;
+    padding-top: 2.3rem;
+    padding-bottom: 2.5rem;
   }
 }
 
@@ -2252,7 +2252,7 @@ section[id] {
     -webkit-column-gap: 3.1rem;
        -moz-column-gap: 3.1rem;
             column-gap: 3.1rem;
-    row-gap: 1.16rem;
+    row-gap: 1rem;
     padding: 0;
     margin: 0;
     list-style: none;
@@ -2294,7 +2294,6 @@ section[id] {
       -ms-flex-align: center;
           align-items: center;
   gap: 3.1rem;
-  margin-bottom: 8rem;
 }
 .footer__sns a {
   -webkit-transition: opacity 0.4s ease;
@@ -2336,6 +2335,7 @@ section[id] {
           justify-content: center;
   padding-block: 3rem 2.9rem;
   width: 100%;
+  margin-top: 7.5rem;
 }
 @media (max-width: 767px) {
   .footer__copyright {
