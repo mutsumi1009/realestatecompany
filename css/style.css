@@ -1646,7 +1646,7 @@ section[id] {
     width: 100%;
     font-size: 1.6rem;
     grid-template-columns: repeat(2, 1fr);
-    row-gap: 0.5rem;
+    row-gap: 0.7rem;
     -webkit-column-gap: 0.2rem;
        -moz-column-gap: 0.2rem;
             column-gap: 0.2rem;
@@ -1670,6 +1670,7 @@ section[id] {
   .contact__checkbox-group label {
     padding-left: 2.5rem;
     white-space: nowrap;
+    padding-top: 0rem;
   }
 }
 .contact__checkbox-group label input {
@@ -1687,6 +1688,12 @@ section[id] {
   height: 20px;
   background-color: #fff;
   margin-right: 2rem;
+}
+@media (max-width: 767px) {
+  .contact__checkbox-group label span {
+    top: 32%;
+    left: -1px;
+  }
 }
 .contact__checkbox-group label input:checked + span::after {
   content: "";
@@ -1859,7 +1866,7 @@ section[id] {
         -ms-flex-align: start;
             align-items: flex-start;
     gap: 0;
-    margin-top: 0.3rem;
+    margin-top: 0.7rem;
     line-height: initial;
   }
 }
@@ -1990,6 +1997,13 @@ section[id] {
   .privacy-content {
     font-size: 1.6rem;
     line-height: 2.0625;
+  }
+  .privacy-content h3 {
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+  }
+  .privacy-content p {
+    margin-bottom: 3rem;
   }
 }
 
@@ -2240,7 +2254,7 @@ section[id] {
 }
 @media (max-width: 767px) {
   .footer__line {
-    margin-top: 2rem;
+    margin-top: 1.8rem;
     margin-bottom: 0;
   }
 }
@@ -2367,6 +2381,7 @@ section[id] {
     padding-block: 2.1rem;
     padding-inline: 3rem;
     line-height: 1.25;
+    margin-top: 5.2rem;
   }
 }
 

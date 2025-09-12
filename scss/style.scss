@@ -1514,7 +1514,7 @@ section[id] {
 		width: 100%;
 		font-size: 1.6rem;
 		grid-template-columns: repeat(2, 1fr);
-		row-gap: 0.5rem;
+		row-gap: 0.7rem;
 		column-gap: 0.2rem;
 		// margin-top: 0.3rem;
 		margin-bottom: 2.1rem;
@@ -1532,6 +1532,7 @@ section[id] {
 		@include sp {
 			padding-left: 2.5rem;
 			white-space: nowrap;
+			padding-top: 0rem;
 		}
 
 		input {
@@ -1549,6 +1550,11 @@ section[id] {
 			height: 20px;
 			background-color: $font-color;
 			margin-right: 2rem;
+
+			@include sp {
+				top: 32%;
+				left: -1px;
+			}
 		}
 
 		input:checked+span::after {
@@ -1676,7 +1682,7 @@ section[id] {
 	@include sp {
     align-items: flex-start;
     gap: 0;
-    margin-top: 0.3rem;
+    margin-top: 0.7rem;
     line-height: initial;    
 	}
 }
@@ -1798,6 +1804,9 @@ section[id] {
 	@include sp {
 		font-size: 1.6rem;
 		line-height: 2.0625;
+		h3 { margin-top: 0rem; margin-bottom: 0rem; }
+		p { margin-bottom: 3rem; } 
+		
 	}
 }
 
@@ -1879,6 +1888,7 @@ section[id] {
 
 	@include sp {
 		width: 100%;
+		// line-height: 1.35;
 	}
 }
 
@@ -1976,6 +1986,7 @@ section[id] {
 		margin: 0 auto;
 		flex: unset;
 		margin-top: 0.2rem;
+		// margin-bottom: 0.5rem;
 	}
 }
 
@@ -2033,7 +2044,7 @@ section[id] {
 	margin: 2.6rem auto;
 
 	@include sp {
-		margin-top: 2rem;
+		margin-top: 1.8rem;
 		margin-bottom: 0;
 	}
 
@@ -2132,6 +2143,7 @@ section[id] {
 		padding-block: 2.1rem;
 		padding-inline: 3rem;
 		line-height: 1.25;
+		margin-top: 5.2rem;
 	}
 }
 
