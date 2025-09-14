@@ -1406,9 +1406,6 @@ section[id] {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     margin-top: 3.8rem;
     padding-bottom: 0;
   }
@@ -1418,15 +1415,28 @@ section[id] {
   width: 65.2173913043%;
   z-index: 99;
   position: relative;
-  aspect-ratio: 3/2;
-  position: relative;
-  padding-bottom: 6.2rem;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .company__map {
+    width: 100%;
+  }
 }
 @media (max-width: 767px) {
   .company__map {
-    position: relative;
     width: 100%;
     padding-bottom: 0;
+  }
+}
+
+.company__map-media {
+  aspect-ratio: 600/400;
+  position: relative;
+}
+@media (max-width: 767px) {
+  .company__map-media {
+    width: 100%;
+    padding-bottom: 0;
+    aspect-ratio: 315/300;
   }
 }
 
@@ -1434,11 +1444,6 @@ section[id] {
   width: 100%;
   height: 100%;
   display: block;
-}
-@media screen and (max-width: 767px) {
-  .company__map iframe {
-    aspect-ratio: 315/300;
-  }
 }
 
 .access__content {
@@ -1475,11 +1480,6 @@ section[id] {
   line-height: 1.65;
   white-space: nowrap;
 }
-@media screen and (max-width: 860px) and (min-width: 768px) {
-  .access__name {
-    font-size: 1.8rem;
-  }
-}
 @media (max-width: 767px) {
   .access__name {
     padding-bottom: 0.9rem;
@@ -1492,11 +1492,6 @@ section[id] {
   line-height: 1.56;
   margin-top: 0.8rem;
   white-space: nowrap;
-}
-@media screen and (max-width: 860px) and (min-width: 768px) {
-  .access__address {
-    font-size: 1.5rem;
-  }
 }
 @media (max-width: 767px) {
   .access__address {
