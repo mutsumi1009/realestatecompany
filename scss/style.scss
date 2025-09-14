@@ -207,6 +207,7 @@ section[id] {
 	max-width: 108rem;
 	margin: 0 auto;
 	padding-inline: 8rem;
+	// padding-top: 0.6rem;
 
 	@media screen and (max-width: 1024px) {
 		padding-inline: 2rem;
@@ -215,6 +216,7 @@ section[id] {
 	@include sp {
 		padding-left: 2.0rem;
 		padding-right: 2.0rem;
+		padding-bottom: 0.5rem;
 	}
 }
 
@@ -236,7 +238,7 @@ section[id] {
 .header__logo-link {
 	display: flex;
 	align-items: center;
-	height: 100%;
+	height: auto;
 	font-style: normal;
 	font-weight: $font-weight;
 	color: $font-color;
@@ -245,14 +247,15 @@ section[id] {
 	font-weight: 500;
 	transition: opacity 0.4s, color 0.4s;
 	//  margin-top: 0.3rem;
-	transform: translateY(3px);
+	transform: none;
+
 
 	@include tab {
 		font-size: 1.8rem;
 	}
 
 	&:hover {
-		// opacity: 0.5;
+		opacity: 0.5;
 	}
 
 	@include sp {
@@ -321,7 +324,7 @@ section[id] {
 		transform: scaleX(0);
 		transform-origin: center;
 		// opacity: 0;
-		transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+		transition: transform 0.5s ease-out;
 	}
 
 	&:hover {
@@ -521,10 +524,11 @@ section[id] {
 	align-items: center;
 	white-space: nowrap;
 	letter-spacing: 0.3em;
-	text-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+	text-shadow: 5px 5px 5px rgba(0, 0, 0, 1);
 
 	@media screen and (max-width: 840px) {
 		font-size: 3.5rem;
+		line-height: 2;
 	}
 
 	@include sp {
@@ -786,7 +790,16 @@ section[id] {
 	font-size: 1.6rem;
 	line-height: 1.5625;
 	margin-top: 1.7rem;
+	white-space: nowrap;
 
+	span {
+		white-space: nowrap;
+
+		@include tab {
+		white-space: normal;
+		}
+	}
+	
 	@media screen and (max-width: 860px) {
 		font-size: 1.4rem;
 	}
@@ -940,7 +953,7 @@ section[id] {
 
 .modal__item {
 	background: $font-color;
-	top: 49%;
+	top: 40%;
 	left: 50%;
 	position: absolute;
 	transform: translate(-50%, -50%) scale(0.8);
@@ -974,14 +987,14 @@ section[id] {
 
 .modal__close {
 	position: absolute;
-	top: 4px;
-	right: 2px;
+	top: 2px;
+	right: 2.79px;
 	width: 15px;
 	height: 15px;
 	line-height: 15px;
 	cursor: pointer;
 	text-align: center;
-	font-size: 2rem;
+	font-size: 1.8rem;
 	color: $text-color;
 	z-index: 3;
 }
@@ -1226,18 +1239,6 @@ section[id] {
 	@include sp {}
 }
 
-// .more-link::after {
-// 	content: "";
-// 	position: absolute;
-// 	right: -2px;
-// 	top: 37%;
-// 	width: 8em;
-// 	height: 1.8rem;
-// 	background: url("../images/more.svg") no-repeat right center;
-
-
-// }
-
 
 /* ===============================================
 # COMPANY
@@ -1275,6 +1276,11 @@ section[id] {
 	aspect-ratio: 3 / 2;
 	position: relative;
 	padding-bottom: 6.2rem;
+
+	// @mixin tab {
+	// 	width: 100%; 
+	//     padding-bottom: 0;
+	// }
 
 	@include sp {
 		position: relative;
@@ -1490,19 +1496,20 @@ section[id] {
 			border-radius: 50%;
 		}
 	}
-
 }
+
 
 // アンケートチェックボックス
 .contact__checkbox-group {
 	display: grid;
 	font-size: 1.8rem;
 	line-height: 1.388;
-	column-gap: 3.8rem;
+	column-gap: 3.5rem;
 	row-gap: 1.3rem;
 	grid-template-columns: repeat(4, 1fr);
 	justify-items: start;
 	margin-right: 2.9rem;
+
 
 
 	@media screen and (max-width: 840px) {
@@ -1530,7 +1537,7 @@ section[id] {
 		padding-top: 0.2rem;
 
 		@include sp {
-			padding-left: 2.5rem;
+			padding-left: 2.4rem;
 			white-space: nowrap;
 			padding-top: 0rem;
 		}
@@ -1539,8 +1546,8 @@ section[id] {
 			display: none;
 		}
 
-		span {
-			position: absolute;
+		label span {
+			position: relative;
 			font-size: 1.8rem;
 			line-height: 1.388;
 			top: 50%;
@@ -1552,8 +1559,9 @@ section[id] {
 			margin-right: 2rem;
 
 			@include sp {
-				top: 32%;
-				left: -1px;
+				top: 35%;
+				left: 0px;
+				transform: translateY(-50%);
 			}
 		}
 
@@ -1570,6 +1578,41 @@ section[id] {
 		}
 	}
 }
+
+.custom-checkbox-square {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+	width: 20px;
+	height: 20px;
+	background-color: $font-color;
+	border: 1px solid #fff;
+
+	@include sp {
+		top: 35%;
+		left: 0;
+	}
+
+}
+
+.checkbox-text {
+	font-size: 1.8rem;
+	color: $text-color;
+	margin-left: 0.5rem;
+	line-height: 1.388;
+	letter-spacing: 0.1rem;
+	white-space: nowrap;
+
+	@include sp {
+		font-size: 1.6rem;
+		transform: translateY(-0.3rem);
+		letter-spacing: 0;
+	}
+}
+
+
+
 
 // # プレースホルダー色
 .contact__input::placeholder,
@@ -1680,10 +1723,10 @@ section[id] {
 	width: auto;
 
 	@include sp {
-    align-items: flex-start;
-    gap: 0;
-    margin-top: 0.7rem;
-    line-height: initial;    
+		align-items: flex-start;
+		gap: 0;
+		margin-top: 0.7rem;
+		line-height: initial;
 	}
 }
 
@@ -1694,8 +1737,12 @@ section[id] {
 	flex-basis: auto;
 	width: auto;
 
+	@include tab {
+        white-space: nowrap;
+    }
+
 	@include sp {
-	  line-height: 1.35;
+		line-height: 1.35;
 	}
 }
 
@@ -1795,18 +1842,38 @@ section[id] {
 	display: -webkit-box;
 	-webkit-box-orient: vertical;
 	overflow: hidden;
-	
-	> * { margin: 0; }
-	> * + * { margin-top: 1rem; }   
-	h3 { margin-top: .4rem; margin-bottom: 0rem; }
-	p { margin-top: 0rem; margin-bottom: 2.2rem; }
+
+	>* {
+		margin: 0;
+	}
+
+	>*+* {
+		margin-top: 1rem;
+	}
+
+	h3 {
+		margin-top: .4rem;
+		margin-bottom: 0rem;
+	}
+
+	p {
+		margin-top: 0rem;
+		margin-bottom: 2.2rem;
+	}
 
 	@include sp {
 		font-size: 1.6rem;
 		line-height: 2.0625;
-		h3 { margin-top: 0rem; margin-bottom: 0rem; }
-		p { margin-bottom: 3rem; } 
-		
+
+		h3 {
+			margin-top: 0rem;
+			margin-bottom: 0rem;
+		}
+
+		p {
+			margin-bottom: 3rem;
+		}
+
 	}
 }
 
@@ -1975,12 +2042,14 @@ section[id] {
 
 .contact__textarea {
 	width: 100%;
-	height: 20rem;
+	min-height: 20rem;
 	padding: 1.5rem 2rem;
 	font-size: 1.8rem;
 	background-color: $font-color;
 	line-height: 1.7;
 	overflow-wrap: anywhere;
+	resize: vertical; 
+   
 
 	@include sp {
 		margin: 0 auto;
@@ -2052,7 +2121,7 @@ section[id] {
 
 .footer__nav {
 	padding-top: 0.6rem;
-	padding-bottom: 2.8rem;
+	 padding-bottom: 2.8rem;
 
 	@include sp {
 		// margin-top: 2.1rem;
@@ -2093,6 +2162,11 @@ section[id] {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+    padding-bottom: 8rem;
+
+	@include sp {
+		padding-bottom: 5.1rem;
+	}
 }
 
 .footer__sns {
@@ -2103,7 +2177,7 @@ section[id] {
 	//  margin-bottom: 8rem;
 
 	@include sp {
-	// margin-bottom: 5.1rem;
+		// margin-bottom: 5.1rem;
 	}
 }
 
@@ -2137,7 +2211,7 @@ section[id] {
 	justify-content: center;
 	padding-block: 3rem 2.9rem;
 	width: 100%;
-	margin-top: 7.5rem;
+	margin-top: 8rem;
 
 	@include sp {
 		padding-block: 2.1rem;
