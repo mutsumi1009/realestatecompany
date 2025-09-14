@@ -313,6 +313,7 @@ section[id] {
   .header__inner {
     padding-left: 2rem;
     padding-right: 2rem;
+    padding-bottom: 0.5rem;
   }
 }
 
@@ -340,7 +341,7 @@ section[id] {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100%;
+  height: auto;
   font-style: normal;
   font-weight: 400;
   color: #fff;
@@ -349,13 +350,16 @@ section[id] {
   font-weight: 500;
   -webkit-transition: opacity 0.4s, color 0.4s;
   transition: opacity 0.4s, color 0.4s;
-  -webkit-transform: translateY(3px);
-          transform: translateY(3px);
+  -webkit-transform: none;
+          transform: none;
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .header__logo-link {
     font-size: 1.8rem;
   }
+}
+.header__logo-link:hover {
+  opacity: 0.5;
 }
 @media (max-width: 767px) {
   .header__logo-link {
@@ -442,10 +446,10 @@ section[id] {
           transform: scaleX(0);
   -webkit-transform-origin: center;
           transform-origin: center;
-  -webkit-transition: opacity 0.5s ease-out, -webkit-transform 0.5s ease-out;
-  transition: opacity 0.5s ease-out, -webkit-transform 0.5s ease-out;
-  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
-  transition: transform 0.5s ease-out, opacity 0.5s ease-out, -webkit-transform 0.5s ease-out;
+  -webkit-transition: -webkit-transform 0.5s ease-out;
+  transition: -webkit-transform 0.5s ease-out;
+  transition: transform 0.5s ease-out;
+  transition: transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
 }
 .header__nav-list li a:hover {
   opacity: 0.5;
@@ -646,11 +650,12 @@ section[id] {
           align-items: center;
   white-space: nowrap;
   letter-spacing: 0.3em;
-  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  text-shadow: 5px 5px 5px rgb(0, 0, 0);
 }
 @media screen and (max-width: 840px) {
   .fv__copy {
     font-size: 3.5rem;
+    line-height: 2;
   }
 }
 @media (max-width: 767px) {
@@ -921,6 +926,15 @@ section[id] {
   font-size: 1.6rem;
   line-height: 1.5625;
   margin-top: 1.7rem;
+  white-space: nowrap;
+}
+.service__text span {
+  white-space: nowrap;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .service__text span {
+    white-space: normal;
+  }
 }
 @media screen and (max-width: 860px) {
   .service__text {
@@ -1081,7 +1095,7 @@ section[id] {
 
 .modal__item {
   background: #fff;
-  top: 49%;
+  top: 40%;
   left: 50%;
   position: absolute;
   -webkit-transform: translate(-50%, -50%) scale(0.8);
@@ -1119,14 +1133,14 @@ section[id] {
 
 .modal__close {
   position: absolute;
-  top: 4px;
-  right: 2px;
+  top: 2px;
+  right: 2.79px;
   width: 15px;
   height: 15px;
   line-height: 15px;
   cursor: pointer;
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: #000;
   z-index: 3;
 }
@@ -1628,9 +1642,9 @@ section[id] {
   display: grid;
   font-size: 1.8rem;
   line-height: 1.388;
-  -webkit-column-gap: 3.8rem;
-     -moz-column-gap: 3.8rem;
-          column-gap: 3.8rem;
+  -webkit-column-gap: 3.5rem;
+     -moz-column-gap: 3.5rem;
+          column-gap: 3.5rem;
   row-gap: 1.3rem;
   grid-template-columns: repeat(4, 1fr);
   justify-items: start;
@@ -1668,7 +1682,7 @@ section[id] {
 }
 @media (max-width: 767px) {
   .contact__checkbox-group label {
-    padding-left: 2.5rem;
+    padding-left: 2.4rem;
     white-space: nowrap;
     padding-top: 0rem;
   }
@@ -1676,8 +1690,8 @@ section[id] {
 .contact__checkbox-group label input {
   display: none;
 }
-.contact__checkbox-group label span {
-  position: absolute;
+.contact__checkbox-group label label span {
+  position: relative;
   font-size: 1.8rem;
   line-height: 1.388;
   top: 50%;
@@ -1690,9 +1704,11 @@ section[id] {
   margin-right: 2rem;
 }
 @media (max-width: 767px) {
-  .contact__checkbox-group label span {
-    top: 32%;
-    left: -1px;
+  .contact__checkbox-group label label span {
+    top: 35%;
+    left: 0px;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
   }
 }
 .contact__checkbox-group label input:checked + span::after {
@@ -1706,6 +1722,41 @@ section[id] {
   border-bottom: 2px solid #000;
   -webkit-transform: translate(-50%, -60%) rotate(-45deg);
           transform: translate(-50%, -60%) rotate(-45deg);
+}
+
+.custom-checkbox-square {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border: 1px solid #fff;
+}
+@media (max-width: 767px) {
+  .custom-checkbox-square {
+    top: 35%;
+    left: 0;
+  }
+}
+
+.checkbox-text {
+  font-size: 1.8rem;
+  color: #000;
+  margin-left: 0.5rem;
+  line-height: 1.388;
+  letter-spacing: 0.1rem;
+  white-space: nowrap;
+}
+@media (max-width: 767px) {
+  .checkbox-text {
+    font-size: 1.6rem;
+    -webkit-transform: translateY(-0.3rem);
+            transform: translateY(-0.3rem);
+    letter-spacing: 0;
+  }
 }
 
 .contact__input::-webkit-input-placeholder, .contact__textarea::-webkit-input-placeholder, .contact__select::-webkit-input-placeholder {
@@ -1880,6 +1931,11 @@ section[id] {
   -ms-flex-preferred-size: auto;
       flex-basis: auto;
   width: auto;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .contact__item--survey .contact__title {
+    white-space: nowrap;
+  }
 }
 @media (max-width: 767px) {
   .contact__item--survey .contact__title {
@@ -2185,12 +2241,13 @@ section[id] {
 
 .contact__textarea {
   width: 100%;
-  height: 20rem;
+  min-height: 20rem;
   padding: 1.5rem 2rem;
   font-size: 1.8rem;
   background-color: #fff;
   line-height: 1.7;
   overflow-wrap: anywhere;
+  resize: vertical;
 }
 @media (max-width: 767px) {
   .contact__textarea {
@@ -2320,6 +2377,12 @@ section[id] {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-bottom: 8rem;
+}
+@media (max-width: 767px) {
+  .footer__bottom {
+    padding-bottom: 5.1rem;
+  }
 }
 
 .footer__sns {
@@ -2374,7 +2437,7 @@ section[id] {
           justify-content: center;
   padding-block: 3rem 2.9rem;
   width: 100%;
-  margin-top: 7.5rem;
+  margin-top: 8rem;
 }
 @media (max-width: 767px) {
   .footer__copyright {
