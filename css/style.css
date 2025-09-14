@@ -1873,6 +1873,12 @@ section[id] {
 }
 
 .contact__item--type {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-top: 5rem;
 }
 @media (max-width: 767px) {
@@ -2214,6 +2220,7 @@ section[id] {
     max-width: none;
     margin: 0;
     font-size: 1.6rem;
+    padding-top: 1.9rem;
   }
 }
 

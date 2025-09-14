@@ -1694,6 +1694,8 @@ section[id] {
 
 // コンタクトアイテム個別
 .contact__item--type {
+	display: flex;
+	align-items: center;
 	margin-top: 5rem;
 
 	@include sp {
@@ -2018,6 +2020,7 @@ section[id] {
 		max-width: none;
 		margin: 0;
 		font-size: 1.6rem;
+		padding-top: 1.9rem;
 	}
 }
 
