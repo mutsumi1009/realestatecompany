@@ -2408,6 +2408,7 @@ section[id] {
           align-items: center;
   gap: 3.1rem;
 }
+
 .footer__sns a {
   -webkit-transition: opacity 0.4s ease;
   transition: opacity 0.4s ease;
