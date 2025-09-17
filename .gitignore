@@ -1,3 +1,5 @@
 # macOSの不要な隠しファイル
 .DS_Storecss/*.map
 /css/*.map
+/_merge_backup/
+.DS_Store
