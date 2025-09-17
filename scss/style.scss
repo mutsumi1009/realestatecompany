@@ -216,7 +216,7 @@ section[id] {
 	@include sp {
 		padding-left: 2.0rem;
 		padding-right: 2.0rem;
-		padding-bottom: 0.5rem;
+		// padding-bottom: 0.5rem;
 	}
 }
 
@@ -238,7 +238,7 @@ section[id] {
 .header__logo-link {
 	display: flex;
 	align-items: center;
-	height: auto;
+	height: 100%;
 	font-style: normal;
 	font-weight: $font-weight;
 	color: $font-color;
@@ -302,6 +302,7 @@ section[id] {
 	color: $font-color;
 	text-decoration: none;
 	position: relative;
+	
 	// transition: opacity 0.4s ease;
 
 	@include tab {
@@ -351,7 +352,7 @@ section[id] {
 		position: fixed;
 		font-size: 1.8rem;
 		font-weight: 500;
-		top: 5rem;
+		top: 5.2rem;
 		right: -100%;
 		width: 80%;
 		height: 34.8rem;
@@ -359,6 +360,7 @@ section[id] {
 		transition: right 0.3s ease;
 		z-index: 1000;
 		color: $text-color;
+		
 
 		&.is-open {
 			right: 0;
@@ -373,14 +375,17 @@ section[id] {
 	width: 100%;
 	margin: 0;
 	padding: 0;
+	row-gap: 1rem;
 
 	a {
 		display: block;
-		font-size: 2.0rem;
+		font-size: 1.8rem;
 		font-weight: 500;
 		color: $font-color;
 		text-decoration: none;
-		padding: 1.2rem 1.5rem;
+		padding-top: 2rem;
+		padding-left: 2rem;
+		// margin-bottom: 1.1rem;
 		text-align: left;
 		// transition: background-color 0.3s, color 0.3s;
 
@@ -1107,8 +1112,8 @@ section[id] {
 .news__item {
 	width: 100%;
 	height: 100%;
-	padding-top: 1rem;
-	padding-bottom: 1.1rem;
+	// padding-top: 1rem;
+	// padding-bottom: 1.1rem;
 	border-bottom: 1px solid $main-color;
 
 
@@ -1153,7 +1158,8 @@ section[id] {
 	align-items: flex-start;
 	transition: opacity 0.3s ease, color 0.3s ease;
 	// border-bottom: 1px solid $main-color;
-	padding-top: 1rem;
+	padding-top: 2rem;
+	padding-bottom: 1.1rem;
 
 	@include sp {
 		padding-block: 1rem 1.1rem;
@@ -2253,9 +2259,7 @@ TOPへ戻るボタン
 	// ホバー時のスタイル
 	&:hover {
 		opacity: 0.8;
-		transform: translateY(-0.5rem);
-
-
+		
 		img {
 			transition: none;
 			transform: none;
@@ -2271,7 +2275,7 @@ TOPへ戻るボタン
 }
 
 // スクロール時に表示するためのクラス
-.is-show {
+.page-top-btn.is-show {
 	opacity: 1;
 	visibility: visible;
 	transform: translateY(0);
