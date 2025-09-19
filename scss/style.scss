@@ -929,7 +929,7 @@ section[id] {
 	// transform: scale(0.8);
 	// transition: transform .3s;
 	transform: translateY(8px) scale(.98);
-	 opacity: 0;
+	opacity: 0;
 	// transition: transform .35s cubic-bezier(.22, .61, .36, 1), opacity .35s ease;
 
 	overflow: hidden;
@@ -2153,16 +2153,6 @@ TOPへ戻るボタン
 		height: 5rem;
 	}
 
-	// ホバー時のスタイル
-	&:hover {
-		opacity: 0.8;
-
-		img {
-			transition: none;
-			transform: none;
-		}
-	}
-
 	img {
 		position: static;
 		transform: none;
@@ -2175,7 +2165,11 @@ TOPへ戻るボタン
 .is-show {
 	opacity: 1;
 	visibility: visible;
-	transform: translateY(0);
+	// transform: translateY(0);
+
+	&:hover {
+		opacity: 0.7;
+	}
 }
 
 .is-modal-open .page-top-btn {
