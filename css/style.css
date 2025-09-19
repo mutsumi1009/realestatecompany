@@ -2516,7 +2516,7 @@ TOPへ戻るボタン
   opacity: 1;
   visibility: visible;
 }
-.page-top-btn.is-show:hover {
+.is-show:hover {
   opacity: 0.7;
 }
 
