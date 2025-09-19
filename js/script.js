@@ -25,21 +25,22 @@ $(function () {
   });
 
 
-/*：閉じる関数 */
-function closeHamburger() {
-  $hamburger.removeClass('is-open');
-  $navSp.removeClass('is-open');
-  $hamburgerBg.removeClass('is-open');
-}
+  /*：閉じる関数 */
+  function closeHamburger() {
+    $hamburger.removeClass('is-open');
+    $navSp.removeClass('is-open');
+    $hamburgerBg.removeClass('is-open');
+  }
 
-/* SPメニューのリンククリックで自動クローズ */
-$('.header__nav-sp a').on('click', function () {
-  closeHamburger();               // ← メニューを閉じる
-});
+  /* SPメニューのリンククリックで自動クローズ */
+  $('.header__nav-sp a').on('click', function () {
+    closeHamburger();               // ← メニューを閉じる
+  });
 
   // --- 3. ヘッダーの背景色切り替え ---
   const $header = $('.js-header');
   const $fv = $('.fv');
+  const $toTopBtn = $('.js-to-top'); 
 
   function changeHeaderBg() {
     if (!$header.length || !$fv.length) return;
@@ -54,48 +55,54 @@ $('.header__nav-sp a').on('click', function () {
   changeHeaderBg();
 
   // --- 4. モーダル機能 ---
-const $modalArea = $('.js-modal');
+  const $modalArea = $('.js-modal');
 
-// 開く：a.work-card をクリックした時だけ（委譲）
-$('.works__contents').on('click', 'a.work-card', function (e) {
-  e.preventDefault(); // ← # へのジャンプ防止
+  // 開く：a.work-card をクリックした時だけ（委譲）
+  $('.works__contents').on('click', 'a.work-card', function (e) {
+    e.preventDefault(); // ← # へのジャンプ防止
 
-  const $item = $(this).closest('.works__item');
-  const data = $item.data('modal') || {};
+    const $item = $(this).closest('.works__item');
+    const data = $item.data('modal') || {};
 
-  $('#modal-img').attr({ src: data.img_src || '', alt: data.title || '' });
-  $('#modal-text').text(data.title || '');
+    $('#modal-img').attr({ src: data.img_src || '', alt: data.title || '' });
+    $('#modal-text').text(data.title || '');
 
-  $modalArea.appendTo('body');
+    $modalArea.appendTo('body');
 
-  $modalArea.addClass('is-active');
-  $('body').addClass('is-modal-open'); 
-  $('body').css('overflow', 'hidden');   // 背景スクロール停止（位置は維持）
-});
+    $modalArea.addClass('is-active');
+    $toTopBtn.addClass('is-hidden-temp');  // 一時的に隠す
+    $('body').addClass('is-modal-open');
+    $('body').css('overflow', 'hidden');   // 背景スクロール停止（位置は維持）
+  });
 
-// 閉じる：× と 黒幕だけで閉じる
+  // 閉じる：× と 黒幕だけで閉じる（★置き換え）
 $(document).on('click', '.js-modal-close, .modal-bg', function () {
   $modalArea.removeClass('is-active');
-  $('body').css('overflow', '');
+
+  $('body').removeClass('is-modal-open').css('overflow', ''); 
+  $toTopBtn.removeClass('is-hidden-temp');                    
+  onScrollToTop();                                          
 });
 
-// モーダル本体をクリックしても閉じない
-$(document).on('click', '.modal__item', function (e) {
-  e.stopPropagation();
-});
 
-// Escapeキーで閉じる
+  // モーダル本体をクリックしても閉じない
+  $(document).on('click', '.modal__item', function (e) {
+    e.stopPropagation();
+  });
+
+ // Escapeキーで閉じる（★置き換え）
 $(document).on('keydown', function (e) {
   if (e.key === 'Escape') {
     $modalArea.removeClass('is-active');
-    $('body').removeClass('is-modal-open');
-    $('body').css('overflow', '');
+    $('body').removeClass('is-modal-open').css('overflow', ''); // クラスも解除
+    $toTopBtn.removeClass('is-hidden-temp');                    // ★追加：TOPボタン再表示
+    onScrollToTop();                                            // ★追加：現在位置で .is-show を付け直し
   }
 });
 
 
   // --- 5. TOPへ戻る（FVより下で表示） ---
-  const $toTopBtn = $('.js-to-top');
+ 
   function fvHeight() { return $fv.length ? $fv.outerHeight() : 200; }
   function onScrollToTop() {
     const y = $(window).scrollTop();

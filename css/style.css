@@ -452,7 +452,6 @@ section[id] {
   transition: transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
 }
 .header__nav-list li a:hover {
-  opacity: 0.5;
   color: #fff;
 }
 .header__nav-list li a:hover::after {
@@ -550,8 +549,10 @@ section[id] {
   left: 2rem;
   background: #4D9600;
   border-radius: 0.2rem;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: opacity 0.35s ease, background-color 0.35s ease, -webkit-transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition: opacity 0.35s ease, background-color 0.35s ease, -webkit-transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), opacity 0.35s ease, background-color 0.35s ease;
+  transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), opacity 0.35s ease, background-color 0.35s ease, -webkit-transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 .hamburger .hamburger-line {
   top: 50%;
@@ -619,6 +620,11 @@ section[id] {
   margin-bottom: 0 !important;
 }
 
+.fv__slider {
+  position: relative;
+  z-index: 0;
+}
+
 .fv__catch {
   position: absolute;
   top: 51.39%;
@@ -626,6 +632,7 @@ section[id] {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   text-align: center;
+  z-index: 2;
 }
 @media (max-width: 767px) {
   .fv__catch {
@@ -680,6 +687,7 @@ section[id] {
   inset: 0;
   background-color: rgba(0, 0, 0, 0.15);
   z-index: 1;
+  pointer-events: none;
 }
 
 /* ===============================================
@@ -1084,8 +1092,8 @@ section[id] {
   opacity: 0;
   padding: 2rem;
   visibility: hidden;
-  -webkit-transition: opacity 0.3s, visibility 0.3s;
-  transition: opacity 0.3s, visibility 0.3s;
+  -webkit-transition: opacity 0.35s ease, visibility 0s linear 0.35s;
+  transition: opacity 0.35s ease, visibility 0s linear 0.35s;
 }
 
 .modal-area.is-active {
@@ -1095,20 +1103,16 @@ section[id] {
 
 .modal__item {
   background: #fff;
-  top: 40%;
-  left: 50%;
-  position: absolute;
-  -webkit-transform: translate(-50%, -50%) scale(0.8);
-          transform: translate(-50%, -50%) scale(0.8);
+  position: relative;
   width: 50%;
   max-width: 450px;
   height: auto;
   padding: 15px 15px 6px 15px;
   z-index: 2;
-  -webkit-transition: -webkit-transform 0.3s;
-  transition: -webkit-transform 0.3s;
-  transition: transform 0.3s;
-  transition: transform 0.3s, -webkit-transform 0.3s;
+  -webkit-transform: translateY(8px) scale(0.98);
+          transform: translateY(8px) scale(0.98);
+  opacity: 0;
+  overflow: hidden;
 }
 @media (max-width: 767px) {
   .modal__item {
@@ -1117,8 +1121,9 @@ section[id] {
 }
 
 .modal-area.is-active .modal__item {
-  -webkit-transform: translate(-50%, -50%) scale(1);
-          transform: translate(-50%, -50%) scale(1);
+  -webkit-transition: opacity 0.35s ease;
+  transition: opacity 0.35s ease;
+  opacity: 1;
 }
 
 .modal-bg {
@@ -2388,7 +2393,6 @@ section[id] {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-bottom: 8rem;
 }
 @media (max-width: 767px) {
   .footer__bottom {
@@ -2505,8 +2509,6 @@ TOPへ戻るボタン
 }
 .page-top-btn:hover {
   opacity: 0.8;
-  -webkit-transform: translateY(-0.5rem);
-          transform: translateY(-0.5rem);
 }
 .page-top-btn:hover img {
   -webkit-transition: none;
