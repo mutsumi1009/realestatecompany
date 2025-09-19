@@ -207,7 +207,6 @@ section[id] {
 	max-width: 108rem;
 	margin: 0 auto;
 	padding-inline: 8rem;
-	// padding-top: 0.6rem;
 
 	@media screen and (max-width: 1024px) {
 		padding-inline: 2rem;
@@ -216,7 +215,7 @@ section[id] {
 	@include sp {
 		padding-left: 2.0rem;
 		padding-right: 2.0rem;
-		// padding-bottom: 0.5rem;
+		padding-bottom: 0.5rem;
 	}
 }
 
@@ -238,7 +237,7 @@ section[id] {
 .header__logo-link {
 	display: flex;
 	align-items: center;
-	height: 100%;
+	height: auto;
 	font-style: normal;
 	font-weight: $font-weight;
 	color: $font-color;
@@ -246,7 +245,6 @@ section[id] {
 	line-height: 1.65;
 	font-weight: 500;
 	transition: opacity 0.4s, color 0.4s;
-	//  margin-top: 0.3rem;
 	transform: none;
 
 
@@ -265,7 +263,6 @@ section[id] {
 
 .header__nav {
 	height: 100%;
-
 }
 
 .header__nav-list {
@@ -285,7 +282,6 @@ section[id] {
 	}
 }
 
-
 .header__nav-list li {
 	height: 100%;
 	display: flex;
@@ -302,8 +298,6 @@ section[id] {
 	color: $font-color;
 	text-decoration: none;
 	position: relative;
-
-	// transition: opacity 0.4s ease;
 
 	@include tab {
 		font-size: 1.6rem;
@@ -324,20 +318,17 @@ section[id] {
 		/* ★デフォルトの下線の色（白） */
 		transform: scaleX(0);
 		transform-origin: center;
-		// opacity: 0;
 		transition: transform 0.5s ease-out;
 	}
 
 	&:hover {
-		// opacity: 0.5;
+		opacity: 0.5;
 		color: $font-color;
 
 
 		&::after {
 			transform: scaleX(1);
 			transform-origin: center;
-			// opacity: 1;
-			// background-color: $font-color;
 		}
 	}
 }
@@ -352,7 +343,7 @@ section[id] {
 		position: fixed;
 		font-size: 1.8rem;
 		font-weight: 500;
-		top: 5.2rem;
+		top: 5rem;
 		right: -100%;
 		width: 80%;
 		height: 34.8rem;
@@ -360,7 +351,6 @@ section[id] {
 		transition: right 0.3s ease;
 		z-index: 1000;
 		color: $text-color;
-
 
 		&.is-open {
 			right: 0;
@@ -375,19 +365,15 @@ section[id] {
 	width: 100%;
 	margin: 0;
 	padding: 0;
-	row-gap: 1rem;
 
 	a {
 		display: block;
-		font-size: 1.8rem;
+		font-size: 2.0rem;
 		font-weight: 500;
 		color: $font-color;
 		text-decoration: none;
-		padding-top: 2rem;
-		padding-left: 2rem;
-		// margin-bottom: 1.1rem;
+		padding: 1.2rem 1.5rem;
 		text-align: left;
-		// transition: background-color 0.3s, color 0.3s;
 
 		&:hover {
 			background-color: $text-color;
@@ -426,10 +412,7 @@ section[id] {
 		left: 2rem;
 		background: $main-color;
 		border-radius: 0.2rem;
-		transition:
-			transform .35s cubic-bezier(.22, .61, .36, 1),
-			opacity .35s ease,
-			background-color .35s ease;
+		transition: .3s;
 	}
 
 	// 中の線
@@ -509,19 +492,12 @@ section[id] {
 	margin-bottom: 0 !important;
 }
 
-.fv__slider {
-	position: relative;
-	z-index: 0;
-}
-
-
 .fv__catch {
 	position: absolute;
 	top: 51.39%;
 	left: 50.5%;
 	transform: translate(-50%, -50%);
 	text-align: center;
-	z-index: 2;
 
 	@include sp {
 		top: 51.3%;
@@ -549,7 +525,6 @@ section[id] {
 	@include sp {
 		font-size: 3rem;
 		letter-spacing: 0.3em;
-		// display: none;
 	}
 }
 
@@ -570,7 +545,6 @@ section[id] {
 	inset: 0;
 	background-color: rgba(0, 0, 0, 0.15);
 	z-index: 1;
-	pointer-events: none;
 }
 
 
@@ -625,7 +599,6 @@ section[id] {
 		letter-spacing: 0.15em;
 	}
 }
-
 
 .about__text {
 	font-size: 1.8rem;
@@ -704,19 +677,6 @@ section[id] {
 
 .service__img {
 	// width: 100%;
-
-}
-
-.service__img img {
-	// width: 100%;
-	// height: auto;
-	// aspect-ratio: 600 / 300;
-	// object-fit: cover;
-
-	@include sp {
-		// aspect-ratio: 315 / 220;
-
-	}
 }
 
 .service__caption {
@@ -753,7 +713,6 @@ section[id] {
 		text-align: left;
 		margin: 1px 0 51px;
 		padding: 16px 20px 12px 20px;
-
 	}
 }
 
@@ -842,7 +801,6 @@ section[id] {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	gap: calc(40 / 920 * 100%);
-	// gap: 40px;
 	margin-top: 6.8rem;
 
 	@include sp {
@@ -866,10 +824,7 @@ section[id] {
 
 .works__img {
 	aspect-ratio: 200 / 200;
-	// cursor: pointer;
-	// opacity: 1;
-	// transition: opacity 0.4s ease;
-
+	
 	@include sp {
 		aspect-ratio: 315 / 250;
 	}
@@ -937,8 +892,7 @@ section[id] {
 	opacity: 0;
 	padding: 2rem;
 	visibility: hidden;
-	// transition: opacity .3s, visibility .3s;
-	transition: opacity .35s ease, visibility 0s linear .35s;
+	transition: opacity .3s, visibility .3s;
 }
 
 .modal-area.is-active {
@@ -948,23 +902,16 @@ section[id] {
 
 .modal__item {
 	background: $font-color;
-	// top: 40%;
-	// left: 50%;
-	position: relative;
-	// transform: translate(-50%, -50%) scale(0.8);
+	top: 40%;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%, -50%) scale(0.8);
 	width: 50%;
 	max-width: 450px;
 	height: auto;
 	padding: 15px 15px 6px 15px;
-	// position: relative;
 	z-index: 2;
-	// transform: scale(0.8);
-	// transition: transform .3s;
-	transform: translateY(8px) scale(.98);
-	 opacity: 0;
-	// transition: transform .35s cubic-bezier(.22, .61, .36, 1), opacity .35s ease;
-
-	overflow: hidden;
+	transition: transform .3s;
 
 	@include sp {
 		width: 80%;
@@ -972,9 +919,7 @@ section[id] {
 }
 
 .modal-area.is-active .modal__item {
-	// transform: translate(-50%, -50%) scale(1);
-	transition: opacity .35s ease;
-	opacity: 1;
+	transform: translate(-50%, -50%) scale(1);
 }
 
 .modal-bg {
@@ -1059,7 +1004,6 @@ section[id] {
 	grid-template-columns: repeat(2, 1fr);
 	justify-content: space-between;
 	gap: calc(60 / 920 * 100%);
-	// gap: 6rem;
 	align-items: stretch;
 	margin-top: 6.8rem;
 
@@ -1114,8 +1058,8 @@ section[id] {
 .news__item {
 	width: 100%;
 	height: 100%;
-	// padding-top: 1rem;
-	// padding-bottom: 1.1rem;
+	padding-top: 1rem;
+	padding-bottom: 1.1rem;
 	border-bottom: 1px solid $main-color;
 
 
@@ -1123,26 +1067,6 @@ section[id] {
 		width: auto;
 		height: auto;
 		padding-bottom: 0.1rem;
-	}
-}
-
-
-
-.news__item:nth-of-type(2) {
-	// padding-block: 0.1rem;
-
-	@include sp {
-		// padding: 0.2rem;
-	}
-
-}
-
-.news__item:nth-of-type(3) {
-	// padding-block: 1rem 2rem;
-
-	@include sp {
-		// padding-block: 1rem;
-
 	}
 }
 
@@ -1159,9 +1083,7 @@ section[id] {
 	text-decoration: none;
 	align-items: flex-start;
 	transition: opacity 0.3s ease, color 0.3s ease;
-	// border-bottom: 1px solid $main-color;
-	padding-top: 2rem;
-	padding-bottom: 1.1rem;
+	padding-top: 1rem;
 
 	@include sp {
 		padding-block: 1rem 1.1rem;
@@ -1206,7 +1128,6 @@ section[id] {
 .news__more {
 	text-align: right;
 	margin-top: 3.5rem;
-	// margin-bottom: 1.2rem;
 
 	@include sp {
 		margin-top: auto;
@@ -1225,11 +1146,6 @@ section[id] {
 	font-size: 2.0rem;
 	color: $main-color;
 	line-height: 0;
-	// padding-bottom: 0.9rem;
-
-	@include sp {
-		//  padding-top: 0;
-	}
 
 	&:hover {
 		transform: translateX(5px);
@@ -1251,8 +1167,7 @@ section[id] {
 	background-color: #f5f5f5;
 	font-size: 1.6rem;
 	padding-block: 8rem;
-	// padding-bottom: 1.8rem;
-
+	
 	@include sp {
 		padding-block: 5rem;
 	}
@@ -1264,7 +1179,7 @@ section[id] {
 	align-items: flex-end;
 	margin-top: 6.8rem;
 
-
+	
 	@include sp {
 		flex-direction: column;
 		margin-top: 3.8rem;
@@ -1278,7 +1193,7 @@ section[id] {
 	position: relative;
 	align-items: flex-start;
 	padding-bottom: 6.2rem;
-
+	
 	@include tab {
 		width: 100%;
 	}
@@ -1289,28 +1204,22 @@ section[id] {
 	}
 }
 
-.company__map-media {
-	aspect-ratio: 600 / 400;
+.company__map-media {           
+	aspect-ratio: 600 / 400;     
 	position: relative;
-
+	
 	@include sp {
 		width: 100%;
 		padding-bottom: 0;
 		aspect-ratio: 315 / 300;
 	}
-}
+  }
 
 .company__map iframe {
 	width: 100%;
 	height: 100%;
 	display: block;
 	align-items: flex-start;
-
-	// aspect-ratio: 600 / 400;
-
-	//  @media screen and (max-width: 767px) {
-	// 	aspect-ratio: 315 / 300;
-	// }
 }
 
 .access__content {
@@ -1318,7 +1227,6 @@ section[id] {
 	color: $font-color;
 	width: calc(500 / 920 * 100%);
 	margin-left: calc(-180 / 920 * 100%);
-	// margin-top: 19.9rem;
 	z-index: 2;
 	padding: 5.2rem 5rem 4.3rem calc(220 / 920 * 100%);
 
@@ -1342,11 +1250,7 @@ section[id] {
 	line-height: 1.65;
 	white-space: nowrap;
 
-	// @media screen and (max-width: 860px) and (min-width: 768px) {
-	// 	font-size: 1.8rem;
-	// }
-
-
+	
 	@include sp {
 		padding-bottom: 0.9rem;
 	}
@@ -1359,16 +1263,12 @@ section[id] {
 	margin-top: 0.8rem;
 	white-space: nowrap;
 
-	// @media screen and (max-width: 860px) and (min-width: 768px) {
-	// 	font-size: 1.5rem;
-	// }
 
 	@include sp {
 		line-height: 1.56;
 		margin-top: 0;
 	}
 }
-
 
 .access__tel {
 	font-size: 1.6rem;
@@ -1379,7 +1279,6 @@ section[id] {
 
 	@include sp {
 		margin-top: 0.5rem;
-
 	}
 }
 
@@ -1401,16 +1300,15 @@ section[id] {
 	}
 }
 
-
 .access__email {
 	font-size: 1.6rem;
 	font-weight: 600;
 	margin-top: 1.3rem;
 	cursor: pointer;
 
-	@media screen and (max-width: 860px) and (min-width: 768px) {
-		font-size: 1.5rem;
-	}
+	 @media screen and (max-width: 860px) and (min-width: 768px) {
+	 	font-size: 1.5rem;
+	 }
 
 	@include sp {
 		margin-top: 1.1rem;
@@ -1515,7 +1413,6 @@ section[id] {
 	margin-right: 2.9rem;
 
 
-
 	@media screen and (max-width: 840px) {
 		font-size: 1.6rem;
 
@@ -1527,7 +1424,6 @@ section[id] {
 		grid-template-columns: repeat(2, 1fr);
 		row-gap: 0.7rem;
 		column-gap: 0.2rem;
-		// margin-top: 0.3rem;
 		margin-bottom: 2.1rem;
 		margin-right: 0;
 	}
@@ -1750,7 +1646,6 @@ section[id] {
 }
 
 
-
 .title-label.check-title {
 	white-space: normal;
 	line-height: 1.6;
@@ -1760,16 +1655,6 @@ section[id] {
 		line-height: 1.35;
 	}
 }
-
-// .title-label.check-title .req {
-// 	display: inline-block;
-// 	white-space: nowrap;
-// 	margin-left: 0.6em;
-
-// 	@include sp {
-
-// 	}
-// }
 
 
 // 個人情報
@@ -1823,7 +1708,6 @@ section[id] {
 	@include sp {
 		bottom: 23px;
 	}
-
 }
 
 .simplebar-scrollbar::before {
@@ -1879,7 +1763,6 @@ section[id] {
 
 	}
 }
-
 
 
 /* プライバシー欄の箇条書き */
@@ -1958,7 +1841,6 @@ section[id] {
 
 	@include sp {
 		width: 100%;
-		// line-height: 1.35;
 	}
 }
 
@@ -1966,7 +1848,6 @@ section[id] {
 	display: inline-block;
 	line-height: 1.65;
 	font-size: 2rem;
-	// width: 16rem;
 	position: relative;
 	margin-top: 1rem;
 	cursor: default;
@@ -1985,7 +1866,6 @@ section[id] {
 	display: block;
 	cursor: pointer;
 	width: 100%;
-	// flex: 1;
 }
 
 .select-container::after {
@@ -2061,7 +1941,6 @@ section[id] {
 		margin: 0 auto;
 		flex: unset;
 		margin-top: 0.2rem;
-		// margin-bottom: 0.5rem;
 	}
 }
 
@@ -2077,7 +1956,6 @@ section[id] {
 .footer {
 	text-align: center;
 	padding-top: 8rem;
-	// padding-block: 38rem 8rem;
 
 	@include sp {
 		padding-top: 5rem;
@@ -2130,7 +2008,6 @@ section[id] {
 	padding-bottom: 2.8rem;
 
 	@include sp {
-		// margin-top: 2.1rem;
 		padding-top: 2.3rem;
 		padding-bottom: 2.5rem;
 	}
@@ -2168,7 +2045,7 @@ section[id] {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	// padding-bottom: 8rem;
+	padding-bottom: 8rem;
 
 	@include sp {
 		padding-bottom: 5.1rem;
@@ -2180,11 +2057,6 @@ section[id] {
 	justify-content: center;
 	align-items: center;
 	gap: 3.1rem;
-	//  margin-bottom: 8rem;
-
-	@include sp {
-		// margin-bottom: 5.1rem;
-	}
 }
 
 .footer__sns a {
@@ -2261,6 +2133,8 @@ TOPへ戻るボタン
 	// ホバー時のスタイル
 	&:hover {
 		opacity: 0.8;
+		transform: translateY(-0.5rem);
+
 
 		img {
 			transition: none;
@@ -2277,7 +2151,7 @@ TOPへ戻るボタン
 }
 
 // スクロール時に表示するためのクラス
-.page-top-btn.is-show {
+.is-show {
 	opacity: 1;
 	visibility: visible;
 	transform: translateY(0);

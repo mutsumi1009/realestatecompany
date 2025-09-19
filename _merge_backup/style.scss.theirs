@@ -302,7 +302,7 @@ section[id] {
 	color: $font-color;
 	text-decoration: none;
 	position: relative;
-
+	
 	// transition: opacity 0.4s ease;
 
 	@include tab {
@@ -329,7 +329,7 @@ section[id] {
 	}
 
 	&:hover {
-		// opacity: 0.5;
+		opacity: 0.5;
 		color: $font-color;
 
 
@@ -360,7 +360,7 @@ section[id] {
 		transition: right 0.3s ease;
 		z-index: 1000;
 		color: $text-color;
-
+		
 
 		&.is-open {
 			right: 0;
@@ -426,10 +426,7 @@ section[id] {
 		left: 2rem;
 		background: $main-color;
 		border-radius: 0.2rem;
-		transition:
-			transform .35s cubic-bezier(.22, .61, .36, 1),
-			opacity .35s ease,
-			background-color .35s ease;
+		transition: .3s;
 	}
 
 	// 中の線
@@ -509,19 +506,12 @@ section[id] {
 	margin-bottom: 0 !important;
 }
 
-.fv__slider {
-	position: relative;
-	z-index: 0;
-}
-
-
 .fv__catch {
 	position: absolute;
 	top: 51.39%;
 	left: 50.5%;
 	transform: translate(-50%, -50%);
 	text-align: center;
-	z-index: 2;
 
 	@include sp {
 		top: 51.3%;
@@ -564,13 +554,29 @@ section[id] {
 }
 
 
+// // fv__copy表示
+// .fv__copy.sp {
+// 	display: none;
+
+// 	@include sp {
+// 		color: $font-color;
+// 		display: block;
+// 		text-align: center;
+// 		font-size: 3.0rem;
+// 		line-height: 2;
+// 		width: auto;
+// 		height: auto;
+// 		letter-spacing: 0.3em;
+// 		white-space: nowrap;
+// 	}
+// }
+
 .fv::before {
 	content: "";
 	position: absolute;
 	inset: 0;
 	background-color: rgba(0, 0, 0, 0.15);
 	z-index: 1;
-	pointer-events: none;
 }
 
 
@@ -937,8 +943,7 @@ section[id] {
 	opacity: 0;
 	padding: 2rem;
 	visibility: hidden;
-	// transition: opacity .3s, visibility .3s;
-	transition: opacity .35s ease, visibility 0s linear .35s;
+	transition: opacity .3s, visibility .3s;
 }
 
 .modal-area.is-active {
@@ -948,10 +953,10 @@ section[id] {
 
 .modal__item {
 	background: $font-color;
-	// top: 40%;
-	// left: 50%;
-	position: relative;
-	// transform: translate(-50%, -50%) scale(0.8);
+	top: 40%;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%, -50%) scale(0.8);
 	width: 50%;
 	max-width: 450px;
 	height: auto;
@@ -959,12 +964,7 @@ section[id] {
 	// position: relative;
 	z-index: 2;
 	// transform: scale(0.8);
-	// transition: transform .3s;
-	transform: translateY(8px) scale(.98);
-	 opacity: 0;
-	// transition: transform .35s cubic-bezier(.22, .61, .36, 1), opacity .35s ease;
-
-	overflow: hidden;
+	transition: transform .3s;
 
 	@include sp {
 		width: 80%;
@@ -972,9 +972,7 @@ section[id] {
 }
 
 .modal-area.is-active .modal__item {
-	// transform: translate(-50%, -50%) scale(1);
-	transition: opacity .35s ease;
-	opacity: 1;
+	transform: translate(-50%, -50%) scale(1);
 }
 
 .modal-bg {
@@ -1264,7 +1262,7 @@ section[id] {
 	align-items: flex-end;
 	margin-top: 6.8rem;
 
-
+	
 	@include sp {
 		flex-direction: column;
 		margin-top: 3.8rem;
@@ -1278,7 +1276,7 @@ section[id] {
 	position: relative;
 	align-items: flex-start;
 	padding-bottom: 6.2rem;
-
+	
 	@include tab {
 		width: 100%;
 	}
@@ -1289,16 +1287,16 @@ section[id] {
 	}
 }
 
-.company__map-media {
-	aspect-ratio: 600 / 400;
+.company__map-media {           
+	aspect-ratio: 600 / 400;     
 	position: relative;
-
+	
 	@include sp {
 		width: 100%;
 		padding-bottom: 0;
 		aspect-ratio: 315 / 300;
 	}
-}
+  }
 
 .company__map iframe {
 	width: 100%;
@@ -1408,9 +1406,9 @@ section[id] {
 	margin-top: 1.3rem;
 	cursor: pointer;
 
-	@media screen and (max-width: 860px) and (min-width: 768px) {
-		font-size: 1.5rem;
-	}
+	 @media screen and (max-width: 860px) and (min-width: 768px) {
+	 	font-size: 1.5rem;
+	 }
 
 	@include sp {
 		margin-top: 1.1rem;
@@ -2168,7 +2166,7 @@ section[id] {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	// padding-bottom: 8rem;
+	padding-bottom: 8rem;
 
 	@include sp {
 		padding-bottom: 5.1rem;
@@ -2261,7 +2259,7 @@ TOPへ戻るボタン
 	// ホバー時のスタイル
 	&:hover {
 		opacity: 0.8;
-
+		
 		img {
 			transition: none;
 			transform: none;
