@@ -3,3 +3,4 @@
 /css/*.map
 /_merge_backup/
 .DS_Store
+css/**/style.css.map
