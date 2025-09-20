@@ -313,7 +313,6 @@ section[id] {
   .header__inner {
     padding-left: 2rem;
     padding-right: 2rem;
-    padding-bottom: 0.5rem;
   }
 }
 
@@ -364,6 +363,8 @@ section[id] {
 @media (max-width: 767px) {
   .header__logo-link {
     margin-top: 0;
+    padding-block: 0;
+    height: 100%;
   }
 }
 
@@ -500,11 +501,11 @@ section[id] {
 }
 .header__nav-sp-list a {
   display: block;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 500;
   color: #fff;
   text-decoration: none;
-  padding: 1.2rem 1.5rem;
+  padding: 1.5rem 1.7rem 1.6rem 2rem;
   text-align: left;
 }
 .header__nav-sp-list a:hover {
@@ -773,7 +774,7 @@ section[id] {
 }
 @media (max-width: 767px) and (max-width: 360px) {
   .about__text {
-    font-size: 1.3rem;
+    font-size: 1・3rem;
     letter-spacing: 0.2em;
   }
 }
@@ -1103,16 +1104,16 @@ section[id] {
 
 .modal__item {
   background: #fff;
-  top: 50%;
-  left: 50%;
-  position: absolute;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  position: relative;
   width: 50%;
   max-width: 450px;
   height: auto;
   padding: 15px 15px 6px 15px;
   z-index: 2;
+  -webkit-transform: translateY(8px) scale(0.98);
+          transform: translateY(8px) scale(0.98);
+  opacity: 0;
+  overflow: hidden;
 }
 @media (max-width: 767px) {
   .modal__item {
@@ -1271,6 +1272,8 @@ section[id] {
 .news__item {
   width: 100%;
   height: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1.1rem;
   border-bottom: 1px solid #4D9600;
 }
 @media (max-width: 767px) {
@@ -1299,8 +1302,7 @@ section[id] {
           align-items: flex-start;
   -webkit-transition: opacity 0.3s ease, color 0.3s ease;
   transition: opacity 0.3s ease, color 0.3s ease;
-  padding-top: 2rem;
-  padding-bottom: 1.1rem;
+  padding-top: 1rem;
 }
 @media (max-width: 767px) {
   .news__link {
@@ -1532,23 +1534,11 @@ section[id] {
   color: inherit;
   text-decoration: none;
 }
-@media (max-width: 767px) {
-  .access__tel a {
-    opacity: 0.7;
-  }
-}
-
-@media (max-width: 767px) {
-  .access__tel a:hover {
-    opacity: 0.7;
-  }
-}
 
 .access__email {
   font-size: 1.6rem;
   font-weight: 600;
   margin-top: 1.3rem;
-  cursor: pointer;
 }
 @media screen and (max-width: 860px) and (min-width: 768px) {
   .access__email {
@@ -1560,7 +1550,16 @@ section[id] {
     margin-top: 1.1rem;
   }
 }
-.access__email:hover {
+
+.access__email a {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  -webkit-transition: opacity 0.4s ease;
+  transition: opacity 0.4s ease;
+}
+
+.access__email a:hover {
   opacity: 0.7;
 }
 
@@ -1650,9 +1649,9 @@ section[id] {
   display: grid;
   font-size: 1.8rem;
   line-height: 1.388;
-  -webkit-column-gap: 3.5rem;
-     -moz-column-gap: 3.5rem;
-          column-gap: 3.5rem;
+  -webkit-column-gap: 3.4rem;
+     -moz-column-gap: 3.4rem;
+          column-gap: 3.4rem;
   row-gap: 1.3rem;
   grid-template-columns: repeat(4, 1fr);
   justify-items: start;
@@ -1734,8 +1733,8 @@ section[id] {
 
 .custom-checkbox-square {
   position: absolute;
-  top: 50%;
-  left: 0;
+  top: 54%;
+  left: -2px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   width: 20px;
@@ -2177,6 +2176,12 @@ section[id] {
   }
 }
 
+@media (max-width: 520px) {
+  .line-break {
+    display: block;
+  }
+}
+
 /* ▼ラッパーと三角 */
 .select-container {
   position: relative;
@@ -2189,15 +2194,14 @@ section[id] {
   content: "";
   position: absolute;
   right: 2rem;
-  top: 50%;
+  top: 58%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  width: 0;
-  height: 0;
-  border-left: 1rem solid transparent;
-  border-right: 1rem solid transparent;
-  border-top: 1.2rem solid #4D9600;
+  width: 1.9rem;
+  height: 1.3rem;
+  background: #4D9600;
   pointer-events: none;
+  clip-path: polygon(46% 96%, 0 0, 96% 0);
 }
 
 .contact__select {
@@ -2393,12 +2397,6 @@ section[id] {
       -ms-flex-align: center;
           align-items: center;
 }
-@media (max-width: 767px) {
-  .footer__bottom {
-    padding-bottom: 5.1rem;
-  }
-}
-
 .footer__sns {
   display: -webkit-box;
   display: -ms-flexbox;
