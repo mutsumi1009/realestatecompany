@@ -127,3 +127,17 @@ AOS.init({
   disable: () => window.matchMedia('(prefers-reduced-motion: reduce)').matches
 });
 window.addEventListener('load', () => AOS.refresh());
+
+
+// --- 6.PCでのみ電話番号リンク無効化 ---
+// ウィンドウの幅でPCかスマホを判定
+const isMobile = window.matchMedia("(max-width: 767px)").matches;
+
+// PCの場合のみリンクを無効化する
+if (!isMobile) {
+  const telLink = document.querySelector('.access__tel a');
+  if (telLink) {
+    telLink.removeAttribute('href');
+    telLink.style.cursor = 'default'; // カーソルをデフォルトに戻す
+  }
+}
