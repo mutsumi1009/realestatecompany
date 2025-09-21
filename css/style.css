@@ -2073,6 +2073,10 @@ section[id] {
   }
 }
 
+.privacy-content address p {
+  margin-bottom: 0;
+}
+
 /* プライバシー欄の箇条書き */
 .privacy-content ul {
   list-style: none;
@@ -2468,7 +2472,7 @@ TOPへ戻るボタン
   position: fixed;
   right: 6rem;
   bottom: 6rem;
-  z-index: 99;
+  z-index: 9999;
   opacity: 0;
   visibility: hidden;
   -webkit-transform: translateY(20px);
@@ -2495,6 +2499,17 @@ TOPへ戻るボタン
   transition: opacity 0.3s, -webkit-transform 0.3s;
   transition: transform 0.3s, opacity 0.3s;
   transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+  --lift: 0px;
+  --showShift: 10px;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translateY(var(--showShift)) translateY(var(--lift));
+          transform: translateY(var(--showShift)) translateY(var(--lift));
+  -webkit-transition: opacity 0.28s ease, visibility 0.28s ease, -webkit-transform 0.35s cubic-bezier(0.25, 0.85, 0.25, 1);
+  transition: opacity 0.28s ease, visibility 0.28s ease, -webkit-transform 0.35s cubic-bezier(0.25, 0.85, 0.25, 1);
+  transition: transform 0.35s cubic-bezier(0.25, 0.85, 0.25, 1), opacity 0.28s ease, visibility 0.28s ease;
+  transition: transform 0.35s cubic-bezier(0.25, 0.85, 0.25, 1), opacity 0.28s ease, visibility 0.28s ease, -webkit-transform 0.35s cubic-bezier(0.25, 0.85, 0.25, 1);
+  will-change: transform;
 }
 @media (max-width: 767px) {
   .page-top-btn {
@@ -2502,6 +2517,7 @@ TOPへ戻るボタン
     bottom: 6rem;
     width: 5rem;
     height: 5rem;
+    bottom: calc(1rem + env(safe-area-inset-bottom));
   }
 }
 .page-top-btn img {
@@ -2512,6 +2528,8 @@ TOPへ戻るボタン
 .is-show {
   opacity: 1;
   visibility: visible;
+  -webkit-transform: translateY(var(--lift));
+          transform: translateY(var(--lift));
 }
 .is-show:hover {
   opacity: 0.7;

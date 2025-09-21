@@ -1,6 +1,6 @@
 // js/script.js
 $(function () {
-  // --- 1. FVスライダーのSlick設定 ---
+  // --- FVスライダーのSlick設定 ---
   $('.fv__slider').slick({
     autoplay: true,
     autoplaySpeed: 3000,
@@ -12,7 +12,7 @@ $(function () {
     cssEase: 'linear'
   });
 
-  // --- 2. ハンバーガーメニューの機能 ---
+  // --- ハンバーガーメニューの機能 ---
   const $trigger = $('.hamburger-trigger');
   const $hamburger = $('#hamburger-block');
   const $navSp = $('.header__nav-sp');
@@ -37,7 +37,7 @@ $(function () {
     closeHamburger();               // ← メニューを閉じる
   });
 
-  // --- 3. ヘッダーの背景色切り替え ---
+  // --- ヘッダーの背景色切り替え ---
   const $header = $('.js-header');
   const $fv = $('.fv');
   const $toTopBtn = $('.js-to-top'); 
@@ -54,7 +54,7 @@ $(function () {
   $(window).on('scroll resize load', changeHeaderBg);
   changeHeaderBg();
 
-  // --- 4. モーダル機能 ---
+  // --- モーダル機能 ---
   const $modalArea = $('.js-modal');
 
   // 開く：a.work-card をクリックした時だけ（委譲）
@@ -94,23 +94,91 @@ $(document).on('click', '.js-modal-close, .modal-bg', function () {
 $(document).on('keydown', function (e) {
   if (e.key === 'Escape') {
     $modalArea.removeClass('is-active');
-    $('body').removeClass('is-modal-open').css('overflow', ''); // クラスも解除
-    $toTopBtn.removeClass('is-hidden-temp');                    // ★追加：TOPボタン再表示
-    onScrollToTop();                                            // ★追加：現在位置で .is-show を付け直し
+    $('body').removeClass('is-modal-open').css('overflow', ''); 
+    $toTopBtn.removeClass('is-hidden-temp');                    
+    onScrollToTop();                                            
   }
 });
 
 
-  // --- 5. TOPへ戻る（FVより下で表示） ---
- 
-  function fvHeight() { return $fv.length ? $fv.outerHeight() : 200; }
+  // --- TOPへ戻る（FVより下で表示） ---
+
   function onScrollToTop() {
     const y = $(window).scrollTop();
-    if (y > fvHeight()) $toTopBtn.addClass('is-show');
+    const threshold = 100;
+    if (y > threshold) $toTopBtn.addClass('is-show');
     else $toTopBtn.removeClass('is-show');
   }
   $(window).on('scroll resize load', onScrollToTop);
   onScrollToTop();
+  
+    // --- TOPへ戻る：フッター直前で止める（持ち上げ）
+  // 1) 念のため body 直下へ退避（footer内にあると重なり順で負ける）
+  if ($toTopBtn.length && !$toTopBtn.parent().is('body')) {
+    $toTopBtn.appendTo('body');
+  }
+
+  const $footer = $('footer');
+  const mqSP = window.matchMedia('(max-width: 767px)');
+  let prevLift = 0;
+
+  function liftToAvoidFooter() {
+    if (!$toTopBtn.length || !$footer.length) return;
+
+    // PC時は解除（SPだけ適用）
+    if (!mqSP.matches) {
+      prevLift = 0;
+      $toTopBtn.css('--lift', '0px');
+      return;
+    }
+
+    const btnEl = $toTopBtn.get(0);
+    const fRect = $footer.get(0).getBoundingClientRect();
+    const btnH  = btnEl.getBoundingClientRect().height;
+
+    // 「CSSの bottom 値」を基準に毎回計算（累積しない）
+    const cs = getComputedStyle(btnEl);
+    const bottomPx = (() => {
+      const v = parseFloat(cs.bottom);
+      return Number.isFinite(v) ? v : 96; // fallback: 6rem相当
+    })();
+
+    const SAFE_GAP = 3;   // フッターとの隙間
+    const MAX_LIFT = 56;  // 持ち上げ上限（56〜96で好み調整）
+
+    const intrude = window.innerHeight - fRect.top;          
+    let lift = Math.max(0, intrude - (bottomPx + btnH + SAFE_GAP));
+    lift = Math.min(lift, MAX_LIFT);
+
+    const STEP = 2;
+    lift = Math.ceil(lift / STEP) * STEP;
+    if (Math.abs(lift - prevLift) < 2) return;
+
+    prevLift = lift;
+    $toTopBtn.css('--lift', `-${lift}px`);
+  }
+
+  // スクロール/リサイズ監視（rAFで軽く）
+  let ticking = false;
+  function scheduleLiftUpdate(){
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      liftToAvoidFooter();
+      ticking = false;
+    });
+  }
+
+  $(window).on('scroll resize load', scheduleLiftUpdate);
+
+  // フッターの出入り境界でも更新
+  if ($footer.length && 'IntersectionObserver' in window) {
+    new IntersectionObserver(scheduleLiftUpdate, { threshold:[0,1] })
+      .observe($footer.get(0));
+  }
+
+  // 初期実行
+  liftToAvoidFooter();
 
   $toTopBtn.on('click', function (e) {
     e.preventDefault();
@@ -129,7 +197,7 @@ AOS.init({
 window.addEventListener('load', () => AOS.refresh());
 
 
-// --- 6.PCでのみ電話番号リンク無効化 ---
+// --- PCでのみ電話番号リンク無効化 ---
 // ウィンドウの幅でPCかスマホを判定
 const isMobile = window.matchMedia("(max-width: 767px)").matches;
 
