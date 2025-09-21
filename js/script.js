@@ -67,8 +67,10 @@ $(function () {
     $('#modal-img').attr({ src: data.img_src || '', alt: data.title || '' });
     $('#modal-text').text(data.title || '');
 
-    $modalArea.appendTo('body');
+    const $cap = $item.find('.works__caption').first().clone();
+  $('#modal-text').empty().append($cap);
 
+    $modalArea.appendTo('body');
     $modalArea.addClass('is-active');
     $toTopBtn.addClass('is-hidden-temp');  // 一時的に隠す
     $('body').addClass('is-modal-open');
@@ -182,7 +184,7 @@ $(document).on('keydown', function (e) {
 
   $toTopBtn.on('click', function (e) {
     e.preventDefault();
-    $('html, body').animate({ scrollTop: 0 }, 500);
+    $('html, body').animate({ scrollTop: 0 }, 800);
   });
 });
 
