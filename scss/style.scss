@@ -257,9 +257,9 @@ section[id] {
 	}
 
 	@include sp {
-		margin-top: 0;              
-		padding-block: 0;   
-		height: 100%;      
+		margin-top: 0;
+		padding-block: 0;
+		height: 100%;
 	}
 }
 
@@ -1545,7 +1545,7 @@ section[id] {
 }
 
 
-// # プレースホルダー色
+// # プレースホルダー（入力欄）色
 .contact__input::placeholder,
 .contact__textarea::placeholder,
 .contact__select::placeholder {
@@ -1796,6 +1796,11 @@ section[id] {
 
 	}
 }
+
+.privacy-content address p {
+	margin-bottom: 0;
+}
+
 
 
 /* プライバシー欄の箇条書き */
@@ -2148,7 +2153,7 @@ TOPへ戻るボタン
 	position: fixed;
 	right: 6rem;
 	bottom: 6rem;
-	z-index: 99;
+	z-index: 9999;
 	opacity: 0;
 	visibility: hidden;
 	transform: translateY(20px);
@@ -2164,12 +2169,23 @@ TOPへ戻るボタン
 	overflow: hidden;
 	-webkit-clip-path: circle(50% at 50% 50%);
 	transition: transform 0.3s, opacity 0.3s;
+	--lift: 0px;
+	--showShift: 10px;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(var(--showShift)) translateY(var(--lift));
+	transition:
+		transform .35s cubic-bezier(.25, .85, .25, 1),
+		opacity .28s ease, visibility .28s ease;
+	will-change: transform;
+
 
 	@include sp {
 		right: 2rem;
 		bottom: 6rem;
 		width: 5rem;
 		height: 5rem;
+		bottom: calc(1rem + env(safe-area-inset-bottom));
 	}
 
 	img {
@@ -2184,6 +2200,7 @@ TOPへ戻るボタン
 .is-show {
 	opacity: 1;
 	visibility: visible;
+	transform: translateY(var(--lift));
 
 	&:hover {
 		opacity: 0.7;
