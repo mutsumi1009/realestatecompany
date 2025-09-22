@@ -418,14 +418,15 @@ section[id] {
 		background: $main-color;
 		border-radius: 0.2rem;
 		transition:
-			transform .35s cubic-bezier(.22, .61, .36, 1),
+			transform .45s cubic-bezier(.22, .61, .36, 1),
 			opacity .35s ease,
 			background-color .35s ease;
 	}
+	
 
 	// 中の線
 	.hamburger-line {
-		top: 50%;
+		top: 49%;
 		transform: translateY(-50%);
 	}
 
@@ -438,13 +439,13 @@ section[id] {
 
 	// 上の線
 	.hamburger-line::before {
-		top: 50%;
+		top: 49%;
 		transform: translateY(calc(-50% - 1.2rem));
 	}
 
 	// 下の線
 	.hamburger-line::after {
-		top: 50%;
+		top: 49%;
 		transform: translateY(calc(-50% + 1.2rem));
 	}
 
@@ -628,7 +629,7 @@ section[id] {
 		letter-spacing: 0.24em;
 
 		@media (max-width: 360px) {
-			font-size: 1・3rem;
+			font-size: 1.3rem;
 			letter-spacing: 0.20em;
 		}
 	}
@@ -848,7 +849,7 @@ section[id] {
 
 .work-card {
 	opacity: 1;
-	transition: opacity 0.4s ease;
+	transition: opacity 0.4s ease-in-out;
 }
 
 .work-card:hover {
@@ -1086,7 +1087,7 @@ section[id] {
 	@include sp {
 		width: auto;
 		height: auto;
-		padding-bottom: 0.1rem;
+		// padding-bottom: 0.1rem;
 	}
 }
 
@@ -1108,7 +1109,7 @@ section[id] {
 
 
 	@include sp {
-		padding-block: 1rem 1.1rem;
+		padding-block: 2rem 1.2rem;
 		column-gap: 1.9rem;
 	}
 
@@ -1645,7 +1646,7 @@ section[id] {
 
 //アンケート
 .contact__item--survey {
-	margin-top: 3.1rem;
+	margin-top: 3.2rem;
 	flex-direction: column;
 	align-items: stretch;
 	gap: 1rem;
@@ -1781,6 +1782,7 @@ section[id] {
 	@include sp {
 		font-size: 1.6rem;
 		line-height: 2.0625;
+		// -webkit-line-clamp: 7;
 
 		h3 {
 			margin-top: 0rem;
