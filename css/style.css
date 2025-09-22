@@ -550,13 +550,13 @@ section[id] {
   left: 2rem;
   background: #4D9600;
   border-radius: 0.2rem;
-  -webkit-transition: opacity 0.35s ease, background-color 0.35s ease, -webkit-transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
-  transition: opacity 0.35s ease, background-color 0.35s ease, -webkit-transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
-  transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), opacity 0.35s ease, background-color 0.35s ease;
-  transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), opacity 0.35s ease, background-color 0.35s ease, -webkit-transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
+  -webkit-transition: opacity 0.35s ease, background-color 0.35s ease, -webkit-transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition: opacity 0.35s ease, background-color 0.35s ease, -webkit-transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition: transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1), opacity 0.35s ease, background-color 0.35s ease;
+  transition: transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1), opacity 0.35s ease, background-color 0.35s ease, -webkit-transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 .hamburger .hamburger-line {
-  top: 50%;
+  top: 49%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
@@ -566,12 +566,12 @@ section[id] {
   left: 0;
 }
 .hamburger .hamburger-line::before {
-  top: 50%;
+  top: 49%;
   -webkit-transform: translateY(calc(-50% - 1.2rem));
           transform: translateY(calc(-50% - 1.2rem));
 }
 .hamburger .hamburger-line::after {
-  top: 50%;
+  top: 49%;
   -webkit-transform: translateY(calc(-50% + 1.2rem));
           transform: translateY(calc(-50% + 1.2rem));
 }
@@ -774,7 +774,7 @@ section[id] {
 }
 @media (max-width: 767px) and (max-width: 360px) {
   .about__text {
-    font-size: 1・3rem;
+    font-size: 1.3rem;
     letter-spacing: 0.2em;
   }
 }
@@ -1027,8 +1027,8 @@ section[id] {
 
 .work-card {
   opacity: 1;
-  -webkit-transition: opacity 0.4s ease;
-  transition: opacity 0.4s ease;
+  -webkit-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
 }
 
 .work-card:hover {
@@ -1280,7 +1280,6 @@ section[id] {
   .news__item {
     width: auto;
     height: auto;
-    padding-bottom: 0.1rem;
   }
 }
 
@@ -1307,7 +1306,7 @@ section[id] {
 }
 @media (max-width: 767px) {
   .news__link {
-    padding-block: 1rem 1.1rem;
+    padding-block: 2rem 1.2rem;
     -webkit-column-gap: 1.9rem;
        -moz-column-gap: 1.9rem;
             column-gap: 1.9rem;
@@ -1911,7 +1910,7 @@ section[id] {
 }
 
 .contact__item--survey {
-  margin-top: 3.1rem;
+  margin-top: 3.2rem;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
