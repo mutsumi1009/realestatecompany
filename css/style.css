@@ -476,8 +476,8 @@ section[id] {
     width: 80%;
     height: 34.8rem;
     background-color: #4D9600;
-    -webkit-transition: right 0.3s ease;
-    transition: right 0.3s ease;
+    -webkit-transition: right 0.6s ease;
+    transition: right 0.6s ease;
     z-index: 1000;
     color: #000;
   }
@@ -598,8 +598,8 @@ section[id] {
   background-color: #000;
   opacity: 0;
   z-index: 999;
-  -webkit-transition: opacity 0.3s ease, width 0.3s ease;
-  transition: opacity 0.3s ease, width 0.3s ease;
+  -webkit-transition: opacity 0.6s ease, width 0.6s ease;
+  transition: opacity 0.6s ease, width 0.6s ease;
 }
 
 .hamburger-bg.is-open {
@@ -1066,11 +1066,6 @@ section[id] {
   }
 }
 
-.works__caption:hover {
-  opacity: 0.7;
-  cursor: pointer;
-}
-
 /*==================================================
 // WORKSモーダル
 ==================================================*/
@@ -1116,6 +1111,8 @@ section[id] {
   z-index: 2;
   opacity: 0;
   overflow: hidden;
+  -webkit-transition: opacity 0.45s ease;
+  transition: opacity 0.45s ease;
 }
 @media (max-width: 767px) {
   .modal__item {
@@ -1555,8 +1552,8 @@ section[id] {
   position: relative;
   text-decoration: none;
   color: inherit;
-  -webkit-transition: opacity 0.4s ease;
-  transition: opacity 0.4s ease;
+  -webkit-transition: opacity 0.45s ease;
+  transition: opacity 0.45s ease;
 }
 
 .access__email a:hover {
