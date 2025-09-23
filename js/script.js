@@ -181,10 +181,10 @@ $(document).on('keydown', function (e) {
 
   // 初期実行
   liftToAvoidFooter();
-
+  
   $toTopBtn.on('click', function (e) {
     e.preventDefault();
-    $('html, body').animate({ scrollTop: 0 }, 800, 'linear');
+    $('html, body').animate({ scrollTop: 0 }, 500, 'linear');
   });
 });
 
