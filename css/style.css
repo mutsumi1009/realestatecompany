@@ -2472,8 +2472,6 @@ TOPへ戻るボタン
   z-index: 9999;
   opacity: 0;
   visibility: hidden;
-  -webkit-transform: translateY(20px);
-          transform: translateY(20px);
   background-color: #4D9600;
   -webkit-transition: 0.5s;
   transition: 0.5s;
