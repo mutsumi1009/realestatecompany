@@ -352,7 +352,7 @@ section[id] {
 		width: 80%;
 		height: 34.8rem;
 		background-color: $main-color;
-		transition: right 0.3s ease;
+		transition: right 0.6s ease;
 		z-index: 1000;
 		color: $text-color;
 
@@ -476,7 +476,7 @@ section[id] {
 	background-color: $text-color;
 	opacity: 0; // 開いたときに0.6になる
 	z-index: 999; // ナビゲーションの下に配置
-	transition: opacity 0.3s ease, width 0.3s ease;
+	transition: opacity 0.6s ease, width 0.6s ease;
 }
 
 .hamburger-bg.is-open {
@@ -888,10 +888,10 @@ section[id] {
 	}
 }
 
-.works__caption:hover {
-	opacity: 0.7;
-	cursor: pointer;
-}
+// .works__caption:hover {
+// 	opacity: 0.7;
+// 	cursor: pointer;
+// }
 
 /*==================================================
 // WORKSモーダル
@@ -931,6 +931,7 @@ section[id] {
 	z-index: 2;
 	opacity: 0;
 	overflow: hidden;
+	transition: opacity .45s ease;
 
 	@include sp {
 		width: 80%;
@@ -1341,7 +1342,7 @@ section[id] {
 	position: relative;
 	text-decoration: none;
 	color: inherit;
-	transition: opacity .4s ease;
+	transition: opacity .45s ease;
 }
 
 
