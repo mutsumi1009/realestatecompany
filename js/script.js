@@ -146,7 +146,7 @@ $(document).on('keydown', function (e) {
     })();
 
     const SAFE_GAP = 3;   // フッターとの隙間
-    const MAX_LIFT = 56;  // 持ち上げ上限（56〜96で好み調整）
+    const MAX_LIFT = 0;  // 持ち上げ上限（56〜96で好み調整）
 
     const intrude = window.innerHeight - fRect.top;          
     let lift = Math.max(0, intrude - (bottomPx + btnH + SAFE_GAP));
