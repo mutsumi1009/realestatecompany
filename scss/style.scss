@@ -349,10 +349,10 @@ section[id] {
 		width: 80%;
 		max-width: 30rem;
 		height: 34.8rem;
-		background-color: $main-color;
-		transition: right 0.6s ease;
+		// background-color: $main-color;
+		 transition: right 0.6s ease;
 		z-index: 1000;
-		color: $text-color;
+		// color: $text-color;
 
 		&.is-open {
 			right: 0;
@@ -376,6 +376,9 @@ section[id] {
 		text-decoration: none;
 		padding: 1.5rem 1.7rem 1.6rem 2rem;
 		text-align: left;
+		background-color: $main-color;
+		transition: background-color 0.3s ease, color 0.3s ease;
+
 
 		&:hover {
 			background-color: $text-color;
@@ -403,10 +406,10 @@ section[id] {
 		flex-direction: column;
 		cursor: pointer;
 		transition: background-color 0.3s ease-in-out,
-		transform 0.3s ease-in-out,
-		opacity 0.3s ease-in-out;
-		
-		&:hover, 
+			transform 0.3s ease-in-out,
+			opacity 0.3s ease-in-out;
+
+		&:hover,
 		&:focus-visible {
 			background-color: color.adjust($font-color, $lightness: 4%);
 		}
@@ -910,7 +913,7 @@ section[id] {
 	opacity: 0;
 	padding: 2rem;
 	visibility: hidden;
-	transition: opacity .45s ease, visibility 0s linear .35s;
+	transition: opacity .7s ease, visibility 0s linear .6s;
 }
 
 .modal-area.is-active {
@@ -940,7 +943,7 @@ section[id] {
 
 .modal-area.is-active .modal__item {
 	opacity: 1;
-	transition: opacity 0.55s ease 0.1s;
+	transition: opacity 0.8s ease 0.1s;
 }
 
 .modal-bg {
@@ -1753,13 +1756,13 @@ section[id] {
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 
-	>* {
+	// >* {
 		margin: 0;
-	}
+	// }
 
-	>*+* {
-		margin-top: 1rem;
-	}
+	// >*+* {
+	// 	margin-top: 0rem;
+	// }
 
 	h3 {
 		margin-top: .4rem;
@@ -1768,7 +1771,29 @@ section[id] {
 
 	p {
 		margin-top: 0rem;
-		margin-bottom: 2.2rem;
+		margin-bottom: 2rem;
+	}
+
+	ul {
+		list-style: none;
+		// margin: 0;
+		padding: 0;
+		margin-top: 0;
+		margin-bottom: 2rem;
+	}
+
+	li {
+		position: relative;
+		padding-left: 1.2em;
+	}
+
+	li::before {
+		content: "・";
+		position: absolute;
+		left: 0;
+		top: 0.1em;
+		font-size: 1em;
+		font-weight: 700;
 	}
 
 	@include sp {
@@ -1792,26 +1817,26 @@ section[id] {
 	margin-bottom: 0;
 }
 
-/* プライバシー欄の箇条書き */
-.privacy-content ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
+// /* プライバシー欄の箇条書き */
+// .privacy-content ul {
+// 	list-style: none;
+// 	margin: 0;
+// 	padding: 0;
+// }
 
-.privacy-content li {
-	position: relative;
-	padding-left: 1.2em;
-}
+// .privacy-content li {
+// 	position: relative;
+// 	padding-left: 1.2em;
+// }
 
-.privacy-content li::before {
-	content: "・";
-	position: absolute;
-	left: 0;
-	top: 0.1em;
-	font-size: 1em;
-	font-weight: 700;
-}
+// .privacy-content li::before {
+// 	content: "・";
+// 	position: absolute;
+// 	left: 0;
+// 	top: 0.1em;
+// 	font-size: 1em;
+// 	font-weight: 700;
+// }
 
 
 // 送信ボタン
