@@ -485,11 +485,9 @@ section[id] {
     width: 80%;
     max-width: 30rem;
     height: 34.8rem;
-    background-color: #4D9600;
     -webkit-transition: right 0.6s ease;
     transition: right 0.6s ease;
     z-index: 1000;
-    color: #000;
   }
   .header__nav-sp.is-open {
     right: 0;
@@ -517,6 +515,9 @@ section[id] {
   text-decoration: none;
   padding: 1.5rem 1.7rem 1.6rem 2rem;
   text-align: left;
+  background-color: #4D9600;
+  -webkit-transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 .header__nav-sp-list a:hover {
   background-color: #000;
@@ -1111,8 +1112,8 @@ section[id] {
   opacity: 0;
   padding: 2rem;
   visibility: hidden;
-  -webkit-transition: opacity 0.45s ease, visibility 0s linear 0.35s;
-  transition: opacity 0.45s ease, visibility 0s linear 0.35s;
+  -webkit-transition: opacity 0.7s ease, visibility 0s linear 0.6s;
+  transition: opacity 0.7s ease, visibility 0s linear 0.6s;
 }
 
 .modal-area.is-active {
@@ -1145,8 +1146,8 @@ section[id] {
 
 .modal-area.is-active .modal__item {
   opacity: 1;
-  -webkit-transition: opacity 0.55s ease 0.1s;
-  transition: opacity 0.55s ease 0.1s;
+  -webkit-transition: opacity 0.8s ease 0.1s;
+  transition: opacity 0.8s ease 0.1s;
 }
 
 .modal-bg {
@@ -2064,12 +2065,7 @@ section[id] {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
-}
-.privacy-content > * {
   margin: 0;
-}
-.privacy-content > * + * {
-  margin-top: 1rem;
 }
 .privacy-content h3 {
   margin-top: 0.4rem;
@@ -2077,7 +2073,25 @@ section[id] {
 }
 .privacy-content p {
   margin-top: 0rem;
-  margin-bottom: 2.2rem;
+  margin-bottom: 2rem;
+}
+.privacy-content ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+.privacy-content li {
+  position: relative;
+  padding-left: 1.2em;
+}
+.privacy-content li::before {
+  content: "・";
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  font-size: 1em;
+  font-weight: 700;
 }
 @media (max-width: 767px) {
   .privacy-content {
@@ -2095,27 +2109,6 @@ section[id] {
 
 .privacy-content address p {
   margin-bottom: 0;
-}
-
-/* プライバシー欄の箇条書き */
-.privacy-content ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.privacy-content li {
-  position: relative;
-  padding-left: 1.2em;
-}
-
-.privacy-content li::before {
-  content: "・";
-  position: absolute;
-  left: 0;
-  top: 0.1em;
-  font-size: 1em;
-  font-weight: 700;
 }
 
 .contact__submit {
