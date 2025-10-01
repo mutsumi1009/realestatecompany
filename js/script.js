@@ -142,11 +142,11 @@ $(document).on('keydown', function (e) {
     const cs = getComputedStyle(btnEl);
     const bottomPx = (() => {
       const v = parseFloat(cs.bottom);
-      return Number.isFinite(v) ? v : 96; // fallback: 6rem相当
+      return Number.isFinite(v) ? v : 60; // fallback: 6rem相当
     })();
 
     const SAFE_GAP = 3;   // フッターとの隙間
-    const MAX_LIFT = 0;  // 持ち上げ上限（56〜96で好み調整）
+    const MAX_LIFT = 3;  // 持ち上げ上限（56〜96で好み調整）
 
     const intrude = window.innerHeight - fRect.top;          
     let lift = Math.max(0, intrude - (bottomPx + btnH + SAFE_GAP));
