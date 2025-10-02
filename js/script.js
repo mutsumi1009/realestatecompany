@@ -22,6 +22,7 @@ $(function () {
     $hamburger.toggleClass('is-open');
     $navSp.toggleClass('is-open');
     $hamburgerBg.toggleClass('is-open');
+    $toTopBtn.toggleClass('is-hidden-temp');
   });
 
 
@@ -30,6 +31,7 @@ $(function () {
     $hamburger.removeClass('is-open');
     $navSp.removeClass('is-open');
     $hamburgerBg.removeClass('is-open');
+    $toTopBtn.removeClass('is-hidden-temp');
   }
 
   /* SPメニューのリンククリックで自動クローズ */
@@ -40,7 +42,7 @@ $(function () {
   // --- ヘッダーの背景色切り替え ---
   const $header = $('.js-header');
   const $fv = $('.fv');
-  const $toTopBtn = $('.js-to-top'); 
+  const $toTopBtn = $('.js-to-top');
 
   function changeHeaderBg() {
     if (!$header.length || !$fv.length) return;
@@ -68,7 +70,7 @@ $(function () {
     $('#modal-text').text(data.title || '');
 
     const $cap = $item.find('.works__caption').first().clone();
-  $('#modal-text').empty().append($cap);
+    $('#modal-text').empty().append($cap);
 
     $modalArea.appendTo('body');
     $modalArea.addClass('is-active');
@@ -78,13 +80,13 @@ $(function () {
   });
 
   // 閉じる：× と 黒幕だけで閉じる（★置き換え）
-$(document).on('click', '.js-modal-close, .modal-bg', function () {
-  $modalArea.removeClass('is-active');
+  $(document).on('click', '.js-modal-close, .modal-bg', function () {
+    $modalArea.removeClass('is-active');
 
-  $('body').removeClass('is-modal-open').css('overflow', ''); 
-  $toTopBtn.removeClass('is-hidden-temp');                    
-  onScrollToTop();                                          
-});
+    $('body').removeClass('is-modal-open').css('overflow', '');
+    $toTopBtn.removeClass('is-hidden-temp');
+    onScrollToTop();
+  });
 
 
   // モーダル本体をクリックしても閉じない
@@ -92,15 +94,15 @@ $(document).on('click', '.js-modal-close, .modal-bg', function () {
     e.stopPropagation();
   });
 
- // Escapeキーで閉じる（★置き換え）
-$(document).on('keydown', function (e) {
-  if (e.key === 'Escape') {
-    $modalArea.removeClass('is-active');
-    $('body').removeClass('is-modal-open').css('overflow', ''); 
-    $toTopBtn.removeClass('is-hidden-temp');                    
-    onScrollToTop();                                            
-  }
-});
+  // Escapeキーで閉じる（★置き換え）
+  $(document).on('keydown', function (e) {
+    if (e.key === 'Escape') {
+      $modalArea.removeClass('is-active');
+      $('body').removeClass('is-modal-open').css('overflow', '');
+      $toTopBtn.removeClass('is-hidden-temp');
+      onScrollToTop();
+    }
+  });
 
 
   // --- TOPへ戻る（FVより下で表示） ---
@@ -113,8 +115,8 @@ $(document).on('keydown', function (e) {
   }
   $(window).on('scroll resize load', onScrollToTop);
   onScrollToTop();
-  
-    // --- TOPへ戻る：フッター直前で止める（持ち上げ）
+
+  // --- TOPへ戻る：フッター直前で止める（持ち上げ）
   // 1) 念のため body 直下へ退避（footer内にあると重なり順で負ける）
   if ($toTopBtn.length && !$toTopBtn.parent().is('body')) {
     $toTopBtn.appendTo('body');
@@ -136,7 +138,7 @@ $(document).on('keydown', function (e) {
 
     const btnEl = $toTopBtn.get(0);
     const fRect = $footer.get(0).getBoundingClientRect();
-    const btnH  = btnEl.getBoundingClientRect().height;
+    const btnH = btnEl.getBoundingClientRect().height;
 
     // 「CSSの bottom 値」を基準に毎回計算（累積しない）
     const cs = getComputedStyle(btnEl);
@@ -146,9 +148,9 @@ $(document).on('keydown', function (e) {
     })();
 
     const SAFE_GAP = 3;   // フッターとの隙間
-    const MAX_LIFT = 3;  // 持ち上げ上限（56〜96で好み調整）
+    const MAX_LIFT = 3;  // 持ち上げ上限
 
-    const intrude = window.innerHeight - fRect.top;          
+    const intrude = window.innerHeight - fRect.top;
     let lift = Math.max(0, intrude - (bottomPx + btnH + SAFE_GAP));
     lift = Math.min(lift, MAX_LIFT);
 
@@ -162,7 +164,7 @@ $(document).on('keydown', function (e) {
 
   // スクロール/リサイズ監視（rAFで軽く）
   let ticking = false;
-  function scheduleLiftUpdate(){
+  function scheduleLiftUpdate() {
     if (ticking) return;
     ticking = true;
     requestAnimationFrame(() => {
@@ -175,13 +177,13 @@ $(document).on('keydown', function (e) {
 
   // フッターの出入り境界でも更新
   if ($footer.length && 'IntersectionObserver' in window) {
-    new IntersectionObserver(scheduleLiftUpdate, { threshold:[0,1] })
+    new IntersectionObserver(scheduleLiftUpdate, { threshold: [0, 1] })
       .observe($footer.get(0));
   }
 
   // 初期実行
   liftToAvoidFooter();
-  
+
   $toTopBtn.on('click', function (e) {
     e.preventDefault();
     $('html, body').animate({ scrollTop: 0 }, 500, 'linear');

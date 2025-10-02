@@ -66,7 +66,6 @@ $placeholder-color: #A0A0A0;
 }
 
 
-
 /* ===============================================
 # ベース設定（html, body, main など）
 =============================================== */
@@ -244,7 +243,6 @@ section[id] {
 	transition: opacity 0.4s, color 0.4s;
 	transform: none;
 
-
 	@include tab {
 		font-size: 1.8rem;
 	}
@@ -352,7 +350,7 @@ section[id] {
 		background-color: $main-color;
 		transition: right 0.6s ease;
 		z-index: 1000;
-		color: $text-color;
+		// color: $text-color;
 
 		&.is-open {
 			right: 0;
@@ -367,6 +365,8 @@ section[id] {
 	width: 100%;
 	margin: 0;
 	padding: 0;
+	flex-grow: 1;
+	justify-content: center;
 
 	a {
 		display: block;
@@ -376,6 +376,8 @@ section[id] {
 		text-decoration: none;
 		padding: 1.5rem 1.7rem 1.6rem 2rem;
 		text-align: left;
+		transition: background-color 0.4s ease;
+
 
 		&:hover {
 			background-color: $text-color;
@@ -1309,12 +1311,6 @@ section[id] {
 	text-decoration: none;
 }
 
-.access__tel a:hover {
-	// @include sp {
-	// 	opacity: 0.7;
-	// }
-}
-
 .access__email {
 	font-size: 1.6rem;
 	font-weight: 600;
@@ -1797,8 +1793,7 @@ section[id] {
 	@include sp {
 		font-size: 1.6rem;
 		line-height: 2.0625;
-		// -webkit-line-clamp: 7;
-
+		
 		h3 {
 
 			margin-top: 0rem;
@@ -1814,27 +1809,6 @@ section[id] {
 .privacy-content address p {
 	margin-bottom: 0;
 }
-
-// /* プライバシー欄の箇条書き */
-// .privacy-content ul {
-// 	list-style: none;
-// 	margin: 0;
-// 	padding: 0;
-// }
-
-// .privacy-content li {
-// 	position: relative;
-// 	padding-left: 1.2em;
-// }
-
-// .privacy-content li::before {
-// 	content: "・";
-// 	position: absolute;
-// 	left: 0;
-// 	top: 0.1em;
-// 	font-size: 1em;
-// 	font-weight: 700;
-// }
 
 // 送信ボタン
 .contact__submit {
@@ -2165,7 +2139,6 @@ TOPへ戻るボタン
 	z-index: 9999;
 	opacity: 0;
 	visibility: hidden;
-	// transform: translateY(20px);
 	background-color: $main-color;
 	transition: 0.5s;
 	width: 6.8rem;
@@ -2194,7 +2167,6 @@ TOPへ戻るボタン
 		bottom: 6rem;
 		width: 5rem;
 		height: 5rem;
-		// bottom: calc(6rem + env(safe-area-inset-bottom));
 	}
 
 	img {
@@ -2218,4 +2190,10 @@ TOPへ戻るボタン
 
 .is-modal-open .page-top-btn {
 	display: none;
+}
+
+.is-hidden-temp {
+	opacity: 0 !important;
+	visibility: hidden !important;
+	pointer-events: none !important;
 }

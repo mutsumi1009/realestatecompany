@@ -489,7 +489,6 @@ section[id] {
     -webkit-transition: right 0.6s ease;
     transition: right 0.6s ease;
     z-index: 1000;
-    color: #000;
   }
   .header__nav-sp.is-open {
     right: 0;
@@ -508,6 +507,12 @@ section[id] {
   width: 100%;
   margin: 0;
   padding: 0;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .header__nav-sp-list a {
   display: block;
@@ -517,6 +522,8 @@ section[id] {
   text-decoration: none;
   padding: 1.5rem 1.7rem 1.6rem 2rem;
   text-align: left;
+  -webkit-transition: background-color 0.4s ease;
+  transition: background-color 0.4s ease;
 }
 .header__nav-sp-list a:hover {
   background-color: #000;
@@ -2551,4 +2558,10 @@ TOPへ戻るボタン
 
 .is-modal-open .page-top-btn {
   display: none;
+}
+
+.is-hidden-temp {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }/*# sourceMappingURL=style.css.map */
