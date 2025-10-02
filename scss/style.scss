@@ -912,12 +912,14 @@ section[id] {
 	opacity: 0;
 	padding: 2rem;
 	visibility: hidden;
-	transition: opacity .55s ease, visibility 0s linear .45s;
+	// transition: opacity .55s ease, visibility 0s linear .45s;
+	transition: opacity 0.4s ease, visibility 0s linear 0.4s;
 }
 
 .modal-area.is-active {
 	opacity: 1;
 	visibility: visible;
+	transition: opacity 0.4s ease, visibility 0s linear 0s;
 }
 
 .modal__item {
@@ -933,7 +935,8 @@ section[id] {
 	z-index: 2;
 	opacity: 0;
 	overflow: hidden;
-	transition: opacity .45s ease;
+	// transition: opacity .45s ease;
+	transition: opacity 0.4s ease; 
 
 	@include sp {
 		width: 80%;
@@ -942,7 +945,8 @@ section[id] {
 
 .modal-area.is-active .modal__item {
 	opacity: 1;
-	transition: opacity 1s ease 0.1s;
+	// transition: opacity 1s ease 0.1s;
+	transition: opacity 0.4s ease 0.1s; 
 }
 
 .modal-bg {
@@ -953,6 +957,12 @@ section[id] {
 	top: 0;
 	left: 0;
 	z-index: 1;
+	opacity: 0;
+    transition: opacity 0.4s ease
+}
+
+.modal-area.is-active .modal-bg {
+    opacity: 1;
 }
 
 .modal__close {
