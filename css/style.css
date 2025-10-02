@@ -1118,15 +1118,15 @@ section[id] {
   opacity: 0;
   padding: 2rem;
   visibility: hidden;
-  -webkit-transition: opacity 0.4s ease, visibility 0s linear 0.4s;
-  transition: opacity 0.4s ease, visibility 0s linear 0.4s;
+  -webkit-transition: opacity 0.8s ease, visibility 0s linear 0.8s;
+  transition: opacity 0.8s ease, visibility 0s linear 0.8s;
 }
 
 .modal-area.is-active {
   opacity: 1;
   visibility: visible;
-  -webkit-transition: opacity 0.4s ease, visibility 0s linear 0s;
-  transition: opacity 0.4s ease, visibility 0s linear 0s;
+  -webkit-transition: opacity 0.8s ease, visibility 0s linear 0s;
+  transition: opacity 0.8s ease, visibility 0s linear 0s;
 }
 
 .modal__item {
@@ -1143,8 +1143,8 @@ section[id] {
   z-index: 2;
   opacity: 0;
   overflow: hidden;
-  -webkit-transition: opacity 0.4s ease;
-  transition: opacity 0.4s ease;
+  -webkit-transition: opacity 0.8s ease;
+  transition: opacity 0.8s ease;
 }
 @media (max-width: 767px) {
   .modal__item {
@@ -1154,8 +1154,8 @@ section[id] {
 
 .modal-area.is-active .modal__item {
   opacity: 1;
-  -webkit-transition: opacity 0.4s ease 0.1s;
-  transition: opacity 0.4s ease 0.1s;
+  -webkit-transition: opacity 0.8s ease 0.1s;
+  transition: opacity 0.8s ease 0.1s;
 }
 
 .modal-bg {
@@ -1167,8 +1167,8 @@ section[id] {
   left: 0;
   z-index: 1;
   opacity: 0;
-  -webkit-transition: opacity 0.4s ease;
-  transition: opacity 0.4s ease;
+  -webkit-transition: opacity 0.8s ease;
+  transition: opacity 0.8s ease;
 }
 
 .modal-area.is-active .modal-bg {
