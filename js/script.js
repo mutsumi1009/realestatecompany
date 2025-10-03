@@ -74,9 +74,12 @@ $(function () {
 
     $modalArea.appendTo('body');
     $modalArea.addClass('is-active');
+
+    setTimeout(function() {
     $toTopBtn.addClass('is-hidden-temp');  // 一時的に隠す
     $('body').addClass('is-modal-open');
     $('body').css('overflow', 'hidden');   // 背景スクロール停止
+  }, 0);
   });
 
   // 閉じる：× と 黒幕だけで閉じる（★置き換え）

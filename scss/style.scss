@@ -363,6 +363,7 @@ section[id] {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
+	height: 100%;
 	margin: 0;
 	padding: 0;
 	flex-grow: 1;
@@ -913,13 +914,13 @@ section[id] {
 	padding: 2rem;
 	visibility: hidden;
 	// transition: opacity .55s ease, visibility 0s linear .45s;
-	transition: opacity 0.8s ease, visibility 0s linear 0.8s;
+	transition: opacity 1.5s ease, visibility 0s linear 1.5s;
 }
 
 .modal-area.is-active {
 	opacity: 1;
 	visibility: visible;
-	transition: opacity 0.8s ease, visibility 0s linear 0s;
+	transition: opacity 1.5s ease, visibility 0s linear 0s;
 }
 
 .modal__item {
@@ -936,7 +937,7 @@ section[id] {
 	opacity: 0;
 	overflow: hidden;
 	// transition: opacity .45s ease;
-	transition: opacity 0.8s ease; 
+	transition: opacity 1.5s ease; 
 
 	@include sp {
 		width: 80%;
@@ -946,7 +947,7 @@ section[id] {
 .modal-area.is-active .modal__item {
 	opacity: 1;
 	// transition: opacity 1s ease 0.1s;
-	transition: opacity 0.8s ease 0.1s;
+	transition: opacity 1.5s ease;
 }
 
 .modal-bg {
