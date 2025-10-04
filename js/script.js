@@ -72,7 +72,7 @@ $(function () {
     const $cap = $item.find('.works__caption').first().clone();
     $('#modal-text').empty().append($cap);
 
-    $modalArea.appendTo('body');
+    //  $modalArea.appendTo('body');
     $modalArea.addClass('is-active');
 
     setTimeout(function() {
@@ -124,73 +124,6 @@ $(function () {
   $(window).on('scroll resize load', onScrollToTop);
   onScrollToTop();
 
-  // --- TOPへ戻る：フッター直前で止める（持ち上げ）
-  // 1) 念のため body 直下へ退避（footer内にあると重なり順で負ける）
-  if ($toTopBtn.length && !$toTopBtn.parent().is('body')) {
-    $toTopBtn.appendTo('body');
-  }
-
-  const $footer = $('footer');
-  const mqSP = window.matchMedia('(max-width: 767px)');
-  let prevLift = 0;
-
-  function liftToAvoidFooter() {
-    if (!$toTopBtn.length || !$footer.length) return;
-
-    // PC時は解除（SPだけ適用）
-    if (!mqSP.matches) {
-      prevLift = 0;
-      $toTopBtn.css('--lift', '0px');
-      return;
-    }
-
-    const btnEl = $toTopBtn.get(0);
-    const fRect = $footer.get(0).getBoundingClientRect();
-    const btnH = btnEl.getBoundingClientRect().height;
-
-    // 「CSSの bottom 値」を基準に毎回計算（累積しない）
-    const cs = getComputedStyle(btnEl);
-    const bottomPx = (() => {
-      const v = parseFloat(cs.bottom);
-      return Number.isFinite(v) ? v : 60; // fallback: 6rem相当
-    })();
-
-    const SAFE_GAP = 3;   // フッターとの隙間
-    const MAX_LIFT = 3;  // 持ち上げ上限
-
-    const intrude = window.innerHeight - fRect.top;
-    let lift = Math.max(0, intrude - (bottomPx + btnH + SAFE_GAP));
-    lift = Math.min(lift, MAX_LIFT);
-
-    const STEP = 2;
-    lift = Math.ceil(lift / STEP) * STEP;
-    if (Math.abs(lift - prevLift) < 2) return;
-
-    prevLift = lift;
-    $toTopBtn.css('--lift', `-${lift}px`);
-  }
-
-  // スクロール/リサイズ監視（rAFで軽く）
-  let ticking = false;
-  function scheduleLiftUpdate() {
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(() => {
-      liftToAvoidFooter();
-      ticking = false;
-    });
-  }
-
-  $(window).on('scroll resize load', scheduleLiftUpdate);
-
-  // フッターの出入り境界でも更新
-  if ($footer.length && 'IntersectionObserver' in window) {
-    new IntersectionObserver(scheduleLiftUpdate, { threshold: [0, 1] })
-      .observe($footer.get(0));
-  }
-
-  // 初期実行
-  liftToAvoidFooter();
 
   $toTopBtn.on('click', function (e) {
     e.preventDefault();
@@ -198,6 +131,7 @@ $(function () {
   });
 });
 
+// --- スクロールでアニメーション発火 ---
 AOS.init({
   once: true,
   duration: 900,

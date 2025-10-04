@@ -900,7 +900,7 @@ section[id] {
 /*==================================================
 // WORKSモーダル
 ==================================================*/
-.modal-area {
+.work-modal {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -913,14 +913,13 @@ section[id] {
 	opacity: 0;
 	padding: 2rem;
 	visibility: hidden;
-	// transition: opacity .55s ease, visibility 0s linear .45s;
-	transition: opacity 1.5s ease, visibility 0s linear 1.5s;
+	transition: opacity .5s ease, visibility 0s linear .5s;
 }
 
-.modal-area.is-active {
+.work-modal.is-active {
 	opacity: 1;
 	visibility: visible;
-	transition: opacity 1.5s ease, visibility 0s linear 0s;
+	transition: opacity .5s ease, visibility 0s linear 0s;
 }
 
 .modal__item {
@@ -934,20 +933,13 @@ section[id] {
 	height: auto;
 	padding: 15px 15px 6px 15px;
 	z-index: 2;
-	opacity: 0;
+	opacity: 1;
 	overflow: hidden;
-	// transition: opacity .45s ease;
-	transition: opacity 1.5s ease; 
+	transition: opacity 0.5s ease; 
 
 	@include sp {
 		width: 80%;
 	}
-}
-
-.modal-area.is-active .modal__item {
-	opacity: 1;
-	// transition: opacity 1s ease 0.1s;
-	transition: opacity 1.5s ease;
 }
 
 .modal-bg {
@@ -958,12 +950,8 @@ section[id] {
 	top: 0;
 	left: 0;
 	z-index: 1;
-	opacity: 0;
-    transition: opacity 0.8s ease
-}
-
-.modal-area.is-active .modal-bg {
-    opacity: 1;
+	opacity: 1;
+    transition: opacity 0.8s ease;
 }
 
 .modal__close {
@@ -997,13 +985,6 @@ section[id] {
 		font-size: 1.6rem;
 	}
 }
-
-.modal__content img {
-	max-width: 100%;
-	height: auto;
-	display: block;
-}
-
 
 /* ===============================================
 # NEWS
@@ -1675,7 +1656,6 @@ section[id] {
 	}
 }
 
-
 .title-label.check-title {
 	white-space: normal;
 	line-height: 1.6;
@@ -1685,7 +1665,6 @@ section[id] {
 		line-height: 1.35;
 	}
 }
-
 
 // 個人情報
 .contact__item--privacy {
@@ -2162,17 +2141,7 @@ TOPへ戻るボタン
 	overflow: hidden;
 	-webkit-clip-path: circle(50% at 50% 50%);
 	transition: transform 0.3s, opacity 0.3s;
-	--lift: 0px;
-	--showShift: 10px;
-	opacity: 0;
-	visibility: hidden;
-	transform: translateY(var(--showShift)) translateY(var(--lift));
-	transition:
-		transform .35s cubic-bezier(.25, .85, .25, 1),
-		opacity .28s ease, visibility .28s ease;
-	will-change: transform;
-
-
+	
 	@include sp {
 		right: 2rem;
 		bottom: 6rem;
@@ -2192,7 +2161,6 @@ TOPへ戻るボタン
 .is-show {
 	opacity: 1;
 	visibility: visible;
-	transform: translateY(var(--lift));
 
 	&:hover {
 		opacity: 0.7;
@@ -2203,6 +2171,7 @@ TOPへ戻るボタン
 	display: none;
 }
 
+/* 一時的にUIを不可視＆非クリック化（モーダル/ハンバーガー表示中の誤操作防止） */
 .is-hidden-temp {
 	opacity: 0 !important;
 	visibility: hidden !important;
