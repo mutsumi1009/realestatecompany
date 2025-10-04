@@ -1100,7 +1100,7 @@ section[id] {
 /*==================================================
 // WORKSモーダル
 ==================================================*/
-.modal-area {
+.work-modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -1119,15 +1119,15 @@ section[id] {
   opacity: 0;
   padding: 2rem;
   visibility: hidden;
-  -webkit-transition: opacity 1.5s ease, visibility 0s linear 1.5s;
-  transition: opacity 1.5s ease, visibility 0s linear 1.5s;
+  -webkit-transition: opacity 0.5s ease, visibility 0s linear 0.5s;
+  transition: opacity 0.5s ease, visibility 0s linear 0.5s;
 }
 
-.modal-area.is-active {
+.work-modal.is-active {
   opacity: 1;
   visibility: visible;
-  -webkit-transition: opacity 1.5s ease, visibility 0s linear 0s;
-  transition: opacity 1.5s ease, visibility 0s linear 0s;
+  -webkit-transition: opacity 0.5s ease, visibility 0s linear 0s;
+  transition: opacity 0.5s ease, visibility 0s linear 0s;
 }
 
 .modal__item {
@@ -1142,21 +1142,15 @@ section[id] {
   height: auto;
   padding: 15px 15px 6px 15px;
   z-index: 2;
-  opacity: 0;
+  opacity: 1;
   overflow: hidden;
-  -webkit-transition: opacity 1.5s ease;
-  transition: opacity 1.5s ease;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
 }
 @media (max-width: 767px) {
   .modal__item {
     width: 80%;
   }
-}
-
-.modal-area.is-active .modal__item {
-  opacity: 1;
-  -webkit-transition: opacity 1.5s ease;
-  transition: opacity 1.5s ease;
 }
 
 .modal-bg {
@@ -1167,13 +1161,9 @@ section[id] {
   top: 0;
   left: 0;
   z-index: 1;
-  opacity: 0;
+  opacity: 1;
   -webkit-transition: opacity 0.8s ease;
   transition: opacity 0.8s ease;
-}
-
-.modal-area.is-active .modal-bg {
-  opacity: 1;
 }
 
 .modal__close {
@@ -1204,12 +1194,6 @@ section[id] {
   margin-top: 9px;
   line-height: 1.5625;
   font-size: 1.6rem;
-}
-
-.modal__content img {
-  max-width: 100%;
-  height: auto;
-  display: block;
 }
 
 /* ===============================================
@@ -2531,17 +2515,6 @@ TOPへ戻るボタン
   transition: opacity 0.3s, -webkit-transform 0.3s;
   transition: transform 0.3s, opacity 0.3s;
   transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
-  --lift: 0px;
-  --showShift: 10px;
-  opacity: 0;
-  visibility: hidden;
-  -webkit-transform: translateY(var(--showShift)) translateY(var(--lift));
-          transform: translateY(var(--showShift)) translateY(var(--lift));
-  -webkit-transition: opacity 0.28s ease, visibility 0.28s ease, -webkit-transform 0.35s cubic-bezier(0.25, 0.85, 0.25, 1);
-  transition: opacity 0.28s ease, visibility 0.28s ease, -webkit-transform 0.35s cubic-bezier(0.25, 0.85, 0.25, 1);
-  transition: transform 0.35s cubic-bezier(0.25, 0.85, 0.25, 1), opacity 0.28s ease, visibility 0.28s ease;
-  transition: transform 0.35s cubic-bezier(0.25, 0.85, 0.25, 1), opacity 0.28s ease, visibility 0.28s ease, -webkit-transform 0.35s cubic-bezier(0.25, 0.85, 0.25, 1);
-  will-change: transform;
 }
 @media (max-width: 767px) {
   .page-top-btn {
@@ -2559,8 +2532,6 @@ TOPへ戻るボタン
 .is-show {
   opacity: 1;
   visibility: visible;
-  -webkit-transform: translateY(var(--lift));
-          transform: translateY(var(--lift));
 }
 .is-show:hover {
   opacity: 0.7;
@@ -2570,6 +2541,7 @@ TOPへ戻るボタン
   display: none;
 }
 
+/* 一時的にUIを不可視＆非クリック化（モーダル/ハンバーガー表示中の誤操作防止） */
 .is-hidden-temp {
   opacity: 0 !important;
   visibility: hidden !important;
