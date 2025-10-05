@@ -935,7 +935,7 @@ section[id] {
 	z-index: 2;
 	opacity: 1;
 	overflow: hidden;
-	transition: opacity 0.5s ease; 
+	transition: opacity 0.5s ease;
 
 	@include sp {
 		width: 80%;
@@ -951,7 +951,7 @@ section[id] {
 	left: 0;
 	z-index: 1;
 	opacity: 1;
-    transition: opacity 0.8s ease;
+	transition: opacity 0.8s ease;
 }
 
 .modal__close {
@@ -1740,14 +1740,6 @@ section[id] {
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 
-	// >* {
-	// margin: 0;
-	// }
-
-	// >*+* {
-	// margin-top: 0rem;
-	// }
-
 	h3 {
 		margin-top: .4rem;
 		margin-bottom: 0rem;
@@ -1755,20 +1747,25 @@ section[id] {
 
 	p {
 		margin-top: 0rem;
-		margin-bottom: 1.2rem;
+		margin-bottom: 2.2rem;
 	}
 
 	ul {
 		list-style: none;
-		// margin: 0;
 		padding: 0;
 		margin-top: 0;
 		margin-bottom: 2.2rem;
 	}
 
-	> h3:first-of-type + p {
-		margin-bottom: 2.2rem;
-	  }
+	// >h3:first-of-type+p,
+	// >h3:first-of-type+p+h3+p {
+	// 	margin-bottom: 2.2rem;
+	// }
+
+	>h3:nth-of-type(3)+p,
+	>h3:nth-of-type(6)+p {
+		margin-bottom: 0;
+	}
 
 	li {
 		position: relative;
@@ -1787,19 +1784,15 @@ section[id] {
 	@include sp {
 		font-size: 1.6rem;
 		line-height: 2.0625;
-		
-		h3 {
 
+		h3 {
 			margin-top: 0rem;
 			margin-bottom: 0rem;
 		}
 
-		p {
-			margin-bottom: 1rem;
+		>h3:first-of-type+p {
+			margin-bottom: 3.2rem;
 		}
-		> h3:first-of-type + p {
-			margin-bottom: 3rem; 
-		  }
 	}
 }
 
@@ -2148,7 +2141,7 @@ TOPへ戻るボタン
 	overflow: hidden;
 	-webkit-clip-path: circle(50% at 50% 50%);
 	transition: transform 0.3s, opacity 0.3s;
-	
+
 	@include sp {
 		right: 2rem;
 		bottom: 6rem;
