@@ -1755,7 +1755,7 @@ section[id] {
 
 	p {
 		margin-top: 0rem;
-		margin-bottom: 2.2rem;
+		margin-bottom: 1.2rem;
 	}
 
 	ul {
@@ -1765,6 +1765,10 @@ section[id] {
 		margin-top: 0;
 		margin-bottom: 2.2rem;
 	}
+
+	> h3:first-of-type + p {
+		margin-bottom: 2.2rem;
+	  }
 
 	li {
 		position: relative;
@@ -1791,8 +1795,11 @@ section[id] {
 		}
 
 		p {
-			margin-bottom: 3rem;
+			margin-bottom: 1rem;
 		}
+		> h3:first-of-type + p {
+			margin-bottom: 3rem; 
+		  }
 	}
 }
 
