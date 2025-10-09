@@ -1434,7 +1434,7 @@ section[id] {
 		width: 100%;
 		font-size: 1.6rem;
 		grid-template-columns: repeat(2, 1fr);
-		row-gap: 0.7rem;
+		row-gap: 0.9rem;
 		column-gap: 0.2rem;
 		// margin-bottom: 2.1rem;
 		margin-right: 0;
@@ -1502,7 +1502,7 @@ section[id] {
 	border: 1px solid #fff;
 
 	@include sp {
-		top: 35%;
+		top: 47%;
 		left: 0;
 	}
 
@@ -1647,7 +1647,7 @@ section[id] {
 		align-items: flex-start;
 		gap: 0;
 		// margin-top: 0.7rem;
-		line-height: initial;
+		// line-height: initial;
 	}
 }
 
@@ -1663,7 +1663,7 @@ section[id] {
 	}
 
 	@include sp {
-		line-height: 1.35;
+		 line-height: 1.35;
 	}
 }
 
@@ -1892,6 +1892,13 @@ section[id] {
 	}
 }
 
+.contact__item--survey .contact__label {
+	@include sp {
+		line-height: 1.35;
+}
+}
+
+
 
 // 問い合わせ種別
 
@@ -1968,6 +1975,7 @@ section[id] {
 	line-height: 1.7;
 	overflow-wrap: anywhere;
 	resize: vertical;
+	display: block;
 
 
 	@include sp {
@@ -2042,7 +2050,7 @@ section[id] {
 	// padding-bottom: 2.8rem;
 
 	@include sp {
-		margin-top: 2.2rem;
+		margin-top: 2.3rem;
 		// padding-top: 2.3rem;
 		// padding-bottom: 2.5rem;
 	}
@@ -2083,7 +2091,7 @@ section[id] {
 	margin-top: 3rem;
 
 	@include sp {
-		margin-top: 2.8rem;
+		margin-top: 3rem;
 	}
 }
 

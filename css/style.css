@@ -1688,7 +1688,7 @@ section[id] {
     width: 100%;
     font-size: 1.6rem;
     grid-template-columns: repeat(2, 1fr);
-    row-gap: 0.7rem;
+    row-gap: 0.9rem;
     -webkit-column-gap: 0.2rem;
        -moz-column-gap: 0.2rem;
             column-gap: 0.2rem;
@@ -1764,7 +1764,7 @@ section[id] {
 }
 @media (max-width: 767px) {
   .custom-checkbox-square {
-    top: 35%;
+    top: 47%;
     left: 0;
   }
 }
@@ -1937,7 +1937,6 @@ section[id] {
         -ms-flex-align: start;
             align-items: flex-start;
     gap: 0;
-    line-height: initial;
   }
 }
 
@@ -2193,6 +2192,12 @@ section[id] {
   }
 }
 
+@media (max-width: 767px) {
+  .contact__item--survey .contact__label {
+    line-height: 1.35;
+  }
+}
+
 /* ▼ラッパーと三角 */
 .select-container {
   position: relative;
@@ -2278,6 +2283,7 @@ section[id] {
   line-height: 1.7;
   overflow-wrap: anywhere;
   resize: vertical;
+  display: block;
 }
 @media (max-width: 767px) {
   .contact__textarea {
@@ -2349,7 +2355,7 @@ section[id] {
 }
 @media (max-width: 767px) {
   .footer__nav {
-    margin-top: 2.2rem;
+    margin-top: 2.3rem;
   }
 }
 
@@ -2407,7 +2413,7 @@ section[id] {
 }
 @media (max-width: 767px) {
   .footer__bottom {
-    margin-top: 2.8rem;
+    margin-top: 3rem;
   }
 }
 
