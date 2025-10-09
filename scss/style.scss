@@ -1423,6 +1423,7 @@ section[id] {
 	grid-template-columns: repeat(4, 1fr);
 	justify-items: start;
 	margin-right: 2.9rem;
+	margin-top: 0.9rem;
 
 
 	@media screen and (max-width: 840px) {
@@ -1434,9 +1435,9 @@ section[id] {
 		width: 100%;
 		font-size: 1.6rem;
 		grid-template-columns: repeat(2, 1fr);
-		row-gap: 0.9rem;
+		row-gap: 0.2rem;
 		column-gap: 0.2rem;
-		// margin-bottom: 2.1rem;
+		margin-top: 0;
 		margin-right: 0;
 	}
 
@@ -1494,7 +1495,7 @@ section[id] {
 .custom-checkbox-square {
 	position: absolute;
 	top: 54%;
-	left: -2px;
+	left: 0px;
 	transform: translateY(-50%);
 	width: 20px;
 	height: 20px;
@@ -1502,7 +1503,7 @@ section[id] {
 	border: 1px solid #fff;
 
 	@include sp {
-		top: 47%;
+		top: 50%;
 		left: 0;
 	}
 
@@ -1513,13 +1514,14 @@ section[id] {
 	color: $text-color;
 	margin-left: 0.5rem;
 	line-height: 1.388;
-	letter-spacing: 0.1rem;
+	// letter-spacing: 0.1rem;
 	white-space: nowrap;
 
 	@include sp {
 		font-size: 1.6rem;
 		transform: translateY(-0.3rem);
-		letter-spacing: 0;
+		margin-top: 0.5rem;
+		// letter-spacing: 0;
 	}
 }
 
@@ -1813,12 +1815,12 @@ section[id] {
 // 送信ボタン
 .contact__submit {
 	text-align: center;
-	margin-top: 7.8rem;
+	margin-top: 8rem;
 
 	@include sp {
 		width: 100%;
 		margin-inline: auto;
-		margin-top: 4.9rem;
+		margin-top: 5rem;
 	}
 }
 
@@ -2035,10 +2037,10 @@ section[id] {
 	max-width: 722px;
 	height: 1px;
 	background-color: #000;
-	margin: 2.9rem auto 0;
+	margin: 2.7rem auto 0;
 
 	@include sp {
-		margin-top: 1.6rem;
+		margin-top: 1.8rem;
 		// margin-bottom: 2.2rem;
 	}
 
@@ -2132,13 +2134,13 @@ section[id] {
 	justify-content: center;
 	padding-block: 3rem 2.9rem;
 	width: 100%;
-	margin-top: 7.8rem;
+	margin-top: 8rem;
 
 	@include sp {
 		padding-block: 2.1rem;
 		padding-inline: 3rem;
 		line-height: 1.25;
-		margin-top: 5.1rem;
+		margin-top: 4.8rem;
 	}
 }
 
