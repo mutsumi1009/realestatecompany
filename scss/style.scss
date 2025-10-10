@@ -1382,11 +1382,11 @@ section[id] {
 		/* カスタムラジオボタンの丸 */
 		span {
 			position: absolute;
-			left: 0;
-			top: 50%;
+			left: 0.2rem;
+			top: 57%;
 			transform: translateY(-50%);
-			width: 18px;
-			height: 18px;
+			width: 1.8rem;
+			height: 1.8rem;
 			border-radius: 50%;
 			background-color: #fff;
 		}
@@ -1415,8 +1415,8 @@ section[id] {
 	row-gap: 1.3rem;
 	grid-template-columns: repeat(4, 1fr);
 	justify-items: start;
-	margin-right: 2.9rem;
-	margin-top: 0.9rem;
+	padding-right: 2.9rem;
+	padding-top: 0.9rem;
 
 
 	@media screen and (max-width: 840px) {
@@ -1429,8 +1429,8 @@ section[id] {
 		grid-template-columns: repeat(2, 1fr);
 		row-gap: 0.2rem;
 		column-gap: 0.2rem;
-		margin-top: 0;
-		margin-right: 0;
+		padding-top: 0;
+		padding-right: 0;
 	}
 
 	label {
@@ -1487,16 +1487,16 @@ section[id] {
 .custom-checkbox-square {
 	position: absolute;
 	top: 54%;
-	left: 0px;
+	left: 0;
 	transform: translateY(-50%);
-	width: 20px;
-	height: 20px;
+	width: 2rem;
+	height: 2rem;
 	background-color: $font-color;
 	border: 1px solid #fff;
 
 	@include sp {
 		top: 48%;
-		left: -1;
+		left: -0.1rem;
 	}
 }
 
@@ -2031,7 +2031,7 @@ section[id] {
 	margin-top: 3rem;
 
 	@include sp {
-		margin-top: 3rem;
+		margin-top: 2.7rem;
 	}
 }
 
@@ -2078,7 +2078,7 @@ section[id] {
 		padding-block: 2.1rem;
 		padding-inline: 3rem;
 		line-height: 1.25;
-		margin-top: 4.8rem;
+		margin-top: 5rem;
 	}
 }
 
