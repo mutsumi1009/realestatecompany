@@ -1980,20 +1980,19 @@ section[id] {
 	max-width: 722px;
 	height: 1px;
 	background-color: #000;
-	margin: 2.7rem auto 0;
+	margin: 2.7rem auto 2.9rem;
 
 	@include sp {
-		margin-top: 1.8rem;
-		// margin-bottom: 2.2rem;
+		margin: 1.8rem auto 2.3rem;
 	}
 
 }
 
 .footer__nav {
-	margin-top: 2.9rem;
+	margin-top: 0;
 
 	@include sp {
-		margin-top: 2.3rem;
+		margin-top: 0;
 	}
 }
 
