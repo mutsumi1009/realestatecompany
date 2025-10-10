@@ -1527,7 +1527,7 @@ section[id] {
   font-size: 1.6rem;
   font-weight: 600;
   line-height: 1.56;
-  margin-top: 0.8rem;
+  margin-top: 0.6rem;
   white-space: nowrap;
 }
 @media (max-width: 767px) {
@@ -2332,20 +2332,20 @@ section[id] {
   max-width: 722px;
   height: 1px;
   background-color: #000;
-  margin: 2.7rem auto 0;
+  margin: 2.7rem auto 2.9rem;
 }
 @media (max-width: 767px) {
   .footer__line {
-    margin-top: 1.8rem;
+    margin: 1.8rem auto 2.3rem;
   }
 }
 
 .footer__nav {
-  margin-top: 2.9rem;
+  margin-top: 0;
 }
 @media (max-width: 767px) {
   .footer__nav {
-    margin-top: 2.3rem;
+    margin-top: 0;
   }
 }
 
