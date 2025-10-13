@@ -176,12 +176,6 @@ body {
   padding-top: 0;
 }
 
-main {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-}
-
 /* ===============================================
 # リンク・画像
 =============================================== */
@@ -485,11 +479,9 @@ section[id] {
     width: 80%;
     max-width: 30rem;
     height: 34.8rem;
-    background-color: #4D9600;
     -webkit-transition: right 0.6s ease;
     transition: right 0.6s ease;
     z-index: 1000;
-    padding-top: 0.6rem;
   }
   .header__nav-sp.is-open {
     right: 0;
@@ -527,10 +519,10 @@ section[id] {
   font-weight: 500;
   color: #fff;
   text-decoration: none;
-  padding: 1.5rem 1.7rem 1.5rem 2rem;
-  text-align: left;
+  padding: 1.6rem 1.7rem 1.5rem 2rem;
   -webkit-transition: background-color 0.4s ease;
   transition: background-color 0.4s ease;
+  background-color: #4D9600;
 }
 .header__nav-sp-list a:hover {
   background-color: #000;
@@ -1703,7 +1695,7 @@ section[id] {
 }
 .contact__checkbox-group label {
   position: relative;
-  padding-left: 3.2rem;
+  padding-left: 4rem;
   cursor: pointer;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -1715,9 +1707,9 @@ section[id] {
 }
 @media (max-width: 767px) {
   .contact__checkbox-group label {
-    padding-left: 2.4rem;
+    padding-left: 3rem;
+    padding-top: 0.5rem;
     white-space: nowrap;
-    padding-top: 0rem;
   }
 }
 .contact__checkbox-group label input {
@@ -1778,7 +1770,6 @@ section[id] {
 .checkbox-text {
   font-size: 1.8rem;
   color: #000;
-  margin-left: 0.5rem;
   line-height: 1.388;
   white-space: nowrap;
 }
@@ -1787,7 +1778,6 @@ section[id] {
     font-size: 1.6rem;
     -webkit-transform: translateY(-0.3rem);
             transform: translateY(-0.3rem);
-    margin-top: 0.5rem;
   }
 }
 

@@ -85,9 +85,9 @@ body {
 	padding-top: 0;
 }
 
-main {
-	flex: 1;
-}
+// main {
+// 	flex: 1;
+// }
 
 /* ===============================================
 # リンク・画像
@@ -347,10 +347,8 @@ section[id] {
 		width: 80%;
 		max-width: 30rem;
 		height: 34.8rem;
-		background-color: $main-color;
 		transition: right 0.6s ease;
 		z-index: 1000;
-		padding-top: 0.6rem;
 
 		&.is-open {
 			right: 0;
@@ -376,9 +374,9 @@ section[id] {
 		font-weight: 500;
 		color: $font-color;
 		text-decoration: none;
-		padding: 1.5rem 1.7rem 1.5rem 2rem;
-		text-align: left;
+		padding: 1.6rem 1.7rem 1.5rem 2rem;
 		transition: background-color 0.4s ease;
+		background-color: $main-color;
 
 		&:hover {
 			background-color: $text-color;
@@ -1435,16 +1433,16 @@ section[id] {
 
 	label {
 		position: relative;
-		padding-left: calc(1.2rem + 2rem);
+		padding-left: 4rem;
 		cursor: pointer;
 		display: inline-flex;
 		align-items: center;
 		padding-top: 0.2rem;
 
 		@include sp {
-			padding-left: 2.4rem;
+			padding-left: 3rem;
+			padding-top: 0.5rem;
 			white-space: nowrap;
-			padding-top: 0rem;
 		}
 
 		input {
@@ -1503,14 +1501,14 @@ section[id] {
 .checkbox-text {
 	font-size: 1.8rem;
 	color: $text-color;
-	margin-left: 0.5rem;
+	// margin-left: 0.5rem;
 	line-height: 1.388;
 	white-space: nowrap;
 
 	@include sp {
 		font-size: 1.6rem;
 		transform: translateY(-0.3rem);
-		margin-top: 0.5rem;
+		// margin-top: 0.5rem;
 	}
 }
 
