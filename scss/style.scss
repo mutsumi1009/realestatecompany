@@ -1496,14 +1496,12 @@ section[id] {
 .checkbox-text {
 	font-size: 1.8rem;
 	color: $text-color;
-	// margin-left: 0.5rem;
 	line-height: 1.388;
 	white-space: nowrap;
 
 	@include sp {
 		font-size: 1.6rem;
 		transform: translateY(-0.3rem);
-		// margin-top: 0.5rem;
 	}
 }
 
