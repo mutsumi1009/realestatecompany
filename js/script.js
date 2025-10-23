@@ -1,4 +1,5 @@
 // js/script.js
+
 $(function () {
   // --- FVスライダーのSlick設定 ---
   $('.fv__slider').slick({
@@ -70,10 +71,12 @@ $(function () {
     $('#modal-text').text(data.title || '');
 
     const $cap = $item.find('.works__caption').first().clone();
+    $cap.find('br').remove(); 
     $('#modal-text').empty().append($cap);
 
     //  $modalArea.appendTo('body');
     $modalArea.addClass('is-active');
+    scrollPosition = $(window).scrollTop();
 
     setTimeout(function() {
     $toTopBtn.addClass('is-hidden-temp');  // 一時的に隠す
