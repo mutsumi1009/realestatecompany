@@ -158,3 +158,5 @@ if (!isMobile) {
     telLink.style.cursor = 'default'; // カーソルをデフォルトに戻す
   }
 }
+
+

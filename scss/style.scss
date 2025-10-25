@@ -73,6 +73,7 @@ $placeholder-color: #A0A0A0;
 html {
 	font-size: 62.5%;
 	scroll-behavior: smooth;
+	
 }
 
 body {
@@ -327,7 +328,7 @@ section[id] {
 // spナビゲゲーション
 .header__nav-sp {
 	display: none;
-
+	
 	@include sp {
 		// display: block;
 		position: fixed;
@@ -343,7 +344,7 @@ section[id] {
 		height: 34.8rem;
 		transition: right 0.6s ease;
 		z-index: 1000;
-
+		
 		&.is-open {
 			right: 0;
 		}
@@ -473,18 +474,18 @@ section[id] {
 	top: 0;
 	right: 0;
 	// width: 0;
-	width: 100vw;
+	 width: 100vw;
 	height: 100vh;
 	background-color: $text-color;
 	opacity: 0;
 	z-index: 999;
-	transition: opacity 0.6s ease;
+	transition: opacity 0.3s ease;
 	pointer-events: none;
 }
 
 .hamburger-bg.is-open {
-	// width: 100vw;
 	opacity: 0.6;
+	transition: opacity 0.6s ease;
 	pointer-events: auto;
 }
 
@@ -1110,6 +1111,7 @@ section[id] {
 	-webkit-line-clamp: 2;
 	overflow: hidden;
 	flex: 1;
+	min-width: 0;
 
 	@include sp {
 		line-height: 1.388;
@@ -1395,9 +1397,7 @@ section[id] {
 	grid-template-columns: repeat(4, 1fr);
 	justify-items: start;
 	padding-right: 2.9rem;
-	// padding-top: 0.9rem;
-
-
+	
 	@media screen and (max-width: 840px) {
 		font-size: 1.6rem;
 	}
@@ -1406,7 +1406,7 @@ section[id] {
 		width: 100%;
 		font-size: 1.6rem;
 		grid-template-columns: repeat(2, 1fr);
-		row-gap: 0.2rem;
+		row-gap: 0.8rem;
 		column-gap: 0.2rem;
 		padding-top: 0;
 		padding-right: 0;
@@ -1418,11 +1418,10 @@ section[id] {
 		cursor: pointer;
 		display: inline-flex;
 		align-items: center;
-		// padding-top: 0.2rem;
-
+		
 		@include sp {
 			padding-left: 3rem;
-			padding-top: 0.5rem;
+			// padding-top: 0.5rem;
 			white-space: nowrap;
 		}
 
@@ -1685,6 +1684,10 @@ section[id] {
 	p {
 		margin-top: 0rem;
 		margin-bottom: 2.2rem;
+
+		@include sp {
+		  margin-top: 0.1rem;
+		}
 	}
 
 	ul {
@@ -2005,7 +2008,7 @@ section[id] {
 	margin-top: 3rem;
 
 	@include sp {
-		margin-top: 2.7rem;
+		margin-top: 2.9rem;
 	}
 }
 
@@ -2114,3 +2117,6 @@ TOPへ戻るボタン
 	visibility: hidden !important;
 	pointer-events: none !important;
 }
+
+
+  
