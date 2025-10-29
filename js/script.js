@@ -58,6 +58,8 @@ $(function () {
   changeHeaderBg();
 
   // --- モーダル機能 ---
+
+  let scrollPosition = 0;
   const $modalArea = $('.js-modal');
 
   // 開く：a.work-card をクリックした時だけ（委譲）
