@@ -86,15 +86,11 @@ body {
 	padding-top: 0;
 }
 
-// main {
-// 	flex: 1;
-// }
 
 /* ===============================================
 # リンク・画像
 =============================================== */
 a {
-	// color: $font-color;
 	text-decoration: none;
 	transition: color 0.3s ease;
 }
@@ -330,7 +326,6 @@ section[id] {
 	display: none;
 
 	@include sp {
-		// display: block;
 		position: fixed;
 		display: flex;
 		flex-direction: column;
@@ -472,7 +467,6 @@ section[id] {
 	position: fixed;
 	top: 0;
 	right: 0;
-	// width: 0;
 	width: 100vw;
 	height: 100vh;
 	background-color: $text-color;
