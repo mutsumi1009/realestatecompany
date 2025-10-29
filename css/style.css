@@ -1150,7 +1150,9 @@ section[id] {
   padding: 15px 15px 6px 15px;
   z-index: 2;
   opacity: 1;
-  overflow: hidden;
+  max-height: 90vh; /* 画面高さを超えてはみ出すのを防ぐ */
+  overflow-y: auto; /* モーダル内でスクロールを可能にする */
+  overflow-x: hidden;
   -webkit-transition: opacity 0.5s ease;
   transition: opacity 0.5s ease;
 }
@@ -1201,6 +1203,10 @@ section[id] {
   margin-top: 9px;
   line-height: 1.5625;
   font-size: 1.6rem;
+}
+
+body:has(.work-modal.is-active) {
+  overflow: hidden;
 }
 
 /* ===============================================
@@ -1255,6 +1261,7 @@ section[id] {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    margin: 0;
   }
 }
 
@@ -1312,8 +1319,8 @@ section[id] {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  -webkit-transition: opacity 0.3s ease, color 0.3s ease;
-  transition: opacity 0.3s ease, color 0.3s ease;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
   padding-top: 2rem;
   padding-bottom: 1.1rem;
 }
@@ -1513,12 +1520,6 @@ section[id] {
   line-height: 1.65;
   white-space: nowrap;
 }
-@media (max-width: 767px) {
-  .access__name {
-    margin-bottom: 0.9rem;
-  }
-}
-
 .access__address {
   font-size: 1.6rem;
   font-weight: 600;
@@ -1684,7 +1685,7 @@ section[id] {
     width: 100%;
     font-size: 1.6rem;
     grid-template-columns: repeat(2, 1fr);
-    row-gap: 0.8rem;
+    row-gap: 0.7rem;
     -webkit-column-gap: 0.2rem;
        -moz-column-gap: 0.2rem;
             column-gap: 0.2rem;
@@ -1759,7 +1760,7 @@ section[id] {
 }
 @media (max-width: 767px) {
   .custom-checkbox-square {
-    top: 48%;
+    top: 50%;
     left: -0.1rem;
   }
 }
@@ -1773,8 +1774,8 @@ section[id] {
 @media (max-width: 767px) {
   .checkbox-text {
     font-size: 1.6rem;
-    -webkit-transform: translateY(-0.3rem);
-            transform: translateY(-0.3rem);
+    -webkit-transform: translateY(0rem);
+            transform: translateY(0rem);
   }
 }
 
@@ -1912,7 +1913,7 @@ section[id] {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
-    gap: 0;
+    gap: 0.3rem;
   }
 }
 
