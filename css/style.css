@@ -1203,6 +1203,15 @@ section[id] {
   font-size: 1.6rem;
 }
 
+html.is-modal-open,
+body.is-modal-open {
+  overflow: hidden;
+  -ms-scroll-chaining: none;
+      overscroll-behavior: none;
+  -ms-touch-action: none;
+      touch-action: none;
+}
+
 /* ===============================================
 # NEWS
 =============================================== */

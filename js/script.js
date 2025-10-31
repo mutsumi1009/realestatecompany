@@ -94,7 +94,7 @@ $(function () {
       $('body').removeClass('is-modal-open').css('overflow', '');
       $toTopBtn.removeClass('is-hidden-temp');
       onScrollToTop();
-    }, 800);
+    }, 600);
   });
 
 
@@ -160,5 +160,4 @@ if (!isMobile) {
     telLink.style.cursor = 'default'; // カーソルをデフォルトに戻す
   }
 }
-
 

@@ -902,7 +902,7 @@ section[id] {
 	opacity: 0;
 	padding: 2rem;
 	visibility: hidden;
-	transition: opacity .5s ease, visibility 0s linear .5s;
+	transition: opacity .6s ease, visibility 0s linear .6s;
 	overscroll-behavior: none;
 	touch-action: none;
 }
@@ -974,6 +974,13 @@ section[id] {
 		line-height: 1.5625;
 		font-size: 1.6rem;
 	}
+}
+
+html.is-modal-open,
+body.is-modal-open {
+  overflow: hidden;
+  overscroll-behavior: none;
+  touch-action: none;
 }
 
 
