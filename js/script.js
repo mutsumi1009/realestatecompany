@@ -83,7 +83,9 @@ $(function () {
     setTimeout(function() {
     $toTopBtn.addClass('is-hidden-temp');  // 一時的に隠す
     $('body').addClass('is-modal-open');
-    $('body').css('overflow', 'hidden');   // 背景スクロール停止
+    $('body').css('overflow', 'hidden');// 背景スクロール停止
+    $('html').css('overflow', 'hidden'); 
+    isModalTransitioning = false;
   }, 0);
   });
 
@@ -94,7 +96,7 @@ $(function () {
       $('body').removeClass('is-modal-open').css('overflow', '');
       $toTopBtn.removeClass('is-hidden-temp');
       onScrollToTop();
-    }, 600);
+    }, 800);
   });
 
 
