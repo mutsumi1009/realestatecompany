@@ -72,7 +72,7 @@ $placeholder-color: #A0A0A0;
 
 html {
 	font-size: 62.5%;
-	 scroll-behavior: smooth;
+	scroll-behavior: smooth;
 
 }
 
@@ -976,13 +976,14 @@ section[id] {
 	}
 }
 
+
+
 html.is-modal-open,
 body.is-modal-open {
-  overflow: hidden;
-  overscroll-behavior: none;
-  touch-action: none;
+	overflow: hidden;
+	overscroll-behavior: none;
+	touch-action: none;
 }
-
 
 /* ===============================================
 # NEWS
@@ -1407,8 +1408,8 @@ body.is-modal-open {
 		width: 100%;
 		font-size: 1.6rem;
 		grid-template-columns: repeat(2, 1fr);
-		row-gap: 0.7rem;
-		column-gap: 0.2rem;
+		row-gap: 0.75rem;
+		column-gap: 0.1rem;
 		padding-top: 0;
 		padding-right: 0;
 	}

@@ -57,67 +57,67 @@ $(function () {
   $(window).on('scroll resize load', changeHeaderBg);
   changeHeaderBg();
 
-  // --- モーダル機能 ---
+ // --- モーダル機能 ---
 
-  let scrollPosition = 0;
-  const $modalArea = $('.js-modal');
+let scrollPosition = 0;
+const $modalArea = $('.js-modal');
 
-  // 開く：a.work-card をクリックした時だけ（委譲）
-  $('.works__contents').on('click', 'a.work-card', function (e) {
-    e.preventDefault(); // ← # へのジャンプ防止
+// 開く：a.work-card をクリックした時だけ（委譲）
+$('.works__contents').on('click', 'a.work-card', function (e) {
+  e.preventDefault(); // ← # へのジャンプ防止
 
-    const $item = $(this).closest('.works__item');
-    const data = $item.data('modal') || {};
+  const $item = $(this).closest('.works__item');
+  const data = $item.data('modal') || {};
 
-    $('#modal-img').attr({ src: data.img_src || '', alt: data.title || '' });
-    $('#modal-text').text(data.title || '');
+  $('#modal-img').attr({ src: data.img_src || '', alt: data.title || '' });
+  $('#modal-text').text(data.title || '');
 
-    const $cap = $item.find('.works__caption').first().clone();
-    $cap.find('br').remove(); 
-    $('#modal-text').empty().append($cap);
+  const $cap = $item.find('.works__caption').first().clone();
+  $cap.find('br').remove();
+  $('#modal-text').empty().append($cap);
 
-    //  $modalArea.appendTo('body');
-    $modalArea.addClass('is-active');
-    scrollPosition = $(window).scrollTop();
+  //  $modalArea.appendTo('body');
+  $modalArea.addClass('is-active');
 
-    setTimeout(function() {
-    $toTopBtn.addClass('is-hidden-temp');  // 一時的に隠す
-    $('body').addClass('is-modal-open');
-    $('body').css('overflow', 'hidden');// 背景スクロール停止
-    $('html').css('overflow', 'hidden'); 
-    isModalTransitioning = false;
-  }, 0);
-  });
+  // 今のスクロール位置を保存
+  scrollPosition = $(window).scrollTop();
 
-  // 閉じる：× と 黒幕だけで閉じる（★置き換え）
-  $(document).on('click', '.js-modal-close, .modal-bg', function () {
+  // トップへ戻るボタンを一時的に隠す
+  $toTopBtn.addClass('is-hidden-temp');
+
+  // 背景スクロール停止
+  $('body').addClass('is-modal-open');
+  $('html').css('overflow', 'hidden');
+});
+
+// 閉じる：× と 黒幕だけで閉じる
+$(document).on('click', '.js-modal-close, .modal-bg', function () {
+  $modalArea.removeClass('is-active');
+
+  // モーダル開いたときに付けたものを戻す
+  $('body').removeClass('is-modal-open').css('overflow', '');
+  $('html').css('overflow', '');
+  $toTopBtn.removeClass('is-hidden-temp');
+  onScrollToTop();
+});
+
+// モーダル本体をクリックしても閉じない
+$(document).on('click', '.modal__item', function (e) {
+  e.stopPropagation();
+});
+
+// Escapeキーで閉じる
+$(document).on('keydown', function (e) {
+  if (e.key === 'Escape' && $modalArea.hasClass('is-active')) {
     $modalArea.removeClass('is-active');
-    setTimeout(function () {
-      $('body').removeClass('is-modal-open').css('overflow', '');
-      $toTopBtn.removeClass('is-hidden-temp');
-      onScrollToTop();
-    }, 800);
-  });
 
-
-  // モーダル本体をクリックしても閉じない
-  $(document).on('click', '.modal__item', function (e) {
-    e.stopPropagation();
-  });
-
-  // Escapeキーで閉じる
-  $(document).on('keydown', function (e) {
-    if (e.key === 'Escape' && $modalArea.hasClass('is-active')) {
-      $modalArea.removeClass('is-active');
-
-      // （CSSアニメーション時間）後にbodyのスタイルをリセットする
-      setTimeout(function () {
-        $('body').removeClass('is-modal-open').css('overflow', '');
-        $toTopBtn.removeClass('is-hidden-temp');
-        onScrollToTop();
-      }, 800);
-    }
-  });
+    // モーダル開いたときに付けたものを戻す
+    $('body').removeClass('is-modal-open').css('overflow', '');
+    $('html').css('overflow', '');
+    $toTopBtn.removeClass('is-hidden-temp');
+    onScrollToTop();
+  }
+});
 
 
   // --- TOPへ戻る（FVより下で表示） ---
@@ -162,4 +162,3 @@ if (!isMobile) {
     telLink.style.cursor = 'default'; // カーソルをデフォルトに戻す
   }
 }
-
